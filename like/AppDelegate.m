@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 
 #import "HockeySDK.h"
+#import <SMS_SDK/SMS_SDK.h>
+#import <FIR/FIR.h>
 
 @interface AppDelegate ()
 
@@ -23,6 +25,17 @@
     [[BITHockeyManager sharedHockeyManager] startManager];
     [[BITHockeyManager sharedHockeyManager].authenticator authenticateInstallation];
 
+    [FIR handleCrashWithKey:@"c360dd80066422b3e11b86d45b55d2fe"]; 
+    
+    //self.window.tintColor = [UIColor terigakiColor];
+    
+    [SMS_SDK registerApp:@"812383acc169" withSecret:@"72e728e8b96ade2ce52f7b4e387fcf57"];
+    
+    initUser();
+    
+    // MAKR: 减少并发下载数量
+    [SDWebImageDownloader sharedDownloader].maxConcurrentDownloads = 2;
+    
     return YES;
 }
 

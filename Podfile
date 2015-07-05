@@ -1,8 +1,11 @@
 platform :ios, '7.0'
 # source 'https://github.com/CocoaPods/Specs.git'
 target :like do
-    
-    
+    pod 'CCBottomRefreshControl'
+    pod 'UIAlert+Blocks', '~> 1.0.2'
+    pod 'CHTCollectionViewWaterfallLayout', '~> 0.9.1'
+    pod 'UICollectionView-ARDynamicHeightLayoutCell', :git => 'https://github.com/SuperMarioBean/UICollectionView-ARDynamicHeightLayoutCell.git'
+    pod 'MulticastDelegate', '~> 0.0.1.1'
     # 页面布局
     pod 'Masonry', '~> 0.6.1'
     # 全局图片缓存
@@ -23,6 +26,10 @@ target :like do
     pod 'CocoaLumberjack', '~> 2.0.0'
     # 崩溃日志上传
     pod 'HockeySDK', '~> 3.6.4'
+    
+    pod 'FIR.im', '~> 1.2.0'
+    # UI分析
+    pod 'Reveal-iOS-SDK', :configurations => ['Debug']
 end
 
 target :likeTests do

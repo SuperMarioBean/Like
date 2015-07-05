@@ -20,6 +20,9 @@ PODS:
   - AFNetworking/UIKit (2.5.4):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - CCBottomRefreshControl (0.5):
+    - Masonry
+  - CHTCollectionViewWaterfallLayout (0.9.1)
   - CocoaLumberjack (2.0.0):
     - CocoaLumberjack/Default (= 2.0.0)
     - CocoaLumberjack/Extensions (= 2.0.0)
@@ -29,6 +32,7 @@ PODS:
   - CocoaLumberjack/Extensions (2.0.0):
     - CocoaLumberjack/Default
   - Expecta (1.0.0)
+  - FIR.im (1.2.0)
   - HockeySDK (3.6.4)
   - KIF (3.2.2):
     - KIF/XCTest (= 3.2.2)
@@ -37,6 +41,7 @@ PODS:
     - Mantle/extobjc (= 2.0.2)
   - Mantle/extobjc (2.0.2)
   - Masonry (0.6.1)
+  - MulticastDelegate (0.0.1.1)
   - OCMock (3.1.2)
   - Pingpp/Alipay (2.0.5):
     - Pingpp/Core
@@ -47,41 +52,67 @@ PODS:
     - Pingpp/Core
   - pop (1.0.7)
   - RBStoryboardLink (0.1.4)
+  - Reveal-iOS-SDK (1.5.1)
   - SDWebImage (3.7.2):
     - SDWebImage/Core (= 3.7.2)
   - SDWebImage/Core (3.7.2)
   - Specta (1.0.0)
+  - UIAlert+Blocks (1.0.2)
+  - UICollectionView-ARDynamicHeightLayoutCell (1.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.5.4)
+  - CCBottomRefreshControl
+  - CHTCollectionViewWaterfallLayout (~> 0.9.1)
   - CocoaLumberjack (~> 2.0.0)
   - Expecta (~> 1.0.0)
+  - FIR.im (~> 1.2.0)
   - HockeySDK (~> 3.6.4)
   - KIF (~> 3.2.2)
   - Mantle (~> 2.0.2)
   - Masonry (~> 0.6.1)
+  - MulticastDelegate (~> 0.0.1.1)
   - OCMock (~> 3.1.2)
   - Pingpp/Alipay (~> 2.0.5)
   - Pingpp/ApplePay (~> 2.0.5)
   - Pingpp/Wx (~> 2.0.5)
   - pop (~> 1.0.7)
   - RBStoryboardLink (~> 0.1.4)
+  - Reveal-iOS-SDK
   - SDWebImage (~> 3.7.2)
   - Specta (~> 1.0.0)
+  - UIAlert+Blocks (~> 1.0.2)
+  - UICollectionView-ARDynamicHeightLayoutCell (from `https://github.com/SuperMarioBean/UICollectionView-ARDynamicHeightLayoutCell.git`)
+
+EXTERNAL SOURCES:
+  UICollectionView-ARDynamicHeightLayoutCell:
+    :git: https://github.com/SuperMarioBean/UICollectionView-ARDynamicHeightLayoutCell.git
+
+CHECKOUT OPTIONS:
+  UICollectionView-ARDynamicHeightLayoutCell:
+    :commit: 86cf2a26c8720adc89c647ba964f96aa150f3aa9
+    :git: https://github.com/SuperMarioBean/UICollectionView-ARDynamicHeightLayoutCell.git
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
+  CCBottomRefreshControl: 2cfdbd6f5be5181f5f070637605981d5557e8e32
+  CHTCollectionViewWaterfallLayout: 1a8da4fc662702cbddda8926ced266036a829f84
   CocoaLumberjack: a6f77d987d65dc7ba86b0f84db7d0b9084f77bcb
   Expecta: 32604574add2c46a36f8d2f716b6c5736eb75024
+  FIR.im: e5c7367a35adcd796f30f176f059356c330c0c2e
   HockeySDK: c07cdd580296737edcd0963e292c19885a53f563
   KIF: b0bd762b0c7890b04920cf618021d6d4fd5127bd
   Mantle: 967fd31ea0220890b2e76589198996b534bb3fb1
   Masonry: 4972309f2f134de9dd312f4dc4a21359b50e6caa
+  MulticastDelegate: 473589ab16a00612150f8bfd726caac85125e695
   OCMock: a10ea9f0a6e921651f96f78b6faee95ebc813b92
   Pingpp: 85fe5b5421c3c774deaa38943cbbff8dbe82c76c
   pop: 628ffc631644601567ee8bfaaaea493ebd7d0923
   RBStoryboardLink: 0faae84aea6a5e8716c4469984d847d958c3fcb3
+  Reveal-iOS-SDK: c9c55cad2729c85f6ced415f1b21857c9a2d8ef9
   SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29
   Specta: 96fe05fe5c7348b5223f85e862904f6e832abb14
+  UIAlert+Blocks: aa9e754efb2b1066e70cac7ed7e1499d960208fe
+  UICollectionView-ARDynamicHeightLayoutCell: 7bcfb4f797def6160a8ce45148b74d2be8d7a322
 
-COCOAPODS: 0.37.1
+COCOAPODS: 0.37.2

@@ -1,0 +1,49 @@
+//
+//  like-Prefix.pch
+//  like
+//
+//  Created by David Fu on 7/5/15.
+//  Copyright (c) 2015 LIKE Technology. All rights reserved.
+//
+
+#ifndef like_like_Prefix_pch
+#define like_like_Prefix_pch
+
+#define HORIZONTAL_HEADER_HEIGHT 60
+#define HORIZONTAL_FOOTER_HEIGHT 30
+
+#define TEXT_VERTICAL_PAD       10
+#define TEXT_HORIZONTAL_PAD     10
+#define DESIGNER_HEADER_HEIGHT  60
+#define STATUS_BAR_HEIGHT       20
+
+#define kServerUrl @"http://xiaomu.ren/pay"
+
+#define MAS_SHORTHAND
+#import "Masonry.h"
+#import "Mantle.h"
+#import "AFNetworking.h"
+#import "UIImageView+WebCache.h"
+#import "UICollectionView+ARDynamicCacheHeightLayoutCell.h"
+#import "GCDMulticastDelegate.h"
+
+#import "LWUser.h"
+#import "LWAppContext.h"
+#import "LWAPIBaseManager.h"
+
+#import "LWAPIProxy.h"
+#import "UIAlert+Blocks.h"
+#import "LWHelper.h"
+
+static NSString *const LWQiNiuImageDomainString = @"7xjljl.com1.z0.glb.clouddn.com";
+
+static NSString *const LWTextSize = @"textSize";
+static NSString *const LWLargeTextSize = @"largeTextSize";
+static NSString *const LWRawImageSize = @"rawImageSize";
+static NSString *const LWImageSize = @"imageSize";
+static NSString *const LWLargeImageSize = @"largeImageSize";
+static NSString *const LWFullSize = @"fullSize";
+static NSString *const LWImageName = @"imageName";
+static NSString *const LWText = @"text";
+
+#endif

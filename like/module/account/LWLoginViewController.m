@@ -1,0 +1,96 @@
+//
+//  LWLoginViewController.m
+//  xiaomuren
+//
+//  Created by David Fu on 6/11/15.
+//  Copyright (c) 2015 XiaoMuRen Technology. All rights reserved.
+//
+
+#import "LWLoginViewController.h"
+
+@interface LWLoginViewController ()
+
+@property (weak, nonatomic) IBOutlet UITextField *phoneNumberTextField;
+
+@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+
+@end
+
+@implementation LWLoginViewController
+#pragma mark - life cycle
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    NSString *identifier = segue.identifier;
+    if ([identifier isEqualToString:@"loginUnwind"]) {
+        
+    }
+    else if ([identifier isEqualToString:@"phoneNumberEnter"]) {
+        
+    }
+}
+
+#pragma mark - delegate methods
+
+#pragma mark - event response
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self.view endEditing:YES];
+}
+
+- (IBAction)loginButtonClick:(id)sender {
+    [self touchesBegan:nil withEvent:nil];
+
+    BOOL phoneNumberFlag = [LWHelper verifyPhoneNumber:self.phoneNumberTextField.text];
+    BOOL passwordFlag = [LWHelper verifyPassword:self.passwordTextField.text];
+    if (phoneNumberFlag && passwordFlag) {
+        __user.phoneNumber = self.phoneNumberTextField.text;
+        __user.password = self.passwordTextField.text;
+        __user.login = YES;
+        [self performSegueWithIdentifier:@"loginUnwind" sender:self];
+    }
+    else {
+        self.passwordTextField.text = @"";
+        NSString *message = @"您的电话号码或密码不正确";
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitleType:UIAlertTitleError
+                                                                message:message
+                                                             buttonType:UIAlertButtonOk];
+        
+        [alertView show];
+    }
+}
+
+- (IBAction)forgetPasswordButtonClick:(id)sender {
+    [self touchesBegan:nil withEvent:nil];
+    
+    __user.forgetPassword = YES;
+    [self performSegueWithIdentifier:@"phoneNumberEnter" sender:self];
+}
+
+- (IBAction)registerButtonClick:(id)sender {
+    [self touchesBegan:nil withEvent:nil];
+
+    [self performSegueWithIdentifier:@"phoneNumberEnter" sender:self];
+}
+
+- (IBAction)loginUnwind:(UIStoryboardSegue *)unwindSegue {
+    self.phoneNumberTextField.text = __user.phoneNumber;
+    self.passwordTextField.text = __user.password;
+}
+
+#pragma mark - private methods
+
+#pragma mark - accessor methods
+
+#pragma mark - api methods
+
+@end

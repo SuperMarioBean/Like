@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="49y-MN-vVS">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="Mx3-vx-sRh">
+            <objects>
+                <navigationController id="49y-MN-vVS" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Nb3-zV-V1l">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="T5L-yw-EkX" kind="relationship" relationship="rootViewController" id="IiH-Od-bTK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NOX-ML-umh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-598" y="420"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="VQY-BC-fic">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="8mX-pi-UHs" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aqe-ob-V4R"/>
+                        <viewControllerLayoutGuide type="bottom" id="TNa-zO-zXM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pds-hp-vea">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="nG6-Uv-8Zo"/>
+                    <connections>
+                        <segue destination="8X2-3z-n8p" kind="unwind" identifier="photoTakeAndPickUnwind" unwindAction="customeUnwind:" id="CHV-1i-HjH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hRk-Wv-yII" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="8X2-3z-n8p" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="206" y="420"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="cOt-nD-6KQ">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="T5L-yw-EkX" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Tk6-Ld-8ge"/>
+                        <viewControllerLayoutGuide type="bottom" id="g1z-bn-RXg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3MR-w5-fjQ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hsI-Kd-8DJ">
+                                <rect key="frame" x="205" y="530" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="5eO-75-rTK"/>
+                                    <constraint firstAttribute="width" constant="100" id="bMi-ii-1DC"/>
+                                </constraints>
+                                <state key="normal" title="提交">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cDE-cK-Lax">
+                                <rect key="frame" x="16" y="530" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="b45-ll-fWM"/>
+                                    <constraint firstAttribute="height" constant="30" id="gGL-FM-jar"/>
+                                </constraints>
+                                <state key="normal" title="取消">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="YsW-uT-Rn1" kind="unwind" identifier="photoTakeAndPickUnwind" unwindAction="mainUnwind:" id="Qpi-P9-6GQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="hsI-Kd-8DJ" secondAttribute="centerX" constant="-95" id="0YC-ky-lMM"/>
+                            <constraint firstAttribute="centerX" secondItem="cDE-cK-Lax" secondAttribute="centerX" constant="94" id="4Xb-gf-0eh"/>
+                            <constraint firstItem="g1z-bn-RXg" firstAttribute="top" secondItem="cDE-cK-Lax" secondAttribute="bottom" constant="8" id="XMK-1K-w47"/>
+                            <constraint firstItem="g1z-bn-RXg" firstAttribute="top" secondItem="hsI-Kd-8DJ" secondAttribute="bottom" constant="8" id="xCR-Ug-JOt"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Mez-XM-7q0">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="aE4-ww-Mdm"/>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="8mX-pi-UHs" kind="modal" identifier="photoTakeAndPick" id="T3n-JD-w0e"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I6b-AR-bjR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="YsW-uT-Rn1" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-198" y="420"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
