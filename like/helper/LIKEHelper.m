@@ -1,14 +1,14 @@
 //
-//  LWHelper.m
+//  LIKEHelper.m
 //  xiaomuren
 //
 //  Created by David Fu on 6/7/15.
 //  Copyright (c) 2015 XiaoMuRen Technology. All rights reserved.
 //
 
-#import "LWHelper.h"
+#import "LIKEHelper.h"
 
-@implementation LWHelper
+@implementation LIKEHelper
 
 static NSString *const letters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 
@@ -45,10 +45,10 @@ static NSString *const letters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRS
                 break;
         }
         NSString *catFilename = [NSString stringWithFormat:@"cat%lu.jpg", (unsigned long)pickACat];
-        NSString *text = [LWHelper randomStringWithMaxLength:80];
-        items[i] = [NSMutableDictionary dictionaryWithObjectsAndKeys:catFilename, LWImageName,
-                     [NSValue valueWithCGSize:imageSize], LWRawImageSize,
-                     text, LWText, nil];
+        NSString *text = [LIKEHelper randomStringWithMaxLength:80];
+        items[i] = [NSMutableDictionary dictionaryWithObjectsAndKeys:catFilename, LIKEImageName,
+                     [NSValue valueWithCGSize:imageSize], LIKERawImageSize,
+                     text, LIKEText, nil];
     }
     return items;
 }

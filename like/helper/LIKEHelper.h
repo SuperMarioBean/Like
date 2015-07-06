@@ -1,5 +1,5 @@
 //
-//  LWHelper.h
+//  LIKEHelper.h
 //  xiaomuren
 //
 //  Created by David Fu on 6/7/15.
@@ -19,7 +19,7 @@
 #import "UIScrollView+BottomRefreshControl.h"
 #import "UIImage+Color.h"
 
-@interface LWHelper : NSObject
+@interface LIKEHelper : NSObject
 
 + (NSString *)randomStringWithMaxLength:(int)maxlength;
 

@@ -1,22 +1,22 @@
 //
-//  LWRegisterViewController.m
+//  LIKERegisterViewController.m
 //  xiaomuren
 //
 //  Created by David Fu on 6/11/15.
 //  Copyright (c) 2015 XiaoMuRen Technology. All rights reserved.
 //
 
-#import "LWRegisterViewController.h"
+#import "LIKERegisterViewController.h"
 
 #import <SMS_SDK/SMS_SDK.h>
 
-@interface LWRegisterViewController ()
+@interface LIKERegisterViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumberTextField;
 
 @end
 
-@implementation LWRegisterViewController
+@implementation LIKERegisterViewController
 #pragma mark - life cycle
 
 - (void)viewDidLoad {
@@ -41,7 +41,7 @@
 - (IBAction)nextbarButtonClick:(id)sender {
     [self touchesBegan:nil withEvent:nil];
     
-    if ([LWHelper verifyPhoneNumber:self.phoneNumberTextField.text]) {
+    if ([LIKEHelper verifyPhoneNumber:self.phoneNumberTextField.text]) {
         __user.phoneNumber = self.phoneNumberTextField.text;
         [self performSegueWithIdentifier:@"phoneNumberVerify" sender:self];
     }

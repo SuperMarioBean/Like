@@ -1,19 +1,19 @@
 //
-//  LWPersonalInfoViewController.m
+//  LIKEPersonalInfoViewController.m
 //  xiaomuren
 //
 //  Created by David Fu on 6/11/15.
 //  Copyright (c) 2015 XiaoMuRen Technology. All rights reserved.
 //
 
-#import "LWPersonalInfoViewController.h"
+#import "LIKEPersonalInfoViewController.h"
 
 static NSString *kDateCellID = @"dateCell";     // the cells with the start or end date
 static NSString *kDatePickerID = @"datePicker"; // the cell containing the date picker
 static NSString *kOtherCell = @"otherCell";     // the remaining cells at the end
 
 
-@interface LWPersonalInfoViewController () {
+@interface LIKEPersonalInfoViewController () {
     NSDate *currentSelectedDate;
     NSInteger pickerHeight;
     NSDateFormatter *dateFormatter;
@@ -31,7 +31,7 @@ static NSString *kOtherCell = @"otherCell";     // the remaining cells at the en
 
 @end
 
-@implementation LWPersonalInfoViewController
+@implementation LIKEPersonalInfoViewController
 #pragma mark - life cycle
 
 - (void)viewDidLoad {
@@ -86,9 +86,9 @@ static NSString *kOtherCell = @"otherCell";     // the remaining cells at the en
 - (IBAction)submitBarButtonClick:(id)sender {
     [self touchesBegan:nil withEvent:nil];
     
-    BOOL usernameFlag = [LWHelper verifyUsername:self.usernameTextField.text];
-    BOOL passwordFlag = [LWHelper verifyPassword:self.passwordTextField.text];
-    BOOL birthdayFlag = [LWHelper veiryBirthday:currentSelectedDate];
+    BOOL usernameFlag = [LIKEHelper verifyUsername:self.usernameTextField.text];
+    BOOL passwordFlag = [LIKEHelper verifyPassword:self.passwordTextField.text];
+    BOOL birthdayFlag = [LIKEHelper veiryBirthday:currentSelectedDate];
     BOOL checkTermFlag = [self.privacyPolicyButton.titleLabel.text isEqualToString:@"√"];
     
     if (usernameFlag && passwordFlag && birthdayFlag && checkTermFlag) {

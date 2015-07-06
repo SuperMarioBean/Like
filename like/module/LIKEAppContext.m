@@ -1,14 +1,14 @@
 //
-//  LWAppContext.m
+//  LIKEAppContext.m
 //  xiaomuren
 //
 //  Created by David Fu on 6/16/15.
 //  Copyright (c) 2015 XiaoMuRen Technology. All rights reserved.
 //
 
-#import "LWAppContext.h"
+#import "LIKEAppContext.h"
 
-@implementation LWAppContext
+@implementation LIKEAppContext
 #pragma mark - life cycle
 
 #pragma mark - delegate methods
@@ -30,10 +30,10 @@
 #pragma mark - api methods
 
 + (instancetype)sharedInstance {
-    static LWAppContext *sharedInstance;
+    static LIKEAppContext *sharedInstance;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        sharedInstance = [[LWAppContext alloc] init];
+        sharedInstance = [[LIKEAppContext alloc] init];
         [[AFNetworkReachabilityManager sharedManager] startMonitoring];
     });
     return sharedInstance;

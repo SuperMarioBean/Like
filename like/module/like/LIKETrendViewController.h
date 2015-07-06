@@ -1,5 +1,5 @@
 //
-//  LWChosenViewController.h
+//  LIKEChosenViewController.h
 //  xiaomuren
 //
 //  Created by David Fu on 6/23/15.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LWChosenViewController : UIViewController
+@interface LIKETrendViewController : UIViewController
 
 @end

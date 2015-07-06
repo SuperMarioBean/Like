@@ -1,21 +1,21 @@
 //
-//  LWUser.m
+//  LIKEUser.m
 //  xiaomuren
 //
 //  Created by David Fu on 6/11/15.
 //  Copyright (c) 2015 XiaoMuRen Technology. All rights reserved.
 //
 
-#import "LWUser.h"
+#import "LIKEUser.h"
 
-LWUser *__user;
+LIKEUser *__user;
 void initUser(){
     if (!__user) {
-        __user = [[LWUser alloc] init];
+        __user = [[LIKEUser alloc] init];
     }
 }
 
-@implementation LWUser
+@implementation LIKEUser
 
 - (instancetype)init {
     return [self initWithPhoneNumber:@"" username:@"" password:@"" male:YES birthday:nil];

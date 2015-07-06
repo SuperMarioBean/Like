@@ -1,16 +1,16 @@
 //
-//  LWAPIProxy.m
+//  LIKEAPIProxy.m
 //  xiaomuren
 //
 //  Created by David Fu on 6/15/15.
 //  Copyright (c) 2015 XiaoMuRen Technology. All rights reserved.
 //
 
-#import "LWAPIProxy.h"
+#import "LIKEAPIProxy.h"
 
-NSInteger LWAPIProxyInvalidRequestID = -1;
+NSInteger LIKEAPIProxyInvalidRequestID = -1;
 
-@interface LWAPIProxy ()
+@interface LIKEAPIProxy ()
 
 @property (readwrite, nonatomic, strong) NSMutableDictionary *dispatchDictionary;
 @property (readwrite, nonatomic, strong) NSNumber *recordedRequestID;
@@ -19,15 +19,15 @@ NSInteger LWAPIProxyInvalidRequestID = -1;
 
 @end
 
-@implementation LWAPIProxy
+@implementation LIKEAPIProxy
 
 #pragma mark - life cycle
 
 + (instancetype)sharedInstance {
     static dispatch_once_t onceToken;
-    static LWAPIProxy *sharedInstance = nil;
+    static LIKEAPIProxy *sharedInstance = nil;
     dispatch_once(&onceToken, ^{
-        sharedInstance = [[LWAPIProxy alloc] init];
+        sharedInstance = [[LIKEAPIProxy alloc] init];
     });
     return sharedInstance;
 }
@@ -53,7 +53,7 @@ NSInteger LWAPIProxyInvalidRequestID = -1;
         id JSON = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:&error];
         if (error) {
             NSLog(@"%@", error);
-            completion? completion(error, nil, LWAPIProxyInvalidRequestID): nil;
+            completion? completion(error, nil, LIKEAPIProxyInvalidRequestID): nil;
             return;
         }
         
@@ -120,7 +120,7 @@ NSInteger LWAPIProxyInvalidRequestID = -1;
                                                                                         error:&serializationError];
     request.timeoutInterval = 5.0f;
     if (serializationError) {
-        completion? completion(serializationError, nil, LWAPIProxyInvalidRequestID): nil;
+        completion? completion(serializationError, nil, LIKEAPIProxyInvalidRequestID): nil;
         return -1;
     }
     
@@ -141,7 +141,7 @@ NSInteger LWAPIProxyInvalidRequestID = -1;
     request.timeoutInterval = 5.0f;
 
     if (serializationError) {
-        completion? completion(serializationError, nil, LWAPIProxyInvalidRequestID): nil;
+        completion? completion(serializationError, nil, LIKEAPIProxyInvalidRequestID): nil;
         return -1;
     }
     

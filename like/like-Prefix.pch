@@ -27,23 +27,23 @@
 #import "UICollectionView+ARDynamicCacheHeightLayoutCell.h"
 #import "GCDMulticastDelegate.h"
 
-#import "LWUser.h"
-#import "LWAppContext.h"
-#import "LWAPIBaseManager.h"
+#import "LIKEUser.h"
+#import "LIKEAppContext.h"
+#import "LIKEAPIBaseManager.h"
 
-#import "LWAPIProxy.h"
+#import "LIKEAPIProxy.h"
 #import "UIAlert+Blocks.h"
-#import "LWHelper.h"
+#import "LIKEHelper.h"
 
-static NSString *const LWQiNiuImageDomainString = @"7xjljl.com1.z0.glb.clouddn.com";
+static NSString *const LIKEQiNiuImageDomainString = @"7xjljl.com1.z0.glb.clouddn.com";
 
-static NSString *const LWTextSize = @"textSize";
-static NSString *const LWLargeTextSize = @"largeTextSize";
-static NSString *const LWRawImageSize = @"rawImageSize";
-static NSString *const LWImageSize = @"imageSize";
-static NSString *const LWLargeImageSize = @"largeImageSize";
-static NSString *const LWFullSize = @"fullSize";
-static NSString *const LWImageName = @"imageName";
-static NSString *const LWText = @"text";
+static NSString *const LIKETextSize = @"textSize";
+static NSString *const LIKELargeTextSize = @"largeTextSize";
+static NSString *const LIKERawImageSize = @"rawImageSize";
+static NSString *const LIKEImageSize = @"imageSize";
+static NSString *const LIKELargeImageSize = @"largeImageSize";
+static NSString *const LIKEFullSize = @"fullSize";
+static NSString *const LIKEImageName = @"imageName";
+static NSString *const LIKEText = @"text";
 
 #endif

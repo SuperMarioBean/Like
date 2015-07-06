@@ -1,5 +1,5 @@
 //
-//  LWAPIProxy.h
+//  LIKEAPIProxy.h
 //  xiaomuren
 //
 //  Created by David Fu on 6/15/15.
@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-extern NSInteger LWAPIProxyInvalidRequestID;
+extern NSInteger LIKEAPIProxyInvalidRequestID;
 
-@interface LWAPIProxy : NSObject
+@interface LIKEAPIProxy : NSObject
 
 + (instancetype)sharedInstance;
 

@@ -1,5 +1,5 @@
 //
-//  LWAppContext.h
+//  LIKEAppContext.h
 //  xiaomuren
 //
 //  Created by David Fu on 6/16/15.
@@ -7,11 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "LWUser.h"
+#import "LIKEUser.h"
 
-@interface LWAppContext : NSObject
+@interface LIKEAppContext : NSObject
 
-@property (readonly, nonatomic, strong) LWUser *user;
+@property (readonly, nonatomic, strong) LIKEUser *user;
 
 @property (readonly, getter=isReachable, nonatomic, assign) BOOL reachable;
 

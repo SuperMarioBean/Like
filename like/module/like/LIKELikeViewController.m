@@ -1,14 +1,14 @@
 //
-//  LWShareViewController.m
+//  LIKEShareViewController.m
 //  xiaomuren
 //
 //  Created by David Fu on 6/7/15.
 //  Copyright (c) 2015 XiaoMuRen Technology. All rights reserved.
 //
 
-#import "LWShareViewController.h"
+#import "LIKELikeViewController.h"
 
-@interface LWShareViewController ()
+@interface LIKELikeViewController ()
 
 @property (readwrite, nonatomic, strong) UITabBarController *tabBarController;
 
@@ -16,7 +16,7 @@
 
 @end
 
-@implementation LWShareViewController
+@implementation LIKELikeViewController
 
 #pragma mark - life cycle
 

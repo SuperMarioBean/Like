@@ -1,5 +1,5 @@
 //
-//  LWUser.h
+//  LIKEUser.h
 //  xiaomuren
 //
 //  Created by David Fu on 6/11/15.
@@ -8,11 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@class LWUser;
-extern LWUser *__user;
+@class LIKEUser;
+extern LIKEUser *__user;
 void initUser();
 
-@interface LWUser : NSObject
+@interface LIKEUser : NSObject
 
 @property (readwrite, getter=isForgetPassword, nonatomic, assign) BOOL forgetPassword;
 

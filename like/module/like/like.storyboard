@@ -6,10 +6,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Share View Controller-->
+        <!--Like View Controller-->
         <scene sceneID="7rj-8g-Mv5">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Mrs-dh-2FP" customClass="LWShareViewController" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Mrs-dh-2FP" customClass="LIKELikeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sPg-SQ-tMD"/>
                         <viewControllerLayoutGuide type="bottom" id="6jg-yn-Lxy"/>
@@ -67,10 +67,10 @@
             </objects>
             <point key="canvasLocation" x="685" y="268"/>
         </scene>
-        <!--最新-->
+        <!--在线-->
         <scene sceneID="dPc-nq-beo">
             <objects>
-                <viewController storyboardIdentifier="latest" id="3AA-4d-ZcK" customClass="LWLatestViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="latest" id="3AA-4d-ZcK" customClass="LIKEOnlineViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AvR-UC-TL2"/>
                         <viewControllerLayoutGuide type="bottom" id="dYE-zN-H0V"/>
@@ -79,8 +79,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="X2c-Gt-ORZ">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="406"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="X2c-Gt-ORZ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="30" minimumInteritemSpacing="30" id="wJh-Fn-FlI">
                                     <size key="itemSize" width="179" height="45"/>
@@ -123,7 +123,7 @@
                             <constraint firstItem="X2c-Gt-ORZ" firstAttribute="leading" secondItem="rKv-UX-HVw" secondAttribute="leadingMargin" constant="-16" id="qjd-cD-YMO"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="最新" id="7T1-wv-9ll"/>
+                    <tabBarItem key="tabBarItem" title="在线" id="7T1-wv-9ll"/>
                     <connections>
                         <outlet property="collectionView" destination="X2c-Gt-ORZ" id="t9K-bA-vDj"/>
                     </connections>
@@ -132,10 +132,10 @@
             </objects>
             <point key="canvasLocation" x="1172" y="690"/>
         </scene>
-        <!--精选-->
+        <!--动态-->
         <scene sceneID="plf-aa-Kme">
             <objects>
-                <viewController storyboardIdentifier="chosen" id="JwA-qk-Zqj" customClass="LWChosenViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="chosen" id="JwA-qk-Zqj" customClass="LIKETrendViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BVf-L9-vAL"/>
                         <viewControllerLayoutGuide type="bottom" id="J7U-vT-SrU"/>
@@ -144,8 +144,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9Fu-U4-AHu">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="406"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9Fu-U4-AHu">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                                 <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="30" minimumInteritemSpacing="30" id="YSY-pu-GXm">
                                     <size key="itemSize" width="179" height="45"/>
@@ -188,7 +188,7 @@
                             <constraint firstItem="J7U-vT-SrU" firstAttribute="top" secondItem="9Fu-U4-AHu" secondAttribute="bottom" id="tpy-Dg-Gq1"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="精选" id="VYb-5L-CaL"/>
+                    <tabBarItem key="tabBarItem" title="动态" id="VYb-5L-CaL"/>
                     <connections>
                         <outlet property="collectionView" destination="9Fu-U4-AHu" id="0VV-6Y-3RB"/>
                     </connections>

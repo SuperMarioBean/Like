@@ -1,20 +1,20 @@
 //
-//  LWLatestViewController.m
+//  LIKEChosenViewController.m
 //  xiaomuren
 //
 //  Created by David Fu on 6/23/15.
 //  Copyright (c) 2015 XiaoMuRen Technology. All rights reserved.
 //
 
-#import "LWLatestViewController.h"
+#import "LIKETrendViewController.h"
 
-@interface LWLatestViewController ()
+@interface LIKETrendViewController ()
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @end
 
-@implementation LWLatestViewController
+@implementation LIKETrendViewController
 
 #pragma mark - life cycle
 
@@ -22,13 +22,13 @@
     [super viewDidLoad];
 }
 
-- (void)viewDidLayoutSubviews {
-    [super viewDidLayoutSubviews];
-}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
 }
 
 #pragma mark - delegate methods
@@ -60,10 +60,31 @@
         reusableView = [collectionView dequeueReusableSupplementaryViewOfKind:kind
                                                           withReuseIdentifier:@"header"
                                                                  forIndexPath:indexPath];
-        
+
     }
     return reusableView;
 }
 
+
+#pragma mark - event response
+
+#pragma mark - private methods
+
+#pragma mark - accessor methods
+
+#pragma mark - api methods
+
+
+
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
 
 @end

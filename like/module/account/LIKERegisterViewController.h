@@ -1,5 +1,5 @@
 //
-//  LWPersonalInfoViewController.h
+//  LIKERegisterViewController.h
 //  xiaomuren
 //
 //  Created by David Fu on 6/11/15.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LWPersonalInfoViewController : UIViewController
+@interface LIKERegisterViewController : UIViewController
 
 @end

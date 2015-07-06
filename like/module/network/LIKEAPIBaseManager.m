@@ -1,27 +1,27 @@
 //
-//  LWAPIBaseManager.m
+//  LIKEAPIBaseManager.m
 //  xiaomuren
 //
 //  Created by David Fu on 6/15/15.
 //  Copyright (c) 2015 XiaoMuRen Technology. All rights reserved.
 //
 
-#import "LWAPIBaseManager.h"
-#import "LWAPIProxy.h"
+#import "LIKEAPIBaseManager.h"
+#import "LIKEAPIProxy.h"
 
-@interface LWAPIBaseManager ()
+@interface LIKEAPIBaseManager ()
 
 @property (readwrite, nonatomic, strong) id fetchedRawData;
 
 @property (readwrite, nonatomic, strong) GCDMulticastDelegate *multicastDelegate;
 
 @property (readwrite, nonatomic, strong) NSError *error;
-@property (readwrite, nonatomic, assign) LWAPIManagerErrorType errorType;
+@property (readwrite, nonatomic, assign) LIKEAPIManagerErrorType errorType;
 @property (readwrite, nonatomic, strong) NSMutableArray *requestIDArray;
 
 @end
 
-@implementation LWAPIBaseManager
+@implementation LIKEAPIBaseManager
 
 #pragma mark - life cycle
 
@@ -34,10 +34,10 @@
         _fetchedRawData = nil;
         
         _error = nil;
-        _errorType = LWAPIManagerErrorTypeDefault;
+        _errorType = LIKEAPIManagerErrorTypeDefault;
         
-        if ([self conformsToProtocol:@protocol(LWAPIManager)]) {
-            self.subclass = (id <LWAPIManager>)self;
+        if ([self conformsToProtocol:@protocol(LIKEAPIManager)]) {
+            self.subclass = (id <LIKEAPIManager>)self;
         }
     }
     return self;
@@ -51,10 +51,10 @@
 
 #pragma mark - delegate methods
 
-#pragma mark LWAPIManagerInterceptor
+#pragma mark LIKEAPIManagerInterceptor
 
 - (void)beforePerformSuccess {
-    self.errorType = LWAPIManagerErrorTypeSuccess;
+    self.errorType = LIKEAPIManagerErrorTypeSuccess;
     if (self != self.interceptor && [self.interceptor respondsToSelector:@selector(beforePerformSuccessAPIManager:)]) {
         [self.interceptor beforePerformSuccessAPIManager:self];
     }
@@ -112,7 +112,7 @@
     if (JSON && [JSON count]) {
         self.fetchedRawData = JSON;
         [self p_lwRemoveRequestWithRequestID:requestID];
-        id <LWAPIManagerCallbackDelegate> delegate;
+        id <LIKEAPIManagerCallbackDelegate> delegate;
         [self.interceptor beforePerformSuccessAPIManager:self];
         dispatch_queue_t dispatchQueue;
         GCDMulticastDelegateEnumerator *delegateEnumerator = [self.multicastDelegate delegateEnumerator];
@@ -122,17 +122,17 @@
         [self.interceptor afterPerformSuccessAPIManager:self];
     }
     else {
-        [self p_lwFailedOnCallingAPIWithJSON:JSON error:[NSError errorWithDomain:@"content is empty" code:10000 userInfo:nil] errorType:LWAPIManagerErrorTypeNoContent requestID:requestID];
+        [self p_lwFailedOnCallingAPIWithJSON:JSON error:[NSError errorWithDomain:@"content is empty" code:10000 userInfo:nil] errorType:LIKEAPIManagerErrorTypeNoContent requestID:requestID];
     }
 }
 
-- (void)p_lwFailedOnCallingAPIWithJSON:(id)JSON error:(NSError *)error errorType:(LWAPIManagerErrorType)type requestID:(NSInteger)requestID {
+- (void)p_lwFailedOnCallingAPIWithJSON:(id)JSON error:(NSError *)error errorType:(LIKEAPIManagerErrorType)type requestID:(NSInteger)requestID {
     self.error = error;
     self.errorType = type;
     [self p_lwRemoveRequestWithRequestID:requestID];
     
     [self.interceptor beforePerformFailAPIManager:self];
-    id <LWAPIManagerCallbackDelegate> delegate;
+    id <LIKEAPIManagerCallbackDelegate> delegate;
     dispatch_queue_t dispatchQueue;
     GCDMulticastDelegateEnumerator *delegateEnumerator = [self.multicastDelegate delegateEnumerator];
     while ([delegateEnumerator getNextDelegate:&delegate delegateQueue:&dispatchQueue forSelector:@selector(didFailedCallbackAPIManager:)]) {
@@ -151,9 +151,9 @@
 }
 
 - (BOOL)isReachable {
-    BOOL isReachability = [LWAppContext sharedInstance].isReachable;
+    BOOL isReachability = [LIKEAppContext sharedInstance].isReachable;
     if (!isReachability) {
-        self.errorType = LWAPIManagerErrorTypeNoNetWork;
+        self.errorType = LIKEAPIManagerErrorTypeNoNetWork;
     }
     return isReachability;
 }
@@ -165,11 +165,11 @@
 
 #pragma mark - api methods
 
-- (void)addDelegate:(id<LWAPIManagerCallbackDelegate>)delegate {
+- (void)addDelegate:(id<LIKEAPIManagerCallbackDelegate>)delegate {
     [self.multicastDelegate addDelegate:delegate delegateQueue:dispatch_get_main_queue()];
 }
 
-- (void)removeDelegate:(id<LWAPIManagerCallbackDelegate>)delegate {
+- (void)removeDelegate:(id<LIKEAPIManagerCallbackDelegate>)delegate {
     [self.multicastDelegate removeDelegate:delegate delegateQueue:dispatch_get_main_queue()];
 }
 
@@ -186,31 +186,31 @@
     if ([self shouldCallAPIWithParams:apiParams]) {
         if ([self isReachable]) {
             switch ([self.subclass requestType]) {
-                case LWAPIManagerRequestTypeGet:
+                case LIKEAPIManagerRequestTypeGet:
                     //AXCallAPI(GET, requestId);
                     break;
-                case LWAPIManagerRequestTypePost:
+                case LIKEAPIManagerRequestTypePost:
                     //AXCallAPI(POST, requestId);
                     break;
-                case LWAPIManagerRequestTypeRestPost: {
-                    requestID = [[LWAPIProxy sharedInstance] callRestfulPOSTWithParams:apiParams resourceName:self.subclass.resourceName completion:^(NSError *error, id JSON, NSInteger requestID) {
+                case LIKEAPIManagerRequestTypeRestPost: {
+                    requestID = [[LIKEAPIProxy sharedInstance] callRestfulPOSTWithParams:apiParams resourceName:self.subclass.resourceName completion:^(NSError *error, id JSON, NSInteger requestID) {
                         if (!error) {
                             [self p_lwSuccessedOnCallingAPIWithJSON:JSON requestID:requestID];
                         }
                         else {
-                            [self p_lwFailedOnCallingAPIWithJSON:JSON error:error errorType:LWAPIManagerErrorTypeDefault requestID:requestID];
+                            [self p_lwFailedOnCallingAPIWithJSON:JSON error:error errorType:LIKEAPIManagerErrorTypeDefault requestID:requestID];
                         }
                         [[self requestIDArray] addObject:@(requestID)];
                     }];
                 }
                     break;
-                case LWAPIManagerRequestTypeRestGet: {
-                    requestID = [[LWAPIProxy sharedInstance] callRestfulGETWithParams:apiParams resourceName:self.subclass.resourceName completion:^(NSError *error, id JSON, NSInteger requestID) {
+                case LIKEAPIManagerRequestTypeRestGet: {
+                    requestID = [[LIKEAPIProxy sharedInstance] callRestfulGETWithParams:apiParams resourceName:self.subclass.resourceName completion:^(NSError *error, id JSON, NSInteger requestID) {
                         if (!error) {
                             [self p_lwSuccessedOnCallingAPIWithJSON:JSON requestID:requestID];
                         }
                         else {
-                            [self p_lwFailedOnCallingAPIWithJSON:JSON error:error errorType:LWAPIManagerErrorTypeDefault requestID:requestID];
+                            [self p_lwFailedOnCallingAPIWithJSON:JSON error:error errorType:LIKEAPIManagerErrorTypeDefault requestID:requestID];
                         }
                         [[self requestIDArray] addObject:@(requestID)];
                     }];
@@ -223,7 +223,7 @@
             return requestID;
         } else {
             [self p_lwFailedOnCallingAPIWithJSON:nil error:[NSError errorWithDomain:@"network not reachalbe" code:1000 userInfo:nil]
-                                       errorType:LWAPIManagerErrorTypeNoNetWork
+                                       errorType:LIKEAPIManagerErrorTypeNoNetWork
                                        requestID:requestID];
             return requestID;
         }
@@ -233,18 +233,18 @@
 }
 
 - (void)cancelAllRequests {
-    [[LWAPIProxy sharedInstance] cancelRequestWithRequestIDList:self.requestIDArray];
+    [[LIKEAPIProxy sharedInstance] cancelRequestWithRequestIDList:self.requestIDArray];
     [self.requestIDArray removeAllObjects];
 }
 
 - (void)cancelRequestWithRequestId:(NSInteger)requestID {
     [self p_lwRemoveRequestWithRequestID:requestID];
-    [[LWAPIProxy sharedInstance] cancelRequestWithRequestID:@(requestID)];
+    [[LIKEAPIProxy sharedInstance] cancelRequestWithRequestID:@(requestID)];
 }
 
-- (id)fetchDataWithReformer:(id<LWAPIManagerDataReformerProtocal>)reformer {
+- (id)fetchDataWithReformer:(id<LIKEAPIManagerDataReformerProtocal>)reformer {
     id resultData = nil;
-    if ([reformer conformsToProtocol:@protocol(LWAPIManagerDataReformerProtocal)]) {
+    if ([reformer conformsToProtocol:@protocol(LIKEAPIManagerDataReformerProtocal)]) {
         resultData = [reformer manager:self reformData:self.fetchedRawData];
     }
     else {
@@ -260,7 +260,7 @@
     if (childIMP == selfIMP) {
         self.fetchedRawData = nil;
         self.error = nil;
-        self.errorType = LWAPIManagerErrorTypeDefault;
+        self.errorType = LIKEAPIManagerErrorTypeDefault;
     } else {
         if ([self.subclass respondsToSelector:@selector(cleanData)]) {
             [self.subclass cleanData];

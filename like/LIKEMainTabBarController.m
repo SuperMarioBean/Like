@@ -1,18 +1,18 @@
 //
-//  LWMainTabBarController.m
+//  LIKEMainTabBarController.m
 //  xiaomuren
 //
 //  Created by David Fu on 6/11/15.
 //  Copyright (c) 2015 XiaoMuRen Technology. All rights reserved.
 //
 
-#import "LWMainTabBarController.h"
+#import "LIKEMainTabBarController.h"
 
-@interface LWMainTabBarController () <UITabBarControllerDelegate>
+@interface LIKEMainTabBarController () <UITabBarControllerDelegate>
 
 @end
 
-@implementation LWMainTabBarController
+@implementation LIKEMainTabBarController
 
 #pragma mark - life cycle
 

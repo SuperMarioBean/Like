@@ -1,5 +1,5 @@
 //
-//  LWVerifyViewController.h
+//  LIKEVerifyViewController.h
 //  xiaomuren
 //
 //  Created by David Fu on 6/11/15.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LWVerifyViewController : UIViewController
+@interface LIKEVerifyViewController : UIViewController
 
 @end

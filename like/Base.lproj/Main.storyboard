@@ -215,7 +215,7 @@
         <!--Main Tab Bar Controller-->
         <scene sceneID="lF0-nF-OMz">
             <objects>
-                <tabBarController id="40D-SM-teq" customClass="LWMainTabBarController" sceneMemberID="viewController">
+                <tabBarController id="40D-SM-teq" customClass="LIKEMainTabBarController" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="uor-oQ-YWH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>

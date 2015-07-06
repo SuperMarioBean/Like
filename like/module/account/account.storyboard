@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="w6J-Aw-kZk">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -9,7 +8,7 @@
         <!--填写手机号-->
         <scene sceneID="RHU-Bd-es9">
             <objects>
-                <viewController id="LiW-hr-ZHa" customClass="LWRegisterViewController" sceneMemberID="viewController">
+                <viewController id="LiW-hr-ZHa" customClass="LIKERegisterViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sDc-Ns-ZLY"/>
                         <viewControllerLayoutGuide type="bottom" id="SpT-IB-LEm"/>
@@ -62,7 +61,7 @@
         <!--验证手机号-->
         <scene sceneID="tKj-pU-1rr">
             <objects>
-                <viewController id="wBC-nA-h0e" customClass="LWVerifyViewController" sceneMemberID="viewController">
+                <viewController id="wBC-nA-h0e" customClass="LIKEVerifyViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dxI-uW-dkg"/>
                         <viewControllerLayoutGuide type="bottom" id="uuz-s1-SL2"/>
@@ -147,7 +146,7 @@
         <!--个人资料-->
         <scene sceneID="bL0-NB-qNY">
             <objects>
-                <viewController id="egV-Aq-h6R" customClass="LWPersonalInfoViewController" sceneMemberID="viewController">
+                <viewController id="egV-Aq-h6R" customClass="LIKEPersonalInfoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DI6-kO-Uci"/>
                         <viewControllerLayoutGuide type="bottom" id="Try-eY-5Ay"/>
@@ -297,7 +296,7 @@
         <!--登录-->
         <scene sceneID="GSP-gW-uwc">
             <objects>
-                <viewController id="mC8-Qk-rdg" customClass="LWLoginViewController" sceneMemberID="viewController">
+                <viewController id="mC8-Qk-rdg" customClass="LIKELoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Vgu-Dd-f8A"/>
                         <viewControllerLayoutGuide type="bottom" id="AlQ-JK-nEF"/>

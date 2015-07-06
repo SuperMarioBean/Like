@@ -1,14 +1,14 @@
 //
-//  LWLoginViewController.m
+//  LIKELoginViewController.m
 //  xiaomuren
 //
 //  Created by David Fu on 6/11/15.
 //  Copyright (c) 2015 XiaoMuRen Technology. All rights reserved.
 //
 
-#import "LWLoginViewController.h"
+#import "LIKELoginViewController.h"
 
-@interface LWLoginViewController ()
+@interface LIKELoginViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumberTextField;
 
@@ -16,7 +16,7 @@
 
 @end
 
-@implementation LWLoginViewController
+@implementation LIKELoginViewController
 #pragma mark - life cycle
 
 - (void)viewDidLoad {
@@ -50,8 +50,8 @@
 - (IBAction)loginButtonClick:(id)sender {
     [self touchesBegan:nil withEvent:nil];
 
-    BOOL phoneNumberFlag = [LWHelper verifyPhoneNumber:self.phoneNumberTextField.text];
-    BOOL passwordFlag = [LWHelper verifyPassword:self.passwordTextField.text];
+    BOOL phoneNumberFlag = [LIKEHelper verifyPhoneNumber:self.phoneNumberTextField.text];
+    BOOL passwordFlag = [LIKEHelper verifyPassword:self.passwordTextField.text];
     if (phoneNumberFlag && passwordFlag) {
         __user.phoneNumber = self.phoneNumberTextField.text;
         __user.password = self.passwordTextField.text;

@@ -10,18 +10,18 @@
 
 #import <objc/runtime.h>
 
-static char const LWIndexPathKey;
+static char const LIKEIndexPathKey;
 
 @implementation UICollectionView (Helper)
 
 - (void)setCurrentIndexPath:(NSIndexPath *)indexPath {
-    objc_setAssociatedObject(self, &LWIndexPathKey, indexPath, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, &LIKEIndexPathKey, indexPath, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (NSIndexPath *)currentIndexPath {
     NSInteger index = self.contentOffset.x / self.frame.size.width;
     
-    NSIndexPath *indexPath = objc_getAssociatedObject(self, &LWIndexPathKey);
+    NSIndexPath *indexPath = objc_getAssociatedObject(self, &LIKEIndexPathKey);
     if (index > 0) {
         return [NSIndexPath indexPathForRow:index inSection:0];
     } else if (indexPath) {

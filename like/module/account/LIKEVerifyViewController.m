@@ -1,16 +1,16 @@
 //
-//  LWVerifyViewController.m
+//  LIKEVerifyViewController.m
 //  xiaomuren
 //
 //  Created by David Fu on 6/11/15.
 //  Copyright (c) 2015 XiaoMuRen Technology. All rights reserved.
 //
 
-#import "LWVerifyViewController.h"
+#import "LIKEVerifyViewController.h"
 
 #import <SMS_SDK/SMS_SDK.h>
 
-@interface LWVerifyViewController () {
+@interface LIKEVerifyViewController () {
     NSUInteger timeCount;
 }
 
@@ -25,7 +25,7 @@
 
 @end
 
-@implementation LWVerifyViewController
+@implementation LIKEVerifyViewController
 #pragma mark - life cycle
 
 - (void)viewDidLoad {
@@ -58,9 +58,9 @@
 - (IBAction)nextbarButtonClick:(id)sender {
     [self touchesBegan:nil withEvent:nil];
     
-    if([LWHelper verifyDigistsCode:self.verifyCodeTextField.text]) {
+    if([LIKEHelper verifyDigistsCode:self.verifyCodeTextField.text]) {
         if (__user.isForgetPassword) {
-            if ([LWHelper verifyPassword:self.resetPasswordTextField.text]) {
+            if ([LIKEHelper verifyPassword:self.resetPasswordTextField.text]) {
             // TODO: should make the new password go ourserver with verify code
             }
             else {
