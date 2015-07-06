@@ -1,9 +1,9 @@
 //
 //  UINavigationBar+Helper.m
-//  xiaomuren
+//  like
 //
 //  Created by David Fu on 6/9/15.
-//  Copyright (c) 2015 XiaoMuRen Technology. All rights reserved.
+//  Copyright (c) 2015 LIKE Technology. All rights reserved.
 //
 
 #import "UINavigationBar+Helper.h"
@@ -29,7 +29,7 @@ static char emptyImageKey;
     objc_setAssociatedObject(self, &emptyImageKey, image, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (void)lw_setBackgroundColor:(UIColor *)backgroundColor {
+- (void)like_setBackgroundColor:(UIColor *)backgroundColor {
     if (!self.overlay) {
         [self setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
         self.overlay = [[UIView alloc] initWithFrame:CGRectMake(0, -20, [UIScreen mainScreen].bounds.size.width, 64)];
@@ -40,13 +40,13 @@ static char emptyImageKey;
     self.overlay.backgroundColor = backgroundColor;
 }
 
-- (void)lw_setTranslationY:(CGFloat)translationY {
+- (void)like_setTranslationY:(CGFloat)translationY {
     self.transform = CGAffineTransformMakeTranslation(0, translationY);
 }
 
-- (void)lw_setContentAlpha:(CGFloat)alpha {
+- (void)like_setContentAlpha:(CGFloat)alpha {
     if (!self.overlay) {
-        [self lw_setBackgroundColor:self.barTintColor];
+        [self like_setBackgroundColor:self.barTintColor];
     }
     [self setAlpha:alpha forSubviewsOfView:self];
     if (alpha == 1) {
@@ -67,7 +67,7 @@ static char emptyImageKey;
     }
 }
 
-- (void)lw_reset {
+- (void)like_reset {
     [self setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
     [self setShadowImage:nil];
     

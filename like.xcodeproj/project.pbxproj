@@ -12,6 +12,8 @@
 		6322567C1B0E10D100D10817 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6322567B1B0E10D100D10817 /* Images.xcassets */; };
 		6322567F1B0E10D100D10817 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6322567D1B0E10D100D10817 /* LaunchScreen.xib */; };
 		6322568B1B0E10D100D10817 /* likeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6322568A1B0E10D100D10817 /* likeTests.m */; };
+		638907071B4A6DE600674A56 /* UIColor+nipponcolors.m in Sources */ = {isa = PBXBuildFile; fileRef = 638907061B4A6DE600674A56 /* UIColor+nipponcolors.m */; };
+		6389070A1B4A712000674A56 /* UIColor+section.m in Sources */ = {isa = PBXBuildFile; fileRef = 638907091B4A712000674A56 /* UIColor+section.m */; };
 		63B3C4511B48DCA40030D5D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63B3C44F1B48DCA40030D5D4 /* Main.storyboard */; };
 		63B3C69A1B48E49F0030D5D4 /* NSFetchRequest+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B3C4DA1B48E49F0030D5D4 /* NSFetchRequest+Extensions.m */; };
 		63B3C69B1B48E49F0030D5D4 /* NSManagedObject+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B3C4DD1B48E49F0030D5D4 /* NSManagedObject+Extensions.m */; };
@@ -163,7 +165,6 @@
 		63B3C72D1B48E49F0030D5D4 /* LIKEHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B3C6341B48E49F0030D5D4 /* LIKEHelper.m */; };
 		63B3C72E1B48E49F0030D5D4 /* NSString+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B3C6361B48E49F0030D5D4 /* NSString+Helper.m */; };
 		63B3C72F1B48E49F0030D5D4 /* UICollectionView+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B3C6381B48E49F0030D5D4 /* UICollectionView+Helper.m */; };
-		63B3C7301B48E49F0030D5D4 /* UIColor+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B3C63A1B48E49F0030D5D4 /* UIColor+Color.m */; };
 		63B3C7311B48E49F0030D5D4 /* UIFont+Font.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B3C63C1B48E49F0030D5D4 /* UIFont+Font.m */; };
 		63B3C7321B48E49F0030D5D4 /* UINavigationBar+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B3C63E1B48E49F0030D5D4 /* UINavigationBar+Helper.m */; };
 		63B3C7331B48E49F0030D5D4 /* UIView+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B3C6401B48E49F0030D5D4 /* UIView+Helper.m */; };
@@ -222,6 +223,10 @@
 		632256841B0E10D100D10817 /* likeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = likeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		632256891B0E10D100D10817 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6322568A1B0E10D100D10817 /* likeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = likeTests.m; sourceTree = "<group>"; };
+		638907051B4A6DE600674A56 /* UIColor+nipponcolors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+nipponcolors.h"; sourceTree = "<group>"; };
+		638907061B4A6DE600674A56 /* UIColor+nipponcolors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+nipponcolors.m"; sourceTree = "<group>"; };
+		638907081B4A712000674A56 /* UIColor+section.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+section.h"; sourceTree = "<group>"; };
+		638907091B4A712000674A56 /* UIColor+section.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+section.m"; sourceTree = "<group>"; };
 		63B3C4501B48DCA40030D5D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		63B3C4D91B48E49F0030D5D4 /* NSFetchRequest+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFetchRequest+Extensions.h"; sourceTree = "<group>"; };
 		63B3C4DA1B48E49F0030D5D4 /* NSFetchRequest+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFetchRequest+Extensions.m"; sourceTree = "<group>"; };
@@ -522,8 +527,6 @@
 		63B3C6361B48E49F0030D5D4 /* NSString+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Helper.m"; sourceTree = "<group>"; };
 		63B3C6371B48E49F0030D5D4 /* UICollectionView+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+Helper.h"; sourceTree = "<group>"; };
 		63B3C6381B48E49F0030D5D4 /* UICollectionView+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = "UICollectionView+Helper.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		63B3C6391B48E49F0030D5D4 /* UIColor+Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Color.h"; sourceTree = "<group>"; };
-		63B3C63A1B48E49F0030D5D4 /* UIColor+Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Color.m"; sourceTree = "<group>"; };
 		63B3C63B1B48E49F0030D5D4 /* UIFont+Font.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+Font.h"; sourceTree = "<group>"; };
 		63B3C63C1B48E49F0030D5D4 /* UIFont+Font.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+Font.m"; sourceTree = "<group>"; };
 		63B3C63D1B48E49F0030D5D4 /* UINavigationBar+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+Helper.h"; sourceTree = "<group>"; };
@@ -679,8 +682,10 @@
 				63B3C6361B48E49F0030D5D4 /* NSString+Helper.m */,
 				63B3C6371B48E49F0030D5D4 /* UICollectionView+Helper.h */,
 				63B3C6381B48E49F0030D5D4 /* UICollectionView+Helper.m */,
-				63B3C6391B48E49F0030D5D4 /* UIColor+Color.h */,
-				63B3C63A1B48E49F0030D5D4 /* UIColor+Color.m */,
+				638907081B4A712000674A56 /* UIColor+section.h */,
+				638907091B4A712000674A56 /* UIColor+section.m */,
+				638907051B4A6DE600674A56 /* UIColor+nipponcolors.h */,
+				638907061B4A6DE600674A56 /* UIColor+nipponcolors.m */,
 				63B3C63B1B48E49F0030D5D4 /* UIFont+Font.h */,
 				63B3C63C1B48E49F0030D5D4 /* UIFont+Font.m */,
 				63B3C63D1B48E49F0030D5D4 /* UINavigationBar+Helper.h */,
@@ -1838,6 +1843,7 @@
 				63B3C6E11B48E49F0030D5D4 /* UIButton+CountDown.m in Sources */,
 				63B3C6F61B48E49F0030D5D4 /* UIImage+PDF.m in Sources */,
 				63B3C6B51B48E49F0030D5D4 /* NSException+Trace.m in Sources */,
+				6389070A1B4A712000674A56 /* UIColor+section.m in Sources */,
 				63B3C6EF1B48E49F0030D5D4 /* UIImage+Capture.m in Sources */,
 				63B3C72A1B48E49F0030D5D4 /* UIWebView+Style.m in Sources */,
 				63B3C6D31B48E49F0030D5D4 /* NSTimer+Addition.m in Sources */,
@@ -1880,7 +1886,6 @@
 				63B3C7211B48E49F0030D5D4 /* UIViewController+MJPopupViewController.m in Sources */,
 				63B3C7001B48E49F0030D5D4 /* UINavigationController+BATransitions.m in Sources */,
 				63B3C6DE1B48E49F0030D5D4 /* UIBezierPath+Symbol.m in Sources */,
-				63B3C7301B48E49F0030D5D4 /* UIColor+Color.m in Sources */,
 				63B3C7091B48E49F0030D5D4 /* UIScrollView+Addition.m in Sources */,
 				63B3C6A01B48E49F0030D5D4 /* CLLocation+CH1903.m in Sources */,
 				63B3C7361B48E49F0030D5D4 /* LIKEPersonalInfoViewController.m in Sources */,
@@ -1920,6 +1925,7 @@
 				63B3C71E1B48E49F0030D5D4 /* UIView+Toast.m in Sources */,
 				632256711B0E10D100D10817 /* main.m in Sources */,
 				63B3C6CF1B48E49F0030D5D4 /* NSString+Trims.m in Sources */,
+				638907071B4A6DE600674A56 /* UIColor+nipponcolors.m in Sources */,
 				63B3C7311B48E49F0030D5D4 /* UIFont+Font.m in Sources */,
 				63B3C6C31B48E49F0030D5D4 /* NSObject+Property.m in Sources */,
 				63B3C6F91B48E49F0030D5D4 /* UIImage+RoundedCorner.m in Sources */,

@@ -1,9 +1,9 @@
 //
 //  LIKEHelper.h
-//  xiaomuren
+//  like
 //
 //  Created by David Fu on 6/7/15.
-//  Copyright (c) 2015 XiaoMuRen Technology. All rights reserved.
+//  Copyright (c) 2015 LIKE Technology. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -13,7 +13,7 @@
 #import "UICollectionView+Helper.h"
 #import "UIImage+Resize.h"
 #import "UIColor+Hex.h"
-#import "UIColor+Color.h"
+#import "UIColor+section.h"
 #import "UIFont+Font.h"
 #import "NSArray+SafeAccess.h"
 #import "UIScrollView+BottomRefreshControl.h"

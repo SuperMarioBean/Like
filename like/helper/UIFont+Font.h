@@ -1,17 +1,17 @@
 //
 //  UIFont+Font.h
-//  xiaomuren
+//  like
 //
 //  Created by David Fu on 6/16/15.
-//  Copyright (c) 2015 XiaoMuRen Technology. All rights reserved.
+//  Copyright (c) 2015 LIKE Technology. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
 @interface UIFont (Font)
 
-+ (UIFont *)lw_titleFont;
++ (UIFont *)like_titleFont;
 
-+ (UIFont *)lw_decriptionFont;
++ (UIFont *)like_decriptionFont;
 
 @end

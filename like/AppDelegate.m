@@ -27,7 +27,7 @@
 
     [FIR handleCrashWithKey:@"c360dd80066422b3e11b86d45b55d2fe"]; 
     
-    //self.window.tintColor = [UIColor terigakiColor];
+    self.window.tintColor = [UIColor like_tintColor];
     
     [SMS_SDK registerApp:@"812383acc169" withSecret:@"72e728e8b96ade2ce52f7b4e387fcf57"];
     
