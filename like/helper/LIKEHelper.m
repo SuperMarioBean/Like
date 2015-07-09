@@ -22,37 +22,6 @@ static NSString *const letters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRS
     return randomString;
 }
 
-+ (NSMutableArray *)testItems {
-    NSMutableArray *items = [NSMutableArray array];
-    for (NSInteger i = 0; i < 30; i++) {
-        NSUInteger pickACat = arc4random_uniform(4) + 1;
-        CGSize imageSize;
-        switch (pickACat) {
-            case 1:
-                imageSize = CGSizeMake(200, 275);
-                break;
-            case 2:
-                imageSize = CGSizeMake(500, 332);
-                break;
-            case 3:
-                imageSize = CGSizeMake(512, 344);
-                break;
-            case 4:
-                imageSize = CGSizeMake(320, 213);
-                break;
-            default:
-                imageSize = CGSizeZero;
-                break;
-        }
-        NSString *catFilename = [NSString stringWithFormat:@"cat%lu.jpg", (unsigned long)pickACat];
-        NSString *text = [LIKEHelper randomStringWithMaxLength:80];
-        items[i] = [NSMutableDictionary dictionaryWithObjectsAndKeys:catFilename, LIKEImageName,
-                     [NSValue valueWithCGSize:imageSize], LIKERawImageSize,
-                     text, LIKEText, nil];
-    }
-    return items;
-}
-
 + (CGSize)randomSize {
     NSUInteger pickACat = arc4random_uniform(7) + 1;
     CGSize imageSize;

@@ -35,15 +35,4 @@
 #import "UIAlert+Blocks.h"
 #import "LIKEHelper.h"
 
-static NSString *const LIKEQiNiuImageDomainString = @"7xjljl.com1.z0.glb.clouddn.com";
-
-static NSString *const LIKETextSize = @"textSize";
-static NSString *const LIKELargeTextSize = @"largeTextSize";
-static NSString *const LIKERawImageSize = @"rawImageSize";
-static NSString *const LIKEImageSize = @"imageSize";
-static NSString *const LIKELargeImageSize = @"largeImageSize";
-static NSString *const LIKEFullSize = @"fullSize";
-static NSString *const LIKEImageName = @"imageName";
-static NSString *const LIKEText = @"text";
-
 #endif

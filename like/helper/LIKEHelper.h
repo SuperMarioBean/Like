@@ -18,6 +18,7 @@
 #import "NSArray+SafeAccess.h"
 #import "UIScrollView+BottomRefreshControl.h"
 #import "UIImage+Color.h"
+#import "NSDate+TimeAgo.h"
 
 @interface LIKEHelper : NSObject
 

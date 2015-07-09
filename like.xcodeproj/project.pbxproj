@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		630C84B51B4E894500B6B243 /* LIKETrendCollectionViewHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 630C84B31B4E894500B6B243 /* LIKETrendCollectionViewHeader.m */; };
+		630C84B61B4E894500B6B243 /* LIKETrendCollectionViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 630C84B41B4E894500B6B243 /* LIKETrendCollectionViewHeader.xib */; };
+		630C84BB1B4EA30100B6B243 /* LIKETrendLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 630C84BA1B4EA30100B6B243 /* LIKETrendLayout.m */; };
 		632256711B0E10D100D10817 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 632256701B0E10D100D10817 /* main.m */; };
 		632256741B0E10D100D10817 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 632256731B0E10D100D10817 /* AppDelegate.m */; };
 		6322567C1B0E10D100D10817 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6322567B1B0E10D100D10817 /* Images.xcassets */; };
@@ -195,6 +198,8 @@
 		63B3C7881B48E99B0030D5D4 /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63B3C77F1B48E99B0030D5D4 /* SMS_SDK.framework */; };
 		63B3C78C1B48EE790030D5D4 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 63B3C78B1B48EE790030D5D4 /* libicucore.dylib */; };
 		63B3C78F1B48F1810030D5D4 /* LIKEMainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B3C78E1B48F1810030D5D4 /* LIKEMainTabBarController.m */; };
+		63D326491B4BE26E007DC454 /* LIKETrendCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D326471B4BE26E007DC454 /* LIKETrendCollectionViewCell.m */; };
+		63D3264A1B4BE26E007DC454 /* LIKETrendCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63D326481B4BE26E007DC454 /* LIKETrendCollectionViewCell.xib */; };
 		9ACAE78879C2194B489B9D5A /* libPods-like.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A979D4D865537226B1455EA9 /* libPods-like.a */; };
 		F64A1F7AEFE5389F5FDB362B /* libPods-likeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4925A4D07F0BFCA3304237D /* libPods-likeTests.a */; };
 /* End PBXBuildFile section */
@@ -213,6 +218,11 @@
 		0BE0FC40C90E3A76F4D23AFD /* Pods-like.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-like.release.xcconfig"; path = "Pods/Target Support Files/Pods-like/Pods-like.release.xcconfig"; sourceTree = "<group>"; };
 		3FC3E7D2321B611B7CA1F69D /* Pods-likeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-likeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-likeTests/Pods-likeTests.release.xcconfig"; sourceTree = "<group>"; };
 		467364C9A6D3BB457EB77F3C /* Pods-like.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-like.debug.xcconfig"; path = "Pods/Target Support Files/Pods-like/Pods-like.debug.xcconfig"; sourceTree = "<group>"; };
+		630C84B21B4E894500B6B243 /* LIKETrendCollectionViewHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LIKETrendCollectionViewHeader.h; sourceTree = "<group>"; };
+		630C84B31B4E894500B6B243 /* LIKETrendCollectionViewHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LIKETrendCollectionViewHeader.m; sourceTree = "<group>"; };
+		630C84B41B4E894500B6B243 /* LIKETrendCollectionViewHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LIKETrendCollectionViewHeader.xib; sourceTree = "<group>"; };
+		630C84B91B4EA30100B6B243 /* LIKETrendLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LIKETrendLayout.h; sourceTree = "<group>"; };
+		630C84BA1B4EA30100B6B243 /* LIKETrendLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LIKETrendLayout.m; sourceTree = "<group>"; };
 		6322566B1B0E10D100D10817 /* like.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = like.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6322566F1B0E10D100D10817 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		632256701B0E10D100D10817 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -576,6 +586,9 @@
 		63B3C78B1B48EE790030D5D4 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		63B3C78D1B48F1810030D5D4 /* LIKEMainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = LIKEMainTabBarController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		63B3C78E1B48F1810030D5D4 /* LIKEMainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = LIKEMainTabBarController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		63D326461B4BE26E007DC454 /* LIKETrendCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LIKETrendCollectionViewCell.h; sourceTree = "<group>"; };
+		63D326471B4BE26E007DC454 /* LIKETrendCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LIKETrendCollectionViewCell.m; sourceTree = "<group>"; };
+		63D326481B4BE26E007DC454 /* LIKETrendCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LIKETrendCollectionViewCell.xib; sourceTree = "<group>"; };
 		7FC1AF0E053AD386E334AC50 /* Pods-likeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-likeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-likeTests/Pods-likeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A979D4D865537226B1455EA9 /* libPods-like.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-like.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4925A4D07F0BFCA3304237D /* libPods-likeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-likeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -607,6 +620,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		630C84B71B4E948C00B6B243 /* trend */ = {
+			isa = PBXGroup;
+			children = (
+				630C84B91B4EA30100B6B243 /* LIKETrendLayout.h */,
+				630C84BA1B4EA30100B6B243 /* LIKETrendLayout.m */,
+				63B3C6781B48E49F0030D5D4 /* LIKETrendViewController.h */,
+				63B3C6791B48E49F0030D5D4 /* LIKETrendViewController.m */,
+				63D326461B4BE26E007DC454 /* LIKETrendCollectionViewCell.h */,
+				63D326471B4BE26E007DC454 /* LIKETrendCollectionViewCell.m */,
+				63D326481B4BE26E007DC454 /* LIKETrendCollectionViewCell.xib */,
+				630C84B21B4E894500B6B243 /* LIKETrendCollectionViewHeader.h */,
+				630C84B31B4E894500B6B243 /* LIKETrendCollectionViewHeader.m */,
+				630C84B41B4E894500B6B243 /* LIKETrendCollectionViewHeader.xib */,
+			);
+			name = trend;
+			sourceTree = "<group>";
+		};
+		630C84B81B4E949300B6B243 /* online */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = online;
+			sourceTree = "<group>";
+		};
 		632256621B0E10D100D10817 = {
 			isa = PBXGroup;
 			children = (
@@ -1491,8 +1528,8 @@
 			isa = PBXGroup;
 			children = (
 				63B3C6771B48E49F0030D5D4 /* like.storyboard */,
-				63B3C6781B48E49F0030D5D4 /* LIKETrendViewController.h */,
-				63B3C6791B48E49F0030D5D4 /* LIKETrendViewController.m */,
+				630C84B81B4E949300B6B243 /* online */,
+				630C84B71B4E948C00B6B243 /* trend */,
 				63B3C6841B48E49F0030D5D4 /* LIKEOnlineViewController.h */,
 				63B3C6851B48E49F0030D5D4 /* LIKEOnlineViewController.m */,
 				63B3C6881B48E49F0030D5D4 /* LIKELikeViewController.h */,
@@ -1696,7 +1733,9 @@
 				63B3C7861B48E99B0030D5D4 /* Pingpp.bundle in Resources */,
 				63B3C75A1B48E49F0030D5D4 /* mine.storyboard in Resources */,
 				6322567C1B0E10D100D10817 /* Images.xcassets in Resources */,
+				630C84B61B4E894500B6B243 /* LIKETrendCollectionViewHeader.xib in Resources */,
 				63B3C7871B48E99B0030D5D4 /* SMS_SDKLocalizable.strings in Resources */,
+				63D3264A1B4BE26E007DC454 /* LIKETrendCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1819,6 +1858,7 @@
 				63B3C6DC1B48E49F0030D5D4 /* UIBezierPath+BasicShapes.m in Sources */,
 				63B3C6A51B48E49F0030D5D4 /* NSData+Base64.m in Sources */,
 				63B3C7071B48E49F0030D5D4 /* UIResponder+UIAdapt.m in Sources */,
+				630C84BB1B4EA30100B6B243 /* LIKETrendLayout.m in Sources */,
 				63B3C69F1B48E49F0030D5D4 /* NSManagedObjectContext+ObjectClear.m in Sources */,
 				63B3C6B71B48E49F0030D5D4 /* NSIndexPath+Offset.m in Sources */,
 				63B3C71D1B48E49F0030D5D4 /* UIView+Shake.m in Sources */,
@@ -1900,6 +1940,7 @@
 				63B3C6B11B48E49F0030D5D4 /* NSDictionary+Block.m in Sources */,
 				63B3C7101B48E49F0030D5D4 /* UITextField+Blocks.m in Sources */,
 				63B3C6A91B48E49F0030D5D4 /* NSData+SDDataCache.m in Sources */,
+				630C84B51B4E894500B6B243 /* LIKETrendCollectionViewHeader.m in Sources */,
 				63B3C6CB1B48E49F0030D5D4 /* NSString+Hash.m in Sources */,
 				63B3C70D1B48E49F0030D5D4 /* UITableView+FDTemplateLayoutCell.m in Sources */,
 				63B3C6B81B48E49F0030D5D4 /* NSNotificationCenter+MainThread.m in Sources */,
@@ -1956,6 +1997,7 @@
 				63B3C6BE1B48E49F0030D5D4 /* NSObject+AutoCoding.m in Sources */,
 				63B3C7011B48E49F0030D5D4 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				63B3C7121B48E49F0030D5D4 /* UITextView+PlaceHolder.m in Sources */,
+				63D326491B4BE26E007DC454 /* LIKETrendCollectionViewCell.m in Sources */,
 				63B3C7551B48E49F0030D5D4 /* LIKEOnlineViewController.m in Sources */,
 				63B3C6FA1B48E49F0030D5D4 /* UIImageView+Addition.m in Sources */,
 			);
