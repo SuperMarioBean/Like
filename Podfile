@@ -27,7 +27,7 @@ target :like do
     # 崩溃日志上传
     pod 'HockeySDK', '~> 3.6.4'
     
-    pod 'FIR.im', '~> 1.2.0', :configurations => ['Debug']
+    pod 'FIR.im', '~> 1.2.0', :configurations => ['Release']
     # UI分析
     pod 'Reveal-iOS-SDK', :configurations => ['Debug']
 end

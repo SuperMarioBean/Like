@@ -10,7 +10,10 @@
 
 #import "HockeySDK.h"
 #import <SMS_SDK/SMS_SDK.h>
+
+#ifndef DEBUG
 #import <FIR/FIR.h>
+#endif
 
 @interface AppDelegate ()
 
@@ -25,7 +28,10 @@
     [[BITHockeyManager sharedHockeyManager] startManager];
     [[BITHockeyManager sharedHockeyManager].authenticator authenticateInstallation];
 
-    [FIR handleCrashWithKey:@"c360dd80066422b3e11b86d45b55d2fe"]; 
+    
+#ifndef DEBUG
+    [FIR handleCrashWithKey:@"c360dd80066422b3e11b86d45b55d2fe"];
+#endif
     
     self.window.tintColor = [UIColor like_tintColor];
     
