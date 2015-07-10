@@ -27,7 +27,7 @@
     [super viewDidAppear:animated];
     
     if (!__user.isLogin) {
-        [self performSegueWithIdentifier:@"account" sender:self];
+        [self performSegueWithIdentifier:@"accountSegue" sender:self];
     }
 }
 
@@ -45,7 +45,7 @@
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
     NSInteger index = [tabBarController.viewControllers indexOfObject:viewController];
     if (index == 2) {
-        [self performSegueWithIdentifier:@"custom&valuate" sender:self];
+        [self performSegueWithIdentifier:@"postSegue" sender:self];
         return NO;
     }
     return YES;

@@ -135,8 +135,8 @@
                         <outlet property="resetPasswordTextField" destination="fzS-0X-9AW" id="9Da-Jd-hUn"/>
                         <outlet property="textLabel" destination="KPc-uL-048" id="gHC-W1-uUL"/>
                         <outlet property="verifyCodeTextField" destination="hJI-I3-l5O" id="XJT-bS-egZ"/>
-                        <segue destination="PFI-Uc-moQ" kind="unwind" identifier="verifyUnwind" unwindAction="loginUnwind:" id="Mgw-2f-JX3"/>
-                        <segue destination="egV-Aq-h6R" kind="push" identifier="personalInfoEnter" id="FHa-hU-yWf"/>
+                        <segue destination="PFI-Uc-moQ" kind="unwind" identifier="verifyUnwindSegue" unwindAction="loginUnwind:" id="Mgw-2f-JX3"/>
+                        <segue destination="egV-Aq-h6R" kind="push" identifier="personalInfoEnterSegue" id="FHa-hU-yWf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FqJ-p7-zjQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -281,8 +281,8 @@
                         <outlet property="privacyPolicyTermButton" destination="Fi8-Mo-Oar" id="e21-Lv-in3"/>
                         <outlet property="privacyPolicyView" destination="p4K-Xn-eoE" id="Z2B-Nx-0l7"/>
                         <outlet property="usernameTextField" destination="QnA-Er-l3h" id="N5W-Wh-FY2"/>
-                        <segue destination="aQA-w3-fgM" kind="modal" identifier="privacyPolicyTerm" id="rKJ-jJ-AUW"/>
-                        <segue destination="gma-za-mvv" kind="unwind" identifier="registerUnwind" unwindAction="mainUnwind:" id="r2x-ab-k7x"/>
+                        <segue destination="aQA-w3-fgM" kind="modal" identifier="privacyPolicyTermSegue" id="rKJ-jJ-AUW"/>
+                        <segue destination="gma-za-mvv" kind="unwind" identifier="registerUnwindSegue" unwindAction="mainUnwind:" id="r2x-ab-k7x"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LMG-Po-R57" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -376,8 +376,8 @@
                     <connections>
                         <outlet property="passwordTextField" destination="UzG-xV-r7q" id="xeR-8L-HNQ"/>
                         <outlet property="phoneNumberTextField" destination="per-xC-yfP" id="Ceg-g4-Cjy"/>
-                        <segue destination="LiW-hr-ZHa" kind="push" identifier="phoneNumberEnter" id="65Z-s4-8A1"/>
-                        <segue destination="Jf1-9f-niR" kind="unwind" identifier="loginUnwind" unwindAction="mainUnwind:" id="Lys-b3-jl9"/>
+                        <segue destination="LiW-hr-ZHa" kind="push" identifier="phoneNumberEnterSegue" id="65Z-s4-8A1"/>
+                        <segue destination="Jf1-9f-niR" kind="unwind" identifier="loginUnwindSegue" unwindAction="mainUnwind:" id="Lys-b3-jl9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="44z-wS-vd6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -404,7 +404,7 @@
                                 </items>
                             </navigationBar>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w1e-0D-7Sn">
-                                <rect key="frame" x="0.0" y="64" width="320" height="457.5"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="458"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">LIKE尊重并保护所有使用服务用户的个人隐私权。为了给您提供更准确、更有个性化的服务，LIKE会按照本隐私权政策的规定使用和披露您的个人信息。但LIKE将以高度的勤勉、审慎义务对待这些信息。除本隐私权政策另有规定外，在未征得您事先许可的情况下，LIKE不会将这些信息对外披露或向第三方提供。LIKE会不时更新本隐私权政策。 您在同意LIKE服务使用协议之时，即视为您已经同意本隐私权政策全部内容。本隐私权政策属于LIKE服务使用协议不可分割的一部分。 
 1. 适用范围 

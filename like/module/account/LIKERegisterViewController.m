@@ -43,7 +43,7 @@
     
     if ([LIKEHelper verifyPhoneNumber:self.phoneNumberTextField.text]) {
         __user.phoneNumber = self.phoneNumberTextField.text;
-        [self performSegueWithIdentifier:@"phoneNumberVerify" sender:self];
+        [self performSegueWithIdentifier:@"phoneNumberVerifySegue" sender:self];
     }
     else {
         NSString *message = @"您的电话号码不正确";

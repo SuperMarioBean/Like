@@ -38,7 +38,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     NSString *identifier = segue.identifier;
-    if ([identifier isEqualToString:@"tabBarEmbed"]) {
+    if ([identifier isEqualToString:@"tabBarEmbedSegue"]) {
         self.tabBarController = (UITabBarController *)segue.destinationViewController;
     }
 }

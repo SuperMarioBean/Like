@@ -223,8 +223,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="IZA-Wo-P4F" kind="custom" identifier="account" customClass="RBStoryboardModalSegue" id="mNp-qc-ztg"/>
-                        <segue destination="MUi-nc-UVc" kind="custom" identifier="custom&amp;valuate" customClass="RBStoryboardModalSegue" id="K4u-IP-ia0"/>
+                        <segue destination="IZA-Wo-P4F" kind="custom" identifier="accountSegue" customClass="RBStoryboardModalSegue" id="mNp-qc-ztg"/>
+                        <segue destination="MUi-nc-UVc" kind="custom" identifier="postSegue" customClass="RBStoryboardModalSegue" id="K4u-IP-ia0"/>
                         <segue destination="aa0-dh-woc" kind="relationship" relationship="viewControllers" id="s0j-Nb-8Fz"/>
                         <segue destination="q3a-Md-gbc" kind="relationship" relationship="viewControllers" id="DcX-Oq-MMq"/>
                         <segue destination="6fW-ZI-Aqr" kind="relationship" relationship="viewControllers" id="8m6-3d-MIm"/>

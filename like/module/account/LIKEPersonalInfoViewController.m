@@ -66,7 +66,7 @@ static NSString *kOtherCell = @"otherCell";     // the remaining cells at the en
 }
 
 - (IBAction)privacyPolicyTermClick:(id)sender {
-    [self performSegueWithIdentifier:@"privacyPolicyTerm" sender:self];
+    [self performSegueWithIdentifier:@"privacyPolicyTermSegue" sender:self];
 }
 
 - (IBAction)birthdayButtonClick:(id)sender {
@@ -97,7 +97,7 @@ static NSString *kOtherCell = @"otherCell";     // the remaining cells at the en
         __user.male = self.genderSegmentedControl.selectedSegmentIndex? NO: YES;
         __user.birthday = currentSelectedDate;
         __user.login = YES;
-        [self performSegueWithIdentifier:@"registerUnwind" sender:self];
+        [self performSegueWithIdentifier:@"registerUnwindSegue" sender:self];
     }
     else {
         NSString *message = @"请按要求填写信息并勾选隐私协议";

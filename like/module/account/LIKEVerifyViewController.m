@@ -87,12 +87,12 @@
                                                                      buttonType:UIAlertButtonOk
                                                                           block:^{
                                                                               __user.password = self.resetPasswordTextField.text;
-                                                                              [self performSegueWithIdentifier:@"verifyUnwind" sender:self];
+                                                                              [self performSegueWithIdentifier:@"verifyUnwindSegue" sender:self];
                                                                           }];
                 [alertView show];
             }
             else {
-                [self performSegueWithIdentifier:@"personalInfoEnter" sender:self];
+                [self performSegueWithIdentifier:@"personalInfoEnterSegue" sender:self];
             }
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             NSString *message = @"您的验证码验证失败";

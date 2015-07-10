@@ -33,10 +33,10 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     NSString *identifier = segue.identifier;
-    if ([identifier isEqualToString:@"loginUnwind"]) {
+    if ([identifier isEqualToString:@"loginUnwindSegue"]) {
         
     }
-    else if ([identifier isEqualToString:@"phoneNumberEnter"]) {
+    else if ([identifier isEqualToString:@"phoneNumberEnterSegue"]) {
         
     }
 }
@@ -58,7 +58,7 @@
         __user.phoneNumber = self.phoneNumberTextField.text;
         __user.password = self.passwordTextField.text;
         __user.login = YES;
-        [self performSegueWithIdentifier:@"loginUnwind" sender:self];
+        [self performSegueWithIdentifier:@"loginUnwindSegue" sender:self];
     }
     else {
         self.passwordTextField.text = @"";
@@ -75,13 +75,13 @@
     [self touchesBegan:nil withEvent:nil];
     
     __user.forgetPassword = YES;
-    [self performSegueWithIdentifier:@"phoneNumberEnter" sender:self];
+    [self performSegueWithIdentifier:@"phoneNumberEnterSegue" sender:self];
 }
 
 - (IBAction)registerButtonClick:(id)sender {
     [self touchesBegan:nil withEvent:nil];
 
-    [self performSegueWithIdentifier:@"phoneNumberEnter" sender:self];
+    [self performSegueWithIdentifier:@"phoneNumberEnterSegue" sender:self];
 }
 
 - (IBAction)loginUnwind:(UIStoryboardSegue *)unwindSegue {
