@@ -35,4 +35,7 @@
 #import "UIAlert+Blocks.h"
 #import "LIKEHelper.h"
 
+static NSString *const LIKEUserGenderMale = @"♂";
+static NSString *const LIKEUserGenderFemale = @"♀";
+
 #endif

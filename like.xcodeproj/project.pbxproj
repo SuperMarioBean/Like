@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6308C5FA1B4ED81700669A72 /* LIKEOnlineCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6308C5F81B4ED81700669A72 /* LIKEOnlineCollectionViewCell.m */; };
+		6308C5FB1B4ED81700669A72 /* LIKEOnlineCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6308C5F91B4ED81700669A72 /* LIKEOnlineCollectionViewCell.xib */; };
 		630C84B51B4E894500B6B243 /* LIKETrendCollectionViewHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 630C84B31B4E894500B6B243 /* LIKETrendCollectionViewHeader.m */; };
 		630C84B61B4E894500B6B243 /* LIKETrendCollectionViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 630C84B41B4E894500B6B243 /* LIKETrendCollectionViewHeader.xib */; };
 		630C84BB1B4EA30100B6B243 /* LIKETrendLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 630C84BA1B4EA30100B6B243 /* LIKETrendLayout.m */; };
@@ -218,6 +220,9 @@
 		0BE0FC40C90E3A76F4D23AFD /* Pods-like.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-like.release.xcconfig"; path = "Pods/Target Support Files/Pods-like/Pods-like.release.xcconfig"; sourceTree = "<group>"; };
 		3FC3E7D2321B611B7CA1F69D /* Pods-likeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-likeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-likeTests/Pods-likeTests.release.xcconfig"; sourceTree = "<group>"; };
 		467364C9A6D3BB457EB77F3C /* Pods-like.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-like.debug.xcconfig"; path = "Pods/Target Support Files/Pods-like/Pods-like.debug.xcconfig"; sourceTree = "<group>"; };
+		6308C5F71B4ED81700669A72 /* LIKEOnlineCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LIKEOnlineCollectionViewCell.h; sourceTree = "<group>"; };
+		6308C5F81B4ED81700669A72 /* LIKEOnlineCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LIKEOnlineCollectionViewCell.m; sourceTree = "<group>"; };
+		6308C5F91B4ED81700669A72 /* LIKEOnlineCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LIKEOnlineCollectionViewCell.xib; sourceTree = "<group>"; };
 		630C84B21B4E894500B6B243 /* LIKETrendCollectionViewHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LIKETrendCollectionViewHeader.h; sourceTree = "<group>"; };
 		630C84B31B4E894500B6B243 /* LIKETrendCollectionViewHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LIKETrendCollectionViewHeader.m; sourceTree = "<group>"; };
 		630C84B41B4E894500B6B243 /* LIKETrendCollectionViewHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LIKETrendCollectionViewHeader.xib; sourceTree = "<group>"; };
@@ -640,6 +645,11 @@
 		630C84B81B4E949300B6B243 /* online */ = {
 			isa = PBXGroup;
 			children = (
+				63B3C6841B48E49F0030D5D4 /* LIKEOnlineViewController.h */,
+				63B3C6851B48E49F0030D5D4 /* LIKEOnlineViewController.m */,
+				6308C5F71B4ED81700669A72 /* LIKEOnlineCollectionViewCell.h */,
+				6308C5F81B4ED81700669A72 /* LIKEOnlineCollectionViewCell.m */,
+				6308C5F91B4ED81700669A72 /* LIKEOnlineCollectionViewCell.xib */,
 			);
 			name = online;
 			sourceTree = "<group>";
@@ -1530,8 +1540,6 @@
 				63B3C6771B48E49F0030D5D4 /* like.storyboard */,
 				630C84B81B4E949300B6B243 /* online */,
 				630C84B71B4E948C00B6B243 /* trend */,
-				63B3C6841B48E49F0030D5D4 /* LIKEOnlineViewController.h */,
-				63B3C6851B48E49F0030D5D4 /* LIKEOnlineViewController.m */,
 				63B3C6881B48E49F0030D5D4 /* LIKELikeViewController.h */,
 				63B3C6891B48E49F0030D5D4 /* LIKELikeViewController.m */,
 			);
@@ -1725,6 +1733,7 @@
 				63B3C6AF1B48E49F0030D5D4 /* NSDateTimeAgo.bundle in Resources */,
 				63B3C75F1B48E49F0030D5D4 /* post.storyboard in Resources */,
 				63B3C7341B48E49F0030D5D4 /* account.storyboard in Resources */,
+				6308C5FB1B4ED81700669A72 /* LIKEOnlineCollectionViewCell.xib in Resources */,
 				63B3C73B1B48E49F0030D5D4 /* discovery.storyboard in Resources */,
 				6322567F1B0E10D100D10817 /* LaunchScreen.xib in Resources */,
 				63B3C74E1B48E49F0030D5D4 /* like.storyboard in Resources */,
@@ -1979,6 +1988,7 @@
 				63B3C6FF1B48E49F0030D5D4 /* UINavigationBar+Awesome.m in Sources */,
 				63B3C7221B48E49F0030D5D4 /* UIViewController+RecursiveDescription.m in Sources */,
 				63B3C6A31B48E49F0030D5D4 /* NSArray+SafeAccess.m in Sources */,
+				6308C5FA1B4ED81700669A72 /* LIKEOnlineCollectionViewCell.m in Sources */,
 				63B3C7051B48E49F0030D5D4 /* UINavigationItem+Lock.m in Sources */,
 				63B3C7201B48E49F0030D5D4 /* UIViewController+DDPopUpViewController.m in Sources */,
 				63B3C6CD1B48E49F0030D5D4 /* NSString+RemoveEmoji.m in Sources */,
