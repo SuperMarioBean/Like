@@ -150,7 +150,7 @@ static NSString *const LIKECollectionViewFooterIdentifier = @"com.trinity.like.o
                                 LIKEOnlineUserVerify: @YES,
                                 LIKEOnlineUserSaying: @"出去耍",
                                 };
-        NSDictionary *text2 = @{LIKEOnlineUserAvatarURL: [NSURL URLWithString:@"http://7xjvx7.com1.z0.glb.clouddn.com/j'jf4.png"],
+        NSDictionary *text2 = @{LIKEOnlineUserAvatarURL: [NSURL URLWithString:@"http://7xjvx7.com1.z0.glb.clouddn.com/f4.png"],
                                 LIKEOnlineUserGender: @YES,
                                 LIKEOnlineUserHot: @NO,
                                 LIKEOnlineUserVerify: @YES,
