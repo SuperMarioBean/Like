@@ -35,14 +35,24 @@
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{{gender}}{{age}}" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NHa-sM-RwE">
-                            <rect key="frame" x="0.0" y="29" width="86" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{{gender}}{{age}}" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NHa-sM-RwE">
+                            <rect key="frame" x="0.0" y="32" width="40" height="18"/>
+                            <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="18" id="uV0-nw-sSb"/>
+                                <constraint firstAttribute="width" constant="40" id="vgA-Pn-nfw"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="4"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{{location}}" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmY-4A-LYc">
-                            <rect key="frame" x="94" y="34" width="52" height="12"/>
+                            <rect key="frame" x="48" y="35" width="52" height="12"/>
                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
@@ -52,7 +62,6 @@
                     <constraints>
                         <constraint firstItem="ff6-bu-87R" firstAttribute="leading" secondItem="qF0-IB-ICq" secondAttribute="leading" id="0ly-ja-dcf"/>
                         <constraint firstItem="NHa-sM-RwE" firstAttribute="centerY" secondItem="bmY-4A-LYc" secondAttribute="centerY" id="5pk-I9-dKV"/>
-                        <constraint firstItem="NHa-sM-RwE" firstAttribute="top" secondItem="ff6-bu-87R" secondAttribute="bottom" constant="8" id="AW5-vr-4BB"/>
                         <constraint firstItem="ff6-bu-87R" firstAttribute="top" secondItem="qF0-IB-ICq" secondAttribute="top" id="LzF-Jg-0us"/>
                         <constraint firstAttribute="bottom" secondItem="NHa-sM-RwE" secondAttribute="bottom" id="Pc1-sc-oQG"/>
                         <constraint firstAttribute="width" secondItem="ff6-bu-87R" secondAttribute="width" id="TjZ-6n-x5g"/>

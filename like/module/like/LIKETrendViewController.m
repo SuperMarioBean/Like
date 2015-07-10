@@ -126,7 +126,8 @@ static NSString *const LIKECollectionViewFooterIdentifier = @"com.trinity.like.t
         NSDictionary *trend = (NSDictionary *)object;
         [header.avatarImageView sd_setImageWithURL:trend[LIKETrendUserAvatarURL]];
         header.nicknameLabel.text = trend[LIKETrendUserNickname];
-        header.genderAndAgeLabel.text = [NSString stringWithFormat:@"%@ %@", [trend[LIKETrendUserGender] boolValue]? @"male": @"female", [trend[LIKETrendUserAge] stringValue]];
+        header.genderAndAgeLabel.text = [NSString stringWithFormat:@"%@  %@", [trend[LIKETrendUserGender] boolValue]? LIKEUserGenderMale: LIKEUserGenderFemale, [trend[LIKETrendUserAge] stringValue]];
+        header.genderAndAgeLabel.backgroundColor = [trend[LIKETrendUserGender] boolValue]? [UIColor blueColor]: [UIColor magentaColor];
         header.timelineLabel.text = [trend[LIKETrendTimeline] timeAgoSimple];
         header.locationLabel.text = trend[LIKETrendUserLocation];
     }
@@ -182,18 +183,5 @@ static NSString *const LIKECollectionViewFooterIdentifier = @"com.trinity.like.t
 #pragma mark - api methods
 
 
-
-
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
