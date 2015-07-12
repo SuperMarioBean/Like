@@ -19,6 +19,8 @@
 
 @property (readwrite, nonatomic, assign) CGFloat scaledWidth;
 
+@property (readwrite, nonatomic, strong) NSMutableArray *localTagsArray;
+
 + (instancetype)sharedInstance;
 
 @end

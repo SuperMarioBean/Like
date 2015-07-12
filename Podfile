@@ -30,6 +30,9 @@ target :like do
     pod 'FIR.im', '~> 1.2.0', :configurations => ['Release']
     # UI分析
     pod 'Reveal-iOS-SDK', :configurations => ['Debug']
+    pod 'PBJVision'
+    pod 'HIPImageCropper'
+    pod 'SCRecorder'
 end
 
 target :likeTests do

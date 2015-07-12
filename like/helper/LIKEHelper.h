@@ -18,13 +18,16 @@
 #import "NSArray+SafeAccess.h"
 #import "UIScrollView+BottomRefreshControl.h"
 #import "UIImage+Color.h"
+#import "UIImage+Resize.h"
+#import "UIImage+Capture.h"
 #import "NSDate+TimeAgo.h"
+#import "NSString+Util.h"
+#import "UIAlert+Blocks.h"
+
 
 @interface LIKEHelper : NSObject
 
 + (NSString *)randomStringWithMaxLength:(int)maxlength;
-
-+ (NSMutableArray *)testItems;
 
 + (CGSize)randomSize;
 

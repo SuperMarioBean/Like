@@ -32,7 +32,6 @@
 #import "LIKEAPIBaseManager.h"
 
 #import "LIKEAPIProxy.h"
-#import "UIAlert+Blocks.h"
 #import "LIKEHelper.h"
 
 static NSString *const LIKEUserGenderMale = @"♂";

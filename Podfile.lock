@@ -33,6 +33,7 @@ PODS:
     - CocoaLumberjack/Default
   - Expecta (1.0.0)
   - FIR.im (1.2.0)
+  - HIPImageCropper (2.0.0)
   - HockeySDK (3.6.4)
   - KIF (3.2.2):
     - KIF/XCTest (= 3.2.2)
@@ -43,6 +44,7 @@ PODS:
   - Masonry (0.6.1)
   - MulticastDelegate (0.0.1.1)
   - OCMock (3.1.2)
+  - PBJVision (0.4.2)
   - Pingpp/Alipay (2.0.5):
     - Pingpp/Core
   - Pingpp/ApplePay (2.0.5):
@@ -53,6 +55,7 @@ PODS:
   - pop (1.0.7)
   - RBStoryboardLink (0.1.4)
   - Reveal-iOS-SDK (1.5.1)
+  - SCRecorder (2.5.0)
   - SDWebImage (3.7.2):
     - SDWebImage/Core (= 3.7.2)
   - SDWebImage/Core (3.7.2)
@@ -67,18 +70,21 @@ DEPENDENCIES:
   - CocoaLumberjack (~> 2.0.0)
   - Expecta (~> 1.0.0)
   - FIR.im (~> 1.2.0)
+  - HIPImageCropper
   - HockeySDK (~> 3.6.4)
   - KIF (~> 3.2.2)
   - Mantle (~> 2.0.2)
   - Masonry (~> 0.6.1)
   - MulticastDelegate (~> 0.0.1.1)
   - OCMock (~> 3.1.2)
+  - PBJVision
   - Pingpp/Alipay (~> 2.0.5)
   - Pingpp/ApplePay (~> 2.0.5)
   - Pingpp/Wx (~> 2.0.5)
   - pop (~> 1.0.7)
   - RBStoryboardLink (~> 0.1.4)
   - Reveal-iOS-SDK
+  - SCRecorder
   - SDWebImage (~> 3.7.2)
   - Specta (~> 1.0.0)
   - UIAlert+Blocks (~> 1.0.2)
@@ -100,16 +106,19 @@ SPEC CHECKSUMS:
   CocoaLumberjack: a6f77d987d65dc7ba86b0f84db7d0b9084f77bcb
   Expecta: 32604574add2c46a36f8d2f716b6c5736eb75024
   FIR.im: e5c7367a35adcd796f30f176f059356c330c0c2e
+  HIPImageCropper: 080054a1d885660e24ca365904842a287207cce2
   HockeySDK: c07cdd580296737edcd0963e292c19885a53f563
   KIF: b0bd762b0c7890b04920cf618021d6d4fd5127bd
   Mantle: 967fd31ea0220890b2e76589198996b534bb3fb1
   Masonry: 4972309f2f134de9dd312f4dc4a21359b50e6caa
   MulticastDelegate: 473589ab16a00612150f8bfd726caac85125e695
   OCMock: a10ea9f0a6e921651f96f78b6faee95ebc813b92
+  PBJVision: fe43c9a58bb1c1277d16fd802fa836d25e034a45
   Pingpp: 85fe5b5421c3c774deaa38943cbbff8dbe82c76c
   pop: 628ffc631644601567ee8bfaaaea493ebd7d0923
   RBStoryboardLink: 0faae84aea6a5e8716c4469984d847d958c3fcb3
   Reveal-iOS-SDK: c9c55cad2729c85f6ced415f1b21857c9a2d8ef9
+  SCRecorder: 90075f2d9deb03cd8280faff8cd3cca11c036025
   SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29
   Specta: 96fe05fe5c7348b5223f85e862904f6e832abb14
   UIAlert+Blocks: aa9e754efb2b1066e70cac7ed7e1499d960208fe

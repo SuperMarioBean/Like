@@ -11,12 +11,18 @@
 		6308C5FB1B4ED81700669A72 /* LIKEOnlineCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6308C5F91B4ED81700669A72 /* LIKEOnlineCollectionViewCell.xib */; };
 		630C84B51B4E894500B6B243 /* LIKETrendCollectionViewHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 630C84B31B4E894500B6B243 /* LIKETrendCollectionViewHeader.m */; };
 		630C84B61B4E894500B6B243 /* LIKETrendCollectionViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 630C84B41B4E894500B6B243 /* LIKETrendCollectionViewHeader.xib */; };
-		630C84BB1B4EA30100B6B243 /* LIKETrendLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 630C84BA1B4EA30100B6B243 /* LIKETrendLayout.m */; };
 		632256711B0E10D100D10817 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 632256701B0E10D100D10817 /* main.m */; };
 		632256741B0E10D100D10817 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 632256731B0E10D100D10817 /* AppDelegate.m */; };
 		6322567C1B0E10D100D10817 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6322567B1B0E10D100D10817 /* Images.xcassets */; };
 		6322567F1B0E10D100D10817 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6322567D1B0E10D100D10817 /* LaunchScreen.xib */; };
 		6322568B1B0E10D100D10817 /* likeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6322568A1B0E10D100D10817 /* likeTests.m */; };
+		633D16E71B51437000C2786A /* LIKEFilterCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 633D16E61B51437000C2786A /* LIKEFilterCollectionViewCell.m */; };
+		633D16ED1B5151DE00C2786A /* LIKETrendLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 633D16EC1B5151DE00C2786A /* LIKETrendLayout.m */; };
+		633D16F01B51538D00C2786A /* LIKEFilterLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 633D16EF1B51538D00C2786A /* LIKEFilterLayout.m */; };
+		633D16FC1B5167A300C2786A /* IrregularView.m in Sources */ = {isa = PBXBuildFile; fileRef = 633D16F41B5167A300C2786A /* IrregularView.m */; };
+		633D16FD1B5167A300C2786A /* UIBezierPath+BasicShapes_tagview.m in Sources */ = {isa = PBXBuildFile; fileRef = 633D16F61B5167A300C2786A /* UIBezierPath+BasicShapes_tagview.m */; };
+		633D16FE1B5167A300C2786A /* PulsingHaloLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 633D16F91B5167A300C2786A /* PulsingHaloLayer.m */; };
+		633D16FF1B5167A300C2786A /* TagView.m in Sources */ = {isa = PBXBuildFile; fileRef = 633D16FB1B5167A300C2786A /* TagView.m */; };
 		638907071B4A6DE600674A56 /* UIColor+nipponcolors.m in Sources */ = {isa = PBXBuildFile; fileRef = 638907061B4A6DE600674A56 /* UIColor+nipponcolors.m */; };
 		6389070A1B4A712000674A56 /* UIColor+section.m in Sources */ = {isa = PBXBuildFile; fileRef = 638907091B4A712000674A56 /* UIColor+section.m */; };
 		63B3C4511B48DCA40030D5D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63B3C44F1B48DCA40030D5D4 /* Main.storyboard */; };
@@ -202,6 +208,16 @@
 		63B3C78F1B48F1810030D5D4 /* LIKEMainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B3C78E1B48F1810030D5D4 /* LIKEMainTabBarController.m */; };
 		63D326491B4BE26E007DC454 /* LIKETrendCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D326471B4BE26E007DC454 /* LIKETrendCollectionViewCell.m */; };
 		63D3264A1B4BE26E007DC454 /* LIKETrendCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63D326481B4BE26E007DC454 /* LIKETrendCollectionViewCell.xib */; };
+		63E58A811B4FCE45004133A5 /* LIKECaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E58A801B4FCE45004133A5 /* LIKECaptureViewController.m */; };
+		63E58A841B4FD0EA004133A5 /* LIKEImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E58A831B4FD0EA004133A5 /* LIKEImagePickerViewController.m */; };
+		63E58A871B4FD122004133A5 /* LIKETagsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E58A861B4FD122004133A5 /* LIKETagsViewController.m */; };
+		63E58A8A1B4FD2A9004133A5 /* LIKEFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E58A891B4FD2A9004133A5 /* LIKEFilterViewController.m */; };
+		63E58A8D1B4FD2FE004133A5 /* LIKESearchTagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E58A8C1B4FD2FE004133A5 /* LIKESearchTagViewController.m */; };
+		63E58A9D1B50BF12004133A5 /* PhotoAlbumCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E58A941B50BF12004133A5 /* PhotoAlbumCell.m */; };
+		63E58A9E1B50BF12004133A5 /* PhotoAlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E58A961B50BF12004133A5 /* PhotoAlbumViewController.m */; };
+		63E58A9F1B50BF12004133A5 /* PhotoGellaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E58A981B50BF12004133A5 /* PhotoGellaryViewController.m */; };
+		63E58AA01B50BF12004133A5 /* PhotoGellaryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E58A9A1B50BF12004133A5 /* PhotoGellaryCell.m */; };
+		63E58AA11B50BF12004133A5 /* PhotoGellaryHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E58A9C1B50BF12004133A5 /* PhotoGellaryHeader.m */; };
 		9ACAE78879C2194B489B9D5A /* libPods-like.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A979D4D865537226B1455EA9 /* libPods-like.a */; };
 		F64A1F7AEFE5389F5FDB362B /* libPods-likeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4925A4D07F0BFCA3304237D /* libPods-likeTests.a */; };
 /* End PBXBuildFile section */
@@ -226,8 +242,6 @@
 		630C84B21B4E894500B6B243 /* LIKETrendCollectionViewHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LIKETrendCollectionViewHeader.h; sourceTree = "<group>"; };
 		630C84B31B4E894500B6B243 /* LIKETrendCollectionViewHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LIKETrendCollectionViewHeader.m; sourceTree = "<group>"; };
 		630C84B41B4E894500B6B243 /* LIKETrendCollectionViewHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LIKETrendCollectionViewHeader.xib; sourceTree = "<group>"; };
-		630C84B91B4EA30100B6B243 /* LIKETrendLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LIKETrendLayout.h; sourceTree = "<group>"; };
-		630C84BA1B4EA30100B6B243 /* LIKETrendLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LIKETrendLayout.m; sourceTree = "<group>"; };
 		6322566B1B0E10D100D10817 /* like.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = like.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6322566F1B0E10D100D10817 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		632256701B0E10D100D10817 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -238,6 +252,20 @@
 		632256841B0E10D100D10817 /* likeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = likeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		632256891B0E10D100D10817 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6322568A1B0E10D100D10817 /* likeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = likeTests.m; sourceTree = "<group>"; };
+		633D16E51B51437000C2786A /* LIKEFilterCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LIKEFilterCollectionViewCell.h; sourceTree = "<group>"; };
+		633D16E61B51437000C2786A /* LIKEFilterCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LIKEFilterCollectionViewCell.m; sourceTree = "<group>"; };
+		633D16EB1B5151DE00C2786A /* LIKETrendLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LIKETrendLayout.h; sourceTree = "<group>"; };
+		633D16EC1B5151DE00C2786A /* LIKETrendLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LIKETrendLayout.m; sourceTree = "<group>"; };
+		633D16EE1B51538D00C2786A /* LIKEFilterLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LIKEFilterLayout.h; sourceTree = "<group>"; };
+		633D16EF1B51538D00C2786A /* LIKEFilterLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LIKEFilterLayout.m; sourceTree = "<group>"; };
+		633D16F31B5167A300C2786A /* IrregularView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IrregularView.h; sourceTree = "<group>"; };
+		633D16F41B5167A300C2786A /* IrregularView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IrregularView.m; sourceTree = "<group>"; };
+		633D16F51B5167A300C2786A /* UIBezierPath+BasicShapes_tagview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBezierPath+BasicShapes_tagview.h"; sourceTree = "<group>"; };
+		633D16F61B5167A300C2786A /* UIBezierPath+BasicShapes_tagview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBezierPath+BasicShapes_tagview.m"; sourceTree = "<group>"; };
+		633D16F81B5167A300C2786A /* PulsingHaloLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PulsingHaloLayer.h; sourceTree = "<group>"; };
+		633D16F91B5167A300C2786A /* PulsingHaloLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PulsingHaloLayer.m; sourceTree = "<group>"; };
+		633D16FA1B5167A300C2786A /* TagView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagView.h; sourceTree = "<group>"; };
+		633D16FB1B5167A300C2786A /* TagView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagView.m; sourceTree = "<group>"; };
 		638907051B4A6DE600674A56 /* UIColor+nipponcolors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+nipponcolors.h"; sourceTree = "<group>"; };
 		638907061B4A6DE600674A56 /* UIColor+nipponcolors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+nipponcolors.m"; sourceTree = "<group>"; };
 		638907081B4A712000674A56 /* UIColor+section.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+section.h"; sourceTree = "<group>"; };
@@ -594,6 +622,27 @@
 		63D326461B4BE26E007DC454 /* LIKETrendCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LIKETrendCollectionViewCell.h; sourceTree = "<group>"; };
 		63D326471B4BE26E007DC454 /* LIKETrendCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LIKETrendCollectionViewCell.m; sourceTree = "<group>"; };
 		63D326481B4BE26E007DC454 /* LIKETrendCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LIKETrendCollectionViewCell.xib; sourceTree = "<group>"; };
+		63E58A7F1B4FCE45004133A5 /* LIKECaptureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LIKECaptureViewController.h; sourceTree = "<group>"; };
+		63E58A801B4FCE45004133A5 /* LIKECaptureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LIKECaptureViewController.m; sourceTree = "<group>"; };
+		63E58A821B4FD0EA004133A5 /* LIKEImagePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LIKEImagePickerViewController.h; sourceTree = "<group>"; };
+		63E58A831B4FD0EA004133A5 /* LIKEImagePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LIKEImagePickerViewController.m; sourceTree = "<group>"; };
+		63E58A851B4FD122004133A5 /* LIKETagsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LIKETagsViewController.h; sourceTree = "<group>"; };
+		63E58A861B4FD122004133A5 /* LIKETagsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LIKETagsViewController.m; sourceTree = "<group>"; };
+		63E58A881B4FD2A9004133A5 /* LIKEFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LIKEFilterViewController.h; sourceTree = "<group>"; };
+		63E58A891B4FD2A9004133A5 /* LIKEFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LIKEFilterViewController.m; sourceTree = "<group>"; };
+		63E58A8B1B4FD2FE004133A5 /* LIKESearchTagViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LIKESearchTagViewController.h; sourceTree = "<group>"; };
+		63E58A8C1B4FD2FE004133A5 /* LIKESearchTagViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LIKESearchTagViewController.m; sourceTree = "<group>"; };
+		63E58A931B50BF12004133A5 /* PhotoAlbumCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoAlbumCell.h; sourceTree = "<group>"; };
+		63E58A941B50BF12004133A5 /* PhotoAlbumCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoAlbumCell.m; sourceTree = "<group>"; };
+		63E58A951B50BF12004133A5 /* PhotoAlbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoAlbumViewController.h; sourceTree = "<group>"; };
+		63E58A961B50BF12004133A5 /* PhotoAlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoAlbumViewController.m; sourceTree = "<group>"; };
+		63E58A971B50BF12004133A5 /* PhotoGellaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoGellaryViewController.h; sourceTree = "<group>"; };
+		63E58A981B50BF12004133A5 /* PhotoGellaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoGellaryViewController.m; sourceTree = "<group>"; };
+		63E58A991B50BF12004133A5 /* PhotoGellaryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoGellaryCell.h; sourceTree = "<group>"; };
+		63E58A9A1B50BF12004133A5 /* PhotoGellaryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoGellaryCell.m; sourceTree = "<group>"; };
+		63E58A9B1B50BF12004133A5 /* PhotoGellaryHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoGellaryHeader.h; sourceTree = "<group>"; };
+		63E58A9C1B50BF12004133A5 /* PhotoGellaryHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoGellaryHeader.m; sourceTree = "<group>"; };
+		63E58AA21B50D87D004133A5 /* LIKETransferProcessedImageProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LIKETransferProcessedImageProtocol.h; sourceTree = "<group>"; };
 		7FC1AF0E053AD386E334AC50 /* Pods-likeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-likeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-likeTests/Pods-likeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A979D4D865537226B1455EA9 /* libPods-like.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-like.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4925A4D07F0BFCA3304237D /* libPods-likeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-likeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -628,8 +677,8 @@
 		630C84B71B4E948C00B6B243 /* trend */ = {
 			isa = PBXGroup;
 			children = (
-				630C84B91B4EA30100B6B243 /* LIKETrendLayout.h */,
-				630C84BA1B4EA30100B6B243 /* LIKETrendLayout.m */,
+				633D16EB1B5151DE00C2786A /* LIKETrendLayout.h */,
+				633D16EC1B5151DE00C2786A /* LIKETrendLayout.m */,
 				63B3C6781B48E49F0030D5D4 /* LIKETrendViewController.h */,
 				63B3C6791B48E49F0030D5D4 /* LIKETrendViewController.m */,
 				63D326461B4BE26E007DC454 /* LIKETrendCollectionViewCell.h */,
@@ -717,6 +766,37 @@
 				632256891B0E10D100D10817 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		633D16F11B5167A300C2786A /* TagView */ = {
+			isa = PBXGroup;
+			children = (
+				633D16F21B5167A300C2786A /* IrreguarView */,
+				633D16F71B5167A300C2786A /* PulsingHalo */,
+				633D16FA1B5167A300C2786A /* TagView.h */,
+				633D16FB1B5167A300C2786A /* TagView.m */,
+			);
+			path = TagView;
+			sourceTree = "<group>";
+		};
+		633D16F21B5167A300C2786A /* IrreguarView */ = {
+			isa = PBXGroup;
+			children = (
+				633D16F31B5167A300C2786A /* IrregularView.h */,
+				633D16F41B5167A300C2786A /* IrregularView.m */,
+				633D16F51B5167A300C2786A /* UIBezierPath+BasicShapes_tagview.h */,
+				633D16F61B5167A300C2786A /* UIBezierPath+BasicShapes_tagview.m */,
+			);
+			path = IrreguarView;
+			sourceTree = "<group>";
+		};
+		633D16F71B5167A300C2786A /* PulsingHalo */ = {
+			isa = PBXGroup;
+			children = (
+				633D16F81B5167A300C2786A /* PulsingHaloLayer.h */,
+				633D16F91B5167A300C2786A /* PulsingHaloLayer.m */,
+			);
+			path = PulsingHalo;
 			sourceTree = "<group>";
 		};
 		63B3C4D51B48E49F0030D5D4 /* helper */ = {
@@ -1557,7 +1637,23 @@
 		63B3C6901B48E49F0030D5D4 /* post */ = {
 			isa = PBXGroup;
 			children = (
+				63E58A921B50BF12004133A5 /* photoGallery */,
 				63B3C6981B48E49F0030D5D4 /* post.storyboard */,
+				63E58A7F1B4FCE45004133A5 /* LIKECaptureViewController.h */,
+				63E58A801B4FCE45004133A5 /* LIKECaptureViewController.m */,
+				63E58A821B4FD0EA004133A5 /* LIKEImagePickerViewController.h */,
+				63E58A831B4FD0EA004133A5 /* LIKEImagePickerViewController.m */,
+				633D16EE1B51538D00C2786A /* LIKEFilterLayout.h */,
+				633D16EF1B51538D00C2786A /* LIKEFilterLayout.m */,
+				63E58A881B4FD2A9004133A5 /* LIKEFilterViewController.h */,
+				63E58A891B4FD2A9004133A5 /* LIKEFilterViewController.m */,
+				633D16E51B51437000C2786A /* LIKEFilterCollectionViewCell.h */,
+				633D16E61B51437000C2786A /* LIKEFilterCollectionViewCell.m */,
+				63E58A851B4FD122004133A5 /* LIKETagsViewController.h */,
+				63E58A861B4FD122004133A5 /* LIKETagsViewController.m */,
+				63E58A8B1B4FD2FE004133A5 /* LIKESearchTagViewController.h */,
+				63E58A8C1B4FD2FE004133A5 /* LIKESearchTagViewController.m */,
+				63E58AA21B50D87D004133A5 /* LIKETransferProcessedImageProtocol.h */,
 			);
 			path = post;
 			sourceTree = "<group>";
@@ -1583,6 +1679,7 @@
 		63B3C7721B48E99B0030D5D4 /* thirdparty */ = {
 			isa = PBXGroup;
 			children = (
+				633D16F11B5167A300C2786A /* TagView */,
 				63B3C7731B48E99B0030D5D4 /* pingpp-sdk */,
 				63B3C77C1B48E99B0030D5D4 /* SMS_SDK */,
 			);
@@ -1618,6 +1715,23 @@
 				63B3C77F1B48E99B0030D5D4 /* SMS_SDK.framework */,
 			);
 			path = SMS_SDK;
+			sourceTree = "<group>";
+		};
+		63E58A921B50BF12004133A5 /* photoGallery */ = {
+			isa = PBXGroup;
+			children = (
+				63E58A931B50BF12004133A5 /* PhotoAlbumCell.h */,
+				63E58A941B50BF12004133A5 /* PhotoAlbumCell.m */,
+				63E58A951B50BF12004133A5 /* PhotoAlbumViewController.h */,
+				63E58A961B50BF12004133A5 /* PhotoAlbumViewController.m */,
+				63E58A971B50BF12004133A5 /* PhotoGellaryViewController.h */,
+				63E58A981B50BF12004133A5 /* PhotoGellaryViewController.m */,
+				63E58A991B50BF12004133A5 /* PhotoGellaryCell.h */,
+				63E58A9A1B50BF12004133A5 /* PhotoGellaryCell.m */,
+				63E58A9B1B50BF12004133A5 /* PhotoGellaryHeader.h */,
+				63E58A9C1B50BF12004133A5 /* PhotoGellaryHeader.m */,
+			);
+			path = photoGallery;
 			sourceTree = "<group>";
 		};
 		947A3FF8C71BE3BBD9A51437 /* Pods */ = {
@@ -1850,7 +1964,9 @@
 				63B3C7711B48E9410030D5D4 /* LIKEAPIProxy.m in Sources */,
 				63B3C6E21B48E49F0030D5D4 /* UIButton+Indicator.m in Sources */,
 				63B3C6BC1B48E49F0030D5D4 /* NSObject+AddProperty.m in Sources */,
+				63E58A871B4FD122004133A5 /* LIKETagsViewController.m in Sources */,
 				63B3C6D21B48E49F0030D5D4 /* NSString+UUID.m in Sources */,
+				633D16F01B51538D00C2786A /* LIKEFilterLayout.m in Sources */,
 				63B3C7291B48E49F0030D5D4 /* UIWebView+Load.m in Sources */,
 				63B3C6B31B48E49F0030D5D4 /* NSDictionary+Merge.m in Sources */,
 				63B3C78F1B48F1810030D5D4 /* LIKEMainTabBarController.m in Sources */,
@@ -1865,15 +1981,17 @@
 				63B3C6D41B48E49F0030D5D4 /* NSTimer+Blocks.m in Sources */,
 				63B3C6AC1B48E49F0030D5D4 /* NSDate+Reporting.m in Sources */,
 				63B3C6DC1B48E49F0030D5D4 /* UIBezierPath+BasicShapes.m in Sources */,
+				63E58A8D1B4FD2FE004133A5 /* LIKESearchTagViewController.m in Sources */,
 				63B3C6A51B48E49F0030D5D4 /* NSData+Base64.m in Sources */,
 				63B3C7071B48E49F0030D5D4 /* UIResponder+UIAdapt.m in Sources */,
-				630C84BB1B4EA30100B6B243 /* LIKETrendLayout.m in Sources */,
 				63B3C69F1B48E49F0030D5D4 /* NSManagedObjectContext+ObjectClear.m in Sources */,
 				63B3C6B71B48E49F0030D5D4 /* NSIndexPath+Offset.m in Sources */,
 				63B3C71D1B48E49F0030D5D4 /* UIView+Shake.m in Sources */,
 				63B3C72E1B48E49F0030D5D4 /* NSString+Helper.m in Sources */,
 				63B3C7321B48E49F0030D5D4 /* UINavigationBar+Helper.m in Sources */,
+				63E58A9F1B50BF12004133A5 /* PhotoGellaryViewController.m in Sources */,
 				63B3C6ED1B48E49F0030D5D4 /* UIImage+animatedGIF.m in Sources */,
+				633D16FC1B5167A300C2786A /* IrregularView.m in Sources */,
 				63B3C7681B48E6930030D5D4 /* LIKEUser.m in Sources */,
 				63B3C7031B48E49F0030D5D4 /* UINavigationController+StackManager.m in Sources */,
 				63B3C70C1B48E49F0030D5D4 /* UISplitViewController+QuickAccess.m in Sources */,
@@ -1905,9 +2023,11 @@
 				63B3C70F1B48E49F0030D5D4 /* UITableViewCell+NIB.m in Sources */,
 				63B3C7261B48E49F0030D5D4 /* UIWebView+Blocks.m in Sources */,
 				63B3C7661B48E6930030D5D4 /* LIKEAppContext.m in Sources */,
+				63E58AA11B50BF12004133A5 /* PhotoGellaryHeader.m in Sources */,
 				63B3C6F81B48E49F0030D5D4 /* UIImage+Resize.m in Sources */,
 				63B3C6E61B48E49F0030D5D4 /* UIColor+Modify.m in Sources */,
 				63B3C6F41B48E49F0030D5D4 /* UIImage+Merge.m in Sources */,
+				63E58A9D1B50BF12004133A5 /* PhotoAlbumCell.m in Sources */,
 				63B3C6A61B48E49F0030D5D4 /* NSData+Encrypt.m in Sources */,
 				63B3C6F31B48E49F0030D5D4 /* UIImage+GIF.m in Sources */,
 				63B3C7281B48E49F0030D5D4 /* UIWebView+JS.m in Sources */,
@@ -1916,6 +2036,8 @@
 				63B3C6DA1B48E49F0030D5D4 /* UIApplication+KeyboardFrame.m in Sources */,
 				63B3C6C91B48E49F0030D5D4 /* NSString+Emoji.m in Sources */,
 				63B3C6AD1B48E49F0030D5D4 /* NSDate+TimeAgo.m in Sources */,
+				633D16FD1B5167A300C2786A /* UIBezierPath+BasicShapes_tagview.m in Sources */,
+				63E58A8A1B4FD2A9004133A5 /* LIKEFilterViewController.m in Sources */,
 				63B3C6EC1B48E49F0030D5D4 /* UIImage+Alpha.m in Sources */,
 				63B3C6B91B48E49F0030D5D4 /* NSDecimalNumber+Extensions.m in Sources */,
 				63B3C6A21B48E49F0030D5D4 /* NSArray+Block.m in Sources */,
@@ -1925,8 +2047,10 @@
 				63B3C6E51B48E49F0030D5D4 /* UIColor+HEX.m in Sources */,
 				63B3C7061B48E49F0030D5D4 /* UIResponder+Chain.m in Sources */,
 				63B3C6B01B48E49F0030D5D4 /* NSDateFormatter+Make.m in Sources */,
+				633D16FE1B5167A300C2786A /* PulsingHaloLayer.m in Sources */,
 				63B3C6BF1B48E49F0030D5D4 /* NSObject+Blocks.m in Sources */,
 				63B3C6E91B48E49F0030D5D4 /* UIControl+ActionBlocks.m in Sources */,
+				63E58AA01B50BF12004133A5 /* PhotoGellaryCell.m in Sources */,
 				63B3C70E1B48E49F0030D5D4 /* UITableView+iOS7Style.m in Sources */,
 				63B3C6E41B48E49F0030D5D4 /* UIColor+Gradient.m in Sources */,
 				63B3C6B61B48E49F0030D5D4 /* NSFileManager+Paths.m in Sources */,
@@ -1944,6 +2068,7 @@
 				63B3C7231B48E49F0030D5D4 /* UIViewController+TopBarMessage.m in Sources */,
 				63B3C6A81B48E49F0030D5D4 /* NSData+Hash.m in Sources */,
 				63B3C6D91B48E49F0030D5D4 /* UIAlertView+Block.m in Sources */,
+				63E58A9E1B50BF12004133A5 /* PhotoAlbumViewController.m in Sources */,
 				63B3C69C1B48E49F0030D5D4 /* NSManagedObjectContext+Extensions.m in Sources */,
 				63B3C6E31B48E49F0030D5D4 /* UIButton+Submitting.m in Sources */,
 				63B3C6B11B48E49F0030D5D4 /* NSDictionary+Block.m in Sources */,
@@ -1963,6 +2088,7 @@
 				63B3C6C51B48E49F0030D5D4 /* NSSet+Block.m in Sources */,
 				63B3C7571B48E49F0030D5D4 /* LIKELikeViewController.m in Sources */,
 				63B3C71C1B48E49F0030D5D4 /* UIView+Screenshot.m in Sources */,
+				63E58A841B4FD0EA004133A5 /* LIKEImagePickerViewController.m in Sources */,
 				63B3C72B1B48E49F0030D5D4 /* WebView+Debug.m in Sources */,
 				63B3C7041B48E49F0030D5D4 /* UINavigationItem+Loading.m in Sources */,
 				63B3C6C61B48E49F0030D5D4 /* NSString+Base64.m in Sources */,
@@ -1973,6 +2099,7 @@
 				63B3C7351B48E49F0030D5D4 /* LIKELoginViewController.m in Sources */,
 				63B3C6AA1B48E49F0030D5D4 /* NSDate+Extension.m in Sources */,
 				63B3C71E1B48E49F0030D5D4 /* UIView+Toast.m in Sources */,
+				633D16FF1B5167A300C2786A /* TagView.m in Sources */,
 				632256711B0E10D100D10817 /* main.m in Sources */,
 				63B3C6CF1B48E49F0030D5D4 /* NSString+Trims.m in Sources */,
 				638907071B4A6DE600674A56 /* UIColor+nipponcolors.m in Sources */,
@@ -1980,6 +2107,7 @@
 				63B3C6C31B48E49F0030D5D4 /* NSObject+Property.m in Sources */,
 				63B3C6F91B48E49F0030D5D4 /* UIImage+RoundedCorner.m in Sources */,
 				63B3C7111B48E49F0030D5D4 /* UITextField+Select.m in Sources */,
+				633D16E71B51437000C2786A /* LIKEFilterCollectionViewCell.m in Sources */,
 				63B3C6C81B48E49F0030D5D4 /* NSString+DictionaryValue.m in Sources */,
 				63B3C7021B48E49F0030D5D4 /* UINavigationController+KeyboardFix.m in Sources */,
 				63B3C6BB1B48E49F0030D5D4 /* NSObject+Additions.m in Sources */,
@@ -1992,6 +2120,7 @@
 				63B3C7051B48E49F0030D5D4 /* UINavigationItem+Lock.m in Sources */,
 				63B3C7201B48E49F0030D5D4 /* UIViewController+DDPopUpViewController.m in Sources */,
 				63B3C6CD1B48E49F0030D5D4 /* NSString+RemoveEmoji.m in Sources */,
+				633D16ED1B5151DE00C2786A /* LIKETrendLayout.m in Sources */,
 				63B3C6CC1B48E49F0030D5D4 /* NSString+MIME.m in Sources */,
 				63B3C6C01B48E49F0030D5D4 /* NSObject+GCD.m in Sources */,
 				63B3C7171B48E49F0030D5D4 /* UIView+Debug.m in Sources */,
@@ -2008,6 +2137,7 @@
 				63B3C7011B48E49F0030D5D4 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				63B3C7121B48E49F0030D5D4 /* UITextView+PlaceHolder.m in Sources */,
 				63D326491B4BE26E007DC454 /* LIKETrendCollectionViewCell.m in Sources */,
+				63E58A811B4FCE45004133A5 /* LIKECaptureViewController.m in Sources */,
 				63B3C7551B48E49F0030D5D4 /* LIKEOnlineViewController.m in Sources */,
 				63B3C6FA1B48E49F0030D5D4 /* UIImageView+Addition.m in Sources */,
 			);

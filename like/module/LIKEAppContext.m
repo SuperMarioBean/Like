@@ -11,6 +11,14 @@
 @implementation LIKEAppContext
 #pragma mark - life cycle
 
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        _localTagsArray = [NSMutableArray array];
+    }
+    return self;
+}
+
 #pragma mark - delegate methods
 
 #pragma mark - event response
