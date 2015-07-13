@@ -27,6 +27,7 @@ typedef NS_ENUM(NSInteger, TagType) {
 @end
 
 @interface TagView : UIView
+
 @property (readwrite, nonatomic, assign) BOOL preventsPositionOutsideSuperview;
 
 @property (readwrite, nonatomic, strong) NSString* tagTitle;
@@ -35,8 +36,6 @@ typedef NS_ENUM(NSInteger, TagType) {
 @property (readwrite, nonatomic, strong) NSString* tagID;
 @property (readwrite, nonatomic, assign) BOOL editable;
 @property (readwrite, nonatomic, weak) id<TagViewDelegate> delegate;
-@property (readwrite, nonatomic, assign) BOOL isShowing;
-
 
 - (id)initWithPoint:(CGPoint)point;
 - (id)initWithPoint:(CGPoint)point isEditable:(BOOL)isEditable;

@@ -8,15 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol LIKETrendCollectionViewCellTagDataSource <NSObject>
-
-- (NSUInteger)countOfItems;
-
-- (CGSize)imageSizeForIndex:(NSUInteger)index;
-
-- (NSURL *)imageURLForIndex:(NSUInteger)index;
-
-@end
+#import "TagView.h"
 
 @interface LIKEFeedItemContentCell : UICollectionViewCell
 
@@ -24,6 +16,12 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *contentLabel;
 
-@property (readwrite, nonatomic, weak) id <LIKETrendCollectionViewCellTagDataSource> datasource;
+- (void)beginTagsUpdate;
 
+- (void)updateTagWithPoint:(CGPoint)point
+                     title:(NSString *)title
+                      type:(TagType)type
+                 direction:(TagDirection)direciton;
+
+- (void)endTagsUpdate;
 @end

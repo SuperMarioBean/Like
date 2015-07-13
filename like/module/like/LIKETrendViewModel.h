@@ -11,6 +11,7 @@
 #import "LIKEFeedItemHeader.h"
 #import "LIKEFeedItemContentCell.h"
 #import "LIKEFeedItemActionCell.h"
+#import "TagView.h"
 
 extern NSString *const LIKEFeedItemElementKindCellContent;
 extern NSString *const LIKEFeedItemElementKindCellAction;

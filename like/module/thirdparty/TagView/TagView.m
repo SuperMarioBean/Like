@@ -136,7 +136,7 @@
 }
 
 - (void)setLableText:(NSString *)text {
-    BOOL isInvert = (self.frame.origin.x+self.frame.size.width)>320;
+    BOOL isInvert = (self.frame.origin.x + self.frame.size.width) > 320;
     [self setLableText:text isInvert:isInvert];
 }
 
