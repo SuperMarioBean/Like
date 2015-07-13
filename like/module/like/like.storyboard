@@ -143,7 +143,6 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                                 <connections>
-                                    <outlet property="dataSource" destination="JwA-qk-Zqj" id="YYU-rB-LEU"/>
                                     <outlet property="delegate" destination="JwA-qk-Zqj" id="LNJ-Fk-pwp"/>
                                 </connections>
                             </collectionView>

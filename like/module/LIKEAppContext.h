@@ -9,6 +9,21 @@
 #import <Foundation/Foundation.h>
 #import "LIKEUser.h"
 
+extern NSString *const LIKETrendUserAvatarURL;
+extern NSString *const LIKETrendUserNickname;
+extern NSString *const LIKETrendUserGender;
+extern NSString *const LIKETrendUserAge;
+extern NSString *const LIKETrendUserLocation;
+extern NSString *const LIKETrendTimeline;
+extern NSString *const LIKETrendContentImageURL;
+extern NSString *const LIKETrendContentText;
+extern NSString *const LIkeTrendContentTagList;
+
+extern NSString *const LIKETagTitle;
+extern NSString *const LIKETagDirection;
+extern NSString *const LIKETagType;
+extern NSString *const LIKETagPosition;
+
 @interface LIKEAppContext : NSObject
 
 @property (readonly, nonatomic, strong) LIKEUser *user;
@@ -20,6 +35,8 @@
 @property (readwrite, nonatomic, assign) CGFloat scaledWidth;
 
 @property (readwrite, nonatomic, strong) NSMutableArray *localTagsArray;
+
+@property (readwrite, nonatomic, strong) NSMutableArray *testTrendsArray;
 
 + (instancetype)sharedInstance;
 

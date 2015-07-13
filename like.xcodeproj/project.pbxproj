@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		6308C5FA1B4ED81700669A72 /* LIKEOnlineCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6308C5F81B4ED81700669A72 /* LIKEOnlineCollectionViewCell.m */; };
 		6308C5FB1B4ED81700669A72 /* LIKEOnlineCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6308C5F91B4ED81700669A72 /* LIKEOnlineCollectionViewCell.xib */; };
-		630C84B51B4E894500B6B243 /* LIKETrendCollectionViewHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 630C84B31B4E894500B6B243 /* LIKETrendCollectionViewHeader.m */; };
-		630C84B61B4E894500B6B243 /* LIKETrendCollectionViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 630C84B41B4E894500B6B243 /* LIKETrendCollectionViewHeader.xib */; };
 		632256711B0E10D100D10817 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 632256701B0E10D100D10817 /* main.m */; };
 		632256741B0E10D100D10817 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 632256731B0E10D100D10817 /* AppDelegate.m */; };
 		6322567C1B0E10D100D10817 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6322567B1B0E10D100D10817 /* Images.xcassets */; };
@@ -23,6 +21,13 @@
 		633D16FD1B5167A300C2786A /* UIBezierPath+BasicShapes_tagview.m in Sources */ = {isa = PBXBuildFile; fileRef = 633D16F61B5167A300C2786A /* UIBezierPath+BasicShapes_tagview.m */; };
 		633D16FE1B5167A300C2786A /* PulsingHaloLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 633D16F91B5167A300C2786A /* PulsingHaloLayer.m */; };
 		633D16FF1B5167A300C2786A /* TagView.m in Sources */ = {isa = PBXBuildFile; fileRef = 633D16FB1B5167A300C2786A /* TagView.m */; };
+		633D17041B52CC4700C2786A /* LIKETrendViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 633D17031B52CC4700C2786A /* LIKETrendViewModel.m */; };
+		633D17121B536E3700C2786A /* LIKEFeedItemContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 633D17101B536E3700C2786A /* LIKEFeedItemContentCell.m */; };
+		633D17131B536E3700C2786A /* LIKEFeedItemContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 633D17111B536E3700C2786A /* LIKEFeedItemContentCell.xib */; };
+		633D17241B53716600C2786A /* LIKEFeedItemActionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 633D17221B53716600C2786A /* LIKEFeedItemActionCell.m */; };
+		633D17251B53716600C2786A /* LIKEFeedItemActionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 633D17231B53716600C2786A /* LIKEFeedItemActionCell.xib */; };
+		633D17291B53733700C2786A /* LIKEFeedItemHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 633D17271B53733700C2786A /* LIKEFeedItemHeader.m */; };
+		633D172A1B53733700C2786A /* LIKEFeedItemHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 633D17281B53733700C2786A /* LIKEFeedItemHeader.xib */; };
 		638907071B4A6DE600674A56 /* UIColor+nipponcolors.m in Sources */ = {isa = PBXBuildFile; fileRef = 638907061B4A6DE600674A56 /* UIColor+nipponcolors.m */; };
 		6389070A1B4A712000674A56 /* UIColor+section.m in Sources */ = {isa = PBXBuildFile; fileRef = 638907091B4A712000674A56 /* UIColor+section.m */; };
 		63B3C4511B48DCA40030D5D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63B3C44F1B48DCA40030D5D4 /* Main.storyboard */; };
@@ -206,8 +211,6 @@
 		63B3C7881B48E99B0030D5D4 /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63B3C77F1B48E99B0030D5D4 /* SMS_SDK.framework */; };
 		63B3C78C1B48EE790030D5D4 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 63B3C78B1B48EE790030D5D4 /* libicucore.dylib */; };
 		63B3C78F1B48F1810030D5D4 /* LIKEMainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B3C78E1B48F1810030D5D4 /* LIKEMainTabBarController.m */; };
-		63D326491B4BE26E007DC454 /* LIKETrendCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D326471B4BE26E007DC454 /* LIKETrendCollectionViewCell.m */; };
-		63D3264A1B4BE26E007DC454 /* LIKETrendCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63D326481B4BE26E007DC454 /* LIKETrendCollectionViewCell.xib */; };
 		63E58A811B4FCE45004133A5 /* LIKECaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E58A801B4FCE45004133A5 /* LIKECaptureViewController.m */; };
 		63E58A841B4FD0EA004133A5 /* LIKEImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E58A831B4FD0EA004133A5 /* LIKEImagePickerViewController.m */; };
 		63E58A871B4FD122004133A5 /* LIKETagsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E58A861B4FD122004133A5 /* LIKETagsViewController.m */; };
@@ -239,9 +242,6 @@
 		6308C5F71B4ED81700669A72 /* LIKEOnlineCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LIKEOnlineCollectionViewCell.h; sourceTree = "<group>"; };
 		6308C5F81B4ED81700669A72 /* LIKEOnlineCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LIKEOnlineCollectionViewCell.m; sourceTree = "<group>"; };
 		6308C5F91B4ED81700669A72 /* LIKEOnlineCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LIKEOnlineCollectionViewCell.xib; sourceTree = "<group>"; };
-		630C84B21B4E894500B6B243 /* LIKETrendCollectionViewHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LIKETrendCollectionViewHeader.h; sourceTree = "<group>"; };
-		630C84B31B4E894500B6B243 /* LIKETrendCollectionViewHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LIKETrendCollectionViewHeader.m; sourceTree = "<group>"; };
-		630C84B41B4E894500B6B243 /* LIKETrendCollectionViewHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LIKETrendCollectionViewHeader.xib; sourceTree = "<group>"; };
 		6322566B1B0E10D100D10817 /* like.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = like.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6322566F1B0E10D100D10817 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		632256701B0E10D100D10817 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -266,6 +266,17 @@
 		633D16F91B5167A300C2786A /* PulsingHaloLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PulsingHaloLayer.m; sourceTree = "<group>"; };
 		633D16FA1B5167A300C2786A /* TagView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagView.h; sourceTree = "<group>"; };
 		633D16FB1B5167A300C2786A /* TagView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagView.m; sourceTree = "<group>"; };
+		633D17021B52CC4700C2786A /* LIKETrendViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LIKETrendViewModel.h; sourceTree = "<group>"; };
+		633D17031B52CC4700C2786A /* LIKETrendViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LIKETrendViewModel.m; sourceTree = "<group>"; };
+		633D170F1B536E3700C2786A /* LIKEFeedItemContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LIKEFeedItemContentCell.h; sourceTree = "<group>"; };
+		633D17101B536E3700C2786A /* LIKEFeedItemContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LIKEFeedItemContentCell.m; sourceTree = "<group>"; };
+		633D17111B536E3700C2786A /* LIKEFeedItemContentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LIKEFeedItemContentCell.xib; sourceTree = "<group>"; };
+		633D17211B53716600C2786A /* LIKEFeedItemActionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LIKEFeedItemActionCell.h; sourceTree = "<group>"; };
+		633D17221B53716600C2786A /* LIKEFeedItemActionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LIKEFeedItemActionCell.m; sourceTree = "<group>"; };
+		633D17231B53716600C2786A /* LIKEFeedItemActionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LIKEFeedItemActionCell.xib; sourceTree = "<group>"; };
+		633D17261B53733700C2786A /* LIKEFeedItemHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LIKEFeedItemHeader.h; sourceTree = "<group>"; };
+		633D17271B53733700C2786A /* LIKEFeedItemHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LIKEFeedItemHeader.m; sourceTree = "<group>"; };
+		633D17281B53733700C2786A /* LIKEFeedItemHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LIKEFeedItemHeader.xib; sourceTree = "<group>"; };
 		638907051B4A6DE600674A56 /* UIColor+nipponcolors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+nipponcolors.h"; sourceTree = "<group>"; };
 		638907061B4A6DE600674A56 /* UIColor+nipponcolors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+nipponcolors.m"; sourceTree = "<group>"; };
 		638907081B4A712000674A56 /* UIColor+section.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+section.h"; sourceTree = "<group>"; };
@@ -619,9 +630,6 @@
 		63B3C78B1B48EE790030D5D4 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		63B3C78D1B48F1810030D5D4 /* LIKEMainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = LIKEMainTabBarController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		63B3C78E1B48F1810030D5D4 /* LIKEMainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = LIKEMainTabBarController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		63D326461B4BE26E007DC454 /* LIKETrendCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LIKETrendCollectionViewCell.h; sourceTree = "<group>"; };
-		63D326471B4BE26E007DC454 /* LIKETrendCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LIKETrendCollectionViewCell.m; sourceTree = "<group>"; };
-		63D326481B4BE26E007DC454 /* LIKETrendCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LIKETrendCollectionViewCell.xib; sourceTree = "<group>"; };
 		63E58A7F1B4FCE45004133A5 /* LIKECaptureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LIKECaptureViewController.h; sourceTree = "<group>"; };
 		63E58A801B4FCE45004133A5 /* LIKECaptureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LIKECaptureViewController.m; sourceTree = "<group>"; };
 		63E58A821B4FD0EA004133A5 /* LIKEImagePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LIKEImagePickerViewController.h; sourceTree = "<group>"; };
@@ -681,12 +689,17 @@
 				633D16EC1B5151DE00C2786A /* LIKETrendLayout.m */,
 				63B3C6781B48E49F0030D5D4 /* LIKETrendViewController.h */,
 				63B3C6791B48E49F0030D5D4 /* LIKETrendViewController.m */,
-				63D326461B4BE26E007DC454 /* LIKETrendCollectionViewCell.h */,
-				63D326471B4BE26E007DC454 /* LIKETrendCollectionViewCell.m */,
-				63D326481B4BE26E007DC454 /* LIKETrendCollectionViewCell.xib */,
-				630C84B21B4E894500B6B243 /* LIKETrendCollectionViewHeader.h */,
-				630C84B31B4E894500B6B243 /* LIKETrendCollectionViewHeader.m */,
-				630C84B41B4E894500B6B243 /* LIKETrendCollectionViewHeader.xib */,
+				633D170F1B536E3700C2786A /* LIKEFeedItemContentCell.h */,
+				633D17101B536E3700C2786A /* LIKEFeedItemContentCell.m */,
+				633D17111B536E3700C2786A /* LIKEFeedItemContentCell.xib */,
+				633D17211B53716600C2786A /* LIKEFeedItemActionCell.h */,
+				633D17221B53716600C2786A /* LIKEFeedItemActionCell.m */,
+				633D17231B53716600C2786A /* LIKEFeedItemActionCell.xib */,
+				633D17261B53733700C2786A /* LIKEFeedItemHeader.h */,
+				633D17271B53733700C2786A /* LIKEFeedItemHeader.m */,
+				633D17281B53733700C2786A /* LIKEFeedItemHeader.xib */,
+				633D17021B52CC4700C2786A /* LIKETrendViewModel.h */,
+				633D17031B52CC4700C2786A /* LIKETrendViewModel.m */,
 			);
 			name = trend;
 			sourceTree = "<group>";
@@ -1846,7 +1859,10 @@
 				63B3C4511B48DCA40030D5D4 /* Main.storyboard in Resources */,
 				63B3C6AF1B48E49F0030D5D4 /* NSDateTimeAgo.bundle in Resources */,
 				63B3C75F1B48E49F0030D5D4 /* post.storyboard in Resources */,
+				633D17131B536E3700C2786A /* LIKEFeedItemContentCell.xib in Resources */,
+				633D172A1B53733700C2786A /* LIKEFeedItemHeader.xib in Resources */,
 				63B3C7341B48E49F0030D5D4 /* account.storyboard in Resources */,
+				633D17251B53716600C2786A /* LIKEFeedItemActionCell.xib in Resources */,
 				6308C5FB1B4ED81700669A72 /* LIKEOnlineCollectionViewCell.xib in Resources */,
 				63B3C73B1B48E49F0030D5D4 /* discovery.storyboard in Resources */,
 				6322567F1B0E10D100D10817 /* LaunchScreen.xib in Resources */,
@@ -1856,9 +1872,7 @@
 				63B3C7861B48E99B0030D5D4 /* Pingpp.bundle in Resources */,
 				63B3C75A1B48E49F0030D5D4 /* mine.storyboard in Resources */,
 				6322567C1B0E10D100D10817 /* Images.xcassets in Resources */,
-				630C84B61B4E894500B6B243 /* LIKETrendCollectionViewHeader.xib in Resources */,
 				63B3C7871B48E99B0030D5D4 /* SMS_SDKLocalizable.strings in Resources */,
-				63D3264A1B4BE26E007DC454 /* LIKETrendCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1989,6 +2003,7 @@
 				63B3C71D1B48E49F0030D5D4 /* UIView+Shake.m in Sources */,
 				63B3C72E1B48E49F0030D5D4 /* NSString+Helper.m in Sources */,
 				63B3C7321B48E49F0030D5D4 /* UINavigationBar+Helper.m in Sources */,
+				633D17121B536E3700C2786A /* LIKEFeedItemContentCell.m in Sources */,
 				63E58A9F1B50BF12004133A5 /* PhotoGellaryViewController.m in Sources */,
 				63B3C6ED1B48E49F0030D5D4 /* UIImage+animatedGIF.m in Sources */,
 				633D16FC1B5167A300C2786A /* IrregularView.m in Sources */,
@@ -2025,6 +2040,7 @@
 				63B3C7661B48E6930030D5D4 /* LIKEAppContext.m in Sources */,
 				63E58AA11B50BF12004133A5 /* PhotoGellaryHeader.m in Sources */,
 				63B3C6F81B48E49F0030D5D4 /* UIImage+Resize.m in Sources */,
+				633D17291B53733700C2786A /* LIKEFeedItemHeader.m in Sources */,
 				63B3C6E61B48E49F0030D5D4 /* UIColor+Modify.m in Sources */,
 				63B3C6F41B48E49F0030D5D4 /* UIImage+Merge.m in Sources */,
 				63E58A9D1B50BF12004133A5 /* PhotoAlbumCell.m in Sources */,
@@ -2039,6 +2055,7 @@
 				633D16FD1B5167A300C2786A /* UIBezierPath+BasicShapes_tagview.m in Sources */,
 				63E58A8A1B4FD2A9004133A5 /* LIKEFilterViewController.m in Sources */,
 				63B3C6EC1B48E49F0030D5D4 /* UIImage+Alpha.m in Sources */,
+				633D17041B52CC4700C2786A /* LIKETrendViewModel.m in Sources */,
 				63B3C6B91B48E49F0030D5D4 /* NSDecimalNumber+Extensions.m in Sources */,
 				63B3C6A21B48E49F0030D5D4 /* NSArray+Block.m in Sources */,
 				63B3C6C21B48E49F0030D5D4 /* NSObject+MKBlockTimer.m in Sources */,
@@ -2069,12 +2086,12 @@
 				63B3C6A81B48E49F0030D5D4 /* NSData+Hash.m in Sources */,
 				63B3C6D91B48E49F0030D5D4 /* UIAlertView+Block.m in Sources */,
 				63E58A9E1B50BF12004133A5 /* PhotoAlbumViewController.m in Sources */,
+				633D17241B53716600C2786A /* LIKEFeedItemActionCell.m in Sources */,
 				63B3C69C1B48E49F0030D5D4 /* NSManagedObjectContext+Extensions.m in Sources */,
 				63B3C6E31B48E49F0030D5D4 /* UIButton+Submitting.m in Sources */,
 				63B3C6B11B48E49F0030D5D4 /* NSDictionary+Block.m in Sources */,
 				63B3C7101B48E49F0030D5D4 /* UITextField+Blocks.m in Sources */,
 				63B3C6A91B48E49F0030D5D4 /* NSData+SDDataCache.m in Sources */,
-				630C84B51B4E894500B6B243 /* LIKETrendCollectionViewHeader.m in Sources */,
 				63B3C6CB1B48E49F0030D5D4 /* NSString+Hash.m in Sources */,
 				63B3C70D1B48E49F0030D5D4 /* UITableView+FDTemplateLayoutCell.m in Sources */,
 				63B3C6B81B48E49F0030D5D4 /* NSNotificationCenter+MainThread.m in Sources */,
@@ -2136,7 +2153,6 @@
 				63B3C6BE1B48E49F0030D5D4 /* NSObject+AutoCoding.m in Sources */,
 				63B3C7011B48E49F0030D5D4 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				63B3C7121B48E49F0030D5D4 /* UITextView+PlaceHolder.m in Sources */,
-				63D326491B4BE26E007DC454 /* LIKETrendCollectionViewCell.m in Sources */,
 				63E58A811B4FCE45004133A5 /* LIKECaptureViewController.m in Sources */,
 				63B3C7551B48E49F0030D5D4 /* LIKEOnlineViewController.m in Sources */,
 				63B3C6FA1B48E49F0030D5D4 /* UIImageView+Addition.m in Sources */,
