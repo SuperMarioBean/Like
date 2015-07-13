@@ -25,7 +25,9 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *flashButton;
 
-@property (readwrite, nonatomic, copy) NSDictionary *currentPhotoInfo;
+@property (weak, nonatomic) IBOutlet UIButton *imagePickerButton;
+
+@property (readwrite, nonatomic, strong) UIImage *photoImage;
 
 @property (readwrite, nonatomic, strong) ALAssetsLibrary *assetLibrary;
 
@@ -39,7 +41,17 @@
     [super viewDidLoad];
     self.captureManager = [PBJVision sharedInstance];
     self.assetLibrary = [[ALAssetsLibrary alloc] init];
-
+    
+    ALAssetsLibrary* assetsLibrary = [[ALAssetsLibrary alloc] init];
+    [assetsLibrary enumerateGroupsWithTypes:ALAssetsGroupSavedPhotos
+                                 usingBlock:^(ALAssetsGroup *group, BOOL *stop) {
+                                     if(group){
+                                         [self.imagePickerButton setBackgroundImage:[UIImage imageWithCGImage:[group posterImage]]
+                                                                           forState:UIControlStateNormal];
+                                     }
+                                 }
+                               failureBlock:^(NSError *error) {
+                               }];
 }
 
 - (void)viewDidLayoutSubviews {
@@ -77,7 +89,8 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     NSString *identifier = segue.identifier;
     if ([identifier isEqualToString:@"filterSegue"]) {
-        // TODO: transfer photo image
+        UIViewController<LIKETransferProcessedImageProtocol> *viewController = segue.destinationViewController;
+        [viewController setImage:self.photoImage];
     }
     else if ([identifier isEqualToString:@"imagePickerSegue"]) {
         // TODO: transfer photo image
@@ -192,13 +205,12 @@
         // handle error properly
         return;
     }
-    self.currentPhotoInfo = photoDict;
     
-    
+    NSData *photoData = photoDict[PBJVisionPhotoJPEGKey];
+    NSDictionary *metadata = photoDict[PBJVisionPhotoMetadataKey];
+    self.photoImage = photoDict[PBJVisionPhotoImageKey];
+
     __weak typeof(self) weakSelf = self;
-    
-    NSData *photoData = self.currentPhotoInfo[PBJVisionPhotoJPEGKey];
-    NSDictionary *metadata = self.currentPhotoInfo[PBJVisionPhotoMetadataKey];
     [self.assetLibrary writeImageDataToSavedPhotosAlbum:photoData
                                                metadata:metadata
                                         completionBlock:^(NSURL *assetURL, NSError *error1) {
@@ -244,7 +256,6 @@
                                                                            // TODO: error handle    
                                                                        }];
                                         }];
-    self.currentPhotoInfo = nil;
 }
 
 #pragma mark - event response

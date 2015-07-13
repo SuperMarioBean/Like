@@ -63,7 +63,7 @@
                                             <action selector="capturePhotoButtonClick:" destination="zGO-j2-85Y" eventType="touchUpInside" id="Vf8-gH-dqd"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JbF-OA-qKd">
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JbF-OA-qKd">
                                         <rect key="frame" x="40" y="67" width="50" height="50"/>
                                         <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -73,6 +73,11 @@
                                         <state key="normal">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="imagePickerButtonClick:" destination="zGO-j2-85Y" eventType="touchUpInside" id="uAL-PW-JIb"/>
                                         </connections>
@@ -137,6 +142,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="flashButton" destination="XDq-6f-h5x" id="G0J-ZR-CRa"/>
+                        <outlet property="imagePickerButton" destination="JbF-OA-qKd" id="MeU-Iz-2R6"/>
                         <outlet property="previewView" destination="WVR-cs-W26" id="ZG2-ld-hdU"/>
                         <segue destination="DNN-Zi-akq" kind="push" identifier="filterSegue" id="kMo-VE-Vc8"/>
                         <segue destination="Gv8-XJ-DiO" kind="push" identifier="imagePickerSegue" id="cLq-lg-KYQ"/>
@@ -827,6 +833,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="vhh-9q-PnZ"/>
+        <segue reference="kMo-VE-Vc8"/>
     </inferredMetricsTieBreakers>
 </document>
