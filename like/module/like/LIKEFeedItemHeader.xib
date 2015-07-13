@@ -8,41 +8,41 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="wsH-GS-xPe" customClass="LIKEFeedItemHeader">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="66"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="54"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U1K-Gc-sCO">
-                    <rect key="frame" x="8" y="8" width="50" height="50"/>
+                    <rect key="frame" x="11" y="11" width="32" height="32"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="50" id="WBM-f3-wc8"/>
-                        <constraint firstAttribute="height" constant="50" id="yPP-aj-T5W"/>
+                        <constraint firstAttribute="width" constant="32" id="WBM-f3-wc8"/>
+                        <constraint firstAttribute="height" constant="32" id="yPP-aj-T5W"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                            <integer key="value" value="25"/>
+                            <integer key="value" value="16"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gb8-FD-cdJ">
-                    <rect key="frame" x="66" y="8" width="146" height="50"/>
+                    <rect key="frame" x="51" y="8" width="161" height="38"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{{nickname}}" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5gB-0Z-K8k">
-                            <rect key="frame" x="0.0" y="0.0" width="146" height="21"/>
+                            <rect key="frame" x="0.0" y="0.0" width="161" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="20.5" id="ftr-sQ-tr5"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{{gender}}{{age}}" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sbS-oE-wrS">
-                            <rect key="frame" x="0.0" y="32" width="40" height="18"/>
+                            <rect key="frame" x="0.0" y="23" width="30" height="15"/>
                             <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="40" id="fTG-f1-LYP"/>
-                                <constraint firstAttribute="height" constant="18" id="ycG-Ir-hUg"/>
+                                <constraint firstAttribute="width" constant="30" id="fTG-f1-LYP"/>
+                                <constraint firstAttribute="height" constant="15" id="ycG-Ir-hUg"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                             <userDefinedRuntimeAttributes>
@@ -52,7 +52,7 @@
                             </userDefinedRuntimeAttributes>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{{location}}" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dly-28-VJ4">
-                            <rect key="frame" x="48" y="35" width="52" height="12"/>
+                            <rect key="frame" x="38" y="24.5" width="51.5" height="12"/>
                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
@@ -70,7 +70,7 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{{timeline}}" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nxZ-l2-mPc">
-                    <rect key="frame" x="212" y="23" width="100" height="21"/>
+                    <rect key="frame" x="212" y="16" width="100" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="38c-2M-L0p"/>
                         <constraint firstAttribute="width" constant="100" id="7qw-OA-rY8"/>
@@ -82,13 +82,13 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="U1K-Gc-sCO" firstAttribute="leading" secondItem="wsH-GS-xPe" secondAttribute="leading" constant="8" id="AhH-9H-64x"/>
-                <constraint firstAttribute="bottom" secondItem="U1K-Gc-sCO" secondAttribute="bottom" constant="8" id="D7z-5t-0T2"/>
+                <constraint firstItem="U1K-Gc-sCO" firstAttribute="leading" secondItem="wsH-GS-xPe" secondAttribute="leading" constant="11" id="AhH-9H-64x"/>
+                <constraint firstAttribute="bottom" secondItem="U1K-Gc-sCO" secondAttribute="bottom" constant="11" id="D7z-5t-0T2"/>
                 <constraint firstAttribute="trailing" secondItem="nxZ-l2-mPc" secondAttribute="trailing" constant="8" id="K3P-CP-baw"/>
                 <constraint firstItem="gb8-FD-cdJ" firstAttribute="top" secondItem="wsH-GS-xPe" secondAttribute="top" constant="8" id="Mya-Ph-1nJ"/>
                 <constraint firstAttribute="bottom" secondItem="gb8-FD-cdJ" secondAttribute="bottom" constant="8" id="SYU-G1-2Ez"/>
                 <constraint firstItem="nxZ-l2-mPc" firstAttribute="leading" secondItem="gb8-FD-cdJ" secondAttribute="trailing" id="Uge-Qv-7ba"/>
-                <constraint firstItem="U1K-Gc-sCO" firstAttribute="top" secondItem="wsH-GS-xPe" secondAttribute="top" constant="8" id="XyB-VC-V50"/>
+                <constraint firstItem="U1K-Gc-sCO" firstAttribute="top" secondItem="wsH-GS-xPe" secondAttribute="top" constant="11" id="XyB-VC-V50"/>
                 <constraint firstAttribute="centerY" secondItem="nxZ-l2-mPc" secondAttribute="centerY" id="e3C-YA-XVL"/>
                 <constraint firstItem="gb8-FD-cdJ" firstAttribute="leading" secondItem="U1K-Gc-sCO" secondAttribute="trailing" constant="8" id="pIl-RL-CHJ"/>
             </constraints>
@@ -99,7 +99,7 @@
                 <outlet property="nicknameLabel" destination="5gB-0Z-K8k" id="Cme-ZC-ceJ"/>
                 <outlet property="timelineLabel" destination="nxZ-l2-mPc" id="fSn-fi-bAb"/>
             </connections>
-            <point key="canvasLocation" x="179" y="211"/>
+            <point key="canvasLocation" x="179" y="212.5"/>
         </collectionReusableView>
     </objects>
 </document>

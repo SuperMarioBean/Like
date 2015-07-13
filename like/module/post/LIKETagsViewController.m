@@ -34,6 +34,7 @@
 @property (readwrite, getter=isProcessAnimating, nonatomic, assign) BOOL processAnimating;
 @property (readwrite, getter=isButtonAnimating, nonatomic, assign) BOOL buttonAnimating;
 
+@property (readwrite, nonatomic, strong) NSDictionary *trendDictionary;
 
 @end
 
@@ -95,7 +96,7 @@
         self.currentTagView = nil;
     }
     
-    [self.tags delete:tagView];
+    [self.tags removeObject:tagView];
 }
 
 #pragma mark SearchDelegate
@@ -116,6 +117,34 @@
 #pragma mark - event response
 
 - (IBAction)publishButtonClick:(id)sender {
+    NSMutableArray *tagsArray = [NSMutableArray array];
+    for (TagView *tagView in self.tags) {
+        NSDictionary *dictionary = @{LIKETagTitle: tagView.tagTitle,
+                                     LIKETagType: @(tagView.type),
+                                     LIKETagDirection: @(tagView.direction),
+                                     LIKETagPosition: NSStringFromCGPoint(tagView.center)
+                                     };
+        [tagsArray addObject:dictionary];
+    }
+    
+    UIImage *thumbnail = [self.image thumbnailImage:32 transparentBorder:0 cornerRadius:0 interpolationQuality:kCGInterpolationHigh];
+    NSDictionary *upload = @{LIKETrendUserAvatarURL: [NSNull null],
+                             LIKETrendUserNickname: @"我",
+                             LIKETrendUserGender: @YES,
+                             LIKETrendUserAge: @(27),
+                             LIKETrendTimeline: [NSDate date],
+                             LIKETrendUserLocation: @"上海",
+                             LIKETrendContentImageURL: [NSNull null],
+                             LIKETrendContentImage: self.image,
+                             LIKETrendContentText: self.contentTextField.text,
+                             LIkeTrendContentTagList: tagsArray,
+                             LIKEUploadThumbnailImage: thumbnail,
+                             LIKEUploadProgress: @(2),
+                             LIKEUploadStatus: @(0)
+                             };
+
+    [[LIKEAppContext sharedInstance].testUploadTrendsArray insertObject:upload atIndex:0];
+    
     [self performSegueWithIdentifier:@"publishUnwindSegue" sender:self];
 }
 
@@ -150,8 +179,7 @@
     if (self.contentTextField.isFirstResponder) {
         [self.contentTextField resignFirstResponder];
     }
-    else
-    {
+    else {
         if (self.isProcessAnimating) {
             return;
         }

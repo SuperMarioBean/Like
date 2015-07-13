@@ -19,6 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.delegate = self;
+    
+    self.selectedIndex = 1;
     [[UITabBar appearance] setBackgroundImage:[UIImage imageWithColor:[UIColor shironeriColor]]];
     [[UITabBar appearance] setShadowImage:[[UIImage alloc] init]];
 }
@@ -54,7 +56,10 @@
 #pragma mark - event response
 
 - (IBAction)mainUnwind:(UIStoryboardSegue *)unwindSegue {
-    NSLog(@"main unwind");
+    NSString *identifier = unwindSegue.identifier;
+    if ([identifier isEqualToString:@"publishUnwindSegue"]) {
+        self.selectedIndex = 1;
+    }
 }
 
 #pragma mark - private methods

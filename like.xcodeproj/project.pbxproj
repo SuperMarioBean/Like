@@ -28,6 +28,8 @@
 		633D17251B53716600C2786A /* LIKEFeedItemActionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 633D17231B53716600C2786A /* LIKEFeedItemActionCell.xib */; };
 		633D17291B53733700C2786A /* LIKEFeedItemHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 633D17271B53733700C2786A /* LIKEFeedItemHeader.m */; };
 		633D172A1B53733700C2786A /* LIKEFeedItemHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 633D17281B53733700C2786A /* LIKEFeedItemHeader.xib */; };
+		6354264D1B53B8DA00B01A63 /* LIKEFeedItemUploadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6354264B1B53B8DA00B01A63 /* LIKEFeedItemUploadCell.m */; };
+		6354264E1B53B8DA00B01A63 /* LIKEFeedItemUploadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6354264C1B53B8DA00B01A63 /* LIKEFeedItemUploadCell.xib */; };
 		638907071B4A6DE600674A56 /* UIColor+nipponcolors.m in Sources */ = {isa = PBXBuildFile; fileRef = 638907061B4A6DE600674A56 /* UIColor+nipponcolors.m */; };
 		6389070A1B4A712000674A56 /* UIColor+section.m in Sources */ = {isa = PBXBuildFile; fileRef = 638907091B4A712000674A56 /* UIColor+section.m */; };
 		63B3C4511B48DCA40030D5D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63B3C44F1B48DCA40030D5D4 /* Main.storyboard */; };
@@ -277,6 +279,9 @@
 		633D17261B53733700C2786A /* LIKEFeedItemHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LIKEFeedItemHeader.h; sourceTree = "<group>"; };
 		633D17271B53733700C2786A /* LIKEFeedItemHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LIKEFeedItemHeader.m; sourceTree = "<group>"; };
 		633D17281B53733700C2786A /* LIKEFeedItemHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LIKEFeedItemHeader.xib; sourceTree = "<group>"; };
+		6354264A1B53B8DA00B01A63 /* LIKEFeedItemUploadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LIKEFeedItemUploadCell.h; sourceTree = "<group>"; };
+		6354264B1B53B8DA00B01A63 /* LIKEFeedItemUploadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LIKEFeedItemUploadCell.m; sourceTree = "<group>"; };
+		6354264C1B53B8DA00B01A63 /* LIKEFeedItemUploadCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LIKEFeedItemUploadCell.xib; sourceTree = "<group>"; };
 		638907051B4A6DE600674A56 /* UIColor+nipponcolors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+nipponcolors.h"; sourceTree = "<group>"; };
 		638907061B4A6DE600674A56 /* UIColor+nipponcolors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+nipponcolors.m"; sourceTree = "<group>"; };
 		638907081B4A712000674A56 /* UIColor+section.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+section.h"; sourceTree = "<group>"; };
@@ -689,6 +694,9 @@
 				633D16EC1B5151DE00C2786A /* LIKETrendLayout.m */,
 				63B3C6781B48E49F0030D5D4 /* LIKETrendViewController.h */,
 				63B3C6791B48E49F0030D5D4 /* LIKETrendViewController.m */,
+				6354264A1B53B8DA00B01A63 /* LIKEFeedItemUploadCell.h */,
+				6354264B1B53B8DA00B01A63 /* LIKEFeedItemUploadCell.m */,
+				6354264C1B53B8DA00B01A63 /* LIKEFeedItemUploadCell.xib */,
 				633D170F1B536E3700C2786A /* LIKEFeedItemContentCell.h */,
 				633D17101B536E3700C2786A /* LIKEFeedItemContentCell.m */,
 				633D17111B536E3700C2786A /* LIKEFeedItemContentCell.xib */,
@@ -1864,6 +1872,7 @@
 				63B3C7341B48E49F0030D5D4 /* account.storyboard in Resources */,
 				633D17251B53716600C2786A /* LIKEFeedItemActionCell.xib in Resources */,
 				6308C5FB1B4ED81700669A72 /* LIKEOnlineCollectionViewCell.xib in Resources */,
+				6354264E1B53B8DA00B01A63 /* LIKEFeedItemUploadCell.xib in Resources */,
 				63B3C73B1B48E49F0030D5D4 /* discovery.storyboard in Resources */,
 				6322567F1B0E10D100D10817 /* LaunchScreen.xib in Resources */,
 				63B3C74E1B48E49F0030D5D4 /* like.storyboard in Resources */,
@@ -2032,6 +2041,7 @@
 				63B3C6EA1B48E49F0030D5D4 /* UIControl+Block.m in Sources */,
 				63B3C72F1B48E49F0030D5D4 /* UICollectionView+Helper.m in Sources */,
 				63B3C6D01B48E49F0030D5D4 /* NSString+UrlEncode.m in Sources */,
+				6354264D1B53B8DA00B01A63 /* LIKEFeedItemUploadCell.m in Sources */,
 				63B3C6BD1B48E49F0030D5D4 /* NSObject+AssociatedObject.m in Sources */,
 				63B3C6A11B48E49F0030D5D4 /* CLLocationManager+Blocks.m in Sources */,
 				63B3C70A1B48E49F0030D5D4 /* UIScrollView+Pages.m in Sources */,

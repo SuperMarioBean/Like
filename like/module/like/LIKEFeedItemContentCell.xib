@@ -9,10 +9,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="LIKEFeedItemContentCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="411"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="355"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="411"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="355"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7YM-hq-zJr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
@@ -21,7 +21,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{{content}}" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="cVW-fK-W7z">
-                        <rect key="frame" x="0.0" y="328" width="320" height="83"/>
+                        <rect key="frame" x="4" y="324" width="312" height="27"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
@@ -30,20 +30,20 @@
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <constraints>
-                <constraint firstItem="cVW-fK-W7z" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="2T9-fb-1td"/>
-                <constraint firstAttribute="bottom" secondItem="cVW-fK-W7z" secondAttribute="bottom" id="9IZ-id-bby"/>
+                <constraint firstItem="cVW-fK-W7z" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="4" id="2T9-fb-1td"/>
+                <constraint firstAttribute="bottom" secondItem="cVW-fK-W7z" secondAttribute="bottom" constant="4" id="9IZ-id-bby"/>
                 <constraint firstItem="7YM-hq-zJr" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="LoK-XE-msf"/>
                 <constraint firstAttribute="trailing" secondItem="7YM-hq-zJr" secondAttribute="trailing" id="Pmi-36-tyA"/>
                 <constraint firstItem="7YM-hq-zJr" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="b7m-hF-Dd6"/>
-                <constraint firstItem="cVW-fK-W7z" firstAttribute="top" secondItem="7YM-hq-zJr" secondAttribute="bottom" constant="8" id="irz-MR-xj0"/>
-                <constraint firstAttribute="trailing" secondItem="cVW-fK-W7z" secondAttribute="trailing" id="jbE-yM-mmh"/>
+                <constraint firstItem="cVW-fK-W7z" firstAttribute="top" secondItem="7YM-hq-zJr" secondAttribute="bottom" constant="4" id="irz-MR-xj0"/>
+                <constraint firstAttribute="trailing" secondItem="cVW-fK-W7z" secondAttribute="trailing" constant="4" id="jbE-yM-mmh"/>
             </constraints>
-            <size key="customSize" width="301" height="411"/>
+            <size key="customSize" width="301" height="355"/>
             <connections>
                 <outlet property="contentLabel" destination="cVW-fK-W7z" id="JtB-UE-g0I"/>
                 <outlet property="photoImageView" destination="7YM-hq-zJr" id="prU-2X-aKZ"/>
             </connections>
-            <point key="canvasLocation" x="301" y="312.5"/>
+            <point key="canvasLocation" x="301" y="284.5"/>
         </collectionViewCell>
     </objects>
 </document>

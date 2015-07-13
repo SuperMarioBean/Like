@@ -30,12 +30,14 @@
     
     [missingSections enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
         
-        NSIndexPath *indexPath = [NSIndexPath indexPathForItem:0 inSection:idx];
-        
-        UICollectionViewLayoutAttributes *layoutAttributes = [self layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionHeader atIndexPath:indexPath];
-        
-        [answer addObject:layoutAttributes];
-        
+        if (idx != 0) {
+            NSIndexPath *indexPath = [NSIndexPath indexPathForItem:0 inSection:idx];
+            
+            UICollectionViewLayoutAttributes *layoutAttributes = [self layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionHeader atIndexPath:indexPath];
+            
+            [answer addObject:layoutAttributes];
+
+        }        
     }];
     
     for (UICollectionViewLayoutAttributes *layoutAttributes in answer) {

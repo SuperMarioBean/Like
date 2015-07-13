@@ -26,6 +26,10 @@ NSString *const LIKETagDirection = @"tagDirection";
 NSString *const LIKETagType = @"tagType";
 NSString *const LIKETagPosition = @"tagPostion";
 
+NSString *const LIKEUploadThumbnailImage = @"uploadThumbnailImage";
+NSString *const LIKEUploadProgress = @"uploadProgress";
+NSString *const LIKEUploadStatus = @"uploadStatus";
+
 @interface LIKEAppContext ()
 
 @end
@@ -126,6 +130,13 @@ NSString *const LIKETagPosition = @"tagPostion";
         [_testTrendsArray addObject:text3];
     }
     return _testTrendsArray;
+}
+
+- (NSMutableArray *)testUploadTrendsArray {
+    if (!_testUploadTrendsArray) {
+        _testUploadTrendsArray = [NSMutableArray array];
+    }
+    return _testUploadTrendsArray;
 }
 
 #pragma mark - api methods

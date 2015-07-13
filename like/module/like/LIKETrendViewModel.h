@@ -11,13 +11,19 @@
 #import "LIKEFeedItemHeader.h"
 #import "LIKEFeedItemContentCell.h"
 #import "LIKEFeedItemActionCell.h"
+#import "LIKEFeedItemUploadCell.h"
 #import "TagView.h"
+
+//extern NSString *const LIKEFeedItemSectionKindSectionUpload;
+//extern NSString *const LIKEFeedItemSectionKindSectionFeed;
 
 extern NSString *const LIKEFeedItemElementKindCellContent;
 extern NSString *const LIKEFeedItemElementKindCellAction;
+extern NSString *const LIKEFeedItemElementKindCellUpload;
 
 extern NSString *const LIKEFeedItemHeaderIdentifier;
 
+extern NSString *const LIKEFeedItemUploadCellIdentifier;
 extern NSString *const LIKEFeedItemContentCellIdentifier;
 extern NSString *const LIKEFeedItemActionCellIdentifier;
 
@@ -25,7 +31,8 @@ extern NSString *const LIKEFeedItemFooterIdentifier;
 
 @interface LIKETrendViewModel : NSObject <UICollectionViewDataSource>
 
-- (instancetype)initWithFeedsArray:(NSMutableArray *)feedsArray;
+- (instancetype)initWithFeedsArray:(NSMutableArray *)feedsArray
+                      uploadsArray:(NSMutableArray *)uploadsArray;
 
 - (NSInteger)numberOfSections;
 
@@ -34,9 +41,15 @@ extern NSString *const LIKEFeedItemFooterIdentifier;
 - (id)objectForIndexPath:(NSIndexPath *)indexPath;
 
 - (NSString *)cellKindForIndexPath:(NSIndexPath *)indexPath;
+//- (NSString *)sectionKindForIndexPath:(NSIndexPath *)indexPath;
 
-- (void)configureCell:(UICollectionViewCell *)collectionViewCell kind:(NSString *)kind indexPath:(NSIndexPath *)indexPath;
+- (void)configureCollectionView:(UICollectionView *)collectionView
+                           cell:(UICollectionViewCell *)collectionViewCell
+                           kind:(NSString *)kind
+                      indexPath:(NSIndexPath *)indexPath;
 
-- (void)configureReusableView:(UICollectionReusableView *)collectionReusableView kind:(NSString *)kind indexPath:(NSIndexPath *)indexPath;
-
+- (void)configureCollectionView:(UICollectionView *)collectionView
+                   reusableView:(UICollectionReusableView *)collectionReusableView
+                           kind:(NSString *)kind
+                      indexPath:(NSIndexPath *)indexPath;
 @end

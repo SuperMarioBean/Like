@@ -11,7 +11,7 @@
 #import "LIKETrendLayout.h"
 #import "LIKETrendViewModel.h"
 
-#define LIKECellAcitonHeight 46
+#define LIKECellAcitonHeight 44
 
 @interface LIKETrendViewController () <UICollectionViewDelegateFlowLayout>
 
@@ -29,6 +29,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self.collectionView registerNib:[UINib nibWithNibName:@"LIKEFeedItemUploadCell" bundle:nil]
+          forCellWithReuseIdentifier:LIKEFeedItemUploadCellIdentifier];
     [self.collectionView registerNib:[UINib nibWithNibName:@"LIKEFeedItemContentCell" bundle:nil]
           forCellWithReuseIdentifier:LIKEFeedItemContentCellIdentifier];
     [self.collectionView registerNib:[UINib nibWithNibName:@"LIKEFeedItemActionCell" bundle:nil]
@@ -37,8 +39,6 @@
     [self.collectionView registerNib:[UINib nibWithNibName:@"LIKEFeedItemHeader" bundle:nil]
             forSupplementaryViewOfKind:UICollectionElementKindSectionHeader
                    withReuseIdentifier:LIKEFeedItemHeaderIdentifier];
-    
-    self.trendLayout.headerReferenceSize = CGSizeMake(CGRectGetWidth(self.collectionView.frame), 66);
     
     self.viewModel = [[LIKETrendViewModel alloc] init];
     self.collectionView.dataSource = self.viewModel;
@@ -55,6 +55,16 @@
     self.collectionView.scrollIndicatorInsets = self.collectionView.contentInset;
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    if ([LIKEAppContext sharedInstance].testUploadTrendsArray.count) {
+        [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:1]
+                                    atScrollPosition:UICollectionViewScrollPositionTop
+                                            animated:NO];
+        [self.collectionView reloadSections:[NSIndexSet indexSetWithIndex:0]];
+    }
+}
+
 #pragma mark - delegate methods
 
 #pragma mark UICollectionViewDelegateFlowLayout
@@ -68,7 +78,8 @@
                                                   indexPath:indexPath
                                                  fixedWidth:CGRectGetWidth(self.collectionView.frame)
                                               configuration:^(id cell) {
-                                                  [self.viewModel configureCell:cell
+                                                  [self.viewModel configureCollectionView:collectionView
+                                                                                     cell:cell
                                                                            kind:LIKEFeedItemElementKindCellContent
                                                                       indexPath:indexPath];
                                               }];
@@ -76,8 +87,18 @@
     else if ([kind isEqualToString:LIKEFeedItemElementKindCellAction]) {
         size = CGSizeMake(CGRectGetWidth(self.collectionView.frame), LIKECellAcitonHeight);
     }
+    else if ([kind isEqualToString:LIKEFeedItemElementKindCellUpload]) {
+        size = CGSizeMake(CGRectGetWidth(self.collectionView.frame), LIKECellAcitonHeight);
+    }
     
     return size;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
+    if (section != 0) {
+        return CGSizeMake(CGRectGetWidth(self.collectionView.frame), 54);
+    }
+    return CGSizeMake(0, 0);
 }
 
 #pragma mark - event response

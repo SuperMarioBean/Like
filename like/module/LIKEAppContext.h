@@ -16,6 +16,7 @@ extern NSString *const LIKETrendUserAge;
 extern NSString *const LIKETrendUserLocation;
 extern NSString *const LIKETrendTimeline;
 extern NSString *const LIKETrendContentImageURL;
+extern NSString *const LIKETrendContentImage;
 extern NSString *const LIKETrendContentText;
 extern NSString *const LIkeTrendContentTagList;
 
@@ -23,6 +24,10 @@ extern NSString *const LIKETagTitle;
 extern NSString *const LIKETagDirection;
 extern NSString *const LIKETagType;
 extern NSString *const LIKETagPosition;
+
+extern NSString *const LIKEUploadThumbnailImage;
+extern NSString *const LIKEUploadProgress;
+extern NSString *const LIKEUploadStatus;
 
 @interface LIKEAppContext : NSObject
 
@@ -37,6 +42,8 @@ extern NSString *const LIKETagPosition;
 @property (readwrite, nonatomic, strong) NSMutableArray *localTagsArray;
 
 @property (readwrite, nonatomic, strong) NSMutableArray *testTrendsArray;
+
+@property (readwrite, nonatomic, strong) NSMutableArray *testUploadTrendsArray;
 
 + (instancetype)sharedInstance;
 
