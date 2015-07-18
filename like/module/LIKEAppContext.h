@@ -9,6 +9,20 @@
 #import <Foundation/Foundation.h>
 #import "LIKEUser.h"
 
+
+typedef NS_ENUM(NSInteger, eLIKEApplyStyle) {
+    eLIKEApplyStyleFriend = 0,
+    eLIKEApplyStyleGroupInvitation,
+    eLIKEApplyStyleJoinGroup,
+};
+
+extern NSString *const LIKEApplyTitle;
+extern NSString *const LIKEApplyUsername;
+extern NSString *const LIKEApplyGroupName;
+extern NSString *const LIKEApplyGroupID;
+extern NSString *const LIKEApplyMessage;
+extern NSString *const LIKEApplyStyle;
+
 extern NSString *const LIKETrendUserAvatarURL;
 extern NSString *const LIKETrendUserNickname;
 extern NSString *const LIKETrendUserGender;
@@ -29,15 +43,11 @@ extern NSString *const LIKEUploadThumbnailImage;
 extern NSString *const LIKEUploadProgress;
 extern NSString *const LIKEUploadStatus;
 
-@interface LIKEAppContext : NSObject
+@interface LIKEAppContext : NSObject <EMChatManagerDelegate>
 
 @property (readonly, nonatomic, strong) LIKEUser *user;
 
 @property (readonly, getter=isReachable, nonatomic, assign) BOOL reachable;
-
-@property (readwrite, nonatomic, assign) CGFloat width;
-
-@property (readwrite, nonatomic, assign) CGFloat scaledWidth;
 
 @property (readwrite, nonatomic, strong) NSMutableArray *localTagsArray;
 
@@ -46,5 +56,7 @@ extern NSString *const LIKEUploadStatus;
 @property (readwrite, nonatomic, strong) NSMutableArray *testUploadTrendsArray;
 
 + (instancetype)sharedInstance;
+
+- (void)didReceiveRemoteNotification:(NSDictionary *)userInfo;
 
 @end

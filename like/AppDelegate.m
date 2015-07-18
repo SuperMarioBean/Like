@@ -7,8 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "AppDelegate+EaseMob.h"
 
-#import "HockeySDK.h"
 #import <SMS_SDK/SMS_SDK.h>
 
 #ifndef DEBUG
@@ -23,11 +23,6 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-    [[BITHockeyManager sharedHockeyManager] configureWithIdentifier:@"994ffaf567c693824821629aabb9f62f"];
-    [[BITHockeyManager sharedHockeyManager] startManager];
-    [[BITHockeyManager sharedHockeyManager].authenticator authenticateInstallation];
-
     
 #ifndef DEBUG
     [FIR handleCrashWithKey:@"c360dd80066422b3e11b86d45b55d2fe"];
@@ -37,8 +32,8 @@
     
     [SMS_SDK registerApp:@"812383acc169" withSecret:@"72e728e8b96ade2ce52f7b4e387fcf57"];
     
-    initUser();
-    
+    [self easemobApplication:application didFinishLaunchingWithOptions:launchOptions];
+        
     // MAKR: 减少并发下载数量
     [SDWebImageDownloader sharedDownloader].maxConcurrentDownloads = 2;
     

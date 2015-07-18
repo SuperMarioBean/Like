@@ -14,6 +14,8 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumberTextField;
 
+@property (readwrite, nonatomic, strong) LIKEUser *user;
+
 @end
 
 @implementation LIKERegisterViewController
@@ -21,6 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.user = [LIKEAppContext sharedInstance].user;
     // Do any additional setup after loading the view.
 }
 
@@ -42,7 +45,7 @@
     [self touchesBegan:nil withEvent:nil];
     
     if ([LIKEHelper verifyPhoneNumber:self.phoneNumberTextField.text]) {
-        __user.phoneNumber = self.phoneNumberTextField.text;
+        self.user.phoneNumber = self.phoneNumberTextField.text;
         [self performSegueWithIdentifier:@"phoneNumberVerifySegue" sender:self];
     }
     else {

@@ -29,6 +29,8 @@ static NSString *kOtherCell = @"otherCell";     // the remaining cells at the en
 @property (weak, nonatomic) IBOutlet UIView *privacyPolicyView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *betweenBirthdayAndPrivacyPolicyConstrait;
 
+@property (readwrite, nonatomic, strong) LIKEUser *user;
+
 @end
 
 @implementation LIKEPersonalInfoViewController
@@ -36,6 +38,7 @@ static NSString *kOtherCell = @"otherCell";     // the remaining cells at the en
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.user = [LIKEAppContext sharedInstance].user;
     self.navigationItem.hidesBackButton = YES;
     
     [self.privacyPolicyButton setTitle:@" " forState:UIControlStateNormal];
@@ -92,11 +95,11 @@ static NSString *kOtherCell = @"otherCell";     // the remaining cells at the en
     BOOL checkTermFlag = [self.privacyPolicyButton.titleLabel.text isEqualToString:@"√"];
     
     if (usernameFlag && passwordFlag && birthdayFlag && checkTermFlag) {
-        __user.username = self.usernameTextField.text;
-        __user.password = self.passwordTextField.text;
-        __user.male = self.genderSegmentedControl.selectedSegmentIndex? NO: YES;
-        __user.birthday = currentSelectedDate;
-        __user.login = YES;
+        self.user.username = self.usernameTextField.text;
+        self.user.password = self.passwordTextField.text;
+        self.user.male = self.genderSegmentedControl.selectedSegmentIndex? NO: YES;
+        self.user.birthday = currentSelectedDate;
+        self.user.login = YES;
         [self performSegueWithIdentifier:@"registerUnwindSegue" sender:self];
     }
     else {

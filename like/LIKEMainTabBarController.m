@@ -19,16 +19,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.delegate = self;
-    
     self.selectedIndex = 1;
-    [[UITabBar appearance] setBackgroundImage:[UIImage imageWithColor:[UIColor shironeriColor]]];
-    [[UITabBar appearance] setShadowImage:[[UIImage alloc] init]];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    if (!__user.isLogin) {
+    if (![LIKEAppContext sharedInstance].user.isLogin) {
         [self performSegueWithIdentifier:@"accountSegue" sender:self];
     }
 }

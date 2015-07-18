@@ -10,6 +10,13 @@
 
 #import "TagView.h"
 
+NSString *const LIKEApplyTitle = @"title";
+NSString *const LIKEApplyUsername = @"username";
+NSString *const LIKEApplyGroupName = @"groupName";
+NSString *const LIKEApplyGroupID = @"groupID";
+NSString *const LIKEApplyMessage = @"applyMessage";
+NSString *const LIKEApplyStyle = @"applyStyle";
+
 NSString *const LIKETrendUserAvatarURL = @"userAvatarURL";
 NSString *const LIKETrendUserNickname = @"userNickname";
 NSString *const LIKETrendUserGender = @"userGender";
@@ -41,6 +48,7 @@ NSString *const LIKEUploadStatus = @"uploadStatus";
 - (instancetype)init {
     self = [super init];
     if (self) {
+        _user = [[LIKEUser alloc] init];;
     }
     return self;
 }
@@ -150,5 +158,9 @@ NSString *const LIKEUploadStatus = @"uploadStatus";
     });
     return sharedInstance;
 }
+
+
+
+
 
 @end

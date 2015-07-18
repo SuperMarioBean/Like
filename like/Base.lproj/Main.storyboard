@@ -9,7 +9,7 @@
         <scene sceneID="TPi-Xe-do1">
             <objects>
                 <navigationController id="aa0-dh-woc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="聊天" id="27t-lS-E1C"/>
+                    <tabBarItem key="tabBarItem" title="聊天" image="chat" id="27t-lS-E1C"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="psa-eA-emv">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -70,11 +70,11 @@
             </objects>
             <point key="canvasLocation" x="-1286" y="767"/>
         </scene>
-        <!--LIKE-->
+        <!--Like-->
         <scene sceneID="EUc-EQ-tW6">
             <objects>
                 <navigationController id="q3a-Md-gbc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="LIKE" id="IuN-aM-JXT"/>
+                    <tabBarItem key="tabBarItem" title="Like" image="like" id="IuN-aM-JXT"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0Pt-W7-mp9">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -110,7 +110,7 @@
         <scene sceneID="gW3-BC-2vi">
             <objects>
                 <navigationController id="AU8-3m-kHF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="我的" id="SCv-9C-x01"/>
+                    <tabBarItem key="tabBarItem" title="我的" image="mine" id="SCv-9C-x01"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Y56-Ei-CsK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -230,11 +230,34 @@
                         <segue destination="6fW-ZI-Aqr" kind="relationship" relationship="viewControllers" id="8m6-3d-MIm"/>
                         <segue destination="du5-ou-G3w" kind="relationship" relationship="viewControllers" id="BEm-E0-rd4"/>
                         <segue destination="AU8-3m-kHF" kind="relationship" relationship="viewControllers" id="4jQ-kx-9U6"/>
+                        <segue destination="H0e-eG-4Ug" kind="relationship" relationship="viewControllers" id="TGZ-bK-qtJ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JSv-Y6-pWq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1286" y="-138"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="qhA-Uh-4Wl">
+            <objects>
+                <viewController id="H0e-eG-4Ug" customClass="RBStoryboardLink" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SnD-wf-oW3"/>
+                        <viewControllerLayoutGuide type="bottom" id="4VX-7n-TEg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3e4-Qg-pAn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="EJM-uu-NxT"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="storyboardName" value="chat"/>
+                    </userDefinedRuntimeAttributes>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9dJ-NX-tcR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2212" y="50"/>
         </scene>
         <!--Storyboard Link-->
         <scene sceneID="nG6-dz-wKN">
@@ -258,6 +281,11 @@
             <point key="canvasLocation" x="-688" y="-138"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="chat" width="20" height="18"/>
+        <image name="like" width="30" height="30"/>
+        <image name="mine" width="36" height="36"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

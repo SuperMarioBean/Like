@@ -3,7 +3,7 @@ platform :ios, '7.0'
 target :like do
     # 基础框架
     ## 环信集成(IM和实时语音)
-    pod 'EaseMobSDKFull'
+    pod 'EaseMobSDK'
 
     ## 支付
     pod 'Pingpp/Alipay', '~> 2.0.5'
@@ -41,6 +41,10 @@ target :like do
     pod 'CHTCollectionViewWaterfallLayout', '~> 0.9.1'
     #### 缓存高度
     pod 'UICollectionView-ARDynamicHeightLayoutCell', :git => 'https://github.com/SuperMarioBean/UICollectionView-ARDynamicHeightLayoutCell.git'
+    #### 进度条
+    pod 'MBProgressHUD', '~> 0.9.1'
+    #### 进度条扩展
+    pod 'MBProgressHUDExtensions@donly', '~> 0.3'
 
     #  开发辅助
     ##   UI分析

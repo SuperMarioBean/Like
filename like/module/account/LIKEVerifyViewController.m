@@ -21,7 +21,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *textLabel;
 
 @property (readwrite, nonatomic, strong) NSTimer *updateTimer;
+
 @property (weak, nonatomic) IBOutlet UIButton *fetchVerifyCodeButton;
+
+@property (readwrite, nonatomic, strong) LIKEUser *user;
 
 @end
 
@@ -30,8 +33,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.resetPasswordTextField.hidden = !__user.isForgetPassword;
-    self.textLabel.text = [NSString stringWithFormat:@"系统将会发送验证码短信到您的手机%@", __user.phoneNumber];
+    self.user = [LIKEAppContext sharedInstance].user;
+    self.resetPasswordTextField.hidden = !self.user.isForgetPassword;
+    self.textLabel.text = [NSString stringWithFormat:@"系统将会发送验证码短信到您的手机%@", self.user.phoneNumber];
     
    
 }
@@ -57,9 +61,8 @@
 
 - (IBAction)nextbarButtonClick:(id)sender {
     [self touchesBegan:nil withEvent:nil];
-    
     if([LIKEHelper verifyDigistsCode:self.verifyCodeTextField.text]) {
-        if (__user.isForgetPassword) {
+        if (self.user.isForgetPassword) {
             if ([LIKEHelper verifyPassword:self.resetPasswordTextField.text]) {
             // TODO: should make the new password go ourserver with verify code
             }
@@ -76,17 +79,17 @@
         
         // TODO: these code need to be refactor
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-        NSDictionary *parameters = @{@"phoneNumber": __user.phoneNumber,
+        NSDictionary *parameters = @{@"phoneNumber": self.user.phoneNumber,
                                      @"digistsCode": self.verifyCodeTextField.text,
                                      @"zone": @"86"};
         [manager POST:@"http://xiaomu.ren/verify" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-            if (__user.isForgetPassword) {
+            if (self.user.isForgetPassword) {
                 NSString *message = @"你的验证码验证成功, 你需要返回登陆界面使用新密码重新登陆一次";
                 UIAlertView *alertView = [[UIAlertView alloc] initWithTitleType:UIAlertTitleConfirm
                                                                         message:message
                                                                      buttonType:UIAlertButtonOk
                                                                           block:^{
-                                                                              __user.password = self.resetPasswordTextField.text;
+                                                                              self.user.password = self.resetPasswordTextField.text;
                                                                               [self performSegueWithIdentifier:@"verifyUnwindSegue" sender:self];
                                                                           }];
                 [alertView show];
@@ -115,7 +118,7 @@
 
 - (IBAction)fetchVerifyCodeButtonClick:(id)sender {
     self.fetchVerifyCodeButton.enabled = NO;
-    [SMS_SDK getVerificationCodeBySMSWithPhone:__user.phoneNumber
+    [SMS_SDK getVerificationCodeBySMSWithPhone:self.user.phoneNumber
                                           zone:@"86"
                                         result:^(SMS_SDKError *error)
      {

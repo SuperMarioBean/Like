@@ -14,7 +14,7 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 
-
+@property (readwrite, nonatomic, strong) LIKEUser *user;
 
 @end
 
@@ -23,6 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.user = [LIKEAppContext sharedInstance].user;
     // Do any additional setup after loading the view.
 }
 
@@ -55,9 +56,9 @@
     BOOL phoneNumberFlag = [LIKEHelper verifyPhoneNumber:self.phoneNumberTextField.text];
     BOOL passwordFlag = [LIKEHelper verifyPassword:self.passwordTextField.text];
     if (phoneNumberFlag && passwordFlag) {
-        __user.phoneNumber = self.phoneNumberTextField.text;
-        __user.password = self.passwordTextField.text;
-        __user.login = YES;
+        self.user.phoneNumber = self.phoneNumberTextField.text;
+        self.user.password = self.passwordTextField.text;
+        self.user.login = YES;
         [self performSegueWithIdentifier:@"loginUnwindSegue" sender:self];
     }
     else {
@@ -74,7 +75,7 @@
 - (IBAction)forgetPasswordButtonClick:(id)sender {
     [self touchesBegan:nil withEvent:nil];
     
-    __user.forgetPassword = YES;
+    self.user.forgetPassword = YES;
     [self performSegueWithIdentifier:@"phoneNumberEnterSegue" sender:self];
 }
 
@@ -85,8 +86,8 @@
 }
 
 - (IBAction)loginUnwind:(UIStoryboardSegue *)unwindSegue {
-    self.phoneNumberTextField.text = __user.phoneNumber;
-    self.passwordTextField.text = __user.password;
+    self.phoneNumberTextField.text = self.user.phoneNumber;
+    self.passwordTextField.text = self.user.password;
 }
 
 #pragma mark - private methods

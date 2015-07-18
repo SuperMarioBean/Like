@@ -30,6 +30,15 @@
 		633D172A1B53733700C2786A /* LIKEFeedItemHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 633D17281B53733700C2786A /* LIKEFeedItemHeader.xib */; };
 		6354264D1B53B8DA00B01A63 /* LIKEFeedItemUploadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6354264B1B53B8DA00B01A63 /* LIKEFeedItemUploadCell.m */; };
 		6354264E1B53B8DA00B01A63 /* LIKEFeedItemUploadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6354264C1B53B8DA00B01A63 /* LIKEFeedItemUploadCell.xib */; };
+		636C13451B56022A0057EA10 /* LIKEThreadsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636C13441B56022A0057EA10 /* LIKEThreadsViewController.m */; };
+		636C134B1B5602D40057EA10 /* LIKEThreadsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 636C134A1B5602D40057EA10 /* LIKEThreadsViewModel.m */; };
+		636C134E1B560D3D0057EA10 /* LIKEChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636C134D1B560D3D0057EA10 /* LIKEChatViewController.m */; };
+		636C13531B56298A0057EA10 /* NSDate+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 636C13521B56298A0057EA10 /* NSDate+Helper.m */; };
+		636C13561B562AB70057EA10 /* chat.strings in Resources */ = {isa = PBXBuildFile; fileRef = 636C13581B562AB70057EA10 /* chat.strings */; };
+		636C135F1B5654B00057EA10 /* AppDelegate+EaseMob.m in Sources */ = {isa = PBXBuildFile; fileRef = 636C135C1B5654B00057EA10 /* AppDelegate+EaseMob.m */; };
+		636C13601B5654B00057EA10 /* AppDelegate+EaseMobDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 636C135E1B5654B00057EA10 /* AppDelegate+EaseMobDebug.m */; };
+		638184CF1B5824B5003E53DC /* chat.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 638184CE1B5824B5003E53DC /* chat.xcassets */; };
+		638184D11B58255E003E53DC /* post.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 638184D01B58255E003E53DC /* post.xcassets */; };
 		638907071B4A6DE600674A56 /* UIColor+nipponcolors.m in Sources */ = {isa = PBXBuildFile; fileRef = 638907061B4A6DE600674A56 /* UIColor+nipponcolors.m */; };
 		6389070A1B4A712000674A56 /* UIColor+section.m in Sources */ = {isa = PBXBuildFile; fileRef = 638907091B4A712000674A56 /* UIColor+section.m */; };
 		63B3C4511B48DCA40030D5D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63B3C44F1B48DCA40030D5D4 /* Main.storyboard */; };
@@ -213,6 +222,10 @@
 		63B3C7881B48E99B0030D5D4 /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63B3C77F1B48E99B0030D5D4 /* SMS_SDK.framework */; };
 		63B3C78C1B48EE790030D5D4 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 63B3C78B1B48EE790030D5D4 /* libicucore.dylib */; };
 		63B3C78F1B48F1810030D5D4 /* LIKEMainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B3C78E1B48F1810030D5D4 /* LIKEMainTabBarController.m */; };
+		63C70FCE1B569E8C00C2A12F /* LIKEInstanceMessageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C70FCD1B569E8C00C2A12F /* LIKEInstanceMessageManager.m */; };
+		63D57C0B1B582D9100ED9D96 /* RealtimeSearchUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D57C0A1B582D9100ED9D96 /* RealtimeSearchUtil.m */; };
+		63D57C0F1B58C86400ED9D96 /* LIKEThreadItemConversationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D57C0D1B58C86400ED9D96 /* LIKEThreadItemConversationCell.m */; };
+		63D57C101B58C86400ED9D96 /* LIKEThreadItemConversationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63D57C0E1B58C86400ED9D96 /* LIKEThreadItemConversationCell.xib */; };
 		63E58A811B4FCE45004133A5 /* LIKECaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E58A801B4FCE45004133A5 /* LIKECaptureViewController.m */; };
 		63E58A841B4FD0EA004133A5 /* LIKEImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E58A831B4FD0EA004133A5 /* LIKEImagePickerViewController.m */; };
 		63E58A871B4FD122004133A5 /* LIKETagsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E58A861B4FD122004133A5 /* LIKETagsViewController.m */; };
@@ -282,6 +295,24 @@
 		6354264A1B53B8DA00B01A63 /* LIKEFeedItemUploadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LIKEFeedItemUploadCell.h; sourceTree = "<group>"; };
 		6354264B1B53B8DA00B01A63 /* LIKEFeedItemUploadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LIKEFeedItemUploadCell.m; sourceTree = "<group>"; };
 		6354264C1B53B8DA00B01A63 /* LIKEFeedItemUploadCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LIKEFeedItemUploadCell.xib; sourceTree = "<group>"; };
+		636C13431B56022A0057EA10 /* LIKEThreadsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LIKEThreadsViewController.h; sourceTree = "<group>"; };
+		636C13441B56022A0057EA10 /* LIKEThreadsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LIKEThreadsViewController.m; sourceTree = "<group>"; };
+		636C13491B5602D40057EA10 /* LIKEThreadsViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LIKEThreadsViewModel.h; sourceTree = "<group>"; };
+		636C134A1B5602D40057EA10 /* LIKEThreadsViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LIKEThreadsViewModel.m; sourceTree = "<group>"; };
+		636C134C1B560D3D0057EA10 /* LIKEChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LIKEChatViewController.h; sourceTree = "<group>"; };
+		636C134D1B560D3D0057EA10 /* LIKEChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LIKEChatViewController.m; sourceTree = "<group>"; };
+		636C134F1B560DD10057EA10 /* LIKEChatViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LIKEChatViewControllerDelegate.h; sourceTree = "<group>"; };
+		636C13501B56169A0057EA10 /* LIKEThreadsViewControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LIKEThreadsViewControllerProtocol.h; sourceTree = "<group>"; };
+		636C13511B56298A0057EA10 /* NSDate+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Helper.h"; sourceTree = "<group>"; };
+		636C13521B56298A0057EA10 /* NSDate+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Helper.m"; sourceTree = "<group>"; };
+		636C135A1B562ABF0057EA10 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/chat.strings"; sourceTree = "<group>"; };
+		636C135B1B5654B00057EA10 /* AppDelegate+EaseMob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+EaseMob.h"; sourceTree = "<group>"; };
+		636C135C1B5654B00057EA10 /* AppDelegate+EaseMob.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+EaseMob.m"; sourceTree = "<group>"; };
+		636C135D1B5654B00057EA10 /* AppDelegate+EaseMobDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+EaseMobDebug.h"; sourceTree = "<group>"; };
+		636C135E1B5654B00057EA10 /* AppDelegate+EaseMobDebug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+EaseMobDebug.m"; sourceTree = "<group>"; };
+		636C13611B5655090057EA10 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/chat.strings; sourceTree = "<group>"; };
+		638184CE1B5824B5003E53DC /* chat.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = chat.xcassets; sourceTree = "<group>"; };
+		638184D01B58255E003E53DC /* post.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = post.xcassets; sourceTree = "<group>"; };
 		638907051B4A6DE600674A56 /* UIColor+nipponcolors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+nipponcolors.h"; sourceTree = "<group>"; };
 		638907061B4A6DE600674A56 /* UIColor+nipponcolors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+nipponcolors.m"; sourceTree = "<group>"; };
 		638907081B4A712000674A56 /* UIColor+section.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+section.h"; sourceTree = "<group>"; };
@@ -635,6 +666,13 @@
 		63B3C78B1B48EE790030D5D4 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		63B3C78D1B48F1810030D5D4 /* LIKEMainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = LIKEMainTabBarController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		63B3C78E1B48F1810030D5D4 /* LIKEMainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = LIKEMainTabBarController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		63C70FCC1B569E8C00C2A12F /* LIKEInstanceMessageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LIKEInstanceMessageManager.h; sourceTree = "<group>"; };
+		63C70FCD1B569E8C00C2A12F /* LIKEInstanceMessageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LIKEInstanceMessageManager.m; sourceTree = "<group>"; };
+		63D57C091B582D9100ED9D96 /* RealtimeSearchUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RealtimeSearchUtil.h; sourceTree = "<group>"; };
+		63D57C0A1B582D9100ED9D96 /* RealtimeSearchUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RealtimeSearchUtil.m; sourceTree = "<group>"; };
+		63D57C0C1B58C86400ED9D96 /* LIKEThreadItemConversationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LIKEThreadItemConversationCell.h; sourceTree = "<group>"; };
+		63D57C0D1B58C86400ED9D96 /* LIKEThreadItemConversationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LIKEThreadItemConversationCell.m; sourceTree = "<group>"; };
+		63D57C0E1B58C86400ED9D96 /* LIKEThreadItemConversationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LIKEThreadItemConversationCell.xib; sourceTree = "<group>"; };
 		63E58A7F1B4FCE45004133A5 /* LIKECaptureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LIKECaptureViewController.h; sourceTree = "<group>"; };
 		63E58A801B4FCE45004133A5 /* LIKECaptureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LIKECaptureViewController.m; sourceTree = "<group>"; };
 		63E58A821B4FD0EA004133A5 /* LIKEImagePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LIKEImagePickerViewController.h; sourceTree = "<group>"; };
@@ -826,6 +864,8 @@
 				63B3C4D61B48E49F0030D5D4 /* Categories */,
 				63B3C6331B48E49F0030D5D4 /* LIKEHelper.h */,
 				63B3C6341B48E49F0030D5D4 /* LIKEHelper.m */,
+				636C13511B56298A0057EA10 /* NSDate+Helper.h */,
+				636C13521B56298A0057EA10 /* NSDate+Helper.m */,
 				63B3C6351B48E49F0030D5D4 /* NSString+Helper.h */,
 				63B3C6361B48E49F0030D5D4 /* NSString+Helper.m */,
 				63B3C6371B48E49F0030D5D4 /* UICollectionView+Helper.h */,
@@ -1623,6 +1663,25 @@
 			isa = PBXGroup;
 			children = (
 				63B3C64D1B48E49F0030D5D4 /* chat.storyboard */,
+				63C70FCC1B569E8C00C2A12F /* LIKEInstanceMessageManager.h */,
+				63C70FCD1B569E8C00C2A12F /* LIKEInstanceMessageManager.m */,
+				636C13431B56022A0057EA10 /* LIKEThreadsViewController.h */,
+				636C13441B56022A0057EA10 /* LIKEThreadsViewController.m */,
+				63D57C0C1B58C86400ED9D96 /* LIKEThreadItemConversationCell.h */,
+				63D57C0D1B58C86400ED9D96 /* LIKEThreadItemConversationCell.m */,
+				63D57C0E1B58C86400ED9D96 /* LIKEThreadItemConversationCell.xib */,
+				636C13491B5602D40057EA10 /* LIKEThreadsViewModel.h */,
+				636C134A1B5602D40057EA10 /* LIKEThreadsViewModel.m */,
+				636C135B1B5654B00057EA10 /* AppDelegate+EaseMob.h */,
+				636C135C1B5654B00057EA10 /* AppDelegate+EaseMob.m */,
+				636C135D1B5654B00057EA10 /* AppDelegate+EaseMobDebug.h */,
+				636C135E1B5654B00057EA10 /* AppDelegate+EaseMobDebug.m */,
+				636C13501B56169A0057EA10 /* LIKEThreadsViewControllerProtocol.h */,
+				636C134C1B560D3D0057EA10 /* LIKEChatViewController.h */,
+				636C134D1B560D3D0057EA10 /* LIKEChatViewController.m */,
+				636C134F1B560DD10057EA10 /* LIKEChatViewControllerDelegate.h */,
+				636C13581B562AB70057EA10 /* chat.strings */,
+				638184CE1B5824B5003E53DC /* chat.xcassets */,
 			);
 			path = chat;
 			sourceTree = "<group>";
@@ -1675,6 +1734,7 @@
 				63E58A8B1B4FD2FE004133A5 /* LIKESearchTagViewController.h */,
 				63E58A8C1B4FD2FE004133A5 /* LIKESearchTagViewController.m */,
 				63E58AA21B50D87D004133A5 /* LIKETransferProcessedImageProtocol.h */,
+				638184D01B58255E003E53DC /* post.xcassets */,
 			);
 			path = post;
 			sourceTree = "<group>";
@@ -1700,6 +1760,7 @@
 		63B3C7721B48E99B0030D5D4 /* thirdparty */ = {
 			isa = PBXGroup;
 			children = (
+				63D57C081B582D9100ED9D96 /* RealtimeSearchUtil */,
 				633D16F11B5167A300C2786A /* TagView */,
 				63B3C7731B48E99B0030D5D4 /* pingpp-sdk */,
 				63B3C77C1B48E99B0030D5D4 /* SMS_SDK */,
@@ -1736,6 +1797,15 @@
 				63B3C77F1B48E99B0030D5D4 /* SMS_SDK.framework */,
 			);
 			path = SMS_SDK;
+			sourceTree = "<group>";
+		};
+		63D57C081B582D9100ED9D96 /* RealtimeSearchUtil */ = {
+			isa = PBXGroup;
+			children = (
+				63D57C091B582D9100ED9D96 /* RealtimeSearchUtil.h */,
+				63D57C0A1B582D9100ED9D96 /* RealtimeSearchUtil.m */,
+			);
+			path = RealtimeSearchUtil;
 			sourceTree = "<group>";
 		};
 		63E58A921B50BF12004133A5 /* photoGallery */ = {
@@ -1832,6 +1902,11 @@
 					6322566A1B0E10D100D10817 = {
 						CreatedOnToolsVersion = 6.3.1;
 						DevelopmentTeam = QBM2VMRGC7;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					632256831B0E10D100D10817 = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -1868,8 +1943,11 @@
 				63B3C6AF1B48E49F0030D5D4 /* NSDateTimeAgo.bundle in Resources */,
 				63B3C75F1B48E49F0030D5D4 /* post.storyboard in Resources */,
 				633D17131B536E3700C2786A /* LIKEFeedItemContentCell.xib in Resources */,
+				63D57C101B58C86400ED9D96 /* LIKEThreadItemConversationCell.xib in Resources */,
 				633D172A1B53733700C2786A /* LIKEFeedItemHeader.xib in Resources */,
+				638184CF1B5824B5003E53DC /* chat.xcassets in Resources */,
 				63B3C7341B48E49F0030D5D4 /* account.storyboard in Resources */,
+				636C13561B562AB70057EA10 /* chat.strings in Resources */,
 				633D17251B53716600C2786A /* LIKEFeedItemActionCell.xib in Resources */,
 				6308C5FB1B4ED81700669A72 /* LIKEOnlineCollectionViewCell.xib in Resources */,
 				6354264E1B53B8DA00B01A63 /* LIKEFeedItemUploadCell.xib in Resources */,
@@ -1882,6 +1960,7 @@
 				63B3C75A1B48E49F0030D5D4 /* mine.storyboard in Resources */,
 				6322567C1B0E10D100D10817 /* Images.xcassets in Resources */,
 				63B3C7871B48E99B0030D5D4 /* SMS_SDKLocalizable.strings in Resources */,
+				638184D11B58255E003E53DC /* post.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1990,6 +2069,7 @@
 				63E58A871B4FD122004133A5 /* LIKETagsViewController.m in Sources */,
 				63B3C6D21B48E49F0030D5D4 /* NSString+UUID.m in Sources */,
 				633D16F01B51538D00C2786A /* LIKEFilterLayout.m in Sources */,
+				636C13601B5654B00057EA10 /* AppDelegate+EaseMobDebug.m in Sources */,
 				63B3C7291B48E49F0030D5D4 /* UIWebView+Load.m in Sources */,
 				63B3C6B31B48E49F0030D5D4 /* NSDictionary+Merge.m in Sources */,
 				63B3C78F1B48F1810030D5D4 /* LIKEMainTabBarController.m in Sources */,
@@ -2043,8 +2123,10 @@
 				63B3C6D01B48E49F0030D5D4 /* NSString+UrlEncode.m in Sources */,
 				6354264D1B53B8DA00B01A63 /* LIKEFeedItemUploadCell.m in Sources */,
 				63B3C6BD1B48E49F0030D5D4 /* NSObject+AssociatedObject.m in Sources */,
+				636C13531B56298A0057EA10 /* NSDate+Helper.m in Sources */,
 				63B3C6A11B48E49F0030D5D4 /* CLLocationManager+Blocks.m in Sources */,
 				63B3C70A1B48E49F0030D5D4 /* UIScrollView+Pages.m in Sources */,
+				636C134B1B5602D40057EA10 /* LIKEThreadsViewModel.m in Sources */,
 				63B3C70F1B48E49F0030D5D4 /* UITableViewCell+NIB.m in Sources */,
 				63B3C7261B48E49F0030D5D4 /* UIWebView+Blocks.m in Sources */,
 				63B3C7661B48E6930030D5D4 /* LIKEAppContext.m in Sources */,
@@ -2060,11 +2142,13 @@
 				63B3C70B1B48E49F0030D5D4 /* UISearchBar+Blocks.m in Sources */,
 				63B3C6D11B48E49F0030D5D4 /* NSString+Util.m in Sources */,
 				63B3C6DA1B48E49F0030D5D4 /* UIApplication+KeyboardFrame.m in Sources */,
+				636C135F1B5654B00057EA10 /* AppDelegate+EaseMob.m in Sources */,
 				63B3C6C91B48E49F0030D5D4 /* NSString+Emoji.m in Sources */,
 				63B3C6AD1B48E49F0030D5D4 /* NSDate+TimeAgo.m in Sources */,
 				633D16FD1B5167A300C2786A /* UIBezierPath+BasicShapes_tagview.m in Sources */,
 				63E58A8A1B4FD2A9004133A5 /* LIKEFilterViewController.m in Sources */,
 				63B3C6EC1B48E49F0030D5D4 /* UIImage+Alpha.m in Sources */,
+				63D57C0B1B582D9100ED9D96 /* RealtimeSearchUtil.m in Sources */,
 				633D17041B52CC4700C2786A /* LIKETrendViewModel.m in Sources */,
 				63B3C6B91B48E49F0030D5D4 /* NSDecimalNumber+Extensions.m in Sources */,
 				63B3C6A21B48E49F0030D5D4 /* NSArray+Block.m in Sources */,
@@ -2088,6 +2172,7 @@
 				63B3C6DE1B48E49F0030D5D4 /* UIBezierPath+Symbol.m in Sources */,
 				63B3C7091B48E49F0030D5D4 /* UIScrollView+Addition.m in Sources */,
 				63B3C6A01B48E49F0030D5D4 /* CLLocation+CH1903.m in Sources */,
+				63C70FCE1B569E8C00C2A12F /* LIKEInstanceMessageManager.m in Sources */,
 				63B3C7361B48E49F0030D5D4 /* LIKEPersonalInfoViewController.m in Sources */,
 				63B3C6D61B48E49F0030D5D4 /* NSUserDefaults+SafeAccess.m in Sources */,
 				63B3C72C1B48E49F0030D5D4 /* UIWindow+Hierarchy.m in Sources */,
@@ -2100,6 +2185,7 @@
 				63B3C69C1B48E49F0030D5D4 /* NSManagedObjectContext+Extensions.m in Sources */,
 				63B3C6E31B48E49F0030D5D4 /* UIButton+Submitting.m in Sources */,
 				63B3C6B11B48E49F0030D5D4 /* NSDictionary+Block.m in Sources */,
+				636C134E1B560D3D0057EA10 /* LIKEChatViewController.m in Sources */,
 				63B3C7101B48E49F0030D5D4 /* UITextField+Blocks.m in Sources */,
 				63B3C6A91B48E49F0030D5D4 /* NSData+SDDataCache.m in Sources */,
 				63B3C6CB1B48E49F0030D5D4 /* NSString+Hash.m in Sources */,
@@ -2108,6 +2194,7 @@
 				63B3C6DF1B48E49F0030D5D4 /* UIButton+BackgroundColor.m in Sources */,
 				63B3C6EE1B48E49F0030D5D4 /* UIImage+Blur.m in Sources */,
 				63B3C6B41B48E49F0030D5D4 /* NSDictionary+SafeAccess.m in Sources */,
+				63D57C0F1B58C86400ED9D96 /* LIKEThreadItemConversationCell.m in Sources */,
 				63B3C7141B48E49F0030D5D4 /* UIView+Animation.m in Sources */,
 				63B3C72D1B48E49F0030D5D4 /* LIKEHelper.m in Sources */,
 				63B3C6F01B48E49F0030D5D4 /* UIImage+Color.m in Sources */,
@@ -2145,6 +2232,7 @@
 				63B3C6A31B48E49F0030D5D4 /* NSArray+SafeAccess.m in Sources */,
 				6308C5FA1B4ED81700669A72 /* LIKEOnlineCollectionViewCell.m in Sources */,
 				63B3C7051B48E49F0030D5D4 /* UINavigationItem+Lock.m in Sources */,
+				636C13451B56022A0057EA10 /* LIKEThreadsViewController.m in Sources */,
 				63B3C7201B48E49F0030D5D4 /* UIViewController+DDPopUpViewController.m in Sources */,
 				63B3C6CD1B48E49F0030D5D4 /* NSString+RemoveEmoji.m in Sources */,
 				633D16ED1B5151DE00C2786A /* LIKETrendLayout.m in Sources */,
@@ -2194,6 +2282,15 @@
 				6322567E1B0E10D100D10817 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		636C13581B562AB70057EA10 /* chat.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				636C135A1B562ABF0057EA10 /* zh-Hans */,
+				636C13611B5655090057EA10 /* en */,
+			);
+			name = chat.strings;
 			sourceTree = "<group>";
 		};
 		63B3C44F1B48DCA40030D5D4 /* Main.storyboard */ = {

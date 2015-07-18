@@ -80,8 +80,8 @@
                                               configuration:^(id cell) {
                                                   [self.viewModel configureCollectionView:collectionView
                                                                                      cell:cell
-                                                                           kind:LIKEFeedItemElementKindCellContent
-                                                                      indexPath:indexPath];
+                                                                                     kind:LIKEFeedItemElementKindCellContent
+                                                                                indexPath:indexPath];
                                               }];
     }
     else if ([kind isEqualToString:LIKEFeedItemElementKindCellAction]) {

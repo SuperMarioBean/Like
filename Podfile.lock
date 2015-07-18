@@ -31,7 +31,7 @@ PODS:
     - CocoaLumberjack/Core
   - CocoaLumberjack/Extensions (2.0.0):
     - CocoaLumberjack/Default
-  - EaseMobSDKFull (2.1.7)
+  - EaseMobSDK (2.1.8)
   - Expecta (1.0.0)
   - FIR.im (1.2.0)
   - HIPImageCropper (2.0.0)
@@ -42,6 +42,9 @@ PODS:
     - Mantle/extobjc (= 2.0.2)
   - Mantle/extobjc (2.0.2)
   - Masonry (0.6.1)
+  - MBProgressHUD (0.9.1)
+  - MBProgressHUDExtensions@donly (0.3):
+    - MBProgressHUD (~> 0.9.1)
   - MulticastDelegate (0.0.1.1)
   - OCMock (3.1.2)
   - PBJVision (0.4.2)
@@ -68,13 +71,15 @@ DEPENDENCIES:
   - CCBottomRefreshControl
   - CHTCollectionViewWaterfallLayout (~> 0.9.1)
   - CocoaLumberjack (~> 2.0.0)
-  - EaseMobSDKFull
+  - EaseMobSDK
   - Expecta (~> 1.0.0)
   - FIR.im (~> 1.2.0)
   - HIPImageCropper
   - KIF (~> 3.2.2)
   - Mantle (~> 2.0.2)
   - Masonry (~> 0.6.1)
+  - MBProgressHUD (~> 0.9.1)
+  - MBProgressHUDExtensions@donly (~> 0.3)
   - MulticastDelegate (~> 0.0.1.1)
   - OCMock (~> 3.1.2)
   - PBJVision
@@ -104,13 +109,15 @@ SPEC CHECKSUMS:
   CCBottomRefreshControl: 2cfdbd6f5be5181f5f070637605981d5557e8e32
   CHTCollectionViewWaterfallLayout: 1a8da4fc662702cbddda8926ced266036a829f84
   CocoaLumberjack: a6f77d987d65dc7ba86b0f84db7d0b9084f77bcb
-  EaseMobSDKFull: 43858ca9a62bbe1fa4c7c006f944a3e52a4bff48
+  EaseMobSDK: 639251847fa6de8cd752a6d4ca841e1753903683
   Expecta: 32604574add2c46a36f8d2f716b6c5736eb75024
   FIR.im: e5c7367a35adcd796f30f176f059356c330c0c2e
   HIPImageCropper: 080054a1d885660e24ca365904842a287207cce2
   KIF: b0bd762b0c7890b04920cf618021d6d4fd5127bd
   Mantle: 967fd31ea0220890b2e76589198996b534bb3fb1
   Masonry: 4972309f2f134de9dd312f4dc4a21359b50e6caa
+  MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
+  MBProgressHUDExtensions@donly: 9b692655484251819c6f3ce5a9e9b2538eac7bf4
   MulticastDelegate: 473589ab16a00612150f8bfd726caac85125e695
   OCMock: a10ea9f0a6e921651f96f78b6faee95ebc813b92
   PBJVision: fe43c9a58bb1c1277d16fd802fa836d25e034a45

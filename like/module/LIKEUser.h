@@ -8,10 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@class LIKEUser;
-extern LIKEUser *__user;
-void initUser();
-
 @interface LIKEUser : NSObject
 
 @property (readwrite, getter=isForgetPassword, nonatomic, assign) BOOL forgetPassword;
@@ -23,6 +19,10 @@ void initUser();
 @property (readwrite, nonatomic, copy) NSString *username;
 
 @property (readwrite, nonatomic, copy) NSString *password;
+
+@property (readwrite, nonatomic, copy) NSString *imUsername;
+
+@property (readwrite, nonatomic, copy) NSString *imPassword;
 
 @property (readwrite, getter=isMale, nonatomic, assign) BOOL male;
 

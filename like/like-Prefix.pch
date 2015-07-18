@@ -26,6 +26,8 @@
 #import "UIImageView+WebCache.h"
 #import "UICollectionView+ARDynamicCacheHeightLayoutCell.h"
 #import "GCDMulticastDelegate.h"
+#import "EaseMob.h"
+#import "RealtimeSearchUtil.h"
 
 #import "LIKEUser.h"
 #import "LIKEAppContext.h"
@@ -33,6 +35,8 @@
 
 #import "LIKEAPIProxy.h"
 #import "LIKEHelper.h"
+
+
 
 static NSString *const LIKEUserGenderMale = @"♂";
 static NSString *const LIKEUserGenderFemale = @"♀";

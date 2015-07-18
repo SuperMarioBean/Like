@@ -8,13 +8,6 @@
 
 #import "LIKEUser.h"
 
-LIKEUser *__user;
-void initUser(){
-    if (!__user) {
-        __user = [[LIKEUser alloc] init];
-    }
-}
-
 @implementation LIKEUser
 
 - (instancetype)init {
@@ -35,6 +28,8 @@ void initUser(){
         _password = password;
         _male = male;
         _birthday = birthday;
+        _imUsername = @"male01";
+        _imPassword = @"1234567890";
     }
     return self;
 }
