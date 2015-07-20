@@ -22,14 +22,14 @@
     self = [super init];
     if (self) {
         _forgetPassword = NO;
-        _login = YES;
+        _login = NO;
         _phoneNumber = phoneNumber;
         _username = username;
         _password = password;
         _male = male;
         _birthday = birthday;
-        _imUsername = @"male01";
-        _imPassword = @"1234567890";
+        _imUsername = nil;
+        _imPassword = nil;
     }
     return self;
 }

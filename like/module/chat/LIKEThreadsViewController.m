@@ -11,17 +11,24 @@
 #import "LIKEThreadsViewModel.h"
 
 #import "LIKEThreadItemConversationCell.h"
+#import "LIKEChatViewController.h"
 
-@interface LIKEThreadsViewController () <EMChatManagerDelegate> {
+@interface LIKEThreadsViewController () <UITabBarDelegate,
+                                         EMChatManagerDelegate,
+                                         SSPullToRefreshViewDelegate> {
     NSIndexPath *_selectedIndexPath;
     LIKEThreadItemElementKind _kind;
 }
 
-//@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (readwrite, nonatomic, strong) LIKEThreadsViewModel *viewModel;
 
 @property (readwrite, nonatomic, strong) UIView *networkStateView;
+
+@property (readwrite, nonatomic, strong) SSPullToRefreshView *refreshView;
 
 @end
 
@@ -33,12 +40,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     [[EaseMob sharedInstance].chatManager loadAllConversationsFromDatabaseWithAppend2Chat:NO];
     [self removeEmptyConversationsFromDB];
-
-    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
-    [refreshControl addTarget:self action:@selector(handleRefresh:) forControlEvents:UIControlEventValueChanged];
-    [self.tableView addSubview:refreshControl];
     
     self.viewModel = [[LIKEThreadsViewModel alloc] init];
     self.tableView.dataSource = self.viewModel;
@@ -51,53 +55,28 @@
 //    [self.searchDisplayController.searchResultsTableView registerNib:[UINib nibWithNibName:@"LIKEThreadItemConversationCell" bundle:nil]
 //                                              forCellReuseIdentifier:LIKEThreadItemConversationSearchResultCellIdentifier];
 //    self.searchDisplayController.searchResultsTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-//  self.searchDisplayController.
-    
-    [self showHUDWithMessage:NSLocalizedString(@"login.ongoing", @"Is Login...")];
-    [self.viewModel.instanceMessageManager loginWithCompletion:^(NSError *error) {
-        [self hideHUD];
-        if (!error) {
-            [self.tableView reloadData];
-        }
-        else {
-            UIAlertView *alertView;
-            switch (error.code) {
-                case LIKEIMErrorCodeServerNotReachable: {
-                    alertView = [[UIAlertView alloc] initWithTitleType:UIAlertTitleError
-                                                               message:NSLocalizedString(@"error.connectServerFail", @"Connect to the server failed!")
-                                                            buttonType:UIAlertButtonOk];
-                }
-                    break;
-                case LIKEIMErrorCodeServerAuthenticationFailure: {
-                    alertView = [[UIAlertView alloc] initWithTitleType:UIAlertTitleError
-                                                               message:NSLocalizedString(@"error.AuthenticationFail", @"Connect to the server failed!")
-                                                            buttonType:UIAlertButtonOk];
-                }
-                    break;
-                case LIKEIMErrorCodeServerTimeout: {
-                    alertView = [[UIAlertView alloc] initWithTitleType:UIAlertTitleError
-                                                               message:NSLocalizedString(@"error.connectServerTimeout", @"Connect to the server timed out!")
-                                                            buttonType:UIAlertButtonOk];
-                }
-                    break;
-                default: {
-                    alertView = [[UIAlertView alloc] initWithTitleType:UIAlertTitleError
-                                                               message:NSLocalizedString(@"login.fail", @"Logon failure")
-                                                            buttonType:UIAlertButtonOk];
-                }
-                    break;
-            }
-            [alertView show];
-        }
-    }];
+//
 }
 
--(void)viewWillAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    [self.tableView reloadData];
+    [self refreshDataSource];
     [[EaseMob sharedInstance].chatManager removeDelegate:self];
     [[EaseMob sharedInstance].chatManager addDelegate:self delegateQueue:nil];
+    
+    [self setupUntreatedApplyCount];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+}
+
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    self.tableView.contentInset = UIEdgeInsetsMake(CGRectGetHeight([UIApplication sharedApplication].statusBarFrame) + CGRectGetHeight(self.navigationController.navigationBar.frame) , 0, CGRectGetHeight(self.tabBarController.tabBar.frame), 0);
+    self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
+    [self refreshView];
 }
 
 -(void)unregisterNotifications{
@@ -116,11 +95,12 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     NSString *identifier = segue.identifier;
-    if ([identifier isEqualToString:@"chatSegue"]) {
-        id conversation = [self.viewModel objectForIndexPath:_selectedIndexPath kind:_kind];
-        UIViewController <LIKEThreadsViewControllerProtocol> *destinationViewController = segue.destinationViewController;
-        destinationViewController.delegate = self;
-        destinationViewController.conversation = conversation;
+    if ([identifier isEqualToString:@"threadsToChatSegue"]) {
+        EMConversation *conversation = [self.viewModel objectForIndexPath:_selectedIndexPath kind:_kind];
+        NSString *chatter = [self chatterForConversation:conversation];
+        LIKEChatViewController *destinationViewController = segue.destinationViewController;
+        destinationViewController.type = conversation.conversationType;
+        destinationViewController.chatter = chatter;
     }
 }
 
@@ -128,11 +108,11 @@
 
 #pragma mark UITableViewDelegate
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     switch (tableView.tag) {
         case LIKEThreadItemElementKindConversation:
         case LIKEThreadItemElementKindConversationSearchResult: {
-            return 60;
+            return 60.0f;
         }
             break;
         default:
@@ -143,11 +123,11 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    //[self.searchDisplayController setActive:NO animated:YES];
+    [self.searchDisplayController setActive:NO animated:YES];
     _kind = tableView.tag;
     _selectedIndexPath = indexPath;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self performSegueWithIdentifier:@"chatSegue" sender:self];
+        [self performSegueWithIdentifier:@"threadsToChatSegue" sender:self];
     });
 }
 
@@ -183,36 +163,105 @@
     }
 }
 
-#pragma mark - IChatMangerDelegate
+#pragma mark IChatMangerDelegate
+
+// 网络状态变化回调
+- (void)didConnectionStateChanged:(EMConnectionState)connectionState {
+    if (connectionState == eEMConnectionDisconnected) {
+        self.tableView.tableHeaderView = self.networkStateView;
+    }
+    else{
+        self.tableView.tableHeaderView = nil;
+    }
+}
 
 -(void)didUnreadMessagesCountChanged {
-    [self.tableView reloadData];
+    [self refreshDataSource];
 }
 
 - (void)didUpdateGroupList:(NSArray *)allGroups error:(EMError *)error {
-    [self.tableView reloadData];
+    [self refreshDataSource];
 }
 
 - (void)willReceiveOfflineMessages {
-    NSLog(NSLocalizedString(@"message.beginReceiveOffine", @"Begin to receive offline messages"));
+    NSLog(NSLocalizedStringFromTable(@"message.beginReceiveOffine", @"chat", @"Begin to receive offline messages"));
 }
 
 - (void)didReceiveOfflineMessages:(NSArray *)offlineMessages {
-    [self.tableView reloadData];
+    [self refreshDataSource];
 }
 
-- (void)didFinishedReceiveOfflineMessages{
-    NSLog(NSLocalizedString(@"message.endReceiveOffine", @"End to receive offline messages"));
+- (void)didReceiveBuddyRequest:(NSString *)username
+                       message:(NSString *)message {
+    [self setupUntreatedApplyCount];
+}
+
+- (void)didReceiveApplyToJoinGroup:(NSString *)groupId
+                         groupname:(NSString *)groupname
+                     applyUsername:(NSString *)username
+                            reason:(NSString *)reason
+                             error:(EMError *)error {
+    [self setupUntreatedApplyCount];
+}
+
+
+#pragma mark SSPullToRefreshViewDelegate
+
+- (void)pullToRefreshViewDidStartLoading:(SSPullToRefreshView *)view {
+    [self refreshDataSource];
+    [view finishLoading];
 }
 
 #pragma mark - event response
 
+- (IBAction)threadsUnwind:(UIStoryboardSegue *)sender {
+    
+}
+
 - (void)handleRefresh:(UIRefreshControl *)sender {
-    [self.tableView reloadData];
+    [self refreshDataSource];
     [sender endRefreshing];
 }
 
 #pragma mark - private methods
+
+- (void)setupUntreatedApplyCount {
+    NSInteger unreadCount = [[[ApplyViewController shareController] dataSource] count];
+    if (self) {
+        if (unreadCount > 0) {
+            self.navigationItem.leftBarButtonItem.badgeValue = [NSString stringWithFormat:@"%i",(int)unreadCount];
+        }else{
+            self.navigationItem.leftBarButtonItem.badgeValue = nil;
+        }
+    }
+}
+
+
+-(void)refreshDataSource {
+    [self.viewModel reloadData];
+    [self.tableView reloadData];
+}
+
+- (NSString *)chatterForConversation:(EMConversation *)conversation {
+    
+    NSString *title = conversation.chatter;
+    if (conversation.conversationType != eConversationTypeChat) {
+        if ([[conversation.ext objectForKey:@"groupSubject"] length]) {
+            title = [conversation.ext objectForKey:@"groupSubject"];
+        }
+        else {
+            NSArray *groupArray = [[EaseMob sharedInstance].chatManager groupList];
+            for (EMGroup *group in groupArray) {
+                if ([group.groupId isEqualToString:conversation.chatter]) {
+                    title = group.groupSubject;
+                    break;
+                }
+            }
+        }
+    }
+    // TODO: some robot thing
+    return title;
+}
 
 - (void)removeEmptyConversationsFromDB {
     NSArray *conversations = [[EaseMob sharedInstance].chatManager conversations];
@@ -236,6 +285,13 @@
 
 #pragma mark - accessor methods
 
+- (SSPullToRefreshView *)refreshView {
+    if (!_refreshView) {
+        _refreshView = [[SSPullToRefreshView alloc] initWithScrollView:self.tableView delegate:self];
+    }
+    return _refreshView;
+}
+
 - (UIView *)networkStateView {
     if (_networkStateView == nil) {
         _networkStateView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, 44)];
@@ -249,7 +305,7 @@
         label.font = [UIFont systemFontOfSize:15.0];
         label.textColor = [UIColor grayColor];
         label.backgroundColor = [UIColor clearColor];
-        label.text = NSLocalizedString(@"network.disconnection", @"Network disconnection");
+        label.text = NSLocalizedStringFromTable(@"network.disconnection", @"chat", @"Network disconnection");
         [_networkStateView addSubview:label];
     }
     

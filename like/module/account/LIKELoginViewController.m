@@ -53,11 +53,26 @@
 - (IBAction)loginButtonClick:(id)sender {
     [self touchesBegan:nil withEvent:nil];
 
-    BOOL phoneNumberFlag = [LIKEHelper verifyPhoneNumber:self.phoneNumberTextField.text];
+    //BOOL phoneNumberFlag = [LIKEHelper verifyPhoneNumber:self.phoneNumberTextField.text];
+    BOOL phoneNumberFlag = YES;
     BOOL passwordFlag = [LIKEHelper verifyPassword:self.passwordTextField.text];
-    if (phoneNumberFlag && passwordFlag) {
+    
+    BOOL debugFlag = ([self.phoneNumberTextField.text isEqualToString:self.passwordTextField.text]
+                      && ([self.phoneNumberTextField.text isEqualToString:@"test01"]
+                          ||[self.phoneNumberTextField.text isEqualToString:@"test02"]
+                          ||[self.phoneNumberTextField.text isEqualToString:@"test03"]));
+    
+    if (phoneNumberFlag && passwordFlag && debugFlag) {
         self.user.phoneNumber = self.phoneNumberTextField.text;
         self.user.password = self.passwordTextField.text;
+        
+        self.user.imUsername = self.user.phoneNumber;
+        self.user.imPassword = self.user.password;
+        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+        [userDefaults setObject:self.user.phoneNumber forKey:@"username"];
+        [userDefaults setObject:self.user.password forKey:@"password"];
+        [userDefaults synchronize];
+        
         self.user.login = YES;
         [self performSegueWithIdentifier:@"loginUnwindSegue" sender:self];
     }

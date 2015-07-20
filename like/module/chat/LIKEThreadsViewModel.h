@@ -24,6 +24,8 @@ typedef NS_ENUM(NSInteger, LIKEThreadItemElementKind) {
 
 @property (readonly, nonatomic, strong) LIKEInstanceMessageManager *instanceMessageManager;
 
+- (NSMutableArray *)reloadData;
+
 - (id)objectForIndexPath:(NSIndexPath *)indexPath kind:(LIKEThreadItemElementKind)kind;
 
 - (void)removeObjectForIndexPath:(NSIndexPath *)indexPath kind:(LIKEThreadItemElementKind)kind;

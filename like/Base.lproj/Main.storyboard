@@ -230,34 +230,11 @@
                         <segue destination="6fW-ZI-Aqr" kind="relationship" relationship="viewControllers" id="8m6-3d-MIm"/>
                         <segue destination="du5-ou-G3w" kind="relationship" relationship="viewControllers" id="BEm-E0-rd4"/>
                         <segue destination="AU8-3m-kHF" kind="relationship" relationship="viewControllers" id="4jQ-kx-9U6"/>
-                        <segue destination="H0e-eG-4Ug" kind="relationship" relationship="viewControllers" id="TGZ-bK-qtJ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JSv-Y6-pWq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1286" y="-138"/>
-        </scene>
-        <!--Item-->
-        <scene sceneID="qhA-Uh-4Wl">
-            <objects>
-                <viewController id="H0e-eG-4Ug" customClass="RBStoryboardLink" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="SnD-wf-oW3"/>
-                        <viewControllerLayoutGuide type="bottom" id="4VX-7n-TEg"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="3e4-Qg-pAn">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="EJM-uu-NxT"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="storyboardName" value="chat"/>
-                    </userDefinedRuntimeAttributes>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9dJ-NX-tcR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2212" y="50"/>
         </scene>
         <!--Storyboard Link-->
         <scene sceneID="nG6-dz-wKN">

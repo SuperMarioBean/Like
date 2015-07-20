@@ -23,7 +23,17 @@
     if (launchOptions) {
         NSDictionary*userInfo = [launchOptions objectForKey:@"UIApplicationLaunchOptionsRemoteNotificationKey"];
         if(userInfo) {
-            [[LIKEAppContext sharedInstance] didReceiveRemoteNotification:userInfo];
+            NSError *parseError = nil;
+            NSData  *jsonData = [NSJSONSerialization dataWithJSONObject:userInfo
+                                                                options:NSJSONWritingPrettyPrinted error:&parseError];
+            NSString *str =  [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+            
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedStringFromTable(@"apns.content", @"chat", @"Apns content")
+                                                            message:str
+                                                           delegate:nil
+                                                  cancelButtonTitle:NSLocalizedStringFromTable(@"ok", @"chat", @"OK")
+                                                  otherButtonTitles:nil];
+            [alert show];
         }
     }
     
@@ -162,10 +172,10 @@
 // 注册deviceToken失败，此处失败，与环信SDK无关，一般是您的环境配置或者证书配置有误
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
     [[EaseMob sharedInstance] application:application didFailToRegisterForRemoteNotificationsWithError:error];
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"apns.failToRegisterApns", Fail to register apns)
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedStringFromTable(@"apns.failToRegisterApns", @"chat", Fail to register apns)
                                                     message:error.description
                                                    delegate:nil
-                                          cancelButtonTitle:NSLocalizedString(@"ok", @"OK")
+                                          cancelButtonTitle:NSLocalizedStringFromTable(@"ok", @"chat", @"OK")
                                           otherButtonTitles:nil];
     [alert show];
 }

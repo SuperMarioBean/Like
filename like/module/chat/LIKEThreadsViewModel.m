@@ -73,6 +73,38 @@ NSString *const LIKEThreadItemConversationSearchResultCellIdentifier = @"com.tri
     return cell;
 }
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
+    switch (tableView.tag) {
+        case LIKEThreadItemElementKindConversation: {
+            return YES;
+        }
+            break;
+        case LIKEThreadItemElementKindConversationSearchResult: {
+            return NO;
+        }
+        default:
+            return NO;
+            break;
+    }
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    switch (tableView.tag) {
+        case LIKEThreadItemElementKindConversation: {
+            if (editingStyle == UITableViewCellEditingStyleDelete) {
+                [self removeObjectForIndexPath:indexPath kind:LIKEThreadItemElementKindConversation];
+                [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
+                                      withRowAnimation:UITableViewRowAnimationFade];
+            }
+        }
+            break;
+        case LIKEThreadItemElementKindConversationSearchResult: {
+        }
+        default:
+            break;
+    }
+}
+
 #pragma mark - event response
 
 #pragma mark - private methods
@@ -103,12 +135,7 @@ NSString *const LIKEThreadItemConversationSearchResultCellIdentifier = @"com.tri
                 ret = NSLocalizedStringFromTable(@"message.image1", @"chat", @"[image]");
             } break;
             case eMessageBodyType_Text:{
-                ret = [[(EMTextMessageBody *)messageBody text] stringByReplacingEmojiUnicodeWithCheatCodes];
-//                if ([[RobotManager sharedInstance] isRobotMenuMessage:lastMessage]) {
-//                    ret = [[RobotManager sharedInstance] getRobotMenuMessageDigest:lastMessage];
-//                } else {
-//                    ret = didReceiveText;
-//                }
+                ret = [[(EMTextMessageBody *)messageBody text] stringByReplacingEmojiCheatCodesWithUnicode];
             }
                 break;
             case eMessageBodyType_Voice:{
@@ -135,24 +162,26 @@ NSString *const LIKEThreadItemConversationSearchResultCellIdentifier = @"com.tri
 
 #pragma mark - accessor methods
 
-- (NSArray *)conversations {
+#pragma mark - api methods
+
+- (NSMutableArray *)reloadData {
+    NSMutableArray *ret = nil;
     NSArray *conversations = [self.instanceMessageManager conversationsArray];
     
-    NSArray* sorted = [conversations sortedArrayUsingComparator:^(EMConversation *obj1, EMConversation* obj2){
-        EMMessage *message1 = [obj1 latestMessage];
-        EMMessage *message2 = [obj2 latestMessage];
-        if(message1.timestamp > message2.timestamp) {
-            return(NSComparisonResult)NSOrderedAscending;
-        }
-        else {
-            return(NSComparisonResult)NSOrderedDescending;
-        }
-    }];
+    NSArray* sorte = [conversations sortedArrayUsingComparator:
+                      ^(EMConversation *obj1, EMConversation* obj2){
+                          EMMessage *message1 = [obj1 latestMessage];
+                          EMMessage *message2 = [obj2 latestMessage];
+                          if(message1.timestamp > message2.timestamp) {
+                              return(NSComparisonResult)NSOrderedAscending;
+                          }else {
+                              return(NSComparisonResult)NSOrderedDescending;
+                          }
+                      }];
     
-    return sorted;
+    self.conversations = [[NSMutableArray alloc] initWithArray:sorte];
+    return ret;
 }
-
-#pragma mark - api methods
 
 - (id)objectForIndexPath:(NSIndexPath *)indexPath kind:(LIKEThreadItemElementKind)kind {
     switch (kind) {

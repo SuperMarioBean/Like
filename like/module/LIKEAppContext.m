@@ -10,13 +10,6 @@
 
 #import "TagView.h"
 
-NSString *const LIKEApplyTitle = @"title";
-NSString *const LIKEApplyUsername = @"username";
-NSString *const LIKEApplyGroupName = @"groupName";
-NSString *const LIKEApplyGroupID = @"groupID";
-NSString *const LIKEApplyMessage = @"applyMessage";
-NSString *const LIKEApplyStyle = @"applyStyle";
-
 NSString *const LIKETrendUserAvatarURL = @"userAvatarURL";
 NSString *const LIKETrendUserNickname = @"userNickname";
 NSString *const LIKETrendUserGender = @"userGender";

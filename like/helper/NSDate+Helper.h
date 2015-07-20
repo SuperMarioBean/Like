@@ -10,6 +10,10 @@
 
 @interface NSDate (Helper)
 
+- (NSString *)formattedTime;
+
+- (NSString *)formattedDateDescription;
+
 + (NSDate *)dateWithTimeIntervalInMilliSecondSince1970:(double)timeIntervalInMilliSecond;
 
 @end

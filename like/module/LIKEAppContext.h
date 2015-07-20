@@ -16,13 +16,6 @@ typedef NS_ENUM(NSInteger, eLIKEApplyStyle) {
     eLIKEApplyStyleJoinGroup,
 };
 
-extern NSString *const LIKEApplyTitle;
-extern NSString *const LIKEApplyUsername;
-extern NSString *const LIKEApplyGroupName;
-extern NSString *const LIKEApplyGroupID;
-extern NSString *const LIKEApplyMessage;
-extern NSString *const LIKEApplyStyle;
-
 extern NSString *const LIKETrendUserAvatarURL;
 extern NSString *const LIKETrendUserNickname;
 extern NSString *const LIKETrendUserGender;
@@ -56,7 +49,5 @@ extern NSString *const LIKEUploadStatus;
 @property (readwrite, nonatomic, strong) NSMutableArray *testUploadTrendsArray;
 
 + (instancetype)sharedInstance;
-
-- (void)didReceiveRemoteNotification:(NSDictionary *)userInfo;
 
 @end

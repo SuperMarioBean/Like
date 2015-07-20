@@ -25,9 +25,14 @@
 #import "AFNetworking.h"
 #import "UIImageView+WebCache.h"
 #import "UICollectionView+ARDynamicCacheHeightLayoutCell.h"
+#import "THProgressView.h"
+#import "EMAlertView.h"
 #import "GCDMulticastDelegate.h"
 #import "EaseMob.h"
+#import "EaseMob+CallService.h"
 #import "RealtimeSearchUtil.h"
+#import "SSPullToRefresh.h"
+#import "UIBarButtonItem+badge.h"
 
 #import "LIKEUser.h"
 #import "LIKEAppContext.h"
@@ -36,7 +41,7 @@
 #import "LIKEAPIProxy.h"
 #import "LIKEHelper.h"
 
-
+static NSString *const LIKEIMLoginChangeNotification = @"loginChange";
 
 static NSString *const LIKEUserGenderMale = @"♂";
 static NSString *const LIKEUserGenderFemale = @"♀";

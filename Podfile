@@ -3,7 +3,7 @@ platform :ios, '7.0'
 target :like do
     # 基础框架
     ## 环信集成(IM和实时语音)
-    pod 'EaseMobSDK'
+    pod 'EaseMobSDKFull', '~> 2.1.7';
 
     ## 支付
     pod 'Pingpp/Alipay', '~> 2.0.5'
@@ -30,8 +30,10 @@ target :like do
     ## 模型框架
     pod 'Mantle', '~> 2.0.2'
     ## 日志
-    pod 'CocoaLumberjack', '~> 2.0.0'
+    #pod 'CocoaLumberjack', '~> 2.0.0'
     ## UIKit 组件封装
+    ### 进度
+    pod 'THProgressView', '~> 1.0'
     ### UIAlert分装 (考虑后期更换为UIAlertController)
     pod 'UIAlert+Blocks', '~> 1.0.2'
     ### UICollectionView增强
@@ -45,6 +47,10 @@ target :like do
     pod 'MBProgressHUD', '~> 0.9.1'
     #### 进度条扩展
     pod 'MBProgressHUDExtensions@donly', '~> 0.3'
+    #### 下拉刷新
+    pod 'SSPullToRefresh', :git => 'git@github.com:SuperMarioBean/sspulltorefresh.git'
+    #### UIBarButtonItem角标扩展
+    pod 'UIBarButtonItem-Badge', :git => 'git@github.com:mikeMTOL/UIBarButtonItem-Badge.git'
 
     #  开发辅助
     ##   UI分析

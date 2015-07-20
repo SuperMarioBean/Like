@@ -14,4 +14,12 @@
     return [UIColor ohniColor];
 }
 
++ (UIColor *)like_viewBackgroundColor {
+    return [UIColor colorWithRed:248.0f/255.0f green:248.0f/255.0f blue:248.0f/255.0f alpha:1.0f];
+}
+
++ (UIColor *)like_moreViewBackgroundColor {
+    return [UIColor colorWithRed:240.0f/255.0f green:242.0f/255.0f blue:247.0f/255.0f alpha:1.0f];
+}
+
 @end

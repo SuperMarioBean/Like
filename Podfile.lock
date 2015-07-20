@@ -23,55 +23,49 @@ PODS:
   - CCBottomRefreshControl (0.5):
     - Masonry
   - CHTCollectionViewWaterfallLayout (0.9.1)
-  - CocoaLumberjack (2.0.0):
-    - CocoaLumberjack/Default (= 2.0.0)
-    - CocoaLumberjack/Extensions (= 2.0.0)
-  - CocoaLumberjack/Core (2.0.0)
-  - CocoaLumberjack/Default (2.0.0):
-    - CocoaLumberjack/Core
-  - CocoaLumberjack/Extensions (2.0.0):
-    - CocoaLumberjack/Default
-  - EaseMobSDK (2.1.8)
+  - EaseMobSDKFull (2.1.7)
   - Expecta (1.0.0)
   - FIR.im (1.2.0)
   - HIPImageCropper (2.0.0)
-  - KIF (3.2.2):
-    - KIF/XCTest (= 3.2.2)
-  - KIF/XCTest (3.2.2)
+  - KIF (3.2.3):
+    - KIF/XCTest (= 3.2.3)
+  - KIF/XCTest (3.2.3)
   - Mantle (2.0.2):
     - Mantle/extobjc (= 2.0.2)
   - Mantle/extobjc (2.0.2)
-  - Masonry (0.6.1)
+  - Masonry (0.6.2)
   - MBProgressHUD (0.9.1)
   - MBProgressHUDExtensions@donly (0.3):
     - MBProgressHUD (~> 0.9.1)
   - MulticastDelegate (0.0.1.1)
   - OCMock (3.1.2)
   - PBJVision (0.4.2)
-  - Pingpp/Alipay (2.0.5):
+  - Pingpp/Alipay (2.0.6):
     - Pingpp/Core
-  - Pingpp/ApplePay (2.0.5):
+  - Pingpp/ApplePay (2.0.6):
     - Pingpp/Core
-  - Pingpp/Core (2.0.5)
-  - Pingpp/Wx (2.0.5):
+  - Pingpp/Core (2.0.6)
+  - Pingpp/Wx (2.0.6):
     - Pingpp/Core
   - pop (1.0.7)
   - RBStoryboardLink (0.1.4)
   - Reveal-iOS-SDK (1.5.1)
   - SCRecorder (2.5.0)
-  - SDWebImage (3.7.2):
-    - SDWebImage/Core (= 3.7.2)
-  - SDWebImage/Core (3.7.2)
-  - Specta (1.0.0)
+  - SDWebImage (3.7.3):
+    - SDWebImage/Core (= 3.7.3)
+  - SDWebImage/Core (3.7.3)
+  - Specta (1.0.2)
+  - SSPullToRefresh (1.2.4)
+  - THProgressView (1.0)
   - UIAlert+Blocks (1.0.2)
+  - UIBarButtonItem-Badge (0.0.1)
   - UICollectionView-ARDynamicHeightLayoutCell (1.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.5.4)
   - CCBottomRefreshControl
   - CHTCollectionViewWaterfallLayout (~> 0.9.1)
-  - CocoaLumberjack (~> 2.0.0)
-  - EaseMobSDK
+  - EaseMobSDKFull (~> 2.1.7)
   - Expecta (~> 1.0.0)
   - FIR.im (~> 1.2.0)
   - HIPImageCropper
@@ -92,14 +86,27 @@ DEPENDENCIES:
   - SCRecorder
   - SDWebImage (~> 3.7.2)
   - Specta (~> 1.0.0)
+  - SSPullToRefresh (from `git@github.com:SuperMarioBean/sspulltorefresh.git`)
+  - THProgressView (~> 1.0)
   - UIAlert+Blocks (~> 1.0.2)
+  - UIBarButtonItem-Badge (from `git@github.com:mikeMTOL/UIBarButtonItem-Badge.git`)
   - UICollectionView-ARDynamicHeightLayoutCell (from `https://github.com/SuperMarioBean/UICollectionView-ARDynamicHeightLayoutCell.git`)
 
 EXTERNAL SOURCES:
+  SSPullToRefresh:
+    :git: git@github.com:SuperMarioBean/sspulltorefresh.git
+  UIBarButtonItem-Badge:
+    :git: git@github.com:mikeMTOL/UIBarButtonItem-Badge.git
   UICollectionView-ARDynamicHeightLayoutCell:
     :git: https://github.com/SuperMarioBean/UICollectionView-ARDynamicHeightLayoutCell.git
 
 CHECKOUT OPTIONS:
+  SSPullToRefresh:
+    :commit: 95fda081198d6210437518999afdd24b0b615297
+    :git: git@github.com:SuperMarioBean/sspulltorefresh.git
+  UIBarButtonItem-Badge:
+    :commit: 7a556e360ce0c63d18177e8b77e104ce3e05a5a1
+    :git: git@github.com:mikeMTOL/UIBarButtonItem-Badge.git
   UICollectionView-ARDynamicHeightLayoutCell:
     :commit: 86cf2a26c8720adc89c647ba964f96aa150f3aa9
     :git: https://github.com/SuperMarioBean/UICollectionView-ARDynamicHeightLayoutCell.git
@@ -108,27 +115,29 @@ SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
   CCBottomRefreshControl: 2cfdbd6f5be5181f5f070637605981d5557e8e32
   CHTCollectionViewWaterfallLayout: 1a8da4fc662702cbddda8926ced266036a829f84
-  CocoaLumberjack: a6f77d987d65dc7ba86b0f84db7d0b9084f77bcb
-  EaseMobSDK: 639251847fa6de8cd752a6d4ca841e1753903683
+  EaseMobSDKFull: 43858ca9a62bbe1fa4c7c006f944a3e52a4bff48
   Expecta: 32604574add2c46a36f8d2f716b6c5736eb75024
   FIR.im: e5c7367a35adcd796f30f176f059356c330c0c2e
   HIPImageCropper: 080054a1d885660e24ca365904842a287207cce2
-  KIF: b0bd762b0c7890b04920cf618021d6d4fd5127bd
+  KIF: a94bffe9c97e449e44f8fa481c53243d21309e1e
   Mantle: 967fd31ea0220890b2e76589198996b534bb3fb1
-  Masonry: 4972309f2f134de9dd312f4dc4a21359b50e6caa
+  Masonry: 362e8a1cc0beada4a4c4832d5e863da2a51533be
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   MBProgressHUDExtensions@donly: 9b692655484251819c6f3ce5a9e9b2538eac7bf4
   MulticastDelegate: 473589ab16a00612150f8bfd726caac85125e695
   OCMock: a10ea9f0a6e921651f96f78b6faee95ebc813b92
   PBJVision: fe43c9a58bb1c1277d16fd802fa836d25e034a45
-  Pingpp: 85fe5b5421c3c774deaa38943cbbff8dbe82c76c
+  Pingpp: c66e424847bc811c890f04b623bc96646eb86bd9
   pop: 628ffc631644601567ee8bfaaaea493ebd7d0923
   RBStoryboardLink: 0faae84aea6a5e8716c4469984d847d958c3fcb3
   Reveal-iOS-SDK: c9c55cad2729c85f6ced415f1b21857c9a2d8ef9
   SCRecorder: 90075f2d9deb03cd8280faff8cd3cca11c036025
-  SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29
-  Specta: 96fe05fe5c7348b5223f85e862904f6e832abb14
+  SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
+  Specta: 9cec98310dca411f7c7ffd6943552b501622abfe
+  SSPullToRefresh: 369e862c1d6528c7a354fc85cd4763d4e670e9af
+  THProgressView: 999dc78f748f4cb6d69408f545de4d82ef7f1cec
   UIAlert+Blocks: aa9e754efb2b1066e70cac7ed7e1499d960208fe
+  UIBarButtonItem-Badge: 8f5ed4d32d32dbb03034d4f273d02c8da680236b
   UICollectionView-ARDynamicHeightLayoutCell: 7bcfb4f797def6160a8ce45148b74d2be8d7a322
 
 COCOAPODS: 0.37.2

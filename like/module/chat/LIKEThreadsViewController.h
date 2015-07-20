@@ -8,9 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-#import "LIKEThreadsViewControllerProtocol.h"
-#import "LIKEChatViewControllerDelegate.h"
-
-@interface LIKEThreadsViewController : UITableViewController <LIKEChatViewControllerDelegate>
+@interface LIKEThreadsViewController : UIViewController
 
 @end

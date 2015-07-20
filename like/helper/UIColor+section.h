@@ -14,4 +14,8 @@
 
 + (UIColor *)like_tintColor;
 
++ (UIColor *)like_viewBackgroundColor;
+
++ (UIColor *)like_moreViewBackgroundColor;
+
 @end

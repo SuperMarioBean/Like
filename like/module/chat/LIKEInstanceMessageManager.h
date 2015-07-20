@@ -8,24 +8,25 @@
 
 #import "LIKEAPIBaseManager.h"
 
+#import "ApplyViewController.h"
+
+extern NSString *const LIKEApplyTitle;
+extern NSString *const LIKEApplyUsername;
+extern NSString *const LIKEApplyGroupName;
+extern NSString *const LIKEApplyGroupID;
+extern NSString *const LIKEApplyMessage;
+extern NSString *const LIKEApplyStyle;
+
 typedef NS_ENUM(NSInteger, LIKEIMErrorCode) {
     LIKEIMErrorCodeServerNotReachable = EMErrorServerNotReachable,
     LIKEIMErrorCodeServerAuthenticationFailure = EMErrorServerAuthenticationFailure,
     LIKEIMErrorCodeServerTimeout = EMErrorServerTimeout,
 };
 
-extern NSString *const LIKEIMLoginChangeNotification;
-
-@interface LIKEInstanceMessageManager : LIKEAPIBaseManager
+@interface LIKEInstanceMessageManager : LIKEAPIBaseManager <EMChatManagerDelegate>
 
 @property (readwrite, nonatomic, strong) NSArray *conversationsArray;
 
 @property (readwrite, nonatomic, strong) NSArray *groupsArray;
-
-@property (readwrite, nonatomic, strong) NSMutableArray *appliesArray;
-
-- (void)loginWithCompletion:(void (^)(NSError *error))completion;
-
-- (void)loginWithUsername:(NSString *)username password:(NSString *)password completion:(void (^)(NSError *error))completion;
 
 @end
