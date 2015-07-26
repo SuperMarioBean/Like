@@ -106,7 +106,7 @@
             </objects>
             <point key="canvasLocation" x="601" y="779"/>
         </scene>
-        <!--Chat View Controller-->
+        <!--{{chatter}}-->
         <scene sceneID="pA7-vv-flh">
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="TdX-jA-cX2" customClass="LIKEChatViewController" sceneMemberID="viewController">
@@ -137,7 +137,7 @@
                             <constraint firstAttribute="bottom" secondItem="zdi-OT-WPu" secondAttribute="bottom" placeholder="YES" id="z8D-HL-PlJ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="iJ6-KL-E5Y"/>
+                    <navigationItem key="navigationItem" title="{{chatter}}" id="iJ6-KL-E5Y"/>
                     <connections>
                         <outlet property="longPressGestureRecognizer" destination="IjV-lJ-B6s" id="qOK-Al-584"/>
                         <outlet property="tableView" destination="zdi-OT-WPu" id="GKm-o0-yId"/>

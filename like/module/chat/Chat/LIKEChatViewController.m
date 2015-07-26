@@ -128,7 +128,7 @@
     [self.view addSubview:self.chatToolBar];
     
     self.tableView.backgroundColor = [UIColor like_viewBackgroundColor];
-    [self.tableView makeConstraints:^(MASConstraintMaker *make) {
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(self.chatToolBar.mas_top);
     }];
     
@@ -176,7 +176,7 @@
 //    [backButton addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
 //    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
 //    [self.navigationItem setLeftBarButtonItem:backItem];
-    UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back.png"]
+    UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"chat_back.png"]
                                                                       style:UIBarButtonItemStylePlain
                                                                      target:self
                                                                      action:@selector(back)];

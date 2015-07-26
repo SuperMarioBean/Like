@@ -19,7 +19,6 @@
 
 #define kServerUrl @"http://xiaomu.ren/pay"
 
-#define MAS_SHORTHAND
 #import "Masonry.h"
 #import "Mantle.h"
 #import "AFNetworking.h"
@@ -32,7 +31,7 @@
 #import "EaseMob+CallService.h"
 #import "RealtimeSearchUtil.h"
 #import "SSPullToRefresh.h"
-#import "UIBarButtonItem+badge.h"
+#import "UIBarButtonItem+Badge.h"
 
 #import "LIKEUser.h"
 #import "LIKEAppContext.h"

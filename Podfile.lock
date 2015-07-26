@@ -54,12 +54,14 @@ PODS:
   - SDWebImage (3.7.3):
     - SDWebImage/Core (= 3.7.3)
   - SDWebImage/Core (3.7.3)
+  - SMBCustomRelationshipSegue (0.1.0)
   - Specta (1.0.2)
   - SSPullToRefresh (1.2.4)
   - THProgressView (1.0)
   - UIAlert+Blocks (1.0.2)
   - UIBarButtonItem-Badge (0.0.1)
   - UICollectionView-ARDynamicHeightLayoutCell (1.0)
+  - UIViewController+BlockSegue (1.0.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.5.4)
@@ -85,12 +87,14 @@ DEPENDENCIES:
   - Reveal-iOS-SDK
   - SCRecorder
   - SDWebImage (~> 3.7.2)
+  - SMBCustomRelationshipSegue
   - Specta (~> 1.0.0)
   - SSPullToRefresh (from `git@github.com:SuperMarioBean/sspulltorefresh.git`)
   - THProgressView (~> 1.0)
   - UIAlert+Blocks (~> 1.0.2)
   - UIBarButtonItem-Badge (from `git@github.com:mikeMTOL/UIBarButtonItem-Badge.git`)
   - UICollectionView-ARDynamicHeightLayoutCell (from `https://github.com/SuperMarioBean/UICollectionView-ARDynamicHeightLayoutCell.git`)
+  - UIViewController+BlockSegue
 
 EXTERNAL SOURCES:
   SSPullToRefresh:
@@ -133,11 +137,13 @@ SPEC CHECKSUMS:
   Reveal-iOS-SDK: c9c55cad2729c85f6ced415f1b21857c9a2d8ef9
   SCRecorder: 90075f2d9deb03cd8280faff8cd3cca11c036025
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
+  SMBCustomRelationshipSegue: d90b5fe7bb64a2a3af86e4d5dabde3f27c1687f1
   Specta: 9cec98310dca411f7c7ffd6943552b501622abfe
   SSPullToRefresh: 369e862c1d6528c7a354fc85cd4763d4e670e9af
   THProgressView: 999dc78f748f4cb6d69408f545de4d82ef7f1cec
   UIAlert+Blocks: aa9e754efb2b1066e70cac7ed7e1499d960208fe
   UIBarButtonItem-Badge: 8f5ed4d32d32dbb03034d4f273d02c8da680236b
   UICollectionView-ARDynamicHeightLayoutCell: 7bcfb4f797def6160a8ce45148b74d2be8d7a322
+  UIViewController+BlockSegue: 5c326671d254c3ad16523ecfe165137004293073
 
-COCOAPODS: 0.37.2
+COCOAPODS: 0.38.1

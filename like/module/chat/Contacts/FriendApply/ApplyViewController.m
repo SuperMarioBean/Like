@@ -60,7 +60,7 @@ static ApplyViewController *controller = nil;
 //    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
 //    [self.navigationItem setLeftBarButtonItem:backItem];
     
-    UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back.png"]
+    UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"chat_back.png"]
                                                                       style:UIBarButtonItemStylePlain
                                                                      target:self
                                                                      action:@selector(back)];
