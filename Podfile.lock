@@ -146,4 +146,4 @@ SPEC CHECKSUMS:
   UICollectionView-ARDynamicHeightLayoutCell: 7bcfb4f797def6160a8ce45148b74d2be8d7a322
   UIViewController+BlockSegue: 5c326671d254c3ad16523ecfe165137004293073
 
-COCOAPODS: 0.38.1
+COCOAPODS: 0.38.2
