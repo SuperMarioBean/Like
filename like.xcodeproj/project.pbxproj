@@ -326,6 +326,12 @@
 		63E58A9F1B50BF12004133A5 /* PhotoGellaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E58A981B50BF12004133A5 /* PhotoGellaryViewController.m */; };
 		63E58AA01B50BF12004133A5 /* PhotoGellaryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E58A9A1B50BF12004133A5 /* PhotoGellaryCell.m */; };
 		63E58AA11B50BF12004133A5 /* PhotoGellaryHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E58A9C1B50BF12004133A5 /* PhotoGellaryHeader.m */; };
+		63FF6A7C1B65DA8C000C46D8 /* LikeMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FF6A7B1B65DA8C000C46D8 /* LikeMineViewController.m */; };
+		63FF6A921B65F2CA000C46D8 /* AbstractTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FF6A891B65F2CA000C46D8 /* AbstractTransition.m */; };
+		63FF6A931B65F2CA000C46D8 /* ScrollTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FF6A8B1B65F2CA000C46D8 /* ScrollTransition.m */; };
+		63FF6A941B65F2CA000C46D8 /* TabBarControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FF6A8D1B65F2CA000C46D8 /* TabBarControllerDelegate.m */; };
+		63FF6A951B65F2CA000C46D8 /* TabBarTransitionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FF6A8F1B65F2CA000C46D8 /* TabBarTransitionController.m */; };
+		63FF6A961B65F2CA000C46D8 /* UITabBarController+SafeIndexSelection.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FF6A911B65F2CA000C46D8 /* UITabBarController+SafeIndexSelection.m */; };
 		9ACAE78879C2194B489B9D5A /* libPods-like.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A979D4D865537226B1455EA9 /* libPods-like.a */; };
 		F64A1F7AEFE5389F5FDB362B /* libPods-likeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4925A4D07F0BFCA3304237D /* libPods-likeTests.a */; };
 /* End PBXBuildFile section */
@@ -973,6 +979,19 @@
 		63E58A9B1B50BF12004133A5 /* PhotoGellaryHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoGellaryHeader.h; sourceTree = "<group>"; };
 		63E58A9C1B50BF12004133A5 /* PhotoGellaryHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoGellaryHeader.m; sourceTree = "<group>"; };
 		63E58AA21B50D87D004133A5 /* LIKETransferProcessedImageProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LIKETransferProcessedImageProtocol.h; sourceTree = "<group>"; };
+		63FF6A7A1B65DA8C000C46D8 /* LikeMineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LikeMineViewController.h; sourceTree = "<group>"; };
+		63FF6A7B1B65DA8C000C46D8 /* LikeMineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LikeMineViewController.m; sourceTree = "<group>"; };
+		63FF6A871B65F2CA000C46D8 /* AbstractTransition+Subclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AbstractTransition+Subclass.h"; sourceTree = "<group>"; };
+		63FF6A881B65F2CA000C46D8 /* AbstractTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractTransition.h; sourceTree = "<group>"; };
+		63FF6A891B65F2CA000C46D8 /* AbstractTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractTransition.m; sourceTree = "<group>"; };
+		63FF6A8A1B65F2CA000C46D8 /* ScrollTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollTransition.h; sourceTree = "<group>"; };
+		63FF6A8B1B65F2CA000C46D8 /* ScrollTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollTransition.m; sourceTree = "<group>"; };
+		63FF6A8C1B65F2CA000C46D8 /* TabBarControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarControllerDelegate.h; sourceTree = "<group>"; };
+		63FF6A8D1B65F2CA000C46D8 /* TabBarControllerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarControllerDelegate.m; sourceTree = "<group>"; };
+		63FF6A8E1B65F2CA000C46D8 /* TabBarTransitionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarTransitionController.h; sourceTree = "<group>"; };
+		63FF6A8F1B65F2CA000C46D8 /* TabBarTransitionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarTransitionController.m; sourceTree = "<group>"; };
+		63FF6A901B65F2CA000C46D8 /* UITabBarController+SafeIndexSelection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBarController+SafeIndexSelection.h"; sourceTree = "<group>"; };
+		63FF6A911B65F2CA000C46D8 /* UITabBarController+SafeIndexSelection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBarController+SafeIndexSelection.m"; sourceTree = "<group>"; };
 		7FC1AF0E053AD386E334AC50 /* Pods-likeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-likeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-likeTests/Pods-likeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A979D4D865537226B1455EA9 /* libPods-like.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-like.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4925A4D07F0BFCA3304237D /* libPods-likeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-likeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2429,7 +2448,10 @@
 		63B3C68C1B48E49F0030D5D4 /* mine */ = {
 			isa = PBXGroup;
 			children = (
+				63FF6A861B65F2CA000C46D8 /* tabbarTransition */,
 				63B3C68F1B48E49F0030D5D4 /* mine.storyboard */,
+				63FF6A7A1B65DA8C000C46D8 /* LikeMineViewController.h */,
+				63FF6A7B1B65DA8C000C46D8 /* LikeMineViewController.m */,
 			);
 			path = mine;
 			sourceTree = "<group>";
@@ -2533,6 +2555,24 @@
 				63E58A9C1B50BF12004133A5 /* PhotoGellaryHeader.m */,
 			);
 			path = photoGallery;
+			sourceTree = "<group>";
+		};
+		63FF6A861B65F2CA000C46D8 /* tabbarTransition */ = {
+			isa = PBXGroup;
+			children = (
+				63FF6A871B65F2CA000C46D8 /* AbstractTransition+Subclass.h */,
+				63FF6A881B65F2CA000C46D8 /* AbstractTransition.h */,
+				63FF6A891B65F2CA000C46D8 /* AbstractTransition.m */,
+				63FF6A8A1B65F2CA000C46D8 /* ScrollTransition.h */,
+				63FF6A8B1B65F2CA000C46D8 /* ScrollTransition.m */,
+				63FF6A8C1B65F2CA000C46D8 /* TabBarControllerDelegate.h */,
+				63FF6A8D1B65F2CA000C46D8 /* TabBarControllerDelegate.m */,
+				63FF6A8E1B65F2CA000C46D8 /* TabBarTransitionController.h */,
+				63FF6A8F1B65F2CA000C46D8 /* TabBarTransitionController.m */,
+				63FF6A901B65F2CA000C46D8 /* UITabBarController+SafeIndexSelection.h */,
+				63FF6A911B65F2CA000C46D8 /* UITabBarController+SafeIndexSelection.m */,
+			);
+			path = tabbarTransition;
 			sourceTree = "<group>";
 		};
 		947A3FF8C71BE3BBD9A51437 /* Pods */ = {
@@ -2773,11 +2813,13 @@
 				63B3C71B1B48E49F0030D5D4 /* UIView+RecursiveDescription.m in Sources */,
 				63B3C7081B48E49F0030D5D4 /* UIScreen+Frame.m in Sources */,
 				63B3C6F11B48E49F0030D5D4 /* UIImage+FileName.m in Sources */,
+				63FF6A921B65F2CA000C46D8 /* AbstractTransition.m in Sources */,
 				63B3C6F71B48E49F0030D5D4 /* UIImage+RemoteSize.m in Sources */,
 				63B3C6C71B48E49F0030D5D4 /* NSString+Contains.m in Sources */,
 				63B3C7711B48E9410030D5D4 /* LIKEAPIProxy.m in Sources */,
 				63B3C6E21B48E49F0030D5D4 /* UIButton+Indicator.m in Sources */,
 				63B3C6BC1B48E49F0030D5D4 /* NSObject+AddProperty.m in Sources */,
+				63FF6A951B65F2CA000C46D8 /* TabBarTransitionController.m in Sources */,
 				63E58A871B4FD122004133A5 /* LIKETagsViewController.m in Sources */,
 				63AAFFB41B5BEA1E00ACF151 /* EMAlertView.m in Sources */,
 				63AAFED31B5BE54C00ACF151 /* AddFriendViewController.m in Sources */,
@@ -2827,6 +2869,7 @@
 				63B3C6ED1B48E49F0030D5D4 /* UIImage+animatedGIF.m in Sources */,
 				63AAFFD11B5BEA1E00ACF151 /* PSTCollectionViewController.m in Sources */,
 				63AAFFAC1B5BEA1E00ACF151 /* MessageReadManager.m in Sources */,
+				63FF6A941B65F2CA000C46D8 /* TabBarControllerDelegate.m in Sources */,
 				633D16FC1B5167A300C2786A /* IrregularView.m in Sources */,
 				63B3C7681B48E6930030D5D4 /* LIKEUser.m in Sources */,
 				63B3C7031B48E49F0030D5D4 /* UINavigationController+StackManager.m in Sources */,
@@ -2868,6 +2911,7 @@
 				63B3C6BD1B48E49F0030D5D4 /* NSObject+AssociatedObject.m in Sources */,
 				63AAFFA31B5BEA1E00ACF151 /* EMChatImageBubbleView.m in Sources */,
 				63AAFFBB1B5BEA1E00ACF151 /* MWTapDetectingView.m in Sources */,
+				63FF6A961B65F2CA000C46D8 /* UITabBarController+SafeIndexSelection.m in Sources */,
 				636C13531B56298A0057EA10 /* NSDate+Helper.m in Sources */,
 				63AAFFD41B5BEA1E00ACF151 /* PSTCollectionViewItemKey.m in Sources */,
 				63AAFFBD1B5BEA1E00ACF151 /* DACircularProgressView.m in Sources */,
@@ -2933,6 +2977,7 @@
 				63B3C6DE1B48E49F0030D5D4 /* UIBezierPath+Symbol.m in Sources */,
 				63AAFFBE1B5BEA1E00ACF151 /* EMSDImageCache.m in Sources */,
 				63B3C7091B48E49F0030D5D4 /* UIScrollView+Addition.m in Sources */,
+				63FF6A931B65F2CA000C46D8 /* ScrollTransition.m in Sources */,
 				63B3C6A01B48E49F0030D5D4 /* CLLocation+CH1903.m in Sources */,
 				63AAFFC61B5BEA1E00ACF151 /* NSData+EMImageContentType.m in Sources */,
 				63AAFED01B5BE54C00ACF151 /* ChineseToPinyin.m in Sources */,
@@ -2957,6 +3002,7 @@
 				63AAFFDD1B5BEA1E00ACF151 /* amrFileCodec.mm in Sources */,
 				63AAFED41B5BE54C00ACF151 /* ApplyFriendCell.m in Sources */,
 				63B3C6CB1B48E49F0030D5D4 /* NSString+Hash.m in Sources */,
+				63FF6A7C1B65DA8C000C46D8 /* LikeMineViewController.m in Sources */,
 				63AAFED21B5BE54C00ACF151 /* AddFriendCell.m in Sources */,
 				63B3C70D1B48E49F0030D5D4 /* UITableView+FDTemplateLayoutCell.m in Sources */,
 				63B3C6B81B48E49F0030D5D4 /* NSNotificationCenter+MainThread.m in Sources */,
