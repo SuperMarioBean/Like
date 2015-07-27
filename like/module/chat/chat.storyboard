@@ -164,6 +164,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="mrc-V3-6Ex"/>
+        <segue reference="xVt-rH-Yyn"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>
