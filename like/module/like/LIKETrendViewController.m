@@ -42,9 +42,6 @@
     
     self.viewModel = [[LIKETrendViewModel alloc] init];
     self.collectionView.dataSource = self.viewModel;
-    
-    self.collectionView.contentInset = UIEdgeInsetsMake(CGRectGetHeight([UIApplication sharedApplication].statusBarFrame) + CGRectGetHeight(self.navigationController.navigationBar.frame) , 0, CGRectGetHeight(self.tabBarController.tabBar.frame), 0);
-    self.collectionView.scrollIndicatorInsets = self.collectionView.contentInset;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -54,6 +51,8 @@
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
+    self.collectionView.contentInset = UIEdgeInsetsMake(CGRectGetHeight([UIApplication sharedApplication].statusBarFrame) + CGRectGetHeight(self.navigationController.navigationBar.frame) , 0, CGRectGetHeight(self.tabBarController.tabBar.frame), 0);
+    self.collectionView.scrollIndicatorInsets = self.collectionView.contentInset;
 }
 
 - (void)viewDidAppear:(BOOL)animated {

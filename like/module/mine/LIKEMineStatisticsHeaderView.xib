@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR" customClass="LIKEMineStatisticsHeaderView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9f5-sE-ViF">
+                    <rect key="frame" x="80" y="0.0" width="80" height="50"/>
+                    <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="10"/>
+                    <state key="normal" title="{{want_count}}">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N2x-O7-xuh">
+                    <rect key="frame" x="160" y="0.0" width="80" height="50"/>
+                    <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="10"/>
+                    <state key="normal" title="{{dinner_count}}">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cgp-gx-vxe">
+                    <rect key="frame" x="240" y="0.0" width="80" height="50"/>
+                    <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="10"/>
+                    <state key="normal" title="{{question_count}}">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Qd-cu-hec">
+                    <rect key="frame" x="0.0" y="0.0" width="80" height="50"/>
+                    <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="10"/>
+                    <state key="normal" title="{{photo_count}}">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstItem="1Qd-cu-hec" firstAttribute="width" secondItem="9f5-sE-ViF" secondAttribute="width" id="1XD-hC-mvf"/>
+                <constraint firstItem="Cgp-gx-vxe" firstAttribute="leading" secondItem="N2x-O7-xuh" secondAttribute="trailing" id="BQo-ax-vHV"/>
+                <constraint firstItem="1Qd-cu-hec" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="Ku1-5h-vJ1"/>
+                <constraint firstItem="1Qd-cu-hec" firstAttribute="width" secondItem="N2x-O7-xuh" secondAttribute="width" id="McZ-nt-Llq"/>
+                <constraint firstAttribute="bottom" secondItem="Cgp-gx-vxe" secondAttribute="bottom" id="PX8-gi-F9x"/>
+                <constraint firstItem="1Qd-cu-hec" firstAttribute="width" secondItem="Cgp-gx-vxe" secondAttribute="width" id="Pyp-Bt-TQB"/>
+                <constraint firstItem="N2x-O7-xuh" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="SqQ-Bd-KeK"/>
+                <constraint firstItem="9f5-sE-ViF" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="WzV-hP-ZHb"/>
+                <constraint firstAttribute="bottom" secondItem="9f5-sE-ViF" secondAttribute="bottom" id="ZGo-Zm-Z7b"/>
+                <constraint firstItem="9f5-sE-ViF" firstAttribute="leading" secondItem="1Qd-cu-hec" secondAttribute="trailing" id="eJq-CM-HWq"/>
+                <constraint firstItem="Cgp-gx-vxe" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="fIb-yk-GVq"/>
+                <constraint firstItem="1Qd-cu-hec" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="kIX-Bh-dH8"/>
+                <constraint firstItem="N2x-O7-xuh" firstAttribute="leading" secondItem="9f5-sE-ViF" secondAttribute="trailing" id="ndg-gz-dJM"/>
+                <constraint firstAttribute="bottom" secondItem="N2x-O7-xuh" secondAttribute="bottom" id="nwz-U7-Quf"/>
+                <constraint firstAttribute="trailing" secondItem="Cgp-gx-vxe" secondAttribute="trailing" id="qWZ-Rc-VV2"/>
+                <constraint firstAttribute="bottom" secondItem="1Qd-cu-hec" secondAttribute="bottom" id="xXP-3G-f37"/>
+            </constraints>
+            <connections>
+                <outlet property="dinnersButton" destination="N2x-O7-xuh" id="Jlp-ev-ClW"/>
+                <outlet property="photosButton" destination="1Qd-cu-hec" id="wCh-qy-HRK"/>
+                <outlet property="questionsButton" destination="Cgp-gx-vxe" id="waj-lS-tFt"/>
+                <outlet property="wantsButton" destination="9f5-sE-ViF" id="YfU-Si-rLV"/>
+            </connections>
+            <point key="canvasLocation" x="263" y="82"/>
+        </collectionReusableView>
+    </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

@@ -31,7 +31,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,6 +42,7 @@
     NSString *identifier = segue.identifier;
     if ([identifier isEqualToString:@"tabBarEmbedSegue"]) {
         self.tabBarController = segue.destinationViewController;
+        self.tabBarController.tabBar.hidden = YES;
         self.tabBarControllerDelegate = [[TabBarControllerDelegate alloc] initWithAnimator:[[ScrollTransition alloc] init]];
         self.tabBarController.delegate = self.tabBarControllerDelegate;
         self.tabBarTransitionController = [[TabBarTransitionController alloc] initWithTabBarController:self.tabBarController

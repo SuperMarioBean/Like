@@ -152,8 +152,4 @@ NSString *const LIKEUploadStatus = @"uploadStatus";
     return sharedInstance;
 }
 
-
-
-
-
 @end

@@ -62,7 +62,7 @@
         <!--Item 1-->
         <scene sceneID="hpi-q8-zLs">
             <objects>
-                <viewController id="GL6-59-jN5" sceneMemberID="viewController">
+                <viewController id="GL6-59-jN5" customClass="LIKEMineDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ESr-Jl-Yqx"/>
                         <viewControllerLayoutGuide type="bottom" id="Uun-Tm-qZK"/>
@@ -70,9 +70,33 @@
                     <view key="view" contentMode="scaleToFill" id="v5F-rP-eV8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wnH-90-7Hy">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ghN-43-r71">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="delegate" destination="GL6-59-jN5" id="BYj-3m-kAr"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="wnH-90-7Hy" firstAttribute="leading" secondItem="v5F-rP-eV8" secondAttribute="leading" id="7Ab-Zk-2MC"/>
+                            <constraint firstItem="wnH-90-7Hy" firstAttribute="top" secondItem="v5F-rP-eV8" secondAttribute="top" id="FOl-uC-IET"/>
+                            <constraint firstAttribute="trailing" secondItem="wnH-90-7Hy" secondAttribute="trailing" id="abM-Ez-GMF"/>
+                            <constraint firstAttribute="bottom" secondItem="wnH-90-7Hy" secondAttribute="bottom" id="lYI-L4-4UP"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="T3A-66-9uA"/>
+                    <connections>
+                        <outlet property="collectionView" destination="wnH-90-7Hy" id="Ta5-4A-myF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Esa-E2-xc3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
