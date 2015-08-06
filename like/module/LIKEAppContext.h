@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "LIKEUser.h"
 
-
 typedef NS_ENUM(NSInteger, eLIKEApplyStyle) {
     eLIKEApplyStyleFriend = 0,
     eLIKEApplyStyleGroupInvitation,
@@ -36,9 +35,7 @@ extern NSString *const LIKEUploadThumbnailImage;
 extern NSString *const LIKEUploadProgress;
 extern NSString *const LIKEUploadStatus;
 
-@interface LIKEAppContext : NSObject <EMChatManagerDelegate>
-
-@property (readonly, nonatomic, strong) LIKEUser *user;
+@interface LIKEAppContext :NSObject  <EMChatManagerDelegate>
 
 @property (readonly, getter=isReachable, nonatomic, assign) BOOL reachable;
 

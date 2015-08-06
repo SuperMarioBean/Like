@@ -1,5 +1,8 @@
-platform :ios, '7.0'
-# source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '7.1'
+
+source 'https://github.com/CocoaPods/Specs.git'
+source 'https://github.com/SuperMarioBean/SMBSpecs.git'
+
 target :like do
     # 基础框架
     ## 环信集成(IM和实时语音)
@@ -24,6 +27,7 @@ target :like do
     ## 动画效果引擎
     pod 'pop', '~> 1.0.7'
     ## 网络库
+    pod 'LIKENetworkLayer'
     pod 'AFNetworking', '~> 2.5.4'
     ## 模型框架
     pod 'Mantle', '~> 2.0.2'
@@ -51,7 +55,7 @@ target :like do
     ### UIBarButtonItem角标扩展
     pod 'UIBarButtonItem-Badge', :git => 'git@github.com:mikeMTOL/UIBarButtonItem-Badge.git'
     
-    ### storyboard 增强
+    ### storybrd 增强
     #### custom relationship storyboard segue
     pod 'SMBCustomRelationshipSegue'
     #### perform segue replace

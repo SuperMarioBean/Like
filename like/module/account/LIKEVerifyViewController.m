@@ -8,23 +8,17 @@
 
 #import "LIKEVerifyViewController.h"
 
-#import <SMS_SDK/SMS_SDK.h>
-
 @interface LIKEVerifyViewController () {
     NSUInteger timeCount;
 }
 
 @property (weak, nonatomic) IBOutlet UITextField *verifyCodeTextField;
 
-@property (weak, nonatomic) IBOutlet UITextField *resetPasswordTextField;
-
 @property (weak, nonatomic) IBOutlet UILabel *textLabel;
 
 @property (readwrite, nonatomic, strong) NSTimer *updateTimer;
 
 @property (weak, nonatomic) IBOutlet UIButton *fetchVerifyCodeButton;
-
-@property (readwrite, nonatomic, strong) LIKEUser *user;
 
 @end
 
@@ -33,11 +27,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.user = [LIKEAppContext sharedInstance].user;
-    self.resetPasswordTextField.hidden = !self.user.isForgetPassword;
-    self.textLabel.text = [NSString stringWithFormat:@"系统将会发送验证码短信到您的手机%@", self.user.phoneNumber];
-    
-   
+    self.textLabel.text = [NSString stringWithFormat:@"系统将会发送验证码短信到您的手机%@", [LIKEUserContext sharedInstance].tempPhoneNumber];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -61,50 +51,35 @@
 
 - (IBAction)nextbarButtonClick:(id)sender {
     [self touchesBegan:nil withEvent:nil];
-    if([LIKEHelper verifyDigistsCode:self.verifyCodeTextField.text]) {
-        if (self.user.isForgetPassword) {
-            if ([LIKEHelper verifyPassword:self.resetPasswordTextField.text]) {
-            // TODO: should make the new password go ourserver with verify code
-            }
-            else {
-                self.resetPasswordTextField.text = @"";
-                NSString *message = @"您输入的新密码格式不正确";
-                UIAlertView *alertView = [[UIAlertView alloc] initWithTitleType:UIAlertTitleError
-                                                                        message:message
-                                                                     buttonType:UIAlertButtonOk];
-                [alertView show];
-                return;
-            }
-        }
-        
-        // TODO: these code need to be refactor
-        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-        NSDictionary *parameters = @{@"phoneNumber": self.user.phoneNumber,
-                                     @"digistsCode": self.verifyCodeTextField.text,
-                                     @"zone": @"86"};
-        [manager POST:@"http://xiaomu.ren/verify" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-            if (self.user.isForgetPassword) {
-                NSString *message = @"你的验证码验证成功, 你需要返回登陆界面使用新密码重新登陆一次";
-                UIAlertView *alertView = [[UIAlertView alloc] initWithTitleType:UIAlertTitleConfirm
-                                                                        message:message
-                                                                     buttonType:UIAlertButtonOk
-                                                                          block:^{
-                                                                              self.user.password = self.resetPasswordTextField.text;
-                                                                              [self performSegueWithIdentifier:@"verifyUnwindSegue" sender:self];
-                                                                          }];
-                [alertView show];
-            }
-            else {
-                [self performSegueWithIdentifier:@"personalInfoEnterSegue" sender:self];
-            }
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            NSString *message = @"您的验证码验证失败";
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitleType:UIAlertTitleError
-                                                                    message:message
-                                                                 buttonType:UIAlertButtonOk];
-            
-            [alertView show];
-        }];
+    if ([LIKEHelper verifyDigistsCode:self.verifyCodeTextField.text]) {        
+        [[LIKEUserContext sharedInstance] validateVerificationCodeBySMSWithPhoneNumber:[LIKEUserContext sharedInstance].tempPhoneNumber
+                                                                                  zone:@"86"
+                                                                                  code:self.verifyCodeTextField.text
+                                                                            completion:^(NSError *error) {
+                                                                                if (!error) {
+                                                                                    if ([LIKEUserContext sharedInstance].isForgetPassword) {
+                                                                                        NSString *message = @"你的验证码验证成功, 你需要返回登陆界面使用新密码重新登陆一次";
+                                                                                        UIAlertView *alertView = [[UIAlertView alloc] initWithTitleType:UIAlertTitleConfirm
+                                                                                                                                                message:message
+                                                                                                                                             buttonType:UIAlertButtonOk
+                                                                                                                                                  block:^{
+                                                                                                                                                      [self performSegueWithIdentifier:@"verifyUnwindSegue" sender:self];
+                                                                                                                                                  }];
+                                                                                        [alertView show];
+                                                                                    }
+                                                                                    else {
+                                                                                        [self performSegueWithIdentifier:@"setPasswordSegue" sender:self];
+                                                                                    }
+                                                                                }
+                                                                                else {
+                                                                                    NSString *message = @"您的验证码验证失败";
+                                                                                    UIAlertView *alertView = [[UIAlertView alloc] initWithTitleType:UIAlertTitleError
+                                                                                                                                            message:message
+                                                                                                                                         buttonType:UIAlertButtonOk];
+                                                                                    
+                                                                                    [alertView show];
+                                                                                }
+                                                                            }];
     }
     else {
         self.verifyCodeTextField.text = @"";
@@ -118,27 +93,28 @@
 
 - (IBAction)fetchVerifyCodeButtonClick:(id)sender {
     self.fetchVerifyCodeButton.enabled = NO;
-    [SMS_SDK getVerificationCodeBySMSWithPhone:self.user.phoneNumber
-                                          zone:@"86"
-                                        result:^(SMS_SDKError *error)
-     {
-         if (!error) {
-             self.updateTimer = [NSTimer scheduledTimerWithTimeInterval:1
-                                                                 target:self
-                                                               selector:@selector(p_lwUpdateTime)
-                                                               userInfo:nil
-                                                                repeats:YES];
-         }
-         else {
-             NSString *message = @"您的验证码发送失败";
-             UIAlertView *alertView = [[UIAlertView alloc] initWithTitleType:UIAlertTitleError
-                                                                     message:message
-                                                                  buttonType:UIAlertButtonOk];
-             
-             [alertView show];
-             self.fetchVerifyCodeButton.enabled = YES;
-         }
-     }];
+    [self showHUD];
+    [[LIKEUserContext sharedInstance] fetchVerificationCodeBySMSWithPhoneNumber:[LIKEUserContext sharedInstance].tempPhoneNumber
+                                                                           zone:@"86"
+                                                                     completion:^(NSError *error) {
+                                                                         [self hideHUD];
+                                                                         if (!error) {
+                                                                             self.updateTimer = [NSTimer scheduledTimerWithTimeInterval:1
+                                                                                                                                 target:self
+                                                                                                                               selector:@selector(p_lwUpdateTime)
+                                                                                                                               userInfo:nil
+                                                                                                                                repeats:YES];
+                                                                         }
+                                                                         else {
+                                                                             NSString *message = @"您的验证码发送失败";
+                                                                             UIAlertView *alertView = [[UIAlertView alloc] initWithTitleType:UIAlertTitleError
+                                                                                                                                     message:message
+                                                                                                                                  buttonType:UIAlertButtonOk];
+                                                                             
+                                                                             [alertView show];
+                                                                             self.fetchVerifyCodeButton.enabled = YES;
+                                                                         }
+                                                                     }];
 }
 
 #pragma mark - private methods

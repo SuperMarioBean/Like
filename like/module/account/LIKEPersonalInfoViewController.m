@@ -38,7 +38,7 @@ static NSString *kOtherCell = @"otherCell";     // the remaining cells at the en
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.user = [LIKEAppContext sharedInstance].user;
+    self.user = [LIKEUserContext sharedInstance].user;
     self.navigationItem.hidesBackButton = YES;
     
     [self.privacyPolicyButton setTitle:@" " forState:UIControlStateNormal];
@@ -90,17 +90,26 @@ static NSString *kOtherCell = @"otherCell";     // the remaining cells at the en
     [self touchesBegan:nil withEvent:nil];
     
     BOOL usernameFlag = [LIKEHelper verifyUsername:self.usernameTextField.text];
-    BOOL passwordFlag = [LIKEHelper verifyPassword:self.passwordTextField.text];
     BOOL birthdayFlag = [LIKEHelper veiryBirthday:currentSelectedDate];
     BOOL checkTermFlag = [self.privacyPolicyButton.titleLabel.text isEqualToString:@"√"];
     
-    if (usernameFlag && passwordFlag && birthdayFlag && checkTermFlag) {
-        self.user.username = self.usernameTextField.text;
-        self.user.password = self.passwordTextField.text;
-        self.user.male = self.genderSegmentedControl.selectedSegmentIndex? NO: YES;
-        self.user.birthday = currentSelectedDate;
-        self.user.login = YES;
-        [self performSegueWithIdentifier:@"registerUnwindSegue" sender:self];
+    if (usernameFlag && birthdayFlag && checkTermFlag) {
+        NSDictionary *keyValuePairs = @{@"username": self.usernameTextField.text,
+                                      @"male": @(self.genderSegmentedControl.selectedSegmentIndex? NO: YES),
+                                      @"birthday": currentSelectedDate};
+        [self showHintHudWithMessage:@"正在创建您的个人简历..."];
+        [[LIKEUserContext sharedInstance] updateUserWithKeyValuePairs:keyValuePairs
+                                                         completion:^(NSError *error) {
+                                                                if (!error) {
+                                                                    [self hideHUDWithCompletionMessage:@"已完成"];
+                                                                    [self performSegueWithIdentifier:@"registerUnwindSegue" sender:self];
+                                                                }
+                                                                else {
+                                                                    [self hideHUDWithCompletionMessage:@"出现异常"];
+                                                                    NSLog(@"%@", error);
+                                                                }
+                                                            }];
+
     }
     else {
         NSString *message = @"请按要求填写信息并勾选隐私协议";

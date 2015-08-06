@@ -8,13 +8,9 @@
 
 #import "LIKERegisterViewController.h"
 
-#import <SMS_SDK/SMS_SDK.h>
-
 @interface LIKERegisterViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumberTextField;
-
-@property (readwrite, nonatomic, strong) LIKEUser *user;
 
 @end
 
@@ -23,7 +19,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.user = [LIKEAppContext sharedInstance].user;
     // Do any additional setup after loading the view.
 }
 
@@ -45,7 +40,7 @@
     [self touchesBegan:nil withEvent:nil];
     
     if ([LIKEHelper verifyPhoneNumber:self.phoneNumberTextField.text]) {
-        self.user.phoneNumber = self.phoneNumberTextField.text;
+        [LIKEUserContext sharedInstance].tempPhoneNumber = self.phoneNumberTextField.text;
         [self performSegueWithIdentifier:@"phoneNumberVerifySegue" sender:self];
     }
     else {

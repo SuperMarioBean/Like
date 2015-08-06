@@ -14,6 +14,10 @@
 		6322567C1B0E10D100D10817 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6322567B1B0E10D100D10817 /* Images.xcassets */; };
 		6322567F1B0E10D100D10817 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6322567D1B0E10D100D10817 /* LaunchScreen.xib */; };
 		6322568B1B0E10D100D10817 /* likeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6322568A1B0E10D100D10817 /* likeTests.m */; };
+		633925FE1B72F79A0061BB32 /* LIKEUserContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 633925FD1B72F79A0061BB32 /* LIKEUserContext.m */; };
+		633926071B7346E70061BB32 /* NSError+StatusCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 633926061B7346E70061BB32 /* NSError+StatusCode.m */; };
+		633926091B736F140061BB32 /* server.cer in Resources */ = {isa = PBXBuildFile; fileRef = 633926081B736F140061BB32 /* server.cer */; };
+		6339260C1B7382F40061BB32 /* LIKEPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6339260B1B7382F40061BB32 /* LIKEPasswordViewController.m */; };
 		633D16E71B51437000C2786A /* LIKEFilterCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 633D16E61B51437000C2786A /* LIKEFilterCollectionViewCell.m */; };
 		633D16ED1B5151DE00C2786A /* LIKETrendLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 633D16EC1B5151DE00C2786A /* LIKETrendLayout.m */; };
 		633D16F01B51538D00C2786A /* LIKEFilterLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 633D16EF1B51538D00C2786A /* LIKEFilterLayout.m */; };
@@ -373,6 +377,13 @@
 		632256841B0E10D100D10817 /* likeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = likeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		632256891B0E10D100D10817 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6322568A1B0E10D100D10817 /* likeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = likeTests.m; sourceTree = "<group>"; };
+		633925FC1B72F79A0061BB32 /* LIKEUserContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LIKEUserContext.h; sourceTree = "<group>"; };
+		633925FD1B72F79A0061BB32 /* LIKEUserContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LIKEUserContext.m; sourceTree = "<group>"; };
+		633926051B7346E70061BB32 /* NSError+StatusCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+StatusCode.h"; sourceTree = "<group>"; };
+		633926061B7346E70061BB32 /* NSError+StatusCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+StatusCode.m"; sourceTree = "<group>"; };
+		633926081B736F140061BB32 /* server.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = server.cer; sourceTree = "<group>"; };
+		6339260A1B7382F40061BB32 /* LIKEPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LIKEPasswordViewController.h; sourceTree = "<group>"; };
+		6339260B1B7382F40061BB32 /* LIKEPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LIKEPasswordViewController.m; sourceTree = "<group>"; };
 		633D16E51B51437000C2786A /* LIKEFilterCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LIKEFilterCollectionViewCell.h; sourceTree = "<group>"; };
 		633D16E61B51437000C2786A /* LIKEFilterCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LIKEFilterCollectionViewCell.m; sourceTree = "<group>"; };
 		633D16EB1B5151DE00C2786A /* LIKETrendLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LIKETrendLayout.h; sourceTree = "<group>"; };
@@ -1647,6 +1658,8 @@
 				63B3C6401B48E49F0030D5D4 /* UIView+Helper.m */,
 				63AAFE961B5B61EC00ACF151 /* UIResponder+Router.h */,
 				63AAFE971B5B61EC00ACF151 /* UIResponder+Router.m */,
+				633926051B7346E70061BB32 /* NSError+StatusCode.h */,
+				633926061B7346E70061BB32 /* NSError+StatusCode.m */,
 			);
 			path = helper;
 			sourceTree = "<group>";
@@ -2394,6 +2407,8 @@
 			children = (
 				63B3C7601B48E6930030D5D4 /* LIKEAppContext.h */,
 				63B3C7611B48E6930030D5D4 /* LIKEAppContext.m */,
+				633925FC1B72F79A0061BB32 /* LIKEUserContext.h */,
+				633925FD1B72F79A0061BB32 /* LIKEUserContext.m */,
 				63B3C7641B48E6930030D5D4 /* LIKEUser.h */,
 				63B3C7651B48E6930030D5D4 /* LIKEUser.m */,
 				63B3C64C1B48E49F0030D5D4 /* chat */,
@@ -2414,12 +2429,14 @@
 				63B3C6431B48E49F0030D5D4 /* account.storyboard */,
 				63B3C6441B48E49F0030D5D4 /* LIKELoginViewController.h */,
 				63B3C6451B48E49F0030D5D4 /* LIKELoginViewController.m */,
-				63B3C6461B48E49F0030D5D4 /* LIKEPersonalInfoViewController.h */,
-				63B3C6471B48E49F0030D5D4 /* LIKEPersonalInfoViewController.m */,
 				63B3C6481B48E49F0030D5D4 /* LIKERegisterViewController.h */,
 				63B3C6491B48E49F0030D5D4 /* LIKERegisterViewController.m */,
 				63B3C64A1B48E49F0030D5D4 /* LIKEVerifyViewController.h */,
 				63B3C64B1B48E49F0030D5D4 /* LIKEVerifyViewController.m */,
+				6339260A1B7382F40061BB32 /* LIKEPasswordViewController.h */,
+				6339260B1B7382F40061BB32 /* LIKEPasswordViewController.m */,
+				63B3C6461B48E49F0030D5D4 /* LIKEPersonalInfoViewController.h */,
+				63B3C6471B48E49F0030D5D4 /* LIKEPersonalInfoViewController.m */,
 			);
 			path = account;
 			sourceTree = "<group>";
@@ -2511,6 +2528,7 @@
 		63B3C6991B48E49F0030D5D4 /* resource */ = {
 			isa = PBXGroup;
 			children = (
+				633926081B736F140061BB32 /* server.cer */,
 			);
 			path = resource;
 			sourceTree = "<group>";
@@ -2760,6 +2778,7 @@
 				6322567F1B0E10D100D10817 /* LaunchScreen.xib in Resources */,
 				63B3C74E1B48E49F0030D5D4 /* like.storyboard in Resources */,
 				63B3C7811B48E99B0030D5D4 /* AlipaySDK.bundle in Resources */,
+				633926091B736F140061BB32 /* server.cer in Resources */,
 				63B3C7391B48E49F0030D5D4 /* chat.storyboard in Resources */,
 				63B3C7861B48E99B0030D5D4 /* Pingpp.bundle in Resources */,
 				63B3C75A1B48E49F0030D5D4 /* mine.storyboard in Resources */,
@@ -2868,6 +2887,7 @@
 				63B3C7081B48E49F0030D5D4 /* UIScreen+Frame.m in Sources */,
 				63B3C6F11B48E49F0030D5D4 /* UIImage+FileName.m in Sources */,
 				63FF6A921B65F2CA000C46D8 /* AbstractTransition.m in Sources */,
+				633925FE1B72F79A0061BB32 /* LIKEUserContext.m in Sources */,
 				63B3C6F71B48E49F0030D5D4 /* UIImage+RemoteSize.m in Sources */,
 				63B3C6C71B48E49F0030D5D4 /* NSString+Contains.m in Sources */,
 				63B3C7711B48E9410030D5D4 /* LIKEAPIProxy.m in Sources */,
@@ -2942,6 +2962,7 @@
 				63AAFFD81B5BEA1E00ACF151 /* PSTGridLayoutItem.m in Sources */,
 				63B3C7381B48E49F0030D5D4 /* LIKEVerifyViewController.m in Sources */,
 				63B3C6EB1B48E49F0030D5D4 /* UIDevice+Hardware.m in Sources */,
+				6339260C1B7382F40061BB32 /* LIKEPasswordViewController.m in Sources */,
 				63AAFFD21B5BEA1E00ACF151 /* PSTCollectionViewData.m in Sources */,
 				63B3C6E71B48E49F0030D5D4 /* UIColor+Random.m in Sources */,
 				63B3C6B21B48E49F0030D5D4 /* NSDictionary+JSONString.m in Sources */,
@@ -3143,6 +3164,7 @@
 				63B3C6FC1B48E49F0030D5D4 /* UILabel+AutoSize.m in Sources */,
 				63B3C74F1B48E49F0030D5D4 /* LIKETrendViewController.m in Sources */,
 				63B3C6CA1B48E49F0030D5D4 /* NSString+Encrypt.m in Sources */,
+				633926071B7346E70061BB32 /* NSError+StatusCode.m in Sources */,
 				63B3C7161B48E49F0030D5D4 /* UIView+Constraints.m in Sources */,
 				63B3C69D1B48E49F0030D5D4 /* NSManagedObjectContext+Fetching.m in Sources */,
 				63B3C6E01B48E49F0030D5D4 /* UIButton+Block.m in Sources */,

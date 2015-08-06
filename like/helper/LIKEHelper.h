@@ -39,6 +39,12 @@
 
 #import "UIViewcontroller+MBProgressHUD.h"
 
+#import "NSError+StatusCode.h"
+
+extern NSString *const LIKEContextCode;
+extern NSString *const LIKEContextData;
+extern NSString *const LIKEContextMessage;
+
 @interface LIKEHelper : NSObject
 
 + (NSString *)randomStringWithMaxLength:(int)maxlength;
@@ -62,5 +68,7 @@ NSString *getAppVersion();
 + (BOOL)verifyDigistsCode:(NSString *)digistsCode;
 
 + (BOOL)veiryBirthday:(NSDate *)birthdayDate;
+
++ (id)dataWithResponceObject:(id)responceObject error:(NSError *__autoreleasing *)error;
     
 @end

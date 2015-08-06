@@ -25,8 +25,6 @@ NSString *const LIKEUserPhotoURL = @"photoURL";
                            birthday:(NSDate *)birthday {
     self = [super init];
     if (self) {
-        _forgetPassword = NO;
-        _login = NO;
         _phoneNumber = phoneNumber;
         _username = username;
         _password = password;

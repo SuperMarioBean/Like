@@ -30,6 +30,8 @@ PODS:
   - KIF (3.2.3):
     - KIF/XCTest (= 3.2.3)
   - KIF/XCTest (3.2.3)
+  - LIKENetworkLayer (0.1.0):
+    - AFNetworking (~> 2.5.4)
   - Mantle (2.0.2):
     - Mantle/extobjc (= 2.0.2)
   - Mantle/extobjc (2.0.2)
@@ -72,6 +74,7 @@ DEPENDENCIES:
   - FIR.im (~> 1.2.0)
   - HIPImageCropper
   - KIF (~> 3.2.2)
+  - LIKENetworkLayer
   - Mantle (~> 2.0.2)
   - Masonry (~> 0.6.1)
   - MBProgressHUD (~> 0.9.1)
@@ -124,6 +127,7 @@ SPEC CHECKSUMS:
   FIR.im: e5c7367a35adcd796f30f176f059356c330c0c2e
   HIPImageCropper: 080054a1d885660e24ca365904842a287207cce2
   KIF: a94bffe9c97e449e44f8fa481c53243d21309e1e
+  LIKENetworkLayer: 4e065f40ad387a27f6528dd9d59f431cedb0de80
   Mantle: 967fd31ea0220890b2e76589198996b534bb3fb1
   Masonry: 362e8a1cc0beada4a4c4832d5e863da2a51533be
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad

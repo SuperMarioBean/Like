@@ -14,8 +14,6 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 
-@property (readwrite, nonatomic, strong) LIKEUser *user;
-
 @end
 
 @implementation LIKELoginViewController
@@ -23,7 +21,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.user = [LIKEAppContext sharedInstance].user;
     // Do any additional setup after loading the view.
 }
 
@@ -55,26 +52,29 @@
 
     //BOOL phoneNumberFlag = [LIKEHelper verifyPhoneNumber:self.phoneNumberTextField.text];
     BOOL phoneNumberFlag = YES;
-    BOOL passwordFlag = [LIKEHelper verifyPassword:self.passwordTextField.text];
+    //BOOL passwordFlag = [LIKEHelper verifyPassword:self.passwordTextField.text];
+    BOOL passwordFlag = YES;
+    //BOOL debugFlag = ([self.phoneNumberTextField.text isEqualToString:self.passwordTextField.text]);
     
-    BOOL debugFlag = ([self.phoneNumberTextField.text isEqualToString:self.passwordTextField.text]
-                      && ([self.phoneNumberTextField.text isEqualToString:@"test01"]
-                          ||[self.phoneNumberTextField.text isEqualToString:@"test02"]
-                          ||[self.phoneNumberTextField.text isEqualToString:@"test03"]));
-    
-    if (phoneNumberFlag && passwordFlag && debugFlag) {
-        self.user.phoneNumber = self.phoneNumberTextField.text;
-        self.user.password = self.passwordTextField.text;
-        
-        self.user.imUsername = self.user.phoneNumber;
-        self.user.imPassword = self.user.password;
-        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-        [userDefaults setObject:self.user.phoneNumber forKey:@"username"];
-        [userDefaults setObject:self.user.password forKey:@"password"];
-        [userDefaults synchronize];
-        
-        self.user.login = YES;
-        [self performSegueWithIdentifier:@"loginUnwindSegue" sender:self];
+    [self showHUD];
+    if (phoneNumberFlag && passwordFlag) {
+        [[LIKEUserContext sharedInstance] loginWithPhoneNumber:self.phoneNumberTextField.text
+                                                      password:self.passwordTextField.text
+                                                    completion:^(NSError *error) {
+                                                        [self hideHUD];
+                                                        if (!error) {
+                                                            NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+                                                            [userDefaults setObject:self.phoneNumberTextField.text forKey:@"username"];
+                                                            [userDefaults setObject:self.passwordTextField.text forKey:@"password"];
+                                                            [userDefaults setObject:@(YES) forKey:@"isAutoLogin"];
+                                                            [userDefaults synchronize];
+                                                            
+                                                            [self performSegueWithIdentifier:@"loginUnwindSegue" sender:self];
+                                                        }
+                                                        else {
+                                                            NSLog(@"%@", error);
+                                                        }
+                                                    }];
     }
     else {
         self.passwordTextField.text = @"";
@@ -90,7 +90,7 @@
 - (IBAction)forgetPasswordButtonClick:(id)sender {
     [self touchesBegan:nil withEvent:nil];
     
-    self.user.forgetPassword = YES;
+    [LIKEUserContext sharedInstance].forgetPassword = YES;
     [self performSegueWithIdentifier:@"phoneNumberEnterSegue" sender:self];
 }
 
@@ -101,8 +101,15 @@
 }
 
 - (IBAction)loginUnwind:(UIStoryboardSegue *)unwindSegue {
-    self.phoneNumberTextField.text = self.user.phoneNumber;
-    self.passwordTextField.text = self.user.password;
+    NSString *identifier = unwindSegue.identifier;
+    if ([identifier isEqualToString:@"userExistUnwindSegue"]) {
+        self.phoneNumberTextField.text = [LIKEUserContext sharedInstance].tempPhoneNumber;
+        self.passwordTextField.text = @"";
+    }
+    else if ([identifier isEqualToString:@"verifyUnwindSegue"]) {
+        self.phoneNumberTextField.text = [LIKEUserContext sharedInstance].tempPhoneNumber;
+        self.passwordTextField.text = [LIKEUserContext sharedInstance].tempPassword;
+    }
 }
 
 #pragma mark - private methods

@@ -12,15 +12,13 @@ extern NSString *const LIKEUserPhotoURL;
 
 @interface LIKEUser : NSObject
 
-@property (readwrite, getter=isForgetPassword, nonatomic, assign) BOOL forgetPassword;
-
-@property (readwrite, getter=isLogin, nonatomic, assign) BOOL login;
+@property (readwrite, nonatomic, copy) NSString *userID;
 
 @property (readwrite, nonatomic, copy) NSString *phoneNumber;
 
-@property (readwrite, nonatomic, copy) NSString *username;
-
 @property (readwrite, nonatomic, copy) NSString *password;
+
+@property (readwrite, nonatomic, copy) NSString *username;
 
 @property (readwrite, nonatomic, copy) NSString *imUsername;
 
@@ -32,6 +30,15 @@ extern NSString *const LIKEUserPhotoURL;
 
 @property (readwrite, nonatomic, strong) NSURL *avatorURL;
 
+@property (readwrite, nonatomic, strong) NSArray *followerList;
+
+@property (readwrite, nonatomic, strong) NSArray *followingList;
+
+@property (readwrite, nonatomic, strong) NSArray *mutualList;
+
+@property (readwrite, nonatomic, assign) NSInteger unreadCount;
+
+// debug
 @property (readwrite, nonatomic, strong) NSMutableArray *testTrendsArray;
 
 @property (readwrite, nonatomic, strong) NSMutableArray *testPhotosArray;

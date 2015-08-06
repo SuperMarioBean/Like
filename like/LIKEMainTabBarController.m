@@ -28,69 +28,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.delegate = self;
-    self.selectedIndex = 1;
-    
+
     [self registerNotifications];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.selectedIndex = 1;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
-    LIKEUser *user;
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSString *username = [userDefaults objectForKey:@"username"];
-    NSString *password = [userDefaults objectForKey:@"password"];
-    if (username
-        && password
-        && [username isEqualToString:password]) {
-        user = [LIKEAppContext sharedInstance].user;
-        user.phoneNumber = username;
-        user.password = password;
-        user.imUsername = username;
-        user.imPassword = password;
-        user.login = YES;
-    }
-    
-    if (![LIKEAppContext sharedInstance].user.isLogin) {
-        [self performSegueWithIdentifier:@"accountSegue" sender:self];
-    }
-    else {
-        
-        BOOL isAutoLogin = [[[EaseMob sharedInstance] chatManager] isAutoLoginEnabled];
-        
-        if (!isAutoLogin) {
-            //异步登陆账号
-            [[EaseMob sharedInstance].chatManager asyncLoginWithUsername:user.imUsername
-                                                                password:user.imPassword
-                                                              completion:
-             ^(NSDictionary *loginInfo, EMError *error) {
-                 if (loginInfo && !error) {
-                     //获取群组列表
-                     [[EaseMob sharedInstance].chatManager asyncFetchMyGroupsList];
-                     
-                     //设置是否自动登录
-                     [[EaseMob sharedInstance].chatManager setIsAutoLoginEnabled:YES];
-                     
-                     //将2.1.0版本旧版的coredata数据导入新的数据库
-                     EMError *error = [[EaseMob sharedInstance].chatManager importDataToNewDatabase];
-                     if (!error) {
-                         error = [[EaseMob sharedInstance].chatManager loadDataFromDatabase];
-                     }
-                     
-                     //发送自动登陆状态通知
-                     [[NSNotificationCenter defaultCenter] postNotificationName:LIKEIMLoginChangeNotification object:@YES];
-                     [self setupUnreadMessageCount];
-                 }
-                 else {
-                     //completion([NSError errorWithDomain:@"instancemessage.login.error" code:error.errorCode userInfo:nil]);
-                 }
-             }
-                                                                 onQueue:nil];
-        }
-        else {
-            // 不作任何事儿
-        }
-    }
+    [self reset];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -99,7 +48,7 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
+    NSString *identifier = segue.identifier;
 }
 
 #pragma mark - delegate methods
@@ -327,27 +276,50 @@
 
 #pragma mark - private methods
 
--(void)registerNotifications
-{
+- (void)reset {
+    if (![LIKEUserContext sharedInstance].user) {
+        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+        BOOL isAutoLogin = [userDefaults boolForKey:@"isAutoLogin"];
+        if (isAutoLogin) {
+            NSString *username = [userDefaults objectForKey:@"username"];
+            NSString *password = [userDefaults objectForKey:@"password"];
+            [[LIKEUserContext sharedInstance] loginWithPhoneNumber:username
+                                                          password:password
+                                                        completion:^(NSError *error) {
+                                                            if (!error) {
+                                                                [self setupUnreadMessageCount];
+                                                            }
+                                                            else {
+                                                                NSLog(@"%@", error);
+                                                                [self performSegueWithIdentifier:@"accountSegue" sender:self];
+                                                            }
+                                                        }];
+        }
+        else {
+            [self performSegueWithIdentifier:@"accountSegue" sender:self];
+        }
+    }
+    else {
+        // 说明用户登录过, 不需要任何动作
+    }
+}
+
+- (void)registerNotifications {
     [self unregisterNotifications];
-    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reset) name:LIKELogoutNotification object:nil];
     [[EaseMob sharedInstance].chatManager addDelegate:self delegateQueue:nil];
     [[EaseMob sharedInstance].callManager addDelegate:self delegateQueue:nil];
 }
 
--(void)unregisterNotifications
-{
+- (void)unregisterNotifications {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
     [[EaseMob sharedInstance].chatManager removeDelegate:self];
     [[EaseMob sharedInstance].callManager removeDelegate:self];
 }
 
 // 统计未读消息数
 - (void)setupUnreadMessageCount {
-    NSArray *conversations = [[[EaseMob sharedInstance] chatManager] conversations];
-    NSInteger unreadCount = 0;
-    for (EMConversation *conversation in conversations) {
-        unreadCount += conversation.unreadMessagesCount;
-    }
+    NSInteger unreadCount = [LIKEUserContext sharedInstance].user.unreadCount;
     if (unreadCount > 0) {
         [[self.tabBar.items firstObject] setBadgeValue:[NSString stringWithFormat:@"%i",(int)unreadCount]];
     }else{

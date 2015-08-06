@@ -55,6 +55,21 @@
 #pragma mark UITabBarControllerDelegate
 
 #pragma mark - event response
+- (IBAction)logoutButtonClick:(id)sender {
+    [[LIKEUserContext sharedInstance] logoutWithCompletion:^(NSError *error) {
+        if (!error) {
+            NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+            [userDefaults removeObjectForKey:@"isAutoLogin"];
+            [userDefaults removeObjectForKey:@"username"];
+            [userDefaults removeObjectForKey:@"password"];
+            [userDefaults synchronize];
+            [[NSNotificationCenter defaultCenter] postNotificationName:LIKELogoutNotification object:nil];
+        }
+        else {
+            
+        }
+    }];
+}
 
 #pragma mark - private methods
 

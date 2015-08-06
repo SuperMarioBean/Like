@@ -8,6 +8,10 @@
 
 #import "LIKEHelper.h"
 
+NSString *const LIKEContextCode = @"code";
+NSString *const LIKEContextData = @"data";
+NSString *const LIKEContextMessage = @"msg";
+
 @implementation LIKEHelper
 
 static NSString *const letters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
@@ -143,6 +147,19 @@ NSString *getAppVersion() {
 
 + (BOOL)veiryBirthday:(NSDate *)birthdayDate {
     return YES;
+}
+
++ (id)dataWithResponceObject:(id)responceObject error:(NSError *__autoreleasing *)error {
+    if ([responceObject[LIKEContextCode] integerValue] == LIKEStatusCodeSuccess) {
+        *error = nil;
+        return responceObject[LIKEContextData];
+    }
+    else {
+        *error = [NSError errorWithDomain:responceObject[LIKEContextMessage]
+                                     code:[responceObject[LIKEContextCode] integerValue]
+                                 userInfo:nil];
+        return nil;
+    }
 }
 
 @end

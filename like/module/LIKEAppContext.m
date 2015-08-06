@@ -41,7 +41,7 @@ NSString *const LIKEUploadStatus = @"uploadStatus";
 - (instancetype)init {
     self = [super init];
     if (self) {
-        _user = [[LIKEUser alloc] init];;
+        [[AFNetworkReachabilityManager sharedManager] startMonitoring];
     }
     return self;
 }
@@ -147,7 +147,6 @@ NSString *const LIKEUploadStatus = @"uploadStatus";
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedInstance = [[LIKEAppContext alloc] init];
-        [[AFNetworkReachabilityManager sharedManager] startMonitoring];
     });
     return sharedInstance;
 }

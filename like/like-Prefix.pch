@@ -35,12 +35,15 @@
 
 #import "LIKEUser.h"
 #import "LIKEAppContext.h"
+#import "LIKEUserContext.h"
 #import "LIKEAPIBaseManager.h"
 
 #import "LIKEAPIProxy.h"
 #import "LIKEHelper.h"
+#import "models.h"
 
 static NSString *const LIKEIMLoginChangeNotification = @"loginChange";
+static NSString *const LIKELogoutNotification = @"logout";
 
 static NSString *const LIKEUserGenderMale = @"♂";
 static NSString *const LIKEUserGenderFemale = @"♀";

@@ -47,7 +47,7 @@ NSString *const LIKEMineItemStatisticsHeaderIdentifier = @"com.trinity.like.mine
 }
 
 - (instancetype)init {
-    return [self initWithUser:[LIKEAppContext sharedInstance].user];
+    return [self initWithUser:[LIKEUserContext sharedInstance].user];
 }
 
 - (instancetype)initWithUser:(LIKEUser *)user {
