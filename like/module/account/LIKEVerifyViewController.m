@@ -97,8 +97,8 @@
     [[LIKEUserContext sharedInstance] fetchVerificationCodeBySMSWithPhoneNumber:[LIKEUserContext sharedInstance].tempPhoneNumber
                                                                            zone:@"86"
                                                                      completion:^(NSError *error) {
-                                                                         [self hideHUD];
                                                                          if (!error) {
+                                                                             [self hideHUD];
                                                                              self.updateTimer = [NSTimer scheduledTimerWithTimeInterval:1
                                                                                                                                  target:self
                                                                                                                                selector:@selector(p_lwUpdateTime)
@@ -106,12 +106,7 @@
                                                                                                                                 repeats:YES];
                                                                          }
                                                                          else {
-                                                                             NSString *message = @"您的验证码发送失败";
-                                                                             UIAlertView *alertView = [[UIAlertView alloc] initWithTitleType:UIAlertTitleError
-                                                                                                                                     message:message
-                                                                                                                                  buttonType:UIAlertButtonOk];
-                                                                             
-                                                                             [alertView show];
+                                                                             [self hideHUDWithCompletionMessage:@"您的验证码发送失败"];
                                                                              self.fetchVerifyCodeButton.enabled = YES;
                                                                          }
                                                                      }];

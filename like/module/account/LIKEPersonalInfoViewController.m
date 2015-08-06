@@ -97,15 +97,15 @@ static NSString *kOtherCell = @"otherCell";     // the remaining cells at the en
         NSDictionary *keyValuePairs = @{@"username": self.usernameTextField.text,
                                       @"male": @(self.genderSegmentedControl.selectedSegmentIndex? NO: YES),
                                       @"birthday": currentSelectedDate};
-        [self showHintHudWithMessage:@"正在创建您的个人简历..."];
+        [self showHintHudWithMessage:@"正在更新您的信息..."];
         [[LIKEUserContext sharedInstance] updateUserWithKeyValuePairs:keyValuePairs
                                                          completion:^(NSError *error) {
                                                                 if (!error) {
-                                                                    [self hideHUDWithCompletionMessage:@"已完成"];
+                                                                    [self hideHUDWithCompletionMessage:@"账号更新完成"];
                                                                     [self performSegueWithIdentifier:@"registerUnwindSegue" sender:self];
                                                                 }
                                                                 else {
-                                                                    [self hideHUDWithCompletionMessage:@"出现异常"];
+                                                                    [self hideHUDWithCompletionMessage:@"账号更新失败"];
                                                                     NSLog(@"%@", error);
                                                                 }
                                                             }];

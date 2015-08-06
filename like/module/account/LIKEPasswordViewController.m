@@ -50,12 +50,15 @@
                                                           }
                                                           else {
                                                               NSLog(@"%@", error);
-                                                              [self showHintHudWithMessage:@"该号码已注册, 请直接登录"];
                                                               if (error.code == LIKEStatusCodeRegistUserExist) {
+                                                                  [self showHintHudWithMessage:@"该号码已注册, 请直接登录"];
                                                                   dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                                                                       [self hideHUD];
                                                                       [self performSegueWithIdentifier:@"userExistUnwindSegue" sender:self];
                                                                   });
+                                                              }
+                                                              else {
+                                                                  [self hideHUDWithCompletionMessage:@"注册失败"];
                                                               }
                                                           }
                                                       }];

@@ -61,17 +61,20 @@
         [[LIKEUserContext sharedInstance] loginWithPhoneNumber:self.phoneNumberTextField.text
                                                       password:self.passwordTextField.text
                                                     completion:^(NSError *error) {
-                                                        [self hideHUD];
                                                         if (!error) {
+                                                            [self hideHUDWithCompletionMessage:@"登陆成功"];
                                                             NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
                                                             [userDefaults setObject:self.phoneNumberTextField.text forKey:@"username"];
                                                             [userDefaults setObject:self.passwordTextField.text forKey:@"password"];
                                                             [userDefaults setObject:@(YES) forKey:@"isAutoLogin"];
                                                             [userDefaults synchronize];
                                                             
-                                                            [self performSegueWithIdentifier:@"loginUnwindSegue" sender:self];
+                                                            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                                                                [self performSegueWithIdentifier:@"loginUnwindSegue" sender:self];
+                                                            });
                                                         }
                                                         else {
+                                                            [self hideHUDWithCompletionMessage:@"登录失败"];
                                                             NSLog(@"%@", error);
                                                         }
                                                     }];
