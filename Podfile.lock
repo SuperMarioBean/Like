@@ -27,6 +27,7 @@ PODS:
   - Expecta (1.0.0)
   - FIR.im (1.2.0)
   - HIPImageCropper (2.0.0)
+  - ICETutorial (1.1.1)
   - KIF (3.2.3):
     - KIF/XCTest (= 3.2.3)
   - KIF/XCTest (3.2.3)
@@ -56,7 +57,7 @@ PODS:
   - SDWebImage (3.7.3):
     - SDWebImage/Core (= 3.7.3)
   - SDWebImage/Core (3.7.3)
-  - SMBCustomRelationshipSegue (0.1.0)
+  - SMBCustomRelationshipSegue (0.1.1)
   - Specta (1.0.2)
   - SSPullToRefresh (1.2.4)
   - THProgressView (1.0)
@@ -73,6 +74,7 @@ DEPENDENCIES:
   - Expecta (~> 1.0.0)
   - FIR.im (~> 1.2.0)
   - HIPImageCropper
+  - ICETutorial (from `https://github.com/SuperMarioBean/ICETutorial.git`)
   - KIF (~> 3.2.2)
   - LIKENetworkLayer
   - Mantle (~> 2.0.2)
@@ -90,7 +92,7 @@ DEPENDENCIES:
   - Reveal-iOS-SDK
   - SCRecorder
   - SDWebImage (~> 3.7.2)
-  - SMBCustomRelationshipSegue
+  - SMBCustomRelationshipSegue (from `/Users/David/Documents/supermariobean@github.com/SMBCustomRelationshipSegue`)
   - Specta (~> 1.0.0)
   - SSPullToRefresh (from `git@github.com:SuperMarioBean/sspulltorefresh.git`)
   - THProgressView (~> 1.0)
@@ -100,6 +102,10 @@ DEPENDENCIES:
   - UIViewController+BlockSegue
 
 EXTERNAL SOURCES:
+  ICETutorial:
+    :git: https://github.com/SuperMarioBean/ICETutorial.git
+  SMBCustomRelationshipSegue:
+    :path: "/Users/David/Documents/supermariobean@github.com/SMBCustomRelationshipSegue"
   SSPullToRefresh:
     :git: git@github.com:SuperMarioBean/sspulltorefresh.git
   UIBarButtonItem-Badge:
@@ -108,6 +114,9 @@ EXTERNAL SOURCES:
     :git: https://github.com/SuperMarioBean/UICollectionView-ARDynamicHeightLayoutCell.git
 
 CHECKOUT OPTIONS:
+  ICETutorial:
+    :commit: 4a60940408d629d479c9c37e71864557828abb9c
+    :git: https://github.com/SuperMarioBean/ICETutorial.git
   SSPullToRefresh:
     :commit: 95fda081198d6210437518999afdd24b0b615297
     :git: git@github.com:SuperMarioBean/sspulltorefresh.git
@@ -126,6 +135,7 @@ SPEC CHECKSUMS:
   Expecta: 32604574add2c46a36f8d2f716b6c5736eb75024
   FIR.im: e5c7367a35adcd796f30f176f059356c330c0c2e
   HIPImageCropper: 080054a1d885660e24ca365904842a287207cce2
+  ICETutorial: 6cb15e46066afc359357f048d1b5fca444d69c83
   KIF: a94bffe9c97e449e44f8fa481c53243d21309e1e
   LIKENetworkLayer: 4e065f40ad387a27f6528dd9d59f431cedb0de80
   Mantle: 967fd31ea0220890b2e76589198996b534bb3fb1
@@ -141,7 +151,7 @@ SPEC CHECKSUMS:
   Reveal-iOS-SDK: c9c55cad2729c85f6ced415f1b21857c9a2d8ef9
   SCRecorder: 90075f2d9deb03cd8280faff8cd3cca11c036025
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
-  SMBCustomRelationshipSegue: d90b5fe7bb64a2a3af86e4d5dabde3f27c1687f1
+  SMBCustomRelationshipSegue: e9a919cabc60433096b0b232e6c24cec590cc3ea
   Specta: 9cec98310dca411f7c7ffd6943552b501622abfe
   SSPullToRefresh: 369e862c1d6528c7a354fc85cd4763d4e670e9af
   THProgressView: 999dc78f748f4cb6d69408f545de4d82ef7f1cec

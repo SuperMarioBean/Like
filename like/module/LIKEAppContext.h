@@ -45,6 +45,14 @@ extern NSString *const LIKEUploadStatus;
 
 @property (readwrite, nonatomic, strong) NSMutableArray *testUploadTrendsArray;
 
+@property (readwrite, nonatomic, copy) NSString *username;
+
+@property (readwrite, nonatomic, copy) NSString *password;
+
+@property (readwrite, nonatomic, assign) BOOL isAutoLogin;
+
+@property (readwrite, nonatomic, assign) BOOL hasWelcomeNewUser;
+
 + (instancetype)sharedInstance;
 
 @end

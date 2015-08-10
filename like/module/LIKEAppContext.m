@@ -140,6 +140,44 @@ NSString *const LIKEUploadStatus = @"uploadStatus";
     return _testUploadTrendsArray;
 }
 
+- (NSString *)username {
+    return [[NSUserDefaults standardUserDefaults] objectForKey:@"username"];
+}
+
+- (void)setUsername:(NSString *)username {
+    [[NSUserDefaults standardUserDefaults] setObject:username forKey:@"username"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (NSString *)password {
+    return [[NSUserDefaults standardUserDefaults] objectForKey:@"password"];
+}
+
+- (void)setPassword:(NSString *)password {
+    [[NSUserDefaults standardUserDefaults] setObject:password forKey:@"password"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (BOOL)isAutoLogin {
+    return [[[NSUserDefaults standardUserDefaults] objectForKey:@"isAutoLogin"] boolValue];
+}
+
+- (void)setIsAutoLogin:(BOOL)isAutoLogin {
+    [[NSUserDefaults standardUserDefaults] setObject:@(isAutoLogin) forKey:@"isAutoLogin"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (BOOL)hasWelcomeNewUser {
+    NSString *hasWelcomeNewUserKey = [NSString stringWithFormat:@"hasWelcomeNewUser_%@", getAppVersion()];
+    return [[[NSUserDefaults standardUserDefaults] objectForKey:hasWelcomeNewUserKey] boolValue];
+}
+
+- (void)setHasWelcomeNewUser:(BOOL)hasWelcomeNewUser {
+    NSString *hasWelcomeNewUserKey = [NSString stringWithFormat:@"hasWelcomeNewUser_%@", getAppVersion()];
+    [[NSUserDefaults standardUserDefaults] setObject:@(hasWelcomeNewUser) forKey:hasWelcomeNewUserKey];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
 #pragma mark - api methods
 
 + (instancetype)sharedInstance {

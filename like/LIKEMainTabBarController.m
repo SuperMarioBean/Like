@@ -28,13 +28,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.delegate = self;
-
     [self registerNotifications];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+
     self.selectedIndex = 1;
+
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -278,11 +280,9 @@
 
 - (void)reset {
     if (![LIKEUserContext sharedInstance].user) {
-        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-        BOOL isAutoLogin = [userDefaults boolForKey:@"isAutoLogin"];
-        if (isAutoLogin) {
-            NSString *username = [userDefaults objectForKey:@"username"];
-            NSString *password = [userDefaults objectForKey:@"password"];
+        if ([LIKEAppContext sharedInstance].isAutoLogin) {
+            NSString *username = [LIKEAppContext sharedInstance].username;
+            NSString *password = [LIKEAppContext sharedInstance].password;
             [[LIKEUserContext sharedInstance] loginWithPhoneNumber:username
                                                           password:password
                                                         completion:^(NSError *error) {

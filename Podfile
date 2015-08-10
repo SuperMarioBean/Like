@@ -54,10 +54,11 @@ target :like do
     pod 'SSPullToRefresh', :git => 'git@github.com:SuperMarioBean/sspulltorefresh.git'
     ### UIBarButtonItem角标扩展
     pod 'UIBarButtonItem-Badge', :git => 'git@github.com:mikeMTOL/UIBarButtonItem-Badge.git'
+    pod 'ICETutorial', :git => 'https://github.com/SuperMarioBean/ICETutorial.git'
     
     ### storybrd 增强
     #### custom relationship storyboard segue
-    pod 'SMBCustomRelationshipSegue'
+    pod 'SMBCustomRelationshipSegue', :path => "/Users/David/Documents/supermariobean@github.com/SMBCustomRelationshipSegue"
     #### perform segue replace
     pod 'UIViewController+BlockSegue'
     #### 多 storyboard 的组合使用

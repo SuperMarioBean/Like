@@ -32,6 +32,7 @@
 #import "RealtimeSearchUtil.h"
 #import "SSPullToRefresh.h"
 #import "UIBarButtonItem+Badge.h"
+#import "ICETutorialController.h"
 
 #import "LIKEUser.h"
 #import "LIKEAppContext.h"

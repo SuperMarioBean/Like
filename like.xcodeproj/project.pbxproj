@@ -14,6 +14,7 @@
 		6322567C1B0E10D100D10817 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6322567B1B0E10D100D10817 /* Images.xcassets */; };
 		6322567F1B0E10D100D10817 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6322567D1B0E10D100D10817 /* LaunchScreen.xib */; };
 		6322568B1B0E10D100D10817 /* likeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6322568A1B0E10D100D10817 /* likeTests.m */; };
+		632E24361B78584500F74CD0 /* tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 632E24351B78584500F74CD0 /* tutorial.storyboard */; };
 		633925FE1B72F79A0061BB32 /* LIKEUserContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 633925FD1B72F79A0061BB32 /* LIKEUserContext.m */; };
 		633926071B7346E70061BB32 /* NSError+StatusCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 633926061B7346E70061BB32 /* NSError+StatusCode.m */; };
 		633926091B736F140061BB32 /* server.cer in Resources */ = {isa = PBXBuildFile; fileRef = 633926081B736F140061BB32 /* server.cer */; };
@@ -377,6 +378,7 @@
 		632256841B0E10D100D10817 /* likeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = likeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		632256891B0E10D100D10817 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6322568A1B0E10D100D10817 /* likeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = likeTests.m; sourceTree = "<group>"; };
+		632E24351B78584500F74CD0 /* tutorial.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = tutorial.storyboard; sourceTree = "<group>"; };
 		633925FC1B72F79A0061BB32 /* LIKEUserContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LIKEUserContext.h; sourceTree = "<group>"; };
 		633925FD1B72F79A0061BB32 /* LIKEUserContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LIKEUserContext.m; sourceTree = "<group>"; };
 		633926051B7346E70061BB32 /* NSError+StatusCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+StatusCode.h"; sourceTree = "<group>"; };
@@ -1162,6 +1164,14 @@
 				632256891B0E10D100D10817 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		632E24341B7857E000F74CD0 /* tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				632E24351B78584500F74CD0 /* tutorial.storyboard */,
+			);
+			path = tutorial;
 			sourceTree = "<group>";
 		};
 		633D16F11B5167A300C2786A /* TagView */ = {
@@ -2411,6 +2421,7 @@
 				633925FD1B72F79A0061BB32 /* LIKEUserContext.m */,
 				63B3C7641B48E6930030D5D4 /* LIKEUser.h */,
 				63B3C7651B48E6930030D5D4 /* LIKEUser.m */,
+				632E24341B7857E000F74CD0 /* tutorial */,
 				63B3C64C1B48E49F0030D5D4 /* chat */,
 				63B3C6421B48E49F0030D5D4 /* account */,
 				63B3C6761B48E49F0030D5D4 /* like */,
@@ -2765,6 +2776,7 @@
 				633D17131B536E3700C2786A /* LIKEFeedItemContentCell.xib in Resources */,
 				63FF6ABB1B6698CA000C46D8 /* LIKEMinePhotoItem.xib in Resources */,
 				63FF6AB21B6608E1000C46D8 /* LIKEMineStatisticsHeaderView.xib in Resources */,
+				632E24361B78584500F74CD0 /* tutorial.storyboard in Resources */,
 				63D57C101B58C86400ED9D96 /* LIKEThreadItemConversationCell.xib in Resources */,
 				633D172A1B53733700C2786A /* LIKEFeedItemHeader.xib in Resources */,
 				638184CF1B5824B5003E53DC /* chat.xcassets in Resources */,
@@ -3328,6 +3340,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_MODULES_AUTOLINK = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3359,6 +3373,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_MODULES_AUTOLINK = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

@@ -60,11 +60,7 @@
     [[LIKEUserContext sharedInstance] logoutWithCompletion:^(NSError *error) {
         if (!error) {
             [self hideHUDWithCompletionMessage:@"注销成功"];
-            NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-            [userDefaults removeObjectForKey:@"isAutoLogin"];
-            [userDefaults removeObjectForKey:@"username"];
-            [userDefaults removeObjectForKey:@"password"];
-            [userDefaults synchronize];
+            [[LIKEAppContext sharedInstance] setIsAutoLogin:NO];
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [[NSNotificationCenter defaultCenter] postNotificationName:LIKELogoutNotification object:nil];
             });
