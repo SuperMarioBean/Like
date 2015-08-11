@@ -19,6 +19,8 @@
 
 #define kServerUrl @"http://xiaomu.ren/pay"
 
+#import <CoreLocation/CoreLocation.h>
+
 #import "Masonry.h"
 #import "Mantle.h"
 #import "AFNetworking.h"
@@ -37,11 +39,13 @@
 #import "LIKEUser.h"
 #import "LIKEAppContext.h"
 #import "LIKEUserContext.h"
+#import "LIKELocationContext.h"
 #import "LIKEAPIBaseManager.h"
 
 #import "LIKEAPIProxy.h"
 #import "LIKEHelper.h"
 #import "models.h"
+
 
 static NSString *const LIKEIMLoginChangeNotification = @"loginChange";
 static NSString *const LIKELogoutNotification = @"logout";

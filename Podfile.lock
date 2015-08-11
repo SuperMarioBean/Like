@@ -20,9 +20,10 @@ PODS:
   - AFNetworking/UIKit (2.5.4):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - AMap2DMap (2.6.0)
+  - AMapSearch (2.6.0)
   - CCBottomRefreshControl (0.5):
     - Masonry
-  - CHTCollectionViewWaterfallLayout (0.9.1)
   - EaseMobSDKFull (2.1.7)
   - Expecta (1.0.0)
   - FIR.im (1.2.0)
@@ -31,6 +32,9 @@ PODS:
   - KIF (3.2.3):
     - KIF/XCTest (= 3.2.3)
   - KIF/XCTest (3.2.3)
+  - LIKELocation (0.1.0):
+    - AMap2DMap
+    - AMapSearch
   - LIKENetworkLayer (0.1.0):
     - AFNetworking (~> 2.5.4)
   - Mantle (2.0.2):
@@ -69,13 +73,13 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 2.5.4)
   - CCBottomRefreshControl
-  - CHTCollectionViewWaterfallLayout (~> 0.9.1)
   - EaseMobSDKFull (~> 2.1.7)
   - Expecta (~> 1.0.0)
   - FIR.im (~> 1.2.0)
   - HIPImageCropper
   - ICETutorial (from `https://github.com/SuperMarioBean/ICETutorial.git`)
   - KIF (~> 3.2.2)
+  - LIKELocation (from `/Users/David/Documents/supermariobean@coding.net/LIKELocation`)
   - LIKENetworkLayer
   - Mantle (~> 2.0.2)
   - Masonry (~> 0.6.1)
@@ -104,6 +108,8 @@ DEPENDENCIES:
 EXTERNAL SOURCES:
   ICETutorial:
     :git: https://github.com/SuperMarioBean/ICETutorial.git
+  LIKELocation:
+    :git: "/Users/David/Documents/supermariobean@coding.net/LIKELocation"
   SMBCustomRelationshipSegue:
     :path: "/Users/David/Documents/supermariobean@github.com/SMBCustomRelationshipSegue"
   SSPullToRefresh:
@@ -117,6 +123,9 @@ CHECKOUT OPTIONS:
   ICETutorial:
     :commit: 4a60940408d629d479c9c37e71864557828abb9c
     :git: https://github.com/SuperMarioBean/ICETutorial.git
+  LIKELocation:
+    :commit: a99a3724f6ae0fa2c41a8a0ff536aefcee029fff
+    :git: "/Users/David/Documents/supermariobean@coding.net/LIKELocation"
   SSPullToRefresh:
     :commit: 95fda081198d6210437518999afdd24b0b615297
     :git: git@github.com:SuperMarioBean/sspulltorefresh.git
@@ -129,14 +138,16 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
+  AMap2DMap: b5ce82581ca53b71a0136da858f7ef04db1ffc59
+  AMapSearch: 0ea3101eec4b9f500b53e33dcda30d343d41613b
   CCBottomRefreshControl: 2cfdbd6f5be5181f5f070637605981d5557e8e32
-  CHTCollectionViewWaterfallLayout: 1a8da4fc662702cbddda8926ced266036a829f84
   EaseMobSDKFull: 43858ca9a62bbe1fa4c7c006f944a3e52a4bff48
   Expecta: 32604574add2c46a36f8d2f716b6c5736eb75024
   FIR.im: e5c7367a35adcd796f30f176f059356c330c0c2e
   HIPImageCropper: 080054a1d885660e24ca365904842a287207cce2
   ICETutorial: 6cb15e46066afc359357f048d1b5fca444d69c83
   KIF: a94bffe9c97e449e44f8fa481c53243d21309e1e
+  LIKELocation: 24af97b59c878bfe1ba1c80be331b27a0f9026ba
   LIKENetworkLayer: 4e065f40ad387a27f6528dd9d59f431cedb0de80
   Mantle: 967fd31ea0220890b2e76589198996b534bb3fb1
   Masonry: 362e8a1cc0beada4a4c4832d5e863da2a51533be
@@ -157,7 +168,7 @@ SPEC CHECKSUMS:
   THProgressView: 999dc78f748f4cb6d69408f545de4d82ef7f1cec
   UIAlert+Blocks: aa9e754efb2b1066e70cac7ed7e1499d960208fe
   UIBarButtonItem-Badge: 8f5ed4d32d32dbb03034d4f273d02c8da680236b
-  UICollectionView-ARDynamicHeightLayoutCell: 7bcfb4f797def6160a8ce45148b74d2be8d7a322
+  UICollectionView-ARDynamicHeightLayoutCell: 560154abd491f89ad6381fa76bfb091cee2b3f37
   UIViewController+BlockSegue: 5c326671d254c3ad16523ecfe165137004293073
 
 COCOAPODS: 0.38.2

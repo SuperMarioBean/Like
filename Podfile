@@ -33,6 +33,8 @@ target :like do
     pod 'Mantle', '~> 2.0.2'
     ## 日志
     #pod 'CocoaLumberjack', '~> 2.0.0'
+    ## 定位
+    pod 'LIKELocation', :git => '/Users/David/Documents/supermariobean@coding.net/LIKELocation'
     
     ## UIKit 组件封装
     ### 进度
@@ -43,7 +45,7 @@ target :like do
     ### 底部刷新
     pod 'CCBottomRefreshControl'
     ### 瀑布流
-    pod 'CHTCollectionViewWaterfallLayout', '~> 0.9.1'
+    #pod 'CHTCollectionViewWaterfallLayout', '~> 0.9.1'
     ### 缓存高度
     pod 'UICollectionView-ARDynamicHeightLayoutCell', :git => 'https://github.com/SuperMarioBean/UICollectionView-ARDynamicHeightLayoutCell.git'
     ### 进度条
@@ -58,7 +60,7 @@ target :like do
     
     ### storybrd 增强
     #### custom relationship storyboard segue
-    pod 'SMBCustomRelationshipSegue', :path => "/Users/David/Documents/supermariobean@github.com/SMBCustomRelationshipSegue"
+    pod 'SMBCustomRelationshipSegue', :path => '/Users/David/Documents/supermariobean@github.com/SMBCustomRelationshipSegue'
     #### perform segue replace
     pod 'UIViewController+BlockSegue'
     #### 多 storyboard 的组合使用

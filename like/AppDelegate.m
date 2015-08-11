@@ -40,8 +40,8 @@
     self.window.tintColor = [UIColor like_tintColor];
     
     [SMS_SDK registerApp:@"812383acc169" withSecret:@"72e728e8b96ade2ce52f7b4e387fcf57"];
-    
     [self easemobApplication:application didFinishLaunchingWithOptions:launchOptions];
+    [[LIKELocationManager sharedInstance] startForceLocating];
     
     // MAKR: 减少并发下载数量
     [SDWebImageDownloader sharedDownloader].maxConcurrentDownloads = 2;

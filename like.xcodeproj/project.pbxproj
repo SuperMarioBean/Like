@@ -319,6 +319,7 @@
 		63B3C78C1B48EE790030D5D4 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 63B3C78B1B48EE790030D5D4 /* libicucore.dylib */; };
 		63B3C78F1B48F1810030D5D4 /* LIKEMainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B3C78E1B48F1810030D5D4 /* LIKEMainTabBarController.m */; };
 		63C70FCE1B569E8C00C2A12F /* LIKEInstanceMessageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C70FCD1B569E8C00C2A12F /* LIKEInstanceMessageManager.m */; };
+		63CB000E1B7A6CBA00F9D198 /* LIKELocationContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CB000D1B7A6CBA00F9D198 /* LIKELocationContext.m */; };
 		63D57C0F1B58C86400ED9D96 /* LIKEThreadItemConversationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D57C0D1B58C86400ED9D96 /* LIKEThreadItemConversationCell.m */; };
 		63D57C101B58C86400ED9D96 /* LIKEThreadItemConversationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63D57C0E1B58C86400ED9D96 /* LIKEThreadItemConversationCell.xib */; };
 		63E58A811B4FCE45004133A5 /* LIKECaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E58A801B4FCE45004133A5 /* LIKECaptureViewController.m */; };
@@ -978,6 +979,8 @@
 		63B3C78E1B48F1810030D5D4 /* LIKEMainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = LIKEMainTabBarController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		63C70FCC1B569E8C00C2A12F /* LIKEInstanceMessageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LIKEInstanceMessageManager.h; sourceTree = "<group>"; };
 		63C70FCD1B569E8C00C2A12F /* LIKEInstanceMessageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LIKEInstanceMessageManager.m; sourceTree = "<group>"; };
+		63CB000C1B7A6CBA00F9D198 /* LIKELocationContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LIKELocationContext.h; sourceTree = "<group>"; };
+		63CB000D1B7A6CBA00F9D198 /* LIKELocationContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LIKELocationContext.m; sourceTree = "<group>"; };
 		63D57C0C1B58C86400ED9D96 /* LIKEThreadItemConversationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LIKEThreadItemConversationCell.h; sourceTree = "<group>"; };
 		63D57C0D1B58C86400ED9D96 /* LIKEThreadItemConversationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LIKEThreadItemConversationCell.m; sourceTree = "<group>"; };
 		63D57C0E1B58C86400ED9D96 /* LIKEThreadItemConversationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LIKEThreadItemConversationCell.xib; sourceTree = "<group>"; };
@@ -2415,6 +2418,8 @@
 		63B3C6411B48E49F0030D5D4 /* module */ = {
 			isa = PBXGroup;
 			children = (
+				63CB000C1B7A6CBA00F9D198 /* LIKELocationContext.h */,
+				63CB000D1B7A6CBA00F9D198 /* LIKELocationContext.m */,
 				63B3C7601B48E6930030D5D4 /* LIKEAppContext.h */,
 				63B3C7611B48E6930030D5D4 /* LIKEAppContext.m */,
 				633925FC1B72F79A0061BB32 /* LIKEUserContext.h */,
@@ -2936,6 +2941,7 @@
 				63B3C7191B48E49F0030D5D4 /* UIView+Frame.m in Sources */,
 				63FF6AB51B6630E6000C46D8 /* LIKEMineDetailViewModel.m in Sources */,
 				63B3C7701B48E9410030D5D4 /* LIKEAPIBaseManager.m in Sources */,
+				63CB000E1B7A6CBA00F9D198 /* LIKELocationContext.m in Sources */,
 				63B3C6D41B48E49F0030D5D4 /* NSTimer+Blocks.m in Sources */,
 				63AAFFCF1B5BEA1E00ACF151 /* PSTCollectionView.m in Sources */,
 				63B3C6AC1B48E49F0030D5D4 /* NSDate+Reporting.m in Sources */,
