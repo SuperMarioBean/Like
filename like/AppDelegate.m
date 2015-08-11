@@ -158,6 +158,7 @@
     // Init tutorial.
     ICETutorialController *viewController = [[ICETutorialController alloc] initWithPages:tutorialLayers
                                                                                 delegate:self];
+    viewController.autoScrollEnabled = NO;
     // Run it.
     [viewController startScrolling];
     

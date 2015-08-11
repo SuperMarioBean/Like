@@ -17,6 +17,8 @@
                         <constraint firstAttribute="height" constant="66" id="Av5-2t-M2M">
                             <variation key="widthClass=compact" constant="180"/>
                         </constraint>
+                        <constraint firstAttribute="width" constant="180" id="Dio-n0-hk1"/>
+                        <constraint firstAttribute="height" constant="180" id="YfG-0g-Drd"/>
                         <constraint firstAttribute="width" constant="150" id="ikS-P6-Mqu">
                             <variation key="widthClass=compact" constant="180"/>
                         </constraint>
@@ -35,13 +37,13 @@
                     </variation>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="联系老朋友" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iV8-3h-qIw">
-                    <rect key="frame" x="0.0" y="329" width="480" height="21"/>
+                    <rect key="frame" x="0.0" y="329" width="480" height="29"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                     <color key="textColor" red="0.61960784310000006" green="0.57647058819999997" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="认识新朋友" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Pi-aC-0tm">
-                    <rect key="frame" x="243" y="358" width="85" height="21"/>
+                    <rect key="frame" x="224" y="366" width="120" height="29"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                     <color key="textColor" red="0.61960784310000006" green="0.57647058819999997" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
@@ -49,16 +51,26 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="5Pi-aC-0tm" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="7BW-a4-JBd"/>
                 <constraint firstAttribute="centerX" secondItem="Ls7-I9-wWE" secondAttribute="centerX" id="9Cj-iG-cW3"/>
                 <constraint firstItem="iV8-3h-qIw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="IA4-Z0-F9G"/>
+                <constraint firstAttribute="trailing" secondItem="5Pi-aC-0tm" secondAttribute="trailing" id="X7Y-Ux-gLw"/>
                 <constraint firstAttribute="centerY" secondItem="Ls7-I9-wWE" secondAttribute="centerY" constant="41" id="XWf-Lv-ckM"/>
                 <constraint firstItem="iV8-3h-qIw" firstAttribute="top" secondItem="Ls7-I9-wWE" secondAttribute="bottom" constant="40" id="jLs-7Z-QYx"/>
                 <constraint firstItem="5Pi-aC-0tm" firstAttribute="top" secondItem="iV8-3h-qIw" secondAttribute="bottom" constant="8" id="jaf-g5-IOr"/>
+                <constraint firstAttribute="centerX" secondItem="5Pi-aC-0tm" secondAttribute="centerX" constant="-44" id="r6w-2x-qyH"/>
                 <constraint firstAttribute="centerX" secondItem="5Pi-aC-0tm" secondAttribute="centerX" constant="-45" id="rmK-zd-YQe"/>
                 <constraint firstAttribute="trailing" secondItem="iV8-3h-qIw" secondAttribute="trailing" id="ujt-3F-ec5"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="7BW-a4-JBd"/>
+                    <exclude reference="X7Y-Ux-gLw"/>
+                    <exclude reference="rmK-zd-YQe"/>
+                </mask>
+            </variation>
             <point key="canvasLocation" x="548" y="455"/>
         </view>
     </objects>
