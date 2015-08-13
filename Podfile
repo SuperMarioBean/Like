@@ -27,15 +27,17 @@ target :like do
     ## 动画效果引擎
     pod 'pop', '~> 1.0.7'
     ## 网络库
-    pod 'LIKENetworkLayer'
     pod 'AFNetworking', '~> 2.5.4'
     ## 模型框架
     pod 'Mantle', '~> 2.0.2'
     ## 日志
     #pod 'CocoaLumberjack', '~> 2.0.0'
     ## 定位
-    pod 'LIKELocation', :git => '/Users/David/Documents/supermariobean@coding.net/LIKELocation'
     
+    pod 'LIKELocation', :path => '/Users/David/Documents/david_fu@bitbucket.org/LIKELocation'
+    pod 'LIKENetworkLayer', :path => '/Users/David/Documents/david_fu@bitbucket.org/LIKENetworkLayer'
+    pod 'LIKENetworkStatus', :path => '/Users/David/Documents/david_fu@bitbucket.org/LIKENetworkStatus'
+
     ## UIKit 组件封装
     ### 进度
     pod 'THProgressView', '~> 1.0'

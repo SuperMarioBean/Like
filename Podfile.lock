@@ -35,7 +35,9 @@ PODS:
   - LIKELocation (0.1.0):
     - AMap2DMap
     - AMapSearch
-  - LIKENetworkLayer (0.1.0):
+  - LIKENetworkLayer (0.1.1):
+    - AFNetworking (~> 2.5.4)
+  - LIKENetworkStatus (0.1.0):
     - AFNetworking (~> 2.5.4)
   - Mantle (2.0.2):
     - Mantle/extobjc (= 2.0.2)
@@ -79,8 +81,9 @@ DEPENDENCIES:
   - HIPImageCropper
   - ICETutorial (from `https://github.com/SuperMarioBean/ICETutorial.git`)
   - KIF (~> 3.2.2)
-  - LIKELocation (from `/Users/David/Documents/supermariobean@coding.net/LIKELocation`)
-  - LIKENetworkLayer
+  - LIKELocation (from `/Users/David/Documents/david_fu@bitbucket.org/LIKELocation`)
+  - LIKENetworkLayer (from `/Users/David/Documents/david_fu@bitbucket.org/LIKENetworkLayer`)
+  - LIKENetworkStatus (from `/Users/David/Documents/david_fu@bitbucket.org/LIKENetworkStatus`)
   - Mantle (~> 2.0.2)
   - Masonry (~> 0.6.1)
   - MBProgressHUD (~> 0.9.1)
@@ -109,7 +112,11 @@ EXTERNAL SOURCES:
   ICETutorial:
     :git: https://github.com/SuperMarioBean/ICETutorial.git
   LIKELocation:
-    :git: "/Users/David/Documents/supermariobean@coding.net/LIKELocation"
+    :path: "/Users/David/Documents/david_fu@bitbucket.org/LIKELocation"
+  LIKENetworkLayer:
+    :path: "/Users/David/Documents/david_fu@bitbucket.org/LIKENetworkLayer"
+  LIKENetworkStatus:
+    :path: "/Users/David/Documents/david_fu@bitbucket.org/LIKENetworkStatus"
   SMBCustomRelationshipSegue:
     :path: "/Users/David/Documents/supermariobean@github.com/SMBCustomRelationshipSegue"
   SSPullToRefresh:
@@ -123,9 +130,6 @@ CHECKOUT OPTIONS:
   ICETutorial:
     :commit: 4a60940408d629d479c9c37e71864557828abb9c
     :git: https://github.com/SuperMarioBean/ICETutorial.git
-  LIKELocation:
-    :commit: a99a3724f6ae0fa2c41a8a0ff536aefcee029fff
-    :git: "/Users/David/Documents/supermariobean@coding.net/LIKELocation"
   SSPullToRefresh:
     :commit: 95fda081198d6210437518999afdd24b0b615297
     :git: git@github.com:SuperMarioBean/sspulltorefresh.git
@@ -147,8 +151,9 @@ SPEC CHECKSUMS:
   HIPImageCropper: 080054a1d885660e24ca365904842a287207cce2
   ICETutorial: 6cb15e46066afc359357f048d1b5fca444d69c83
   KIF: a94bffe9c97e449e44f8fa481c53243d21309e1e
-  LIKELocation: 24af97b59c878bfe1ba1c80be331b27a0f9026ba
-  LIKENetworkLayer: 4e065f40ad387a27f6528dd9d59f431cedb0de80
+  LIKELocation: fb6a45e8811a73bdbb3aa1f5b2acf8129f6cf3fb
+  LIKENetworkLayer: 36040d9e70fedc88933b7a77023ebf1dbd89689e
+  LIKENetworkStatus: 711d0d3a54e541e59101266f818b5d1f6f08fa14
   Mantle: 967fd31ea0220890b2e76589198996b534bb3fb1
   Masonry: 362e8a1cc0beada4a4c4832d5e863da2a51533be
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
