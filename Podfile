@@ -61,7 +61,7 @@ target :like do
     ### 下拉刷新
     pod 'SSPullToRefresh', :git => 'https://github.com/SuperMarioBean/sspulltorefresh.git'
     ### UIBarButtonItem角标扩展
-    pod 'UIBarButtonItem-Badge', :git => 'https://github.com:mikeMTOL/UIBarButtonItem-Badge.git'
+    pod 'UIBarButtonItem-Badge', :git => 'https://github.com/mikeMTOL/UIBarButtonItem-Badge.git'
     pod 'ICETutorial', :git => 'https://github.com/SuperMarioBean/ICETutorial.git'
     
     ### storybrd 增强

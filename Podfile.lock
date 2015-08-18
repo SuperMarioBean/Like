@@ -81,9 +81,9 @@ DEPENDENCIES:
   - HIPImageCropper
   - ICETutorial (from `https://github.com/SuperMarioBean/ICETutorial.git`)
   - KIF (~> 3.2.2)
-  - LIKELocation (from `/Users/David/Documents/david_fu@bitbucket.org/LIKELocation`)
-  - LIKENetworkLayer (from `/Users/David/Documents/david_fu@bitbucket.org/LIKENetworkLayer`)
-  - LIKENetworkStatus (from `/Users/David/Documents/david_fu@bitbucket.org/LIKENetworkStatus`)
+  - LIKELocation
+  - LIKENetworkLayer
+  - LIKENetworkStatus
   - Mantle (~> 2.0.2)
   - Masonry (~> 0.6.1)
   - MBProgressHUD (~> 0.9.1)
@@ -99,30 +99,22 @@ DEPENDENCIES:
   - Reveal-iOS-SDK
   - SCRecorder
   - SDWebImage (~> 3.7.2)
-  - SMBCustomRelationshipSegue (from `/Users/David/Documents/supermariobean@github.com/SMBCustomRelationshipSegue`)
+  - SMBCustomRelationshipSegue
   - Specta (~> 1.0.0)
-  - SSPullToRefresh (from `git@github.com:SuperMarioBean/sspulltorefresh.git`)
+  - SSPullToRefresh (from `https://github.com/SuperMarioBean/sspulltorefresh.git`)
   - THProgressView (~> 1.0)
   - UIAlert+Blocks (~> 1.0.2)
-  - UIBarButtonItem-Badge (from `git@github.com:mikeMTOL/UIBarButtonItem-Badge.git`)
+  - UIBarButtonItem-Badge (from `https://github.com/mikeMTOL/UIBarButtonItem-Badge.git`)
   - UICollectionView-ARDynamicHeightLayoutCell (from `https://github.com/SuperMarioBean/UICollectionView-ARDynamicHeightLayoutCell.git`)
   - UIViewController+BlockSegue
 
 EXTERNAL SOURCES:
   ICETutorial:
     :git: https://github.com/SuperMarioBean/ICETutorial.git
-  LIKELocation:
-    :path: "/Users/David/Documents/david_fu@bitbucket.org/LIKELocation"
-  LIKENetworkLayer:
-    :path: "/Users/David/Documents/david_fu@bitbucket.org/LIKENetworkLayer"
-  LIKENetworkStatus:
-    :path: "/Users/David/Documents/david_fu@bitbucket.org/LIKENetworkStatus"
-  SMBCustomRelationshipSegue:
-    :path: "/Users/David/Documents/supermariobean@github.com/SMBCustomRelationshipSegue"
   SSPullToRefresh:
-    :git: git@github.com:SuperMarioBean/sspulltorefresh.git
+    :git: https://github.com/SuperMarioBean/sspulltorefresh.git
   UIBarButtonItem-Badge:
-    :git: git@github.com:mikeMTOL/UIBarButtonItem-Badge.git
+    :git: https://github.com/mikeMTOL/UIBarButtonItem-Badge.git
   UICollectionView-ARDynamicHeightLayoutCell:
     :git: https://github.com/SuperMarioBean/UICollectionView-ARDynamicHeightLayoutCell.git
 
@@ -132,10 +124,10 @@ CHECKOUT OPTIONS:
     :git: https://github.com/SuperMarioBean/ICETutorial.git
   SSPullToRefresh:
     :commit: 95fda081198d6210437518999afdd24b0b615297
-    :git: git@github.com:SuperMarioBean/sspulltorefresh.git
+    :git: https://github.com/SuperMarioBean/sspulltorefresh.git
   UIBarButtonItem-Badge:
     :commit: 7a556e360ce0c63d18177e8b77e104ce3e05a5a1
-    :git: git@github.com:mikeMTOL/UIBarButtonItem-Badge.git
+    :git: https://github.com/mikeMTOL/UIBarButtonItem-Badge.git
   UICollectionView-ARDynamicHeightLayoutCell:
     :commit: 86cf2a26c8720adc89c647ba964f96aa150f3aa9
     :git: https://github.com/SuperMarioBean/UICollectionView-ARDynamicHeightLayoutCell.git
@@ -151,9 +143,9 @@ SPEC CHECKSUMS:
   HIPImageCropper: 080054a1d885660e24ca365904842a287207cce2
   ICETutorial: 6cb15e46066afc359357f048d1b5fca444d69c83
   KIF: a94bffe9c97e449e44f8fa481c53243d21309e1e
-  LIKELocation: fb6a45e8811a73bdbb3aa1f5b2acf8129f6cf3fb
-  LIKENetworkLayer: 36040d9e70fedc88933b7a77023ebf1dbd89689e
-  LIKENetworkStatus: 711d0d3a54e541e59101266f818b5d1f6f08fa14
+  LIKELocation: dff6ca6323fa5274ebd56a679e5d81c3f3206756
+  LIKENetworkLayer: 3db09f7d1e7e743be26a6300814df0fd5deb2ed3
+  LIKENetworkStatus: d5d0f18060eb99b1fe82251e17668eed4976a33f
   Mantle: 967fd31ea0220890b2e76589198996b534bb3fb1
   Masonry: 362e8a1cc0beada4a4c4832d5e863da2a51533be
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
