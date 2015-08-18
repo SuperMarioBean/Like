@@ -98,4 +98,12 @@
     return ret;
 }
 
++ (NSDate *)dateWithTimeIntervalStringInMilliSecondSince1970:(NSString *)timeIntervalStringInMilliSecond {
+    return [NSDate dateWithTimeIntervalInMilliSecondSince1970:[timeIntervalStringInMilliSecond doubleValue]];
+}
+
+- (NSString *)timeIntervalStringInMilliSecond {
+    return [@([self timeIntervalSince1970] * 1000) stringValue];
+}
+
 @end

@@ -287,6 +287,7 @@
                                                           password:password
                                                         completion:^(NSError *error) {
                                                             if (!error) {
+                                                                NSLog(@"=========登陆成功!!!==========");
                                                                 [self setupUnreadMessageCount];
                                                             }
                                                             else {
@@ -306,7 +307,7 @@
 
 - (void)registerNotifications {
     [self unregisterNotifications];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reset) name:LIKELogoutNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reset) name:LIKELogoutSuccessNotification object:nil];
     [[EaseMob sharedInstance].chatManager addDelegate:self delegateQueue:nil];
     [[EaseMob sharedInstance].callManager addDelegate:self delegateQueue:nil];
 }

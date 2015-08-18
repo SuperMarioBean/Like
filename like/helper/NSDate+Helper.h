@@ -16,4 +16,8 @@
 
 + (NSDate *)dateWithTimeIntervalInMilliSecondSince1970:(double)timeIntervalInMilliSecond;
 
++ (NSDate *)dateWithTimeIntervalStringInMilliSecondSince1970:(NSString *)timeIntervalStringInMilliSecond;
+
+- (NSString *)timeIntervalStringInMilliSecond;
+
 @end

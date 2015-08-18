@@ -20,6 +20,10 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet LIKETrendLayout *trendLayout;
 
+@property (readwrite, nonatomic, strong) UIRefreshControl *bottomRefreshControl;
+
+@property (readwrite, nonatomic, strong) UIRefreshControl *topRefreshControl;
+
 @end
 
 @implementation LIKETrendViewController
@@ -42,6 +46,17 @@
     
     self.viewModel = [[LIKETrendViewModel alloc] init];
     self.collectionView.dataSource = self.viewModel;
+    
+    self.bottomRefreshControl = [[UIRefreshControl alloc] init];
+    self.bottomRefreshControl.triggerVerticalOffset = 30.0f;
+    [self.bottomRefreshControl addTarget:self action:@selector(bottomRefresh) forControlEvents:UIControlEventValueChanged];
+    self.collectionView.bottomRefreshControl = self.bottomRefreshControl;
+    
+    self.topRefreshControl = [[UIRefreshControl alloc] init];
+    [self.topRefreshControl addTarget:self action:@selector(topRefresh) forControlEvents:UIControlEventValueChanged];
+    [self.collectionView addSubview:self.topRefreshControl];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginSuccessHandler:) name:LIKELoginSuccessNotification object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -102,6 +117,40 @@
 }
 
 #pragma mark - event response
+
+- (void)loginSuccessHandler:(NSNotification *)notification {
+    [self topRefresh];
+}
+
+- (void)bottomRefresh {
+    [self.viewModel loadDataWithRefreshFlag:NO
+                                 completion:^(NSError *error,
+                                              NSIndexSet *appendIndexSet) {
+                                     [self.bottomRefreshControl endRefreshing];
+        if (!error) {
+            [self.collectionView insertSections:appendIndexSet];
+        }
+        else {
+            // TODO: show did not fetch anything
+        }
+    }];
+}
+
+- (void)topRefresh {
+    [self.viewModel loadDataWithRefreshFlag:YES
+                                 completion:^(NSError *error,
+                                              NSIndexSet *appendIndexSet) {
+                                     [self.topRefreshControl endRefreshing];
+        if (!error) {
+//            /[self.collectionView insertSections:appendIndexSet];
+            [self.collectionView reloadData];
+        }
+        else {
+            // TODO: show did not fetch anything
+        }
+    }];
+}
+
 
 #pragma mark - private methods
 

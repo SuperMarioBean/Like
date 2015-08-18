@@ -52,4 +52,8 @@ extern NSString *const LIKEFeedItemFooterIdentifier;
                    reusableView:(UICollectionReusableView *)collectionReusableView
                            kind:(NSString *)kind
                       indexPath:(NSIndexPath *)indexPath;
+
+- (void)loadDataWithRefreshFlag:(BOOL)refreshFlag
+                     completion:(void (^)(NSError *error, NSIndexSet *appendIndexSet))completion;
+
 @end

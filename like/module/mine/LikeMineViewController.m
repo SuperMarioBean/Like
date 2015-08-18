@@ -62,11 +62,12 @@
             [self hideHUDWithCompletionMessage:@"注销成功"];
             [[LIKEAppContext sharedInstance] setIsAutoLogin:NO];
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                [[NSNotificationCenter defaultCenter] postNotificationName:LIKELogoutNotification object:nil];
+                [[NSNotificationCenter defaultCenter] postNotificationName:LIKELoginSuccessNotification object:nil];
             });
         }
         else {
             [self hideHUDWithCompletionMessage:@"注销失败"];
+            [[NSNotificationCenter defaultCenter] postNotificationName:LIKELoginFailureNotification object:nil];
         }
     }];
 }

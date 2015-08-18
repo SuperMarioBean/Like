@@ -322,6 +322,7 @@
 		63CB000E1B7A6CBA00F9D198 /* LIKELocationContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CB000D1B7A6CBA00F9D198 /* LIKELocationContext.m */; };
 		63D57C0F1B58C86400ED9D96 /* LIKEThreadItemConversationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D57C0D1B58C86400ED9D96 /* LIKEThreadItemConversationCell.m */; };
 		63D57C101B58C86400ED9D96 /* LIKEThreadItemConversationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63D57C0E1B58C86400ED9D96 /* LIKEThreadItemConversationCell.xib */; };
+		63E0C5081B748032007BA213 /* LIKEPostContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E0C5071B748032007BA213 /* LIKEPostContext.m */; };
 		63E58A811B4FCE45004133A5 /* LIKECaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E58A801B4FCE45004133A5 /* LIKECaptureViewController.m */; };
 		63E58A841B4FD0EA004133A5 /* LIKEImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E58A831B4FD0EA004133A5 /* LIKEImagePickerViewController.m */; };
 		63E58A871B4FD122004133A5 /* LIKETagsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E58A861B4FD122004133A5 /* LIKETagsViewController.m */; };
@@ -984,6 +985,8 @@
 		63D57C0C1B58C86400ED9D96 /* LIKEThreadItemConversationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LIKEThreadItemConversationCell.h; sourceTree = "<group>"; };
 		63D57C0D1B58C86400ED9D96 /* LIKEThreadItemConversationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LIKEThreadItemConversationCell.m; sourceTree = "<group>"; };
 		63D57C0E1B58C86400ED9D96 /* LIKEThreadItemConversationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LIKEThreadItemConversationCell.xib; sourceTree = "<group>"; };
+		63E0C5061B748032007BA213 /* LIKEPostContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LIKEPostContext.h; sourceTree = "<group>"; };
+		63E0C5071B748032007BA213 /* LIKEPostContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LIKEPostContext.m; sourceTree = "<group>"; };
 		63E58A7F1B4FCE45004133A5 /* LIKECaptureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LIKECaptureViewController.h; sourceTree = "<group>"; };
 		63E58A801B4FCE45004133A5 /* LIKECaptureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LIKECaptureViewController.m; sourceTree = "<group>"; };
 		63E58A821B4FD0EA004133A5 /* LIKEImagePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LIKEImagePickerViewController.h; sourceTree = "<group>"; };
@@ -2424,6 +2427,8 @@
 				63B3C7611B48E6930030D5D4 /* LIKEAppContext.m */,
 				633925FC1B72F79A0061BB32 /* LIKEUserContext.h */,
 				633925FD1B72F79A0061BB32 /* LIKEUserContext.m */,
+				63E0C5061B748032007BA213 /* LIKEPostContext.h */,
+				63E0C5071B748032007BA213 /* LIKEPostContext.m */,
 				63B3C7641B48E6930030D5D4 /* LIKEUser.h */,
 				63B3C7651B48E6930030D5D4 /* LIKEUser.m */,
 				632E24341B7857E000F74CD0 /* tutorial */,
@@ -2997,6 +3002,7 @@
 				63B3C72A1B48E49F0030D5D4 /* UIWebView+Style.m in Sources */,
 				63B3C6D31B48E49F0030D5D4 /* NSTimer+Addition.m in Sources */,
 				63AAFEB01B5B629200ACF151 /* EMTextView.m in Sources */,
+				63E0C5081B748032007BA213 /* LIKEPostContext.m in Sources */,
 				63B3C6EA1B48E49F0030D5D4 /* UIControl+Block.m in Sources */,
 				63AAFEB41B5B629200ACF151 /* EMNavigationController.m in Sources */,
 				63B3C72F1B48E49F0030D5D4 /* UICollectionView+Helper.m in Sources */,

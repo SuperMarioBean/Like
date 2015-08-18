@@ -10,6 +10,15 @@
 
 @class LIKEUser;
 
+extern NSString *const LIKELoginSuccessNotification;
+extern NSString *const LIKELoginFailureNotification;
+extern NSString *const LIKELogoutSuccessNotification;
+extern NSString *const LIKELogoutFailureNotification;
+
+extern NSString *const LIKEUploadThumbnailImage;
+extern NSString *const LIKEUploadProgress;
+extern NSString *const LIKEUploadStatus;
+
 @interface LIKEUserContext : NSObject
 
 @property (readonly, nonatomic, strong) LIKEUser *user;
@@ -33,7 +42,7 @@
 - (void)logoutWithCompletion:(void (^)(NSError *error))completion;
 
 // 根据电话号码获取验证码
-- (void)fetchVerificationCodeBySMSWithPhoneNumber:(NSString *)phoneNumber
+- (void)verificationCodeBySMSWithPhoneNumber:(NSString *)phoneNumber
                                              zone:(NSString *)zone
                                        completion:(void (^)(NSError *error))completion;
 
@@ -47,7 +56,7 @@
 
 - (void)updateUserWithKeyValuePairs:(NSDictionary *)keyValuePairs completion:(void (^)(NSError *error))completion;
 
-- (void)fetchUserWithUserID:(NSString *)userID completion:(void (^)(NSError *error))completion;
+- (void)userWithUserID:(NSString *)userID completion:(void (^)(NSError *error))completion;
 
 - (void)followWithUserID:(NSString *)userID completion:(void (^)(NSError *error))completion;
 
@@ -58,4 +67,5 @@
 - (void)followingListWithPage:(NSInteger)page completion:(void (^)(NSError *))completion;
 
 - (void)mutualListWithPage:(NSInteger)page completion:(void (^)(NSError *))completion;
+
 @end

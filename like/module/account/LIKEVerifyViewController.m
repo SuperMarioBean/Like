@@ -94,22 +94,22 @@
 - (IBAction)fetchVerifyCodeButtonClick:(id)sender {
     self.fetchVerifyCodeButton.enabled = NO;
     [self showHUD];
-    [[LIKEUserContext sharedInstance] fetchVerificationCodeBySMSWithPhoneNumber:[LIKEUserContext sharedInstance].tempPhoneNumber
-                                                                           zone:@"86"
-                                                                     completion:^(NSError *error) {
-                                                                         if (!error) {
-                                                                             [self hideHUD];
-                                                                             self.updateTimer = [NSTimer scheduledTimerWithTimeInterval:1
-                                                                                                                                 target:self
-                                                                                                                               selector:@selector(p_lwUpdateTime)
-                                                                                                                               userInfo:nil
-                                                                                                                                repeats:YES];
-                                                                         }
-                                                                         else {
-                                                                             [self hideHUDWithCompletionMessage:@"您的验证码发送失败"];
-                                                                             self.fetchVerifyCodeButton.enabled = YES;
-                                                                         }
-                                                                     }];
+    [[LIKEUserContext sharedInstance] verificationCodeBySMSWithPhoneNumber:[LIKEUserContext sharedInstance].tempPhoneNumber
+                                                                       zone:@"86"
+                                                                 completion:^(NSError *error) {
+                                                                     if (!error) {
+                                                                         [self hideHUD];
+                                                                         self.updateTimer = [NSTimer scheduledTimerWithTimeInterval:1
+                                                                                                                             target:self
+                                                                                                                           selector:@selector(p_lwUpdateTime)
+                                                                                                                           userInfo:nil
+                                                                                                                            repeats:YES];
+                                                                     }
+                                                                     else {
+                                                                         [self hideHUDWithCompletionMessage:@"您的验证码发送失败"];
+                                                                         self.fetchVerifyCodeButton.enabled = YES;
+                                                                     }
+                                                                 }];
 }
 
 #pragma mark - private methods

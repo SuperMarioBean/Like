@@ -10,6 +10,12 @@
 
 #import <SMS_SDK/SMS_SDK.h>
 
+NSString *const LIKELoginSuccessNotification = @"login.success";
+NSString *const LIKELoginFailureNotification = @"login.failure";
+NSString *const LIKELogoutSuccessNotification = @"logout.success";
+NSString *const LIKELogoutFailureNotification = @"logout.failure";
+
+
 NSString const* LIKEUserPhoneNumber = @"username";
 NSString const* LIKEUserUserID = @"id";
 NSString const* LIKEUserIMUsername = @"imUsername";
@@ -92,10 +98,6 @@ NSString const* LIKEUserIMPassword = @"imPassword";
                                   error = [[EaseMob sharedInstance].chatManager loadDataFromDatabase];
                               }
                               
-                              //发送自动登陆状态通知
-                              [[NSNotificationCenter defaultCenter] postNotificationName:LIKEIMLoginChangeNotification
-                                                                                  object:@YES];
-                              
                               NSArray *conversations = [[[EaseMob sharedInstance] chatManager] conversations];
                               NSInteger unreadCount = 0;
                               for (EMConversation *conversation in conversations) {
@@ -103,12 +105,17 @@ NSString const* LIKEUserIMPassword = @"imPassword";
                               }
                               self.user.unreadCount = unreadCount;
                               completion(nil);
+                              //发送自动登陆状态通知
+                              [[NSNotificationCenter defaultCenter] postNotificationName:LIKEIMLoginChangeNotification
+                                                                                  object:@YES];
+                              [[NSNotificationCenter defaultCenter] postNotificationName:LIKELoginSuccessNotification object:nil];
                           }
                           else {
                               NSError *retError = [NSError errorWithDomain:@"instancemessage.login.error"
                                                                       code:LIKEStatusCodeIMLoginError
                                                                   userInfo:nil];
                               completion(retError);
+                              [[NSNotificationCenter defaultCenter] postNotificationName:LIKELoginFailureNotification object:nil];
                           }
                       }
                                                                           onQueue:nil];
@@ -116,10 +123,12 @@ NSString const* LIKEUserIMPassword = @"imPassword";
                  else {
                      // 自动登录
                      completion(nil);
+                     [[NSNotificationCenter defaultCenter] postNotificationName:LIKELoginSuccessNotification object:nil];
                  }
              }
              else {
                  completion(error);
+                 [[NSNotificationCenter defaultCenter] postNotificationName:LIKELoginFailureNotification object:nil];
              }
          }
         failure:^(NSError *error) {
@@ -127,6 +136,7 @@ NSString const* LIKEUserIMPassword = @"imPassword";
                                                     code:LIKEStatusCodeNetworkError
                                                 userInfo:nil];
             completion(retError);
+            [[NSNotificationCenter defaultCenter] postNotificationName:LIKELoginFailureNotification object:nil];
         }];
 }
 
@@ -143,18 +153,20 @@ NSString const* LIKEUserIMPassword = @"imPassword";
                                                                         [geo logout:nil failure:nil];
                                                                         _user = nil;
                                                                         completion(nil);
+                                                                        [[NSNotificationCenter defaultCenter] postNotificationName:LIKELogoutSuccessNotification object:nil];
                                                                     }
                                                                     else {
                                                                         NSError *retError = [NSError errorWithDomain:@"instancemessage.logoff.error"
                                                                                                                 code:LIKEStatusCodeIMLogoutError
                                                                                                             userInfo:nil];
                                                                         completion(retError);
+                                                                        [[NSNotificationCenter defaultCenter] postNotificationName:LIKELogoutFailureNotification object:nil];
                                                                     }
                                                                 }
                                                                    onQueue:nil];
 }
 
-- (void)fetchVerificationCodeBySMSWithPhoneNumber:(NSString *)phoneNumber
+- (void)verificationCodeBySMSWithPhoneNumber:(NSString *)phoneNumber
                                              zone:(NSString *)zone
                                        completion:(void (^)(NSError *))completion {
     [SMS_SDK getVerificationCodeBySMSWithPhone:phoneNumber
@@ -242,7 +254,7 @@ NSString const* LIKEUserIMPassword = @"imPassword";
                  }];
 }
 
-- (void)fetchUserWithUserID:(NSString *)userID completion:(void (^)(NSError *))completion {
+- (void)userWithUserID:(NSString *)userID completion:(void (^)(NSError *))completion {
     [User getUserInfo:userID
               success:^(id responseObject) {
                   NSError *error;

@@ -41,8 +41,8 @@ NSString *const LIKEFeedItemFooterIdentifier = @"com.trinity.like.trend.footer";
 }
 
 - (instancetype)init {
-    return [self initWithFeedsArray:[LIKEAppContext sharedInstance].testTrendsArray
-                       uploadsArray:[LIKEAppContext sharedInstance].testUploadTrendsArray];
+    return [self initWithFeedsArray:[LIKEPostContext sharedInstance].timelineList
+                       uploadsArray:[LIKEPostContext sharedInstance].uploadList];
 }
 
 - (instancetype)initWithFeedsArray:(NSMutableArray *)feedsArray
@@ -170,7 +170,7 @@ NSString *const LIKEFeedItemFooterIdentifier = @"com.trinity.like.trend.footer";
     if ([kind isEqualToString:LIKEFeedItemElementKindCellContent]) {
         LIKEFeedItemContentCell *cell = (LIKEFeedItemContentCell *)collectionViewCell;
         NSDictionary *feed = [self objectForIndexPath:indexPath];
-        NSURL *url = feed[LIKETrendContentImageURL];
+        NSURL *url = [NSURL URLWithString:feed[LIKETrendContentImageURL]];
         if ([url isEqual:[NSNull null]]) {
             cell.photoImageView.image = feed[LIKETrendContentImage];
         }
@@ -221,16 +221,35 @@ NSString *const LIKEFeedItemFooterIdentifier = @"com.trinity.like.trend.footer";
     if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
         LIKEFeedItemHeader *header = (LIKEFeedItemHeader *)collectionReusableView;
         NSDictionary *feed = [self objectForIndexPath:indexPath];
-        [header.avatarImageView sd_setImageWithURL:feed[LIKETrendUserAvatarURL]];
+        [header.avatarImageView sd_setImageWithURL:[NSURL URLWithString:feed[LIKETrendUserAvatarURL]]];
         header.nicknameLabel.text = feed[LIKETrendUserNickname];
-        header.genderAndAgeLabel.text = [NSString stringWithFormat:@"%@  %@", [feed[LIKETrendUserGender] boolValue]? LIKEUserGenderMale: LIKEUserGenderFemale, [feed[LIKETrendUserAge] stringValue]];
+        header.genderAndAgeLabel.text = [NSString stringWithFormat:@"%@  %@", [feed[LIKETrendUserGender] boolValue]? LIKEUserGenderMale: LIKEUserGenderFemale, feed[LIKETrendUserAge]];
         header.genderAndAgeLabel.backgroundColor = [feed[LIKETrendUserGender] boolValue]? [UIColor blueColor]: [UIColor magentaColor];
-        header.timelineLabel.text = [feed[LIKETrendTimeline] timeAgoSimple];
+        NSDate *date = [NSDate dateWithTimeIntervalStringInMilliSecondSince1970:feed[LIKETrendTimeline]];
+        header.timelineLabel.text = [date timeAgoSimple];
         header.locationLabel.text = feed[LIKETrendUserLocation];
     }
     else if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
         
     }
+}
+
+- (void)loadDataWithRefreshFlag:(BOOL)refreshFlag
+                     completion:(void (^)(NSError *, NSIndexSet *))completion {
+    NSUInteger page = refreshFlag? 1: [LIKEPostContext sharedInstance].currentTimelinePage + 1;
+    [[LIKEPostContext sharedInstance] timelineWithPage:page
+                                            completion:^(NSError *error,
+                                                         NSArray *appendPostsArray) {
+                                                if (!error) {
+                                                    NSUInteger location = refreshFlag? 0: [LIKEPostContext sharedInstance].timelineList.count;
+                                                    NSUInteger length = appendPostsArray.count;
+                                                    NSIndexSet *indexSet = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(location, length)];
+                                                    completion(nil, indexSet);
+                                                }
+                                                else {
+                                                    completion(error, nil);
+                                                }
+                                            }];
 }
 
 @end
