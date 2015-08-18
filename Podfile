@@ -34,9 +34,13 @@ target :like do
     #pod 'CocoaLumberjack', '~> 2.0.0'
     ## 定位
     
-    pod 'LIKELocation', :path => '/Users/David/Documents/david_fu@bitbucket.org/LIKELocation'
-    pod 'LIKENetworkLayer', :path => '/Users/David/Documents/david_fu@bitbucket.org/LIKENetworkLayer'
-    pod 'LIKENetworkStatus', :path => '/Users/David/Documents/david_fu@bitbucket.org/LIKENetworkStatus'
+#    pod 'LIKELocation', :path => '/Users/David/Documents/david_fu@bitbucket.org/LIKELocation'
+#    pod 'LIKENetworkLayer', :path => '/Users/David/Documents/david_fu@bitbucket.org/LIKENetworkLayer'
+#    pod 'LIKENetworkStatus', :path => '/Users/David/Documents/david_fu@bitbucket.org/LIKENetworkStatus'
+
+    pod 'LIKELocation'
+    pod 'LIKENetworkLayer'
+    pod 'LIKENetworkStatus'
 
     ## UIKit 组件封装
     ### 进度
@@ -55,14 +59,16 @@ target :like do
     ### 进度条扩展
     pod 'MBProgressHUDExtensions@donly', '~> 0.3'
     ### 下拉刷新
-    pod 'SSPullToRefresh', :git => 'git@github.com:SuperMarioBean/sspulltorefresh.git'
+    pod 'SSPullToRefresh', :git => 'https://github.com/SuperMarioBean/sspulltorefresh.git'
     ### UIBarButtonItem角标扩展
-    pod 'UIBarButtonItem-Badge', :git => 'git@github.com:mikeMTOL/UIBarButtonItem-Badge.git'
+    pod 'UIBarButtonItem-Badge', :git => 'https://github.com:mikeMTOL/UIBarButtonItem-Badge.git'
     pod 'ICETutorial', :git => 'https://github.com/SuperMarioBean/ICETutorial.git'
     
     ### storybrd 增强
     #### custom relationship storyboard segue
-    pod 'SMBCustomRelationshipSegue', :path => '/Users/David/Documents/supermariobean@github.com/SMBCustomRelationshipSegue'
+    # pod 'SMBCustomRelationshipSegue', :path => '/Users/David/Documents/supermariobean@github.com/SMBCustomRelationshipSegue'
+    pod 'SMBCustomRelationshipSegue'
+
     #### perform segue replace
     pod 'UIViewController+BlockSegue'
     #### 多 storyboard 的组合使用
