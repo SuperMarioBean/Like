@@ -38,9 +38,9 @@ target :like do
 #    pod 'LIKENetworkLayer', :path => '/Users/David/Documents/david_fu@bitbucket.org/LIKENetworkLayer'
 #    pod 'LIKENetworkStatus', :path => '/Users/David/Documents/david_fu@bitbucket.org/LIKENetworkStatus'
 
-    pod 'LIKELocation'
-    pod 'LIKENetworkLayer'
-    pod 'LIKENetworkStatus'
+    pod 'LIKELocation', :git => 'https://David_Fu@bitbucket.org/TrinityLike/likelocation.git'
+    pod 'LIKENetworkLayer', :git => 'https://David_Fu@bitbucket.org/TrinityLike/likenetworklayer.git'
+    pod 'LIKENetworkStatus', :git => 'https://David_Fu@bitbucket.org/TrinityLike/likenetworkstatus.git'
 
     ## UIKit 组件封装
     ### 进度
