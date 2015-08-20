@@ -5,3 +5,30 @@
   Created by David Fu on 8/19/15.
   Copyright (c) 2015 LIKE Technology. All rights reserved.
 */
+
+"prompt.userExist" = "This phone number has been registed, please login directly";
+"prompt.updateProfileComplete" = "Profile update complete";
+"prompt.updating" = "Updating";
+"prompt.loginSuccess" = "Login succeed";
+"prompt.SMSCodeVerifySuccess" = "SMS code verify succeed, you should back to login with your password";
+
+"error.registFail" = "Regist failed";
+
+"error.loginFail" = "Login failed";
+"error.invalidPhoneNumberFormat" = "Invalid phone number format";
+"error.invalidPasswordFormat" = "Invalid password format";
+"error.invalidPhoneNumberOrPasswordFormat" = "Invalid phone number or password format";
+"error.invalidSMSCodeFormat" = "Invalid SMS code format";
+"error.updateProfileFail" = "Profile update failed";
+"error.SMSCodeVerifyFail" = "SMS code verify failed";
+"error.SMSCodeSendFail" = "SMS code send failed";
+
+"readPrivacyPolicy" = "I have agree to privacy policy";
+"setNewPassword" = "Please set your new password";
+"setPassword" = "Please set your password";
+"sendCodeToPhone" = "We will send SMS code to your phone";
+"fetchSMSCode" = "fetch SMS code";
+"refetchSMSCode" = "refetch SMS code";
+"fillInfomationAndCheckPrivacyPolicy" = "Confirm your profile information and check the privacy policy";
+
+"format.birthdayDate" = "yyyy-MM-dd";
