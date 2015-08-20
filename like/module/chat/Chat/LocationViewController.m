@@ -58,7 +58,7 @@ static LocationViewController *defaultLocation = nil;
 {
     [super viewDidLoad];
     
-    self.title = NSLocalizedStringFromTable(@"location.messageType", @"chat", @"location message");
+    self.title = NSLocalizedStringFromTable(@"location.messageType", LIKELocalizeChat, @"location message");
     
     UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
     [backButton setImage:[UIImage imageNamed:@"chat_back.png"] forState:UIControlStateNormal];
@@ -76,7 +76,7 @@ static LocationViewController *defaultLocation = nil;
         _mapView.showsUserLocation = YES;//显示当前位置
         
         UIButton *sendButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 60, 44)];
-        [sendButton setTitle:NSLocalizedStringFromTable(@"send", @"chat", @"Send") forState:UIControlStateNormal];
+        [sendButton setTitle:NSLocalizedStringFromTable(@"send", LIKELocalizeChat, @"Send") forState:UIControlStateNormal];
         [sendButton setTitleColor:[UIColor colorWithRed:32 / 255.0 green:134 / 255.0 blue:158 / 255.0 alpha:1.0] forState:UIControlStateNormal];
         [sendButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
         [sendButton addTarget:self action:@selector(sendLocation) forControlEvents:UIControlEventTouchUpInside];
@@ -142,7 +142,7 @@ static LocationViewController *defaultLocation = nil;
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
                                                             message:[error.userInfo objectForKey:NSLocalizedRecoverySuggestionErrorKey]
                                                            delegate:nil
-                                                  cancelButtonTitle:NSLocalizedStringFromTable(@"ok", @"chat", @"OK")
+                                                  cancelButtonTitle:NSLocalizedStringFromTable(@"ok", LIKELocalizeChat, @"OK")
                                                   otherButtonTitles:nil, nil];
         [alertView show];
     }
@@ -184,7 +184,7 @@ static LocationViewController *defaultLocation = nil;
         self.navigationItem.rightBarButtonItem.enabled = NO;
     }
     
-    [self showHintHudWithMessage:NSLocalizedStringFromTable(@"location.ongoning", @"chat", @"locating...")];
+    [self showHintHudWithMessage:NSLocalizedStringFromTable(@"location.ongoning", LIKELocalizeChat, @"locating...")];
 }
 
 -(void)createAnnotationWithCoords:(CLLocationCoordinate2D)coords

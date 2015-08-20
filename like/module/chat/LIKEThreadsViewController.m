@@ -184,7 +184,7 @@
 }
 
 - (void)willReceiveOfflineMessages {
-    NSLog(NSLocalizedStringFromTable(@"message.beginReceiveOffine", @"chat", @"Begin to receive offline messages"));
+    NSLog(NSLocalizedStringFromTable(@"message.beginReceiveOffine", LIKELocalizeChat, @"Begin to receive offline messages"));
 }
 
 - (void)didReceiveOfflineMessages:(NSArray *)offlineMessages {
@@ -305,7 +305,7 @@
         label.font = [UIFont systemFontOfSize:15.0];
         label.textColor = [UIColor grayColor];
         label.backgroundColor = [UIColor clearColor];
-        label.text = NSLocalizedStringFromTable(@"network.disconnection", @"chat", @"Network disconnection");
+        label.text = NSLocalizedStringFromTable(@"network.disconnection", LIKELocalizeChat, @"Network disconnection");
         [_networkStateView addSubview:label];
     }
     

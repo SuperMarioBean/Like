@@ -44,8 +44,8 @@
         [self performSegueWithIdentifier:@"phoneNumberVerifySegue" sender:self];
     }
     else {
-        [PSTAlertController presentDismissableAlertWithTitle:NSLocalizedStringFromTable(@"error", @"main", nil)
-                                                     message:NSLocalizedStringFromTable(@"error.invalidPhoneNumberFormat", @"account", nil)
+        [PSTAlertController presentDismissableAlertWithTitle:NSLocalizedStringFromTable(@"error", LIKELocalizeMain, nil)
+                                                     message:NSLocalizedStringFromTable(@"error.invalidPhoneNumberFormat", LIKELocalizeAccount, nil)
                                                   controller:self];
     }
 }

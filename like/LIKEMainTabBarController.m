@@ -85,20 +85,20 @@
 - (void)willAutoLoginWithInfo:(NSDictionary *)loginInfo error:(EMError *)error {
     UIAlertView *alertView = nil;
     if (error) {
-        alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedStringFromTable(@"prompt", @"chat", @"Prompt")
-                                               message:NSLocalizedStringFromTable(@"login.errorAutoLogin", @"chat", @"Automatic logon failure")
+        alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedStringFromTable(@"prompt", LIKELocalizeChat, @"Prompt")
+                                               message:NSLocalizedStringFromTable(@"login.errorAutoLogin", LIKELocalizeChat, @"Automatic logon failure")
                                               delegate:nil
-                                     cancelButtonTitle:NSLocalizedStringFromTable(@"ok", @"chat", @"OK")
+                                     cancelButtonTitle:NSLocalizedStringFromTable(@"ok", LIKELocalizeChat, @"OK")
                                      otherButtonTitles:nil, nil];
         
         //发送自动登陆状态通知
         [[NSNotificationCenter defaultCenter] postNotificationName:LIKEIMLoginChangeNotification object:@NO];
     }
     else{
-        alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedStringFromTable(@"prompt", @"chat", @"Prompt")
-                                               message:NSLocalizedStringFromTable(@"login.beginAutoLogin", @"chat", @"Start automatic login...")
+        alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedStringFromTable(@"prompt", LIKELocalizeChat, @"Prompt")
+                                               message:NSLocalizedStringFromTable(@"login.beginAutoLogin", LIKELocalizeChat, @"Start automatic login...")
                                               delegate:nil
-                                     cancelButtonTitle:NSLocalizedStringFromTable(@"ok", @"chat", @"OK")
+                                     cancelButtonTitle:NSLocalizedStringFromTable(@"ok", LIKELocalizeChat, @"OK")
                                      otherButtonTitles:nil, nil];
     }
     [alertView show];
@@ -108,10 +108,10 @@
 - (void)didAutoLoginWithInfo:(NSDictionary *)loginInfo error:(EMError *)error {
     UIAlertView *alertView = nil;
     if (error) {
-        alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedStringFromTable(@"prompt", @"chat", @"Prompt")
-                                               message:NSLocalizedStringFromTable(@"login.errorAutoLogin", @"chat", @"Automatic logon failure")
+        alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedStringFromTable(@"prompt", LIKELocalizeChat, @"Prompt")
+                                               message:NSLocalizedStringFromTable(@"login.errorAutoLogin", LIKELocalizeChat, @"Automatic logon failure")
                                               delegate:nil
-                                     cancelButtonTitle:NSLocalizedStringFromTable(@"ok", @"chat", @"OK")
+                                     cancelButtonTitle:NSLocalizedStringFromTable(@"ok", LIKELocalizeChat, @"OK")
                                      otherButtonTitles:nil, nil];
         
         //发送自动登陆状态通知
@@ -121,10 +121,10 @@
         //获取群组列表
         [[EaseMob sharedInstance].chatManager asyncFetchMyGroupsList];
         
-        alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedStringFromTable(@"prompt", @"chat", @"Prompt")
-                                               message:NSLocalizedStringFromTable(@"login.endAutoLogin", @"chat", @"End automatic login...")
+        alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedStringFromTable(@"prompt", LIKELocalizeChat, @"Prompt")
+                                               message:NSLocalizedStringFromTable(@"login.endAutoLogin", LIKELocalizeChat, @"End automatic login...")
                                               delegate:nil
-                                     cancelButtonTitle:NSLocalizedStringFromTable(@"ok", @"chat", @"OK")
+                                     cancelButtonTitle:NSLocalizedStringFromTable(@"ok", LIKELocalizeChat, @"OK")
                                      otherButtonTitles:nil, nil];
         // 旧数据转换 (如果您的sdk是由2.1.2版本升级过来的，需要家这句话)
         [[EaseMob sharedInstance].chatManager importDataToNewDatabase];
@@ -152,10 +152,10 @@
     }
     
     if (reason == eGroupLeaveReason_BeRemoved) {
-        str = [NSString stringWithFormat:NSLocalizedStringFromTable(@"group.beKicked", @"chat", @"you have been kicked out from the group of \'%@\'"), tmpStr];
+        str = [NSString stringWithFormat:NSLocalizedStringFromTable(@"group.beKicked", LIKELocalizeChat, @"you have been kicked out from the group of \'%@\'"), tmpStr];
     }
     if (str.length > 0) {
-        [PSTAlertController presentDismissableAlertWithTitle:NSLocalizedStringFromTable(@"prompt", @"chat", nil)
+        [PSTAlertController presentDismissableAlertWithTitle:NSLocalizedStringFromTable(@"prompt", LIKELocalizeChat, nil)
                                                      message:str
                                                   controller:self];
     }
@@ -167,12 +167,12 @@
                                       reason:(NSString *)reason
                                        error:(EMError *)error {
     if (!reason || reason.length == 0) {
-        reason = [NSString stringWithFormat:NSLocalizedStringFromTable(@"group.beRefusedToJoin", @"chat", @"be refused to join the group\'%@\'"), groupname];
+        reason = [NSString stringWithFormat:NSLocalizedStringFromTable(@"group.beRefusedToJoin", LIKELocalizeChat, @"be refused to join the group\'%@\'"), groupname];
     }
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedStringFromTable(@"prompt", @"chat", @"Prompt")
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedStringFromTable(@"prompt", LIKELocalizeChat, @"Prompt")
                                                         message:reason
                                                        delegate:nil
-                                              cancelButtonTitle:NSLocalizedStringFromTable(@"ok", @"chat", @"OK")
+                                              cancelButtonTitle:NSLocalizedStringFromTable(@"ok", LIKELocalizeChat, @"OK")
                                               otherButtonTitles:nil, nil];
     [alertView show];
 }
@@ -192,11 +192,11 @@
         groupTag = group.groupId;
     }
     
-    NSString *message = [NSString stringWithFormat:NSLocalizedStringFromTable(@"group.agreedAndJoined", @"chat", @"agreed and joined the group of \'%@\'"), groupTag];
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedStringFromTable(@"prompt", @"chat", @"Prompt")
+    NSString *message = [NSString stringWithFormat:NSLocalizedStringFromTable(@"group.agreedAndJoined", LIKELocalizeChat, @"agreed and joined the group of \'%@\'"), groupTag];
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedStringFromTable(@"prompt", LIKELocalizeChat, @"Prompt")
                                                         message:message
                                                        delegate:nil
-                                              cancelButtonTitle:NSLocalizedStringFromTable(@"ok", @"chat", @"OK")
+                                              cancelButtonTitle:NSLocalizedStringFromTable(@"ok", LIKELocalizeChat, @"OK")
                                               otherButtonTitles:nil, nil];
     [alertView show];
 }
@@ -205,8 +205,8 @@
 // 绑定deviceToken回调
 - (void)didBindDeviceWithError:(EMError *)error {
     if (error) {
-        [PSTAlertController presentDismissableAlertWithTitle:NSLocalizedStringFromTable(@"error", @"chat", nil)
-                                                     message:NSLocalizedStringFromTable(@"apns.failToBindDeviceToken", @"chat", @"Fail to bind device token")
+        [PSTAlertController presentDismissableAlertWithTitle:NSLocalizedStringFromTable(@"error", LIKELocalizeChat, nil)
+                                                     message:NSLocalizedStringFromTable(@"apns.failToBindDeviceToken", LIKELocalizeChat, @"Fail to bind device token")
                                                   controller:self];
     }
 }
@@ -222,18 +222,18 @@
     }
     
     if (!reason || reason.length == 0) {
-        reason = [NSString stringWithFormat:NSLocalizedStringFromTable(@"group.applyJoin", @"chat", @"%@ apply to join groups\'%@\'"), username, groupname];
+        reason = [NSString stringWithFormat:NSLocalizedStringFromTable(@"group.applyJoin", LIKELocalizeChat, @"%@ apply to join groups\'%@\'"), username, groupname];
     }
     else{
-        reason = [NSString stringWithFormat:NSLocalizedStringFromTable(@"group.applyJoinWithName", @"chat", @"%@ apply to join groups\'%@\'：%@"), username, groupname, reason];
+        reason = [NSString stringWithFormat:NSLocalizedStringFromTable(@"group.applyJoinWithName", LIKELocalizeChat, @"%@ apply to join groups\'%@\'：%@"), username, groupname, reason];
     }
     
     if (error) {
-        NSString *message = [NSString stringWithFormat:NSLocalizedStringFromTable(@"group.sendApplyFail", @"chat", @"send application failure:%@\nreason：%@"), reason, error.description];
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedStringFromTable(@"error", @"chat", @"Error")
+        NSString *message = [NSString stringWithFormat:NSLocalizedStringFromTable(@"group.sendApplyFail", LIKELocalizeChat, @"send application failure:%@\nreason：%@"), reason, error.description];
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedStringFromTable(@"error", LIKELocalizeChat, @"Error")
                                                             message:message
                                                            delegate:nil
-                                                  cancelButtonTitle:NSLocalizedStringFromTable(@"ok", @"chat", @"OK")
+                                                  cancelButtonTitle:NSLocalizedStringFromTable(@"ok", LIKELocalizeChat, @"OK")
                                                   otherButtonTitles:nil, nil];
         [alertView show];
     }
@@ -255,7 +255,7 @@
         return;
     }
     if (!message) {
-        message = [NSString stringWithFormat:NSLocalizedStringFromTable(@"friend.somebodyAddWithName", @"chat",  @"%@ add you as a friend"), username];
+        message = [NSString stringWithFormat:NSLocalizedStringFromTable(@"friend.somebodyAddWithName", LIKELocalizeChat,  @"%@ add you as a friend"), username];
     }
     NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithDictionary:@{LIKEApplyTitle: username,
                                                                                LIKEApplyUsername: username,

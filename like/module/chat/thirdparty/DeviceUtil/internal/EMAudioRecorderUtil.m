@@ -116,7 +116,7 @@ static EMAudioRecorderUtil *audioRecorderUtil = nil;
     {
         _recorder = nil;
         if (completion) {
-            error = [NSError errorWithDomain:NSLocalizedStringFromTable(@"error.initRecorderFail", @"chat", @"Failed to initialize AVAudioRecorder")
+            error = [NSError errorWithDomain:NSLocalizedStringFromTable(@"error.initRecorderFail", LIKELocalizeChat, @"Failed to initialize AVAudioRecorder")
                                         code:EMErrorInitFailure
                                     userInfo:nil];
             completion(error);

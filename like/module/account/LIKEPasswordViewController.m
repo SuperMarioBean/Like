@@ -21,7 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.textLabel.text = [LIKEUserContext sharedInstance].isForgetPassword?  NSLocalizedStringFromTable(@"setNewPassword", @"account", nil): NSLocalizedStringFromTable(@"setPassword", @"account", nil);
+    self.textLabel.text = [LIKEUserContext sharedInstance].isForgetPassword?  NSLocalizedStringFromTable(@"setNewPassword", LIKELocalizeAccount, nil): NSLocalizedStringFromTable(@"setPassword", LIKELocalizeAccount, nil);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,7 +51,7 @@
                                                           else {
                                                               NSLog(@"%@", error);
                                                               if (error.code == LIKEStatusCodeRegistUserExist) {
-                                                                  [self showHintHudWithMessage:NSLocalizedStringFromTable(@"prompt.userExist", @"account", nil)];
+                                                                  [self showHintHudWithMessage:NSLocalizedStringFromTable(@"prompt.userExist", LIKELocalizeAccount, nil)];
                                                                   
                                                                   // FIXME: 临时测试行为
                                                                   [LIKEUserContext sharedInstance].tempPassword = self.passwordTextField.text;
@@ -64,7 +64,7 @@
 //                                                                  });
                                                               }
                                                               else {
-                                                                  [self hideHUDWithCompletionMessage:NSLocalizedStringFromTable(@"error.registFail", @"account", nil)];
+                                                                  [self hideHUDWithCompletionMessage:NSLocalizedStringFromTable(@"error.registFail", LIKELocalizeAccount, nil)];
                                                               }
                                                           }
                                                       }];
@@ -73,8 +73,8 @@
     else {
         self.passwordTextField.text = @"";
         
-        [PSTAlertController presentDismissableAlertWithTitle:NSLocalizedStringFromTable(@"error", @"main", nil)
-                                                     message:NSLocalizedStringFromTable(@"error.invalidPasswordFormat", @"account", nil)
+        [PSTAlertController presentDismissableAlertWithTitle:NSLocalizedStringFromTable(@"error", LIKELocalizeMain, nil)
+                                                     message:NSLocalizedStringFromTable(@"error.invalidPasswordFormat", LIKELocalizeAccount, nil)
                                                   controller:self];
         return;
     }

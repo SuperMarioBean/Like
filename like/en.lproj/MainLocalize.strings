@@ -5,3 +5,11 @@
   Created by David Fu on 8/20/15.
   Copyright (c) 2015 LIKE Technology. All rights reserved.
 */
+
+"sure" = "OK";
+"yes" = "YES";
+"cancel" = "Cancel";
+"no" = "NO";
+
+"error" = "Error";
+"prompt" = "Prompt";

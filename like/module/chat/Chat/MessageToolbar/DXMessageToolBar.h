@@ -23,8 +23,8 @@
 #define kHorizontalPadding 8
 #define kVerticalPadding 5
 
-#define kTouchToRecord NSLocalizedStringFromTable(@"message.toolBar.record.touch", @"chat", @"hold down to talk")
-#define kTouchToFinish NSLocalizedStringFromTable(@"message.toolBar.record.send", @"chat", @"loosen to send")
+#define kTouchToRecord NSLocalizedStringFromTable(@"message.toolBar.record.touch", LIKELocalizeChat, @"hold down to talk")
+#define kTouchToFinish NSLocalizedStringFromTable(@"message.toolBar.record.send", LIKELocalizeChat, @"loosen to send")
 
 
 /**

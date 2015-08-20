@@ -27,7 +27,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.textLabel.text = [NSString stringWithFormat:@"%@ %@", NSLocalizedStringFromTable(@"sendCodeToPhone", @"account", nil), [LIKEUserContext sharedInstance].tempPhoneNumber];
+    self.textLabel.text = [NSString stringWithFormat:@"%@ %@", NSLocalizedStringFromTable(@"sendCodeToPhone", LIKELocalizeAccount, nil), [LIKEUserContext sharedInstance].tempPhoneNumber];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -58,8 +58,8 @@
                                                                             completion:^(NSError *error) {
                                                                                 if (!error) {
                                                                                     if ([LIKEUserContext sharedInstance].isForgetPassword) {
-                                                                                        [PSTAlertController presentDismissableAlertWithTitle:NSLocalizedStringFromTable(@"error", @"main", nil)
-                                                                                                                                 message:NSLocalizedStringFromTable(@"prompt.SMSCodeVerifySuccess", @"account", nil)
+                                                                                        [PSTAlertController presentDismissableAlertWithTitle:NSLocalizedStringFromTable(@"error", LIKELocalizeMain, nil)
+                                                                                                                                 message:NSLocalizedStringFromTable(@"prompt.SMSCodeVerifySuccess", LIKELocalizeAccount, nil)
                                                                                                                               controller:self];
                                                                                     }
                                                                                     else {
@@ -67,16 +67,16 @@
                                                                                     }
                                                                                 }
                                                                                 else {
-                                                                                    [PSTAlertController presentDismissableAlertWithTitle:NSLocalizedStringFromTable(@"error", @"main", nil)
-                                                                                                                                 message:NSLocalizedStringFromTable(@"error.invalidSMSCodeFormat", @"account", nil)
+                                                                                    [PSTAlertController presentDismissableAlertWithTitle:NSLocalizedStringFromTable(@"error", LIKELocalizeMain, nil)
+                                                                                                                                 message:NSLocalizedStringFromTable(@"error.invalidSMSCodeFormat", LIKELocalizeAccount, nil)
                                                                                                                               controller:self];
                                                                                 }
                                                                             }];
     }
     else {
         self.verifyCodeTextField.text = @"";
-        [PSTAlertController presentDismissableAlertWithTitle:NSLocalizedStringFromTable(@"error", @"main", nil)
-                                                     message:NSLocalizedStringFromTable(@"error.invalidSMSCodeFormat", @"account", nil)
+        [PSTAlertController presentDismissableAlertWithTitle:NSLocalizedStringFromTable(@"error", LIKELocalizeMain, nil)
+                                                     message:NSLocalizedStringFromTable(@"error.invalidSMSCodeFormat", LIKELocalizeAccount, nil)
                                                   controller:self];
     }
 }
@@ -96,7 +96,7 @@
                                                                                                                             repeats:YES];
                                                                      }
                                                                      else {
-                                                                         [self hideHUDWithCompletionMessage:NSLocalizedStringFromTable(@"error.SMSCodeSendFail", @"account", nil)];
+                                                                         [self hideHUDWithCompletionMessage:NSLocalizedStringFromTable(@"error.SMSCodeSendFail", LIKELocalizeAccount, nil)];
                                                                          self.fetchVerifyCodeButton.enabled = YES;
                                                                      }
                                                                  }];
@@ -109,12 +109,12 @@
     if (timeCount >= 60) {
         [self.updateTimer invalidate];
         self.updateTimer = nil;
-        [self.fetchVerifyCodeButton setTitle:NSLocalizedStringFromTable(@"fetchSMSCode", @"account", nil) forState:UIControlStateNormal];
+        [self.fetchVerifyCodeButton setTitle:NSLocalizedStringFromTable(@"fetchSMSCode", LIKELocalizeAccount, nil) forState:UIControlStateNormal];
         self.fetchVerifyCodeButton.enabled = YES;
         timeCount = 0;
         return;
     }
-    [self.fetchVerifyCodeButton setTitle:[NSString stringWithFormat:@"%lus %@", (60 - timeCount), NSLocalizedStringFromTable(@"refetchSMSCode", @"account", nil)]
+    [self.fetchVerifyCodeButton setTitle:[NSString stringWithFormat:@"%lus %@", (60 - timeCount), NSLocalizedStringFromTable(@"refetchSMSCode", LIKELocalizeAccount, nil)]
                                 forState:UIControlStateDisabled];
      
 }

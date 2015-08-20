@@ -37,7 +37,7 @@
     {
         [self setEdgesForExtendedLayout:UIRectEdgeNone];
     }
-    self.title = NSLocalizedStringFromTable(@"friend.add", @"chat", @"Add friend");
+    self.title = NSLocalizedStringFromTable(@"friend.add", LIKELocalizeChat, @"Add friend");
     self.view.backgroundColor = [UIColor whiteColor];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.tableHeaderView = self.headerView;
@@ -47,7 +47,7 @@
     self.tableView.tableFooterView = footerView;
     
     UIButton *searchButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 60, 44)];
-    [searchButton setTitle:NSLocalizedStringFromTable(@"search", @"chat", @"Search") forState:UIControlStateNormal];
+    [searchButton setTitle:NSLocalizedStringFromTable(@"search", LIKELocalizeChat, @"Search") forState:UIControlStateNormal];
     //[searchButton setTitleColor:[UIColor colorWithRed:32 / 255.0 green:134 / 255.0 blue:158 / 255.0 alpha:1.0] forState:UIControlStateNormal];
     //[searchButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
     [searchButton setTitleColor:[UIColor like_tintColor] forState:UIControlStateNormal];
@@ -90,7 +90,7 @@
         _textField.clearButtonMode = UITextFieldViewModeWhileEditing;
         _textField.font = [UIFont systemFontOfSize:15.0];
         _textField.backgroundColor = [UIColor whiteColor];
-        _textField.placeholder = NSLocalizedStringFromTable(@"friend.inputNameToSearch", @"chat", @"input to find friends");
+        _textField.placeholder = NSLocalizedStringFromTable(@"friend.inputNameToSearch", LIKELocalizeChat, @"input to find friends");
         _textField.returnKeyType = UIReturnKeyDone;
         _textField.delegate = self;
     }
@@ -153,22 +153,22 @@
     self.selectedIndexPath = indexPath;
     NSString *buddyName = [self.dataSource objectAtIndex:indexPath.row];
     if ([self didBuddyExist:buddyName]) {
-        NSString *message = [NSString stringWithFormat:NSLocalizedStringFromTable(@"friend.repeat", @"chat", @"'%@'has been your friend!"), buddyName];
+        NSString *message = [NSString stringWithFormat:NSLocalizedStringFromTable(@"friend.repeat", LIKELocalizeChat, @"'%@'has been your friend!"), buddyName];
         
         [EMAlertView showAlertWithTitle:message
                                 message:nil
                         completionBlock:nil
-                      cancelButtonTitle:NSLocalizedStringFromTable(@"ok", @"chat", @"OK")
+                      cancelButtonTitle:NSLocalizedStringFromTable(@"ok", LIKELocalizeChat, @"OK")
                       otherButtonTitles:nil];
         
     }
     else if([self hasSendBuddyRequest:buddyName])
     {
-        NSString *message = [NSString stringWithFormat:NSLocalizedStringFromTable(@"friend.repeatApply", @"chat", @"you have send fridend request to '%@'!"), buddyName];
+        NSString *message = [NSString stringWithFormat:NSLocalizedStringFromTable(@"friend.repeatApply", LIKELocalizeChat, @"you have send fridend request to '%@'!"), buddyName];
         [EMAlertView showAlertWithTitle:message
                                 message:nil
                         completionBlock:nil
-                      cancelButtonTitle:NSLocalizedStringFromTable(@"ok", @"chat", @"OK")
+                      cancelButtonTitle:NSLocalizedStringFromTable(@"ok", LIKELocalizeChat, @"OK")
                       otherButtonTitles:nil];
         
     }else{
@@ -196,7 +196,7 @@
         NSDictionary *loginInfo = [[[EaseMob sharedInstance] chatManager] loginInfo];
         NSString *loginUsername = [loginInfo objectForKey:kSDKUsername];
         if ([_textField.text isEqualToString:loginUsername]) {
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedStringFromTable(@"prompt", @"chat", @"Prompt") message:NSLocalizedStringFromTable(@"friend.notAddSelf", @"chat", @"can't add yourself as a friend") delegate:nil cancelButtonTitle:NSLocalizedStringFromTable(@"ok", @"chat", @"OK") otherButtonTitles:nil, nil];
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedStringFromTable(@"prompt", LIKELocalizeChat, @"Prompt") message:NSLocalizedStringFromTable(@"friend.notAddSelf", LIKELocalizeChat, @"can't add yourself as a friend") delegate:nil cancelButtonTitle:NSLocalizedStringFromTable(@"ok", LIKELocalizeChat, @"OK") otherButtonTitles:nil, nil];
             [alertView show];
             
             return;
@@ -209,8 +209,8 @@
                 ApplyStyle style = [entity.style intValue];
                 BOOL isGroup = style == ApplyStyleFriend ? NO : YES;
                 if (!isGroup && [entity.applicantUsername isEqualToString:_textField.text]) {
-                    NSString *str = [NSString stringWithFormat:NSLocalizedStringFromTable(@"friend.repeatInvite", @"chat", @"%@ have sent the application to you"), _textField.text];
-                    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedStringFromTable(@"prompt", @"chat", @"Prompt") message:str delegate:nil cancelButtonTitle:NSLocalizedStringFromTable(@"ok", @"chat", @"OK") otherButtonTitles:nil, nil];
+                    NSString *str = [NSString stringWithFormat:NSLocalizedStringFromTable(@"friend.repeatInvite", LIKELocalizeChat, @"%@ have sent the application to you"), _textField.text];
+                    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedStringFromTable(@"prompt", LIKELocalizeChat, @"Prompt") message:str delegate:nil cancelButtonTitle:NSLocalizedStringFromTable(@"ok", LIKELocalizeChat, @"OK") otherButtonTitles:nil, nil];
                     [alertView show];
                     
                     return;
@@ -252,10 +252,10 @@
 - (void)showMessageAlertView
 {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
-                                                    message:NSLocalizedStringFromTable(@"saySomething", @"chat", @"say somthing")
+                                                    message:NSLocalizedStringFromTable(@"saySomething", LIKELocalizeChat, @"say somthing")
                                                    delegate:self
-                                          cancelButtonTitle:NSLocalizedStringFromTable(@"cancel", @"chat", @"Cancel")
-                                          otherButtonTitles:NSLocalizedStringFromTable(@"ok", @"chat", @"OK"), nil];
+                                          cancelButtonTitle:NSLocalizedStringFromTable(@"cancel", LIKELocalizeChat, @"Cancel")
+                                          otherButtonTitles:NSLocalizedStringFromTable(@"ok", LIKELocalizeChat, @"OK"), nil];
     [alert setAlertViewStyle:UIAlertViewStylePlainTextInput];
     [alert show];
 }
@@ -271,7 +271,7 @@
             messageStr = [NSString stringWithFormat:@"%@：%@", username, messageTextField.text];
         }
         else{
-            messageStr = [NSString stringWithFormat:NSLocalizedStringFromTable(@"friend.somebodyInvite", @"chat", @"%@ invite you as a friend"), username];
+            messageStr = [NSString stringWithFormat:NSLocalizedStringFromTable(@"friend.somebodyInvite", LIKELocalizeChat, @"%@ invite you as a friend"), username];
         }
         [self sendFriendApplyAtIndexPath:self.selectedIndexPath
                                  message:messageStr];
@@ -283,15 +283,15 @@
 {
     NSString *buddyName = [self.dataSource objectAtIndex:indexPath.row];
     if (buddyName && buddyName.length > 0) {
-        [self showHintHudWithMessage:NSLocalizedStringFromTable(@"friend.sendApply", @"chat", @"sending application...")];
+        [self showHintHudWithMessage:NSLocalizedStringFromTable(@"friend.sendApply", LIKELocalizeChat, @"sending application...")];
         EMError *error;
         [[EaseMob sharedInstance].chatManager addBuddy:buddyName message:message error:&error];
         [self hideHUD];
         if (error) {
-            [self showHintHudWithMessage:NSLocalizedStringFromTable(@"friend.sendApplyFail", @"chat", @"send application fails, please operate again")];
+            [self showHintHudWithMessage:NSLocalizedStringFromTable(@"friend.sendApplyFail", LIKELocalizeChat, @"send application fails, please operate again")];
         }
         else{
-            [self showHintHudWithMessage:NSLocalizedStringFromTable(@"friend.sendApplySuccess", @"chat", @"send successfully")];
+            [self showHintHudWithMessage:NSLocalizedStringFromTable(@"friend.sendApplySuccess", LIKELocalizeChat, @"send successfully")];
             [self.navigationController popViewControllerAnimated:YES];
         }
     }

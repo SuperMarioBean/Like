@@ -18,7 +18,7 @@ static BOOL diagStat = NO;
 }
 
 -(BOOL)webView:(UIWebView *)sender runJavaScriptConfirmPanelWithMessage:(NSString *)message initiatedByFrame:(id)frame{
-    UIAlertView* dialogue = [[UIAlertView alloc] initWithTitle:nil message:message delegate:self cancelButtonTitle:NSLocalizedStringFromTable(@"Okay", @"chat", @"Okay") otherButtonTitles:NSLocalizedStringFromTable(@"Cancel", @"chat", @"Cancel"), nil];
+    UIAlertView* dialogue = [[UIAlertView alloc] initWithTitle:nil message:message delegate:self cancelButtonTitle:NSLocalizedStringFromTable(@"Okay", LIKELocalizeChat, @"Okay") otherButtonTitles:NSLocalizedStringFromTable(@"Cancel", LIKELocalizeChat, @"Cancel"), nil];
     [dialogue show];
     while (dialogue.hidden==NO && dialogue.superview!=nil) {
         [[NSRunLoop mainRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.01f]];

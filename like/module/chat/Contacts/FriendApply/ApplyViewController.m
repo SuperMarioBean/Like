@@ -50,7 +50,7 @@ static ApplyViewController *controller = nil;
     [super viewDidLoad];
     
     // Uncomment the following line to preserve selection between presentations.
-    self.title = NSLocalizedStringFromTable(@"title.apply", @"chat", @"Application and notification");
+    self.title = NSLocalizedStringFromTable(@"title.apply", LIKELocalizeChat, @"Application and notification");
     self.tableView.tableFooterView = [[UIView alloc] init];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
@@ -132,12 +132,12 @@ static ApplyViewController *controller = nil;
             cell.indexPath = indexPath;
             ApplyStyle applyStyle = [entity.style intValue];
             if (applyStyle == ApplyStyleGroupInvitation) {
-                cell.titleLabel.text = NSLocalizedStringFromTable(@"title.groupApply", @"chat", @"Group Notification");
+                cell.titleLabel.text = NSLocalizedStringFromTable(@"title.groupApply", LIKELocalizeChat, @"Group Notification");
                 cell.headerImageView.image = [UIImage imageNamed:@"groupPrivateHeader"];
             }
             else if (applyStyle == ApplyStyleJoinGroup)
             {
-                cell.titleLabel.text = NSLocalizedStringFromTable(@"title.groupApply", @"chat", @"Group Notification");
+                cell.titleLabel.text = NSLocalizedStringFromTable(@"title.groupApply", LIKELocalizeChat, @"Group Notification");
                 cell.headerImageView.image = [UIImage imageNamed:@"groupPrivateHeader"];
             }
             else if(applyStyle == ApplyStyleFriend){
@@ -176,7 +176,7 @@ static ApplyViewController *controller = nil;
 - (void)applyCellAddFriendAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row < [self.dataSource count]) {
-        [self showHintHudWithMessage:NSLocalizedStringFromTable(@"sendingApply", @"chat", @"sending apply...")];
+        [self showHintHudWithMessage:NSLocalizedStringFromTable(@"sendingApply", LIKELocalizeChat, @"sending apply...")];
         
         ApplyEntity *entity = [self.dataSource objectAtIndex:indexPath.row];
         ApplyStyle applyStyle = [entity.style intValue];
@@ -201,7 +201,7 @@ static ApplyViewController *controller = nil;
             [self.tableView reloadData];
         }
         else{
-            [self showHUDWithMessage:NSLocalizedStringFromTable(@"acceptFail", @"chat", @"accept failure")];
+            [self showHUDWithMessage:NSLocalizedStringFromTable(@"acceptFail", LIKELocalizeChat, @"accept failure")];
         }
     }
 }
@@ -209,7 +209,7 @@ static ApplyViewController *controller = nil;
 - (void)applyCellRefuseFriendAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row < [self.dataSource count]) {
-        [self showHintHudWithMessage:NSLocalizedStringFromTable(@"sendingApply", @"chat", @"sending apply...")];
+        [self showHintHudWithMessage:NSLocalizedStringFromTable(@"sendingApply", LIKELocalizeChat, @"sending apply...")];
         ApplyEntity *entity = [self.dataSource objectAtIndex:indexPath.row];
         ApplyStyle applyStyle = [entity.style intValue];
         EMError *error;
@@ -234,7 +234,7 @@ static ApplyViewController *controller = nil;
             [self.tableView reloadData];
         }
         else{
-            [self showHintHudWithMessage:NSLocalizedStringFromTable(@"rejectFail", @"chat", @"reject failure")];
+            [self showHintHudWithMessage:NSLocalizedStringFromTable(@"rejectFail", LIKELocalizeChat, @"reject failure")];
         }
     }
 }

@@ -46,7 +46,7 @@ typedef NS_ENUM(NSInteger, EMAudioSession){
         BOOL covertRet = [self convertAMR:aFilePath toWAV:wavFilePath];
         if (!covertRet) {
             if (completon) {
-                completon([NSError errorWithDomain:NSLocalizedStringFromTable(@"error.initRecorderFail", @"chat", @"File format conversion failed")
+                completon([NSError errorWithDomain:NSLocalizedStringFromTable(@"error.initRecorderFail", LIKELocalizeChat, @"File format conversion failed")
                                               code:EMErrorFileTypeConvertionFailure
                                           userInfo:nil]);
             }
@@ -98,7 +98,7 @@ typedef NS_ENUM(NSInteger, EMAudioSession){
     // 判断当前是否是录音状态
     if ([self isRecording]) {
         if (completion) {
-            error = [NSError errorWithDomain:NSLocalizedStringFromTable(@"error.recordStoping", @"chat", @"Record voice is not over yet")
+            error = [NSError errorWithDomain:NSLocalizedStringFromTable(@"error.recordStoping", LIKELocalizeChat, @"Record voice is not over yet")
                                         code:EMErrorAudioRecordStoping
                                     userInfo:nil];
             completion(error);
@@ -108,7 +108,7 @@ typedef NS_ENUM(NSInteger, EMAudioSession){
     
     // 文件名不存在
     if (!fileName || [fileName length] == 0) {
-        error = [NSError errorWithDomain:NSLocalizedStringFromTable(@"error.notFound", @"chat", @"File path not exist")
+        error = [NSError errorWithDomain:NSLocalizedStringFromTable(@"error.notFound", LIKELocalizeChat, @"File path not exist")
                                     code:EMErrorAttachmentNotFound
                                 userInfo:nil];
         completion(error);
@@ -148,7 +148,7 @@ typedef NS_ENUM(NSInteger, EMAudioSession){
     // 当前是否在录音
     if(![self isRecording]){
         if (completion) {
-            error = [NSError errorWithDomain:NSLocalizedStringFromTable(@"error.recordNotBegin", @"chat", @"Recording has not yet begun")
+            error = [NSError errorWithDomain:NSLocalizedStringFromTable(@"error.recordNotBegin", LIKELocalizeChat, @"Recording has not yet begun")
                                         code:EMErrorAudioRecordNotStarted
                                     userInfo:nil];
             completion(nil,0,error);
@@ -161,7 +161,7 @@ typedef NS_ENUM(NSInteger, EMAudioSession){
     
     if([_recorderEndDate timeIntervalSinceDate:_recorderStartDate] < [EMCDDeviceManager recordMinDuration]){
         if (completion) {
-            error = [NSError errorWithDomain:NSLocalizedStringFromTable(@"error.recordTooShort", @"chat", @"Recording time is too short")
+            error = [NSError errorWithDomain:NSLocalizedStringFromTable(@"error.recordTooShort", LIKELocalizeChat, @"Recording time is too short")
                                         code:EMErrorAudioRecordDurationTooShort
                                     userInfo:nil];
             completion(nil,0,error);
@@ -240,7 +240,7 @@ typedef NS_ENUM(NSInteger, EMAudioSession){
                                    withOptions:AVAudioSessionSetActiveOptionNotifyOthersOnDeactivation
                                          error:&error];
         if(!success || error){
-            error = [NSError errorWithDomain:NSLocalizedStringFromTable(@"error.initPlayerFail", @"chat", @"Failed to initialize AVAudioPlayer")
+            error = [NSError errorWithDomain:NSLocalizedStringFromTable(@"error.initPlayerFail", LIKELocalizeChat, @"Failed to initialize AVAudioPlayer")
                                         code:EMErrorInitFailure
                                     userInfo:nil];
             return error;
