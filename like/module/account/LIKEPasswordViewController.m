@@ -21,7 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.textLabel.text = [LIKEUserContext sharedInstance].isForgetPassword?  @"请设置您的新登录密码": @"请创建您的登录密码";
+    self.textLabel.text = [LIKEUserContext sharedInstance].isForgetPassword?  NSLocalizedStringFromTable(@"setNewPassword", @"account", nil): NSLocalizedStringFromTable(@"setPassword", @"account", nil);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,14 +51,20 @@
                                                           else {
                                                               NSLog(@"%@", error);
                                                               if (error.code == LIKEStatusCodeRegistUserExist) {
-                                                                  [self showHintHudWithMessage:@"该号码已注册, 请直接登录"];
-                                                                  dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                                                                      [self hideHUD];
-                                                                      [self performSegueWithIdentifier:@"userExistUnwindSegue" sender:self];
-                                                                  });
+                                                                  [self showHintHudWithMessage:NSLocalizedStringFromTable(@"prompt.userExist", @"account", nil)];
+                                                                  
+                                                                  // FIXME: 临时测试行为
+                                                                  [LIKEUserContext sharedInstance].tempPassword = self.passwordTextField.text;
+                                                                  [self performSegueWithIdentifier:@"personalInfoEnterSegue" sender:self];
+                                                                  
+                                                                  
+//                                                                  dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//                                                                      [self hideHUD];
+//                                                                      [self performSegueWithIdentifier:@"userExistUnwindSegue" sender:self];
+//                                                                  });
                                                               }
                                                               else {
-                                                                  [self hideHUDWithCompletionMessage:@"注册失败"];
+                                                                  [self hideHUDWithCompletionMessage:NSLocalizedStringFromTable(@"error.registFail", @"account", nil)];
                                                               }
                                                           }
                                                       }];
@@ -66,11 +72,10 @@
     }
     else {
         self.passwordTextField.text = @"";
-        NSString *message = @"您输入的新密码格式不正确";
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitleType:UIAlertTitleError
-                                                                message:message
-                                                             buttonType:UIAlertButtonOk];
-        [alertView show];
+        
+        [PSTAlertController presentDismissableAlertWithTitle:NSLocalizedStringFromTable(@"error", @"main", nil)
+                                                     message:NSLocalizedStringFromTable(@"error.invalidPasswordFormat", @"account", nil)
+                                                  controller:self];
         return;
     }
 }

@@ -35,8 +35,6 @@
 #import "NSString+Emoji.h"
 #import "NSString+Helper.h"
 
-#import "UIAlert+Blocks.h"
-
 #import "UIViewcontroller+MBProgressHUD.h"
 
 #import "NSError+StatusCode.h"

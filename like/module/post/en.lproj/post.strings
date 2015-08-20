@@ -1,0 +1,48 @@
+
+/* Class = "UILabel"; text = "点击图片添加标签"; ObjectID = "45d-GY-w0T"; */
+"45d-GY-w0T.text" = "点击图片添加标签";
+
+/* Class = "UISearchBar"; placeholder = "搜索标签"; ObjectID = "8Sk-RC-Jt8"; */
+"8Sk-RC-Jt8.placeholder" = "搜索标签";
+
+/* Class = "UIViewController"; title = "添加滤镜"; ObjectID = "DNN-Zi-akq"; */
+"DNN-Zi-akq.title" = "添加滤镜";
+
+/* Class = "UINavigationItem"; title = "选取照片"; ObjectID = "KKh-F5-NOP"; */
+"KKh-F5-NOP.title" = "选取照片";
+
+/* Class = "UILabel"; text = "分享到"; ObjectID = "QfV-1q-WzZ"; */
+"QfV-1q-WzZ.text" = "分享到";
+
+/* Class = "UIButton"; normalTitle = "位置"; ObjectID = "RpQ-4Q-R1Q"; */
+"RpQ-4Q-R1Q.normalTitle" = "位置";
+
+/* Class = "UINavigationItem"; title = "标签"; ObjectID = "Zzq-o5-jZc"; */
+"Zzq-o5-jZc.title" = "标签";
+
+/* Class = "UILabel"; text = "相机胶卷"; ObjectID = "aVD-Hs-TXS"; */
+"aVD-Hs-TXS.text" = "相机胶卷";
+
+/* Class = "UILabel"; text = "相机胶卷"; ObjectID = "cxc-wa-zkC"; */
+"cxc-wa-zkC.text" = "相机胶卷";
+
+/* Class = "UILabel"; text = "98"; ObjectID = "d07-BP-duK"; */
+"d07-BP-duK.text" = "98";
+
+/* Class = "UIButton"; normalTitle = "下一步"; ObjectID = "g7S-zV-wy7"; */
+"g7S-zV-wy7.normalTitle" = "下一步";
+
+/* Class = "UINavigationItem"; title = "滤镜"; ObjectID = "gK5-Wo-npj"; */
+"gK5-Wo-npj.title" = "滤镜";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "iOj-TT-I5L"; */
+"iOj-TT-I5L.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "发布"; ObjectID = "qGE-GE-vSR"; */
+"qGE-GE-vSR.normalTitle" = "发布";
+
+/* Class = "UIButton"; normalTitle = "标签"; ObjectID = "tKj-vB-wqE"; */
+"tKj-vB-wqE.normalTitle" = "标签";
+
+/* Class = "UIButton"; normalTitle = "确定"; ObjectID = "xfl-UX-eor"; */
+"xfl-UX-eor.normalTitle" = "确定";

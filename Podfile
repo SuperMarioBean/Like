@@ -45,8 +45,10 @@ target :like do
     ## UIKit 组件封装
     ### 进度
     pod 'THProgressView', '~> 1.0'
-    ### UIAlert分装 (考虑后期更换为UIAlertController)
-    pod 'UIAlert+Blocks', '~> 1.0.2'
+    
+    ### UIAlertController, UIAlertView, UIActionSheet 的 iOS7 兼容封装
+    pod 'PSTAlertController', '~> 1.1.0'
+    
     ### UICollectionView增强
     ### 底部刷新
     pod 'CCBottomRefreshControl'

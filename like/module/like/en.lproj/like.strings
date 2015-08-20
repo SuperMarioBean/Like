@@ -1,0 +1,12 @@
+
+/* Class = "UITabBarItem"; title = "在线"; ObjectID = "7T1-wv-9ll"; */
+"7T1-wv-9ll.title" = "在线";
+
+/* Class = "UITabBarItem"; title = "动态"; ObjectID = "VYb-5L-CaL"; */
+"VYb-5L-CaL.title" = "动态";
+
+/* Class = "UISegmentedControl"; k0H-2w-hUS.segmentTitles[0] = "动态"; ObjectID = "k0H-2w-hUS"; */
+"k0H-2w-hUS.segmentTitles[0]" = "动态";
+
+/* Class = "UISegmentedControl"; k0H-2w-hUS.segmentTitles[1] = "在线"; ObjectID = "k0H-2w-hUS"; */
+"k0H-2w-hUS.segmentTitles[1]" = "在线";

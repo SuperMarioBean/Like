@@ -20,7 +20,7 @@ static NSString *kOtherCell = @"otherCell";     // the remaining cells at the en
 }
 
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
-@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+
 @property (weak, nonatomic) IBOutlet UISegmentedControl *genderSegmentedControl;
 @property (weak, nonatomic) IBOutlet UIButton *birthdayButton;
 @property (weak, nonatomic) IBOutlet UIButton *privacyPolicyButton;
@@ -28,6 +28,7 @@ static NSString *kOtherCell = @"otherCell";     // the remaining cells at the en
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 @property (weak, nonatomic) IBOutlet UIView *privacyPolicyView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *betweenBirthdayAndPrivacyPolicyConstrait;
+@property (weak, nonatomic) IBOutlet UIButton *avatarButton;
 
 @property (readwrite, nonatomic, strong) LIKEUser *user;
 
@@ -43,13 +44,13 @@ static NSString *kOtherCell = @"otherCell";     // the remaining cells at the en
     
     [self.privacyPolicyButton setTitle:@" " forState:UIControlStateNormal];
     
-    NSMutableAttributedString *privacyPolicyString = [[NSMutableAttributedString alloc] initWithString:@"我已阅读并同意隐私协议"];
+    NSMutableAttributedString *privacyPolicyString = [[NSMutableAttributedString alloc] initWithString:NSLocalizedStringFromTable(@"prompt.readPrivacyPolicy", @"account", nil)];
     [privacyPolicyString addAttribute:NSLinkAttributeName value:@" " range: NSMakeRange(7, 4)];
     self.privacyPolicyTermButton.titleLabel.attributedText = privacyPolicyString;
     
     // TODO: this block should be replace
     dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy年 MM月 dd日"];
+    [dateFormatter setDateFormat:NSLocalizedStringFromTable(@"format.birthdayDate", @"account", nil)];
     
     pickerHeight = CGRectGetHeight(self.datePicker.frame);
 }
@@ -62,6 +63,10 @@ static NSString *kOtherCell = @"otherCell";     // the remaining cells at the en
 #pragma mark - delegate methods
 
 #pragma mark - event response
+
+- (IBAction)uploadAvatar:(id)sender {
+    
+}
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     [self.view endEditing:YES];
@@ -97,27 +102,24 @@ static NSString *kOtherCell = @"otherCell";     // the remaining cells at the en
         NSDictionary *keyValuePairs = @{@"username": self.usernameTextField.text,
                                       @"male": @(self.genderSegmentedControl.selectedSegmentIndex? NO: YES),
                                       @"birthday": currentSelectedDate};
-        [self showHintHudWithMessage:@"正在更新您的信息..."];
+        [self showHintHudWithMessage:NSLocalizedStringFromTable(@"prompt.updating", @"account", nil)];
         [[LIKEUserContext sharedInstance] updateUserWithKeyValuePairs:keyValuePairs
                                                          completion:^(NSError *error) {
                                                                 if (!error) {
-                                                                    [self hideHUDWithCompletionMessage:@"账号更新完成"];
+                                                                    [self hideHUDWithCompletionMessage:NSLocalizedStringFromTable(@"prompt.updateProfileComplete", @"account", nil)];
                                                                     [self performSegueWithIdentifier:@"registerUnwindSegue" sender:self];
                                                                 }
                                                                 else {
-                                                                    [self hideHUDWithCompletionMessage:@"账号更新失败"];
+                                                                    [self hideHUDWithCompletionMessage:NSLocalizedStringFromTable(@"error.updateProfileFail", @"account", nil)];
                                                                     NSLog(@"%@", error);
                                                                 }
                                                             }];
 
     }
     else {
-        NSString *message = @"请按要求填写信息并勾选隐私协议";
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitleType:UIAlertTitleError
-                                                                message:message
-                                                             buttonType:UIAlertButtonOk];
-        
-        [alertView show];
+        [PSTAlertController presentDismissableAlertWithTitle:NSLocalizedStringFromTable(@"error", @"main", nil)
+                                                     message:NSLocalizedStringFromTable(@"fillInfomationAndCheckPrivacyPolicy", @"account", nil)
+                                                  controller:self];
     }
 }
 

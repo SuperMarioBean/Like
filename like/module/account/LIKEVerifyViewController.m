@@ -27,7 +27,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.textLabel.text = [NSString stringWithFormat:@"系统将会发送验证码短信到您的手机%@", [LIKEUserContext sharedInstance].tempPhoneNumber];
+    self.textLabel.text = [NSString stringWithFormat:@"%@ %@", NSLocalizedStringFromTable(@"sendCodeToPhone", @"account", nil), [LIKEUserContext sharedInstance].tempPhoneNumber];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -58,36 +58,26 @@
                                                                             completion:^(NSError *error) {
                                                                                 if (!error) {
                                                                                     if ([LIKEUserContext sharedInstance].isForgetPassword) {
-                                                                                        NSString *message = @"你的验证码验证成功, 你需要返回登陆界面使用新密码重新登陆一次";
-                                                                                        UIAlertView *alertView = [[UIAlertView alloc] initWithTitleType:UIAlertTitleConfirm
-                                                                                                                                                message:message
-                                                                                                                                             buttonType:UIAlertButtonOk
-                                                                                                                                                  block:^{
-                                                                                                                                                      [self performSegueWithIdentifier:@"verifyUnwindSegue" sender:self];
-                                                                                                                                                  }];
-                                                                                        [alertView show];
+                                                                                        [PSTAlertController presentDismissableAlertWithTitle:NSLocalizedStringFromTable(@"error", @"main", nil)
+                                                                                                                                 message:NSLocalizedStringFromTable(@"prompt.SMSCodeVerifySuccess", @"account", nil)
+                                                                                                                              controller:self];
                                                                                     }
                                                                                     else {
                                                                                         [self performSegueWithIdentifier:@"setPasswordSegue" sender:self];
                                                                                     }
                                                                                 }
                                                                                 else {
-                                                                                    NSString *message = @"您的验证码验证失败";
-                                                                                    UIAlertView *alertView = [[UIAlertView alloc] initWithTitleType:UIAlertTitleError
-                                                                                                                                            message:message
-                                                                                                                                         buttonType:UIAlertButtonOk];
-                                                                                    
-                                                                                    [alertView show];
+                                                                                    [PSTAlertController presentDismissableAlertWithTitle:NSLocalizedStringFromTable(@"error", @"main", nil)
+                                                                                                                                 message:NSLocalizedStringFromTable(@"error.invalidSMSCodeFormat", @"account", nil)
+                                                                                                                              controller:self];
                                                                                 }
                                                                             }];
     }
     else {
         self.verifyCodeTextField.text = @"";
-        NSString *message = @"您的验证码格式不正确";
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitleType:UIAlertTitleError
-                                                                message:message
-                                                             buttonType:UIAlertButtonOk];
-        [alertView show];
+        [PSTAlertController presentDismissableAlertWithTitle:NSLocalizedStringFromTable(@"error", @"main", nil)
+                                                     message:NSLocalizedStringFromTable(@"error.invalidSMSCodeFormat", @"account", nil)
+                                                  controller:self];
     }
 }
 
@@ -106,7 +96,7 @@
                                                                                                                             repeats:YES];
                                                                      }
                                                                      else {
-                                                                         [self hideHUDWithCompletionMessage:@"您的验证码发送失败"];
+                                                                         [self hideHUDWithCompletionMessage:NSLocalizedStringFromTable(@"error.SMSCodeSendFail", @"account", nil)];
                                                                          self.fetchVerifyCodeButton.enabled = YES;
                                                                      }
                                                                  }];
@@ -119,12 +109,12 @@
     if (timeCount >= 60) {
         [self.updateTimer invalidate];
         self.updateTimer = nil;
-        [self.fetchVerifyCodeButton setTitle:@"获取验证码" forState:UIControlStateNormal];
+        [self.fetchVerifyCodeButton setTitle:NSLocalizedStringFromTable(@"fetchSMSCode", @"account", nil) forState:UIControlStateNormal];
         self.fetchVerifyCodeButton.enabled = YES;
         timeCount = 0;
         return;
     }
-    [self.fetchVerifyCodeButton setTitle:[NSString stringWithFormat:@"%lus重新获取验证码", (60 - timeCount)]
+    [self.fetchVerifyCodeButton setTitle:[NSString stringWithFormat:@"%lus %@", (60 - timeCount), NSLocalizedStringFromTable(@"refetchSMSCode", @"account", nil)]
                                 forState:UIControlStateDisabled];
      
 }

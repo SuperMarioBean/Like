@@ -155,10 +155,9 @@
         str = [NSString stringWithFormat:NSLocalizedStringFromTable(@"group.beKicked", @"chat", @"you have been kicked out from the group of \'%@\'"), tmpStr];
     }
     if (str.length > 0) {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitleType:UIAlertTitleConfirm
-                                                                message:str
-                                                             buttonType:UIAlertButtonOk];
-        [alertView show];
+        [PSTAlertController presentDismissableAlertWithTitle:NSLocalizedStringFromTable(@"prompt", @"chat", nil)
+                                                     message:str
+                                                  controller:self];
     }
 }
 
@@ -206,10 +205,9 @@
 // 绑定deviceToken回调
 - (void)didBindDeviceWithError:(EMError *)error {
     if (error) {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitleType:UIAlertTitleConfirm
-                                                                message:NSLocalizedStringFromTable(@"apns.failToBindDeviceToken", @"chat", @"Fail to bind device token")
-                                                             buttonType:UIAlertButtonOk];
-        [alertView show];
+        [PSTAlertController presentDismissableAlertWithTitle:NSLocalizedStringFromTable(@"error", @"chat", nil)
+                                                     message:NSLocalizedStringFromTable(@"apns.failToBindDeviceToken", @"chat", @"Fail to bind device token")
+                                                  controller:self];
     }
 }
 

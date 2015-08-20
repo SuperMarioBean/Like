@@ -44,12 +44,9 @@
         [self performSegueWithIdentifier:@"phoneNumberVerifySegue" sender:self];
     }
     else {
-        NSString *message = @"您的电话号码不正确";
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitleType:UIAlertTitleError
-                                                                message:message
-                                                             buttonType:UIAlertButtonOk];
-        
-        [alertView show];
+        [PSTAlertController presentDismissableAlertWithTitle:NSLocalizedStringFromTable(@"error", @"main", nil)
+                                                     message:NSLocalizedStringFromTable(@"error.invalidPhoneNumberFormat", @"account", nil)
+                                                  controller:self];
     }
 }
 

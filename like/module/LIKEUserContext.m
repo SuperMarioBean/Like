@@ -66,16 +66,8 @@ NSString const* LIKEUserIMPassword = @"imPassword";
                  _user = [[LIKEUser alloc] init];
                  self.user.username = data[LIKEUserPhoneNumber];
                  self.user.userID = data[LIKEUserUserID];
-//                 self.user.imUsername = data[LIKEUserIMUsername];
-//                 self.user.imPassword = data[LIKEUserIMPassword];
-                 if ([self.user.username isEqualToString:@"18516103001"]) {
-                     self.user.imUsername = @"test01";
-                     self.user.imPassword = @"test01";
-                 }
-                 else if ([self.user.username isEqualToString:@"13601804009"]) {
-                     self.user.imUsername = @"test02";
-                     self.user.imPassword = @"test02";
-                 }
+                 self.user.imUsername = data[LIKEUserPhoneNumber];
+                 self.user.imPassword = password;
                  
                  BOOL isAutoLogin = [[[EaseMob sharedInstance] chatManager] isAutoLoginEnabled];
                  
@@ -193,7 +185,10 @@ NSString const* LIKEUserIMPassword = @"imPassword";
                zone:zone
         digistsCode:code
             success:^(id responseObject) {
-                if ([responseObject[LIKEContextCode] integerValue] == 200) {
+                NSError *error;
+                id __unused data = [LIKEHelper dataWithResponceObject:responseObject error:&error];
+
+                if (!error) {
                     completion(nil);
                 }
                 else {

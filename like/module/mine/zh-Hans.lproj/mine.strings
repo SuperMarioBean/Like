@@ -1,0 +1,9 @@
+
+/* Class = "UITabBarItem"; title = "Item 1"; ObjectID = "T3A-66-9uA"; */
+"T3A-66-9uA.title" = "Item 1";
+
+/* Class = "UITabBarItem"; title = "Item 2"; ObjectID = "WrR-vd-5Zw"; */
+"WrR-vd-5Zw.title" = "Item 2";
+
+/* Class = "UINavigationItem"; title = "我的"; ObjectID = "u9m-Yi-B6n"; */
+"u9m-Yi-B6n.title" = "我的";

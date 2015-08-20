@@ -1,0 +1,15 @@
+
+/* Class = "UITabBarItem"; title = "聊天"; ObjectID = "27t-lS-E1C"; */
+"27t-lS-E1C.title" = "聊天";
+
+/* Class = "UITabBarItem"; title = "Like"; ObjectID = "IuN-aM-JXT"; */
+"IuN-aM-JXT.title" = "Like";
+
+/* Class = "UITabBarItem"; title = "我的"; ObjectID = "SCv-9C-x01"; */
+"SCv-9C-x01.title" = "我的";
+
+/* Class = "UITabBarItem"; title = "发布"; ObjectID = "hXi-UH-Z98"; */
+"hXi-UH-Z98.title" = "发布";
+
+/* Class = "UITabBarItem"; title = "发现"; ObjectID = "mEG-Gi-V0S"; */
+"mEG-Gi-V0S.title" = "发现";

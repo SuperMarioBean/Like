@@ -62,7 +62,7 @@
                                                       password:self.passwordTextField.text
                                                     completion:^(NSError *error) {
                                                         if (!error) {
-                                                            [self hideHUDWithCompletionMessage:@"登陆成功"];
+                                                            [self hideHUDWithCompletionMessage:NSLocalizedStringFromTable(@"prompt.loginSuccess", @"account", nil)];
                                                             
                                                             [[LIKEAppContext sharedInstance] setUsername:self.phoneNumberTextField.text];
                                                             [[LIKEAppContext sharedInstance] setPassword:self.passwordTextField.text];
@@ -72,19 +72,17 @@
                                                             });
                                                         }
                                                         else {
-                                                            [self hideHUDWithCompletionMessage:@"登录失败"];
+                                                            [self hideHUDWithCompletionMessage:NSLocalizedStringFromTable(@"error.loginFail", @"account", nil)];
                                                             NSLog(@"%@", error);
                                                         }
                                                     }];
     }
     else {
         self.passwordTextField.text = @"";
-        NSString *message = @"您的电话号码或密码不正确";
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitleType:UIAlertTitleError
-                                                                message:message
-                                                             buttonType:UIAlertButtonOk];
         
-        [alertView show];
+        [PSTAlertController presentDismissableAlertWithTitle:NSLocalizedStringFromTable(@"error", @"main", nil)
+                                                     message:NSLocalizedStringFromTable(@"error.invalidPhoneNumberOrPasswordFormat", @"account", nil)
+                                                  controller:self];
     }
 }
 
