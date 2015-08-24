@@ -28,7 +28,6 @@ PODS:
   - Expecta (1.0.2)
   - FIR.im (1.2.0)
   - HIPImageCropper (2.0.0)
-  - ICETutorial (1.1.1)
   - KIF (3.2.3):
     - KIF/XCTest (= 3.2.3)
   - KIF/XCTest (3.2.3)
@@ -79,7 +78,6 @@ DEPENDENCIES:
   - Expecta (~> 1.0.0)
   - FIR.im (~> 1.2.0)
   - HIPImageCropper
-  - ICETutorial (from `https://github.com/SuperMarioBean/ICETutorial.git`)
   - KIF (~> 3.2.2)
   - LIKELocation (from `https://David_Fu@bitbucket.org/TrinityLike/likelocation.git`)
   - LIKENetworkLayer (from `https://David_Fu@bitbucket.org/TrinityLike/likenetworklayer.git`)
@@ -109,8 +107,6 @@ DEPENDENCIES:
   - UIViewController+BlockSegue
 
 EXTERNAL SOURCES:
-  ICETutorial:
-    :git: https://github.com/SuperMarioBean/ICETutorial.git
   LIKELocation:
     :git: https://David_Fu@bitbucket.org/TrinityLike/likelocation.git
   LIKENetworkLayer:
@@ -125,9 +121,6 @@ EXTERNAL SOURCES:
     :git: https://github.com/SuperMarioBean/UICollectionView-ARDynamicHeightLayoutCell.git
 
 CHECKOUT OPTIONS:
-  ICETutorial:
-    :commit: 4a60940408d629d479c9c37e71864557828abb9c
-    :git: https://github.com/SuperMarioBean/ICETutorial.git
   LIKELocation:
     :commit: 8c586582e2009950d04aa5d9610b7c20fa365934
     :git: https://David_Fu@bitbucket.org/TrinityLike/likelocation.git
@@ -156,7 +149,6 @@ SPEC CHECKSUMS:
   Expecta: 54e8a3530add08f4f0208c111355eda7cde74a53
   FIR.im: e5c7367a35adcd796f30f176f059356c330c0c2e
   HIPImageCropper: 080054a1d885660e24ca365904842a287207cce2
-  ICETutorial: 6cb15e46066afc359357f048d1b5fca444d69c83
   KIF: a94bffe9c97e449e44f8fa481c53243d21309e1e
   LIKELocation: fb6a45e8811a73bdbb3aa1f5b2acf8129f6cf3fb
   LIKENetworkLayer: 36040d9e70fedc88933b7a77023ebf1dbd89689e
