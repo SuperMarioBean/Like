@@ -36,7 +36,7 @@ extern NSString *const LIKETagPosition;
 
 - (void)postWithPostID:(NSString *)postID completion:(void (^)(NSError *error))completion;
 
-- (void)postWithKeyValuePairs:(NSDictionary *)keyValuePairs completion:(void (^)(NSError *error))completion;
+- (void)postWithKeyValuePairs:(NSDictionary *)keyValuePairs image:(UIImage*)image completion:(void (^)(NSError *error))completion;
 
 - (void)deletePostWithPostID:(NSString *)postID completion:(void (^)(NSError *error))completion;
 

@@ -64,8 +64,8 @@ target :like do
     pod 'SSPullToRefresh', :git => 'https://github.com/SuperMarioBean/sspulltorefresh.git'
     ### UIBarButtonItem角标扩展
     pod 'UIBarButtonItem-Badge', :git => 'https://github.com/mikeMTOL/UIBarButtonItem-Badge.git'
-    pod 'ICETutorial', :git => 'https://github.com/SuperMarioBean/ICETutorial.git'
-    
+#    pod 'ICETutorial', :git => 'https://github.com/SuperMarioBean/ICETutorial.git'
+
     ### storybrd 增强
     #### custom relationship storyboard segue
     # pod 'SMBCustomRelationshipSegue', :path => '/Users/David/Documents/supermariobean@github.com/SMBCustomRelationshipSegue'

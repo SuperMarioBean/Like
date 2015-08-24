@@ -22,10 +22,10 @@ PODS:
     - AFNetworking/NSURLSession
   - AMap2DMap (2.6.0)
   - AMapSearch (2.6.0)
-  - CCBottomRefreshControl (0.5):
-    - Masonry
+  - CCBottomRefreshControl (0.5.1):
+    - Masonry (~> 0.6.2)
   - EaseMobSDKFull (2.1.7)
-  - Expecta (1.0.0)
+  - Expecta (1.0.2)
   - FIR.im (1.2.0)
   - HIPImageCropper (2.0.0)
   - ICETutorial (1.1.1)
@@ -39,9 +39,9 @@ PODS:
     - AFNetworking (~> 2.5.4)
   - LIKENetworkStatus (0.1.0):
     - AFNetworking (~> 2.5.4)
-  - Mantle (2.0.2):
-    - Mantle/extobjc (= 2.0.2)
-  - Mantle/extobjc (2.0.2)
+  - Mantle (2.0.4):
+    - Mantle/extobjc (= 2.0.4)
+  - Mantle/extobjc (2.0.4)
   - Masonry (0.6.2)
   - MBProgressHUD (0.9.1)
   - MBProgressHUDExtensions@donly (0.3):
@@ -65,7 +65,7 @@ PODS:
     - SDWebImage/Core (= 3.7.3)
   - SDWebImage/Core (3.7.3)
   - SMBCustomRelationshipSegue (0.1.1)
-  - Specta (1.0.2)
+  - Specta (1.0.3)
   - SSPullToRefresh (1.2.4)
   - THProgressView (1.0)
   - UIBarButtonItem-Badge (0.0.1)
@@ -81,9 +81,9 @@ DEPENDENCIES:
   - HIPImageCropper
   - ICETutorial (from `https://github.com/SuperMarioBean/ICETutorial.git`)
   - KIF (~> 3.2.2)
-  - LIKELocation
-  - LIKENetworkLayer
-  - LIKENetworkStatus
+  - LIKELocation (from `https://David_Fu@bitbucket.org/TrinityLike/likelocation.git`)
+  - LIKENetworkLayer (from `https://David_Fu@bitbucket.org/TrinityLike/likenetworklayer.git`)
+  - LIKENetworkStatus (from `https://David_Fu@bitbucket.org/TrinityLike/likenetworkstatus.git`)
   - Mantle (~> 2.0.2)
   - Masonry (~> 0.6.1)
   - MBProgressHUD (~> 0.9.1)
@@ -111,6 +111,12 @@ DEPENDENCIES:
 EXTERNAL SOURCES:
   ICETutorial:
     :git: https://github.com/SuperMarioBean/ICETutorial.git
+  LIKELocation:
+    :git: https://David_Fu@bitbucket.org/TrinityLike/likelocation.git
+  LIKENetworkLayer:
+    :git: https://David_Fu@bitbucket.org/TrinityLike/likenetworklayer.git
+  LIKENetworkStatus:
+    :git: https://David_Fu@bitbucket.org/TrinityLike/likenetworkstatus.git
   SSPullToRefresh:
     :git: https://github.com/SuperMarioBean/sspulltorefresh.git
   UIBarButtonItem-Badge:
@@ -122,6 +128,15 @@ CHECKOUT OPTIONS:
   ICETutorial:
     :commit: 4a60940408d629d479c9c37e71864557828abb9c
     :git: https://github.com/SuperMarioBean/ICETutorial.git
+  LIKELocation:
+    :commit: 8c586582e2009950d04aa5d9610b7c20fa365934
+    :git: https://David_Fu@bitbucket.org/TrinityLike/likelocation.git
+  LIKENetworkLayer:
+    :commit: 8437501ab8d19924bc1a96d2c9cbb857c06ae77e
+    :git: https://David_Fu@bitbucket.org/TrinityLike/likenetworklayer.git
+  LIKENetworkStatus:
+    :commit: a1b0e50d617e6c930bc3f13fecaf3cca5dfc1052
+    :git: https://David_Fu@bitbucket.org/TrinityLike/likenetworkstatus.git
   SSPullToRefresh:
     :commit: 95fda081198d6210437518999afdd24b0b615297
     :git: https://github.com/SuperMarioBean/sspulltorefresh.git
@@ -136,17 +151,17 @@ SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
   AMap2DMap: b5ce82581ca53b71a0136da858f7ef04db1ffc59
   AMapSearch: 0ea3101eec4b9f500b53e33dcda30d343d41613b
-  CCBottomRefreshControl: 2cfdbd6f5be5181f5f070637605981d5557e8e32
+  CCBottomRefreshControl: 57a596348855260f627ffc2b311328ed15b94877
   EaseMobSDKFull: 43858ca9a62bbe1fa4c7c006f944a3e52a4bff48
-  Expecta: 32604574add2c46a36f8d2f716b6c5736eb75024
+  Expecta: 54e8a3530add08f4f0208c111355eda7cde74a53
   FIR.im: e5c7367a35adcd796f30f176f059356c330c0c2e
   HIPImageCropper: 080054a1d885660e24ca365904842a287207cce2
   ICETutorial: 6cb15e46066afc359357f048d1b5fca444d69c83
   KIF: a94bffe9c97e449e44f8fa481c53243d21309e1e
-  LIKELocation: dff6ca6323fa5274ebd56a679e5d81c3f3206756
-  LIKENetworkLayer: 3db09f7d1e7e743be26a6300814df0fd5deb2ed3
-  LIKENetworkStatus: d5d0f18060eb99b1fe82251e17668eed4976a33f
-  Mantle: 967fd31ea0220890b2e76589198996b534bb3fb1
+  LIKELocation: fb6a45e8811a73bdbb3aa1f5b2acf8129f6cf3fb
+  LIKENetworkLayer: 36040d9e70fedc88933b7a77023ebf1dbd89689e
+  LIKENetworkStatus: e75aa7315e61a8788f3ec213d8d9eafd60a22a00
+  Mantle: 6bee68168423948be0c0c5924832bf3af188e099
   Masonry: 362e8a1cc0beada4a4c4832d5e863da2a51533be
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   MBProgressHUDExtensions@donly: 9b692655484251819c6f3ce5a9e9b2538eac7bf4
@@ -161,7 +176,7 @@ SPEC CHECKSUMS:
   SCRecorder: 90075f2d9deb03cd8280faff8cd3cca11c036025
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
   SMBCustomRelationshipSegue: e9a919cabc60433096b0b232e6c24cec590cc3ea
-  Specta: 9cec98310dca411f7c7ffd6943552b501622abfe
+  Specta: cf3e4188cf35375c3ee2cd03f8db8f1f4ef98234
   SSPullToRefresh: 369e862c1d6528c7a354fc85cd4763d4e670e9af
   THProgressView: 999dc78f748f4cb6d69408f545de4d82ef7f1cec
   UIBarButtonItem-Badge: 8f5ed4d32d32dbb03034d4f273d02c8da680236b

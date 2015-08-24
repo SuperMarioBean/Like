@@ -109,5 +109,54 @@ NSString *const LIKEUploadStatus = @"uploadStatus";
               }];
 }
 
+- (void)postWithKeyValuePairs:(NSDictionary *)keyValuePairs image:(UIImage*)image completion:(void (^)(NSError *error))completion
+{
+    [upload uploadImage:image uploadProgress:^(CGFloat percent) {
+        NSLog(@"upload : %d %%",(int)percent*100);
+    } success:^(id responseObject) {
+        NSError* error;
+        NSDictionary* data = [LIKEHelper dataWithResponceObject:responseObject error:&error];
+        if (!error) {
+            NSString *uri = [data objectForKey:@"uri"];
+            NSMutableDictionary* postInfo = [NSMutableDictionary dictionaryWithDictionary:keyValuePairs];
+            [postInfo setObject:uri forKey:LIKETrendContentImageURL];
+            
+            [post newPost:postInfo success:^(id responseObject) {
+                if (completion) {
+                    completion(nil);
+                }
+            } failure:^(NSError *error) {
+                if (completion) {
+                    completion(error);
+                }
+            }];
+        }else
+        {
+            NSLog(@"%@",error);
+            if (completion) {
+                completion(error);
+            }
+        }
 
+    } failure:^(NSError *error) {
+        NSLog(@"upload image fail.%@",error);
+        if (completion) {
+            completion(error);
+        }
+    }];
+}
+
+
+- (void)deletePostWithPostID:(NSString *)postID completion:(void (^)(NSError *error))completion
+{
+    [post delPost:postID success:^(id responseObject) {
+        if (completion) {
+            completion(nil);
+        }
+    } failure:^(NSError *error) {
+        if (completion) {
+            completion(error);
+        }
+    }];
+}
 @end

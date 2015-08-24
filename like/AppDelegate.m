@@ -50,17 +50,7 @@
     // 暂时默认动画为渐变, 后期需要定制
     self.rootViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     
-    // APP 第一次开启, 设置最初的欢迎页面
-    // 始终为第一次打开应用
-    [LIKEAppContext sharedInstance].hasWelcomeNewUser = NO;
-    if (![LIKEAppContext sharedInstance].hasWelcomeNewUser) {
-        self.window.rootViewController = [self setupTutorialViewController];
-        
-    }
-    else {
-        self.window.rootViewController = self.rootViewController;
-    }
-    
+    self.window.rootViewController = self.rootViewController;
     return YES;
 }
 
@@ -121,27 +111,27 @@
 
 - (UIViewController *)setupTutorialViewController {
     // Init the pages texts, and pictures.
-    ICETutorialPage *layer1 = [[ICETutorialPage alloc] initWithTitle:@"Picture 1"
-                                                            subTitle:@"Champs-Elysées by night"
-                                                         pictureName:@"tutorial_background_00@2x.jpg"
+    ICETutorialPage *layer1 = [[ICETutorialPage alloc] initWithTitle:@" "
+                                                            subTitle:@" "
+                                                         pictureName:@"intro1"
                                                             duration:3.0];
-    ICETutorialPage *layer2 = [[ICETutorialPage alloc] initWithTitle:@"Picture 2"
-                                                            subTitle:@"The Eiffel Tower with\n cloudy weather"
-                                                         pictureName:@"tutorial_background_01@2x.jpg"
+    ICETutorialPage *layer2 = [[ICETutorialPage alloc] initWithTitle:@" "
+                                                            subTitle:@" "
+                                                         pictureName:@"intro2"
                                                             duration:3.0];
-    ICETutorialPage *layer3 = [[ICETutorialPage alloc] initWithTitle:@"Picture 3"
-                                                            subTitle:@"An other famous street of Paris"
-                                                         pictureName:@"tutorial_background_02@2x.jpg"
+    ICETutorialPage *layer3 = [[ICETutorialPage alloc] initWithTitle:@" "
+                                                            subTitle:@" "
+                                                         pictureName:@"intro3"
                                                             duration:3.0];
-    ICETutorialPage *layer4 = [[ICETutorialPage alloc] initWithTitle:@"Picture 4"
-                                                            subTitle:@"The Eiffel Tower with a better weather"
-                                                         pictureName:@"tutorial_background_03@2x.jpg"
-                                                            duration:3.0];
-    ICETutorialPage *layer5 = [[ICETutorialPage alloc] initWithTitle:@"Picture 5"
-                                                            subTitle:@"The Louvre's Museum Pyramide"
-                                                         pictureName:@"tutorial_background_04@2x.jpg"
-                                                            duration:3.0];
-    NSArray *tutorialLayers = @[layer1,layer2,layer3,layer4,layer5];
+//    ICETutorialPage *layer4 = [[ICETutorialPage alloc] initWithTitle:@"Picture 4"
+//                                                            subTitle:@"The Eiffel Tower with a better weather"
+//                                                         pictureName:@"tutorial_background_03@2x.jpg"
+//                                                            duration:3.0];
+//    ICETutorialPage *layer5 = [[ICETutorialPage alloc] initWithTitle:@"Picture 5"
+//                                                            subTitle:@"The Louvre's Museum Pyramide"
+//                                                         pictureName:@"tutorial_background_04@2x.jpg"
+//                                                            duration:3.0];
+    NSArray *tutorialLayers = @[layer1,layer2,layer3];
     
     // Set the common style for the title.
     ICETutorialLabelStyle *titleStyle = [[ICETutorialLabelStyle alloc] init];
