@@ -111,7 +111,7 @@
     if (_searchBar == nil) {
         _searchBar = [[EMSearchBar alloc] init];
         _searchBar.delegate = self;
-        _searchBar.placeholder = NSLocalizedStringFromTable(@"search", @"chat", "Search");
+        _searchBar.placeholder = NSLocalizedStringFromTable(@"search", LIKELocalizeChat, "Search");
         _searchBar.backgroundColor = [UIColor colorWithRed:0.747 green:0.756 blue:0.751 alpha:1.000];
     }
     
@@ -193,7 +193,7 @@
             NSString *loginUsername = [loginInfo objectForKey:kSDKUsername];
             if (loginUsername && loginUsername.length > 0) {
                 if ([loginUsername isEqualToString:buddy.username]) {
-                    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedStringFromTable(@"prompt", @"chat", "Prompt") message:NSLocalizedStringFromTable(@"friend.notChatSelf", @"chat", "can't talk to yourself") delegate:nil cancelButtonTitle:NSLocalizedStringFromTable(@"ok", @"chat", "OK") otherButtonTitles:nil, nil];
+                    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedStringFromTable(@"prompt", LIKELocalizeChat, "Prompt") message:NSLocalizedStringFromTable(@"friend.notChatSelf", LIKELocalizeChat, "can't talk to yourself") delegate:nil cancelButtonTitle:NSLocalizedStringFromTable(@"ok", LIKELocalizeChat, "OK") otherButtonTitles:nil, nil];
                     [alertView show];
                     
                     return;
@@ -239,7 +239,7 @@
         }
         
         cell.imageView.image = [UIImage imageNamed:@"newFriends"];
-        cell.textLabel.text = NSLocalizedStringFromTable(@"title.apply", @"chat", "Application and notification");
+        cell.textLabel.text = NSLocalizedStringFromTable(@"title.apply", LIKELocalizeChat, "Application and notification");
         [cell addSubview:self.unapplyCountLabel];
     }
     else{
@@ -254,15 +254,15 @@
 //        cell.indexPath = indexPath;
 //        if (indexPath.section == 0 && indexPath.row == 1) {
 //            cell.imageView.image = [UIImage imageNamed:@"groupPrivateHeader"];
-//            cell.textLabel.text = NSLocalizedStringFromTable(@"title.group", @"chat", "Group");
+//            cell.textLabel.text = NSLocalizedStringFromTable(@"title.group", LIKELocalizeChat, "Group");
 //        }
 //        else if (indexPath.section == 0 && indexPath.row == 2) {
 //            cell.imageView.image = [UIImage imageNamed:@"groupPublicHeader"];
-//            cell.textLabel.text = NSLocalizedStringFromTable(@"title.chatroomlist", @"chat", @"chatroom list");
+//            cell.textLabel.text = NSLocalizedStringFromTable(@"title.chatroomlist", LIKELocalizeChat, @"chatroom list");
 //        }
 //        else if (indexPath.section == 0 && indexPath.row == 3) {
 //            cell.imageView.image = [UIImage imageNamed:@"groupPublicHeader"];
-//            cell.textLabel.text = NSLocalizedStringFromTable(@"title.robotlist", @"chat", @"robot list");
+//            cell.textLabel.text = NSLocalizedStringFromTable(@"title.robotlist", LIKELocalizeChat, @"robot list");
 //        }
 //        else{
             EMBuddy *buddy = [[self.dataSource objectAtIndex:(indexPath.section - 1)] objectAtIndex:indexPath.row];
@@ -292,7 +292,7 @@
         NSString *loginUsername = [loginInfo objectForKey:kSDKUsername];
         EMBuddy *buddy = [[self.dataSource objectAtIndex:(indexPath.section - 1)] objectAtIndex:indexPath.row];
         if ([buddy.username isEqualToString:loginUsername]) {
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedStringFromTable(@"prompt", @"chat", "Prompt") message:NSLocalizedStringFromTable(@"friend.notDeleteSelf", @"chat", "can't delete self") delegate:nil cancelButtonTitle:NSLocalizedStringFromTable(@"ok", @"chat", "OK") otherButtonTitles:nil, nil];
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedStringFromTable(@"prompt", LIKELocalizeChat, "Prompt") message:NSLocalizedStringFromTable(@"friend.notDeleteSelf", LIKELocalizeChat, "can't delete self") delegate:nil cancelButtonTitle:NSLocalizedStringFromTable(@"ok", LIKELocalizeChat, "OK") otherButtonTitles:nil, nil];
             [alertView show];
             
             return;
@@ -310,7 +310,7 @@
             [tableView  endUpdates];
         }
         else{
-            [self showHintHudWithMessage:[NSString stringWithFormat:NSLocalizedStringFromTable(@"deleteFailed", @"chat", "Delete failed:%@"), error.description]];
+            [self showHintHudWithMessage:[NSString stringWithFormat:NSLocalizedStringFromTable(@"deleteFailed", LIKELocalizeChat, "Delete failed:%@"), error.description]];
             [tableView reloadData];
         }
     }
@@ -402,10 +402,10 @@
         NSString *loginUsername = [loginInfo objectForKey:kSDKUsername];
         if (loginUsername && loginUsername.length > 0) {
             if ([loginUsername isEqualToString:buddy.username]) {
-                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedStringFromTable(@"prompt", @"chat", "Prompt")
-                                                                    message:NSLocalizedStringFromTable(@"friend.notChatSelf", @"chat", "can't talk to yourself")
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedStringFromTable(@"prompt", LIKELocalizeChat, "Prompt")
+                                                                    message:NSLocalizedStringFromTable(@"friend.notChatSelf", LIKELocalizeChat, "can't talk to yourself")
                                                                    delegate:nil
-                                                          cancelButtonTitle:NSLocalizedStringFromTable(@"ok", @"chat", "OK")
+                                                          cancelButtonTitle:NSLocalizedStringFromTable(@"ok", LIKELocalizeChat, "OK")
                                                           otherButtonTitles:nil, nil];
                 [alertView show];
                 
@@ -467,7 +467,7 @@
     if (buttonIndex != actionSheet.cancelButtonIndex && _currentLongPressIndex) {
         EMBuddy *buddy = [[self.dataSource objectAtIndex:(_currentLongPressIndex.section - 1)] objectAtIndex:_currentLongPressIndex.row];
         [self hideHUD];
-        [self showHintHudWithMessage:NSLocalizedStringFromTable(@"wait", @"chat", "Pleae wait...")];
+        [self showHintHudWithMessage:NSLocalizedStringFromTable(@"wait", LIKELocalizeChat, "Pleae wait...")];
         
         __weak typeof(self) weakSelf = self;
         [[EaseMob sharedInstance].chatManager asyncBlockBuddy:buddy.username relationship:eRelationshipBoth withCompletion:^(NSString *username, EMError *error){
@@ -511,7 +511,7 @@
     }
     
     _currentLongPressIndex = indexPath;
-    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:NSLocalizedStringFromTable(@"cancel", @"chat", "Cancel") destructiveButtonTitle:NSLocalizedStringFromTable(@"friend.block", @"chat", "join the blacklist") otherButtonTitles:nil, nil];
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:NSLocalizedStringFromTable(@"cancel", LIKELocalizeChat, "Cancel") destructiveButtonTitle:NSLocalizedStringFromTable(@"friend.block", LIKELocalizeChat, "join the blacklist") otherButtonTitles:nil, nil];
     [actionSheet showInView:[[UIApplication sharedApplication] keyWindow]];
 }
 

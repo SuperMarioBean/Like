@@ -462,7 +462,7 @@
 -(void)didReceiveCmdMessage:(EMMessage *)message
 {
     if ([_conversation.chatter isEqualToString:message.conversationChatter]) {
-        [self showHintHudWithMessage:NSLocalizedStringFromTable(@"receiveCmd", @"chat", @"receive cmd message")];
+        [self showHintHudWithMessage:NSLocalizedStringFromTable(@"receiveCmd", LIKELocalizeChat, @"receive cmd message")];
     }
 }
 
@@ -580,7 +580,7 @@
     [self keyBoardHidden];
     
 #if TARGET_IPHONE_SIMULATOR
-    [self showHintHudWithMessage:NSLocalizedStringFromTable(@"message.simulatorNotSupportCamera", @"chat", @"simulator does not support taking picture")];
+    [self showHintHudWithMessage:NSLocalizedStringFromTable(@"message.simulatorNotSupportCamera", LIKELocalizeChat, @"simulator does not support taking picture")];
 #elif TARGET_OS_IPHONE
     self.imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
     self.imagePicker.mediaTypes = @[(NSString *)kUTTypeImage,(NSString *)kUTTypeMovie];
@@ -668,7 +668,7 @@
                                                                  completion:^(NSError *error)
          {
              if (error) {
-                 NSLog(NSLocalizedStringFromTable(@"message.startRecordFail", @"chat", @"failure to start recording"));
+                 NSLog(NSLocalizedStringFromTable(@"message.startRecordFail", LIKELocalizeChat, @"failure to start recording"));
              }
          }];
     }
@@ -695,7 +695,7 @@
             voice.duration = aDuration;
             [weakSelf sendAudioMessage:voice];
         }else {
-            [weakSelf showHintHudWithMessage:NSLocalizedStringFromTable(@"media.timeShort", @"chat", @"The recording time is too short")];
+            [weakSelf showHintHudWithMessage:NSLocalizedStringFromTable(@"media.timeShort", LIKELocalizeChat, @"The recording time is too short")];
             weakSelf.chatToolBar.recordButton.enabled = NO;
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [weakSelf hideHUD];
@@ -768,14 +768,14 @@
 {
 //    CGRect frame = self.chatToolBar.frame;
 //    [self showHint:[NSString stringWithFormat:NSLocalizedStringFromTable(@"chatroom.join", @"\'%@\'join chatroom\'%@\'"), username, chatroom.chatroomId] yOffset:-frame.size.height + KHintAdjustY];
-    [self showHintHudWithMessage:[NSString stringWithFormat:NSLocalizedStringFromTable(@"chatroom.join", @"chat", @"\'%@\'join chatroom\'%@\'"), username, chatroom.chatroomId]];
+    [self showHintHudWithMessage:[NSString stringWithFormat:NSLocalizedStringFromTable(@"chatroom.join", LIKELocalizeChat, @"\'%@\'join chatroom\'%@\'"), username, chatroom.chatroomId]];
 }
 
 - (void)chatroom:(EMChatroom *)chatroom occupantDidLeave:(NSString *)username
 {
 //    CGRect frame = self.chatToolBar.frame;
 //    [self showHint:[NSString stringWithFormat:NSLocalizedStringFromTable(@"chatroom.leave", @"\'%@\'leave chatroom\'%@\'"), username, chatroom.chatroomId] yOffset:-frame.size.height + KHintAdjustY];
-    [self showHintHudWithMessage:[NSString stringWithFormat:NSLocalizedStringFromTable(@"chatroom.leave", @"chat", @"\'%@\'leave chatroom\'%@\'"), username, chatroom.chatroomId]];
+    [self showHintHudWithMessage:[NSString stringWithFormat:NSLocalizedStringFromTable(@"chatroom.leave", LIKELocalizeChat, @"\'%@\'leave chatroom\'%@\'"), username, chatroom.chatroomId]];
 }
 
 - (void)beKickedOutFromChatroom:(EMChatroom *)chatroom reason:(EMChatroomBeKickedReason)reason {
@@ -783,7 +783,7 @@
         _isKicked = YES;
         //CGRect frame = self.chatToolBar.frame;
         //[self showHint:[NSString stringWithFormat:NSLocalizedStringFromTable(@"chatroom.remove", @"be removed from chatroom\'%@\'"), chatroom.chatroomId] yOffset:-frame.size.height + KHintAdjustY];
-        [self showHintHudWithMessage:[NSString stringWithFormat:NSLocalizedStringFromTable(@"chatroom.remove", @"chat", @"be removed from chatroom\'%@\'"), chatroom.chatroomId]];
+        [self showHintHudWithMessage:[NSString stringWithFormat:NSLocalizedStringFromTable(@"chatroom.remove", LIKELocalizeChat, @"be removed from chatroom\'%@\'"), chatroom.chatroomId]];
         [self.navigationController popViewControllerAnimated:YES];
     }
 }
@@ -897,12 +897,12 @@
     id <IEMFileMessageBody> body = [model.message.messageBodies firstObject];
     EMAttachmentDownloadStatus downloadStatus = [body attachmentDownloadStatus];
     if (downloadStatus == EMAttachmentDownloading) {
-        [self showHintHudWithMessage:NSLocalizedStringFromTable(@"message.downloadingAudio", @"chat", @"downloading voice, click later")];
+        [self showHintHudWithMessage:NSLocalizedStringFromTable(@"message.downloadingAudio", LIKELocalizeChat, @"downloading voice, click later")];
         return;
     }
     else if (downloadStatus == EMAttachmentDownloadFailure)
     {
-        [self showHintHudWithMessage:NSLocalizedStringFromTable(@"message.downloadingAudio", @"chat", @"downloading voice, click later")];
+        [self showHintHudWithMessage:NSLocalizedStringFromTable(@"message.downloadingAudio", LIKELocalizeChat, @"downloading voice, click later")];
         [[EaseMob sharedInstance].chatManager asyncFetchMessage:model.message progress:nil];
         
         return;
@@ -969,7 +969,7 @@
     
     __weak typeof (self) weakSelf = self;
     id <IChatManager> chatManager = [[EaseMob sharedInstance] chatManager];
-    [weakSelf showHintHudWithMessage:NSLocalizedStringFromTable(@"message.downloadingVideo", @"chat", @"downloading video...")];
+    [weakSelf showHintHudWithMessage:NSLocalizedStringFromTable(@"message.downloadingVideo", LIKELocalizeChat, @"downloading video...")];
     [chatManager asyncFetchMessage:model.message progress:nil completion:^(EMMessage *aMessage, EMError *error) {
         [weakSelf hideHUD];
         if (!error) {
@@ -983,7 +983,7 @@
                 [weakSelf playVideoWithVideoPath:localPath];
             }
         }else{
-            [weakSelf showHintHudWithMessage:NSLocalizedStringFromTable(@"message.videoFail", @"chat", @"video for failure!")];
+            [weakSelf showHintHudWithMessage:NSLocalizedStringFromTable(@"message.videoFail", LIKELocalizeChat, @"video for failure!")];
         }
     } onQueue:nil];
 }
@@ -1028,7 +1028,7 @@
                     return ;
                 }
             }
-            [weakSelf showHintHudWithMessage:NSLocalizedStringFromTable(@"message.downloadingImage", @"chat", @"downloading a image...")];
+            [weakSelf showHintHudWithMessage:NSLocalizedStringFromTable(@"message.downloadingImage", LIKELocalizeChat, @"downloading a image...")];
             [chatManager asyncFetchMessage:model.message progress:nil completion:^(EMMessage *aMessage, EMError *error) {
                 [weakSelf hideHUD];
                 if (!error) {
@@ -1052,7 +1052,7 @@
                         return ;
                     }
                 }
-                [weakSelf showHintHudWithMessage:NSLocalizedStringFromTable(@"message.imageFail", @"chat", @"image for failure!")];
+                [weakSelf showHintHudWithMessage:NSLocalizedStringFromTable(@"message.imageFail", LIKELocalizeChat, @"image for failure!")];
             } onQueue:nil];
         }else{
             //获取缩略图
@@ -1060,7 +1060,7 @@
                 if (!error) {
                     [weakSelf reloadTableViewDataWithMessage:model.message];
                 }else{
-                    [weakSelf showHintHudWithMessage:NSLocalizedStringFromTable(@"message.thumImageFail", @"chat", @"thumbnail for failure!")];
+                    [weakSelf showHintHudWithMessage:NSLocalizedStringFromTable(@"message.thumImageFail", LIKELocalizeChat, @"thumbnail for failure!")];
                 }
                 
             } onQueue:nil];
@@ -1073,7 +1073,7 @@
                 if (!error) {
                     [weakSelf reloadTableViewDataWithMessage:model.message];
                 }else{
-                    [weakSelf showHintHudWithMessage:NSLocalizedStringFromTable(@"message.thumImageFail", @"chat", @"thumbnail for failure!")];
+                    [weakSelf showHintHudWithMessage:NSLocalizedStringFromTable(@"message.thumImageFail", LIKELocalizeChat, @"thumbnail for failure!")];
                 }
             } onQueue:nil];
         }
@@ -1138,7 +1138,7 @@
 }
 
 - (void)joinChatroom:(NSString *)chatroomId {
-    [self showHintHudWithMessage:NSLocalizedStringFromTable(@"chatroom.joining", @"chat", @"Joining the chatroom")];
+    [self showHintHudWithMessage:NSLocalizedStringFromTable(@"chatroom.joining", LIKELocalizeChat, @"Joining the chatroom")];
     __weak typeof(self) weakSelf = self;
     [[EaseMob sharedInstance].chatManager asyncJoinChatroom:chatroomId
                                                  completion:^(EMChatroom *chatroom,
@@ -1147,7 +1147,7 @@
                                                          LIKEChatViewController *strongSelf = weakSelf;
                                                          [strongSelf hideHUD];
                                                          if (error && (error.errorCode != EMErrorChatroomJoined)) {
-                                                             [strongSelf showHintHudWithMessage:[NSString stringWithFormat:NSLocalizedStringFromTable(@"chatroom.joinFailed", @"chat", @"join chatroom \'%@\' failed"), chatroomId]];
+                                                             [strongSelf showHintHudWithMessage:[NSString stringWithFormat:NSLocalizedStringFromTable(@"chatroom.joinFailed", LIKELocalizeChat, @"join chatroom \'%@\' failed"), chatroomId]];
                                                          }
                                                          else {
                                                              [strongSelf saveChatroom:chatroom];
@@ -1240,7 +1240,7 @@
         }
         else
         {
-            [weakSelf showHintHudWithMessage:NSLocalizedStringFromTable(@"message.thumImageFail", @"chat", @"thumbnail for failure!")];
+            [weakSelf showHintHudWithMessage:NSLocalizedStringFromTable(@"message.thumImageFail", LIKELocalizeChat, @"thumbnail for failure!")];
         }
     };
     
@@ -1383,7 +1383,7 @@
 
 - (IBAction)removeAllMessages:(id)sender {
     if (_dataSource.count == 0) {
-        [self showHintHudWithMessage:NSLocalizedStringFromTable(@"message.noMessage", @"chat", @"no messages")];
+        [self showHintHudWithMessage:NSLocalizedStringFromTable(@"message.noMessage", LIKELocalizeChat, @"no messages")];
         return;
     }
     
@@ -1395,14 +1395,14 @@
             _chatTagDate = nil;
             [_dataSource removeAllObjects];
             [_tableView reloadData];
-            [self showHintHudWithMessage:NSLocalizedStringFromTable(@"message.noMessage", @"chat", @"no messages")];
+            [self showHintHudWithMessage:NSLocalizedStringFromTable(@"message.noMessage", LIKELocalizeChat, @"no messages")];
         }
     }
     else{
         __weak typeof(self) weakSelf = self;
         
-        [EMAlertView showAlertWithTitle:NSLocalizedStringFromTable(@"prompt", @"chat", @"Prompt")
-                                message:NSLocalizedStringFromTable(@"sureToDelete", @"chat", @"please make sure to delete")
+        [EMAlertView showAlertWithTitle:NSLocalizedStringFromTable(@"prompt", LIKELocalizeChat, @"Prompt")
+                                message:NSLocalizedStringFromTable(@"sureToDelete", LIKELocalizeChat, @"please make sure to delete")
                         completionBlock:^(NSUInteger buttonIndex, EMAlertView *alertView) {
                             if (buttonIndex == 1) {
                                 [weakSelf.conversation removeAllMessages];
@@ -1411,8 +1411,8 @@
                                 [weakSelf.dataSource removeAllObjects];
                                 [weakSelf.tableView reloadData];
                             }
-                        } cancelButtonTitle:NSLocalizedStringFromTable(@"cancel", @"chat", @"Cancel")
-                      otherButtonTitles:NSLocalizedStringFromTable(@"ok", @"chat", @"OK"), nil];
+                        } cancelButtonTitle:NSLocalizedStringFromTable(@"cancel", LIKELocalizeChat, @"Cancel")
+                      otherButtonTitles:NSLocalizedStringFromTable(@"ok", LIKELocalizeChat, @"OK"), nil];
     }
 }
 
@@ -1571,10 +1571,10 @@
         _menuController = [UIMenuController sharedMenuController];
     }
     if (_copyMenuItem == nil) {
-        _copyMenuItem = [[UIMenuItem alloc] initWithTitle:NSLocalizedStringFromTable(@"copy", @"chat", @"Copy") action:@selector(copyMenuAction:)];
+        _copyMenuItem = [[UIMenuItem alloc] initWithTitle:NSLocalizedStringFromTable(@"copy", LIKELocalizeChat, @"Copy") action:@selector(copyMenuAction:)];
     }
     if (_deleteMenuItem == nil) {
-        _deleteMenuItem = [[UIMenuItem alloc] initWithTitle:NSLocalizedStringFromTable(@"delete", @"chat", @"Delete") action:@selector(deleteMenuAction:)];
+        _deleteMenuItem = [[UIMenuItem alloc] initWithTitle:NSLocalizedStringFromTable(@"delete", LIKELocalizeChat, @"Delete") action:@selector(deleteMenuAction:)];
     }
     
     if (messageType == eMessageBodyType_Text) {

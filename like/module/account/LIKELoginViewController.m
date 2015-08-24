@@ -62,7 +62,7 @@
                                                       password:self.passwordTextField.text
                                                     completion:^(NSError *error) {
                                                         if (!error) {
-                                                            [self hideHUDWithCompletionMessage:NSLocalizedStringFromTable(@"prompt.loginSuccess", @"account", nil)];
+                                                            [self hideHUDWithCompletionMessage:NSLocalizedStringFromTable(@"prompt.loginSuccess", LIKELocalizeAccount, nil)];
                                                             
                                                             [[LIKEAppContext sharedInstance] setUsername:self.phoneNumberTextField.text];
                                                             [[LIKEAppContext sharedInstance] setPassword:self.passwordTextField.text];
@@ -72,7 +72,7 @@
                                                             });
                                                         }
                                                         else {
-                                                            [self hideHUDWithCompletionMessage:NSLocalizedStringFromTable(@"error.loginFail", @"account", nil)];
+                                                            [self hideHUDWithCompletionMessage:NSLocalizedStringFromTable(@"error.loginFail", LIKELocalizeAccount, nil)];
                                                             NSLog(@"%@", error);
                                                         }
                                                     }];
@@ -80,8 +80,8 @@
     else {
         self.passwordTextField.text = @"";
         
-        [PSTAlertController presentDismissableAlertWithTitle:NSLocalizedStringFromTable(@"error", @"main", nil)
-                                                     message:NSLocalizedStringFromTable(@"error.invalidPhoneNumberOrPasswordFormat", @"account", nil)
+        [PSTAlertController presentDismissableAlertWithTitle:NSLocalizedStringFromTable(@"error", LIKELocalizeMain, nil)
+                                                     message:NSLocalizedStringFromTable(@"error.invalidPhoneNumberOrPasswordFormat", LIKELocalizeAccount, nil)
                                                   controller:self];
     }
 }

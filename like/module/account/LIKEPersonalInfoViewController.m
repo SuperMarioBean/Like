@@ -44,13 +44,13 @@ static NSString *kOtherCell = @"otherCell";     // the remaining cells at the en
     
     [self.privacyPolicyButton setTitle:@" " forState:UIControlStateNormal];
     
-    NSMutableAttributedString *privacyPolicyString = [[NSMutableAttributedString alloc] initWithString:NSLocalizedStringFromTable(@"prompt.readPrivacyPolicy", @"account", nil)];
+    NSMutableAttributedString *privacyPolicyString = [[NSMutableAttributedString alloc] initWithString:NSLocalizedStringFromTable(@"prompt.readPrivacyPolicy", LIKELocalizeAccount, nil)];
     [privacyPolicyString addAttribute:NSLinkAttributeName value:@" " range: NSMakeRange(7, 4)];
     self.privacyPolicyTermButton.titleLabel.attributedText = privacyPolicyString;
     
     // TODO: this block should be replace
     dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:NSLocalizedStringFromTable(@"format.birthdayDate", @"account", nil)];
+    [dateFormatter setDateFormat:NSLocalizedStringFromTable(@"format.birthdayDate", LIKELocalizeAccount, nil)];
     
     pickerHeight = CGRectGetHeight(self.datePicker.frame);
 }
@@ -102,23 +102,23 @@ static NSString *kOtherCell = @"otherCell";     // the remaining cells at the en
         NSDictionary *keyValuePairs = @{@"username": self.usernameTextField.text,
                                       @"male": @(self.genderSegmentedControl.selectedSegmentIndex? NO: YES),
                                       @"birthday": currentSelectedDate};
-        [self showHintHudWithMessage:NSLocalizedStringFromTable(@"prompt.updating", @"account", nil)];
+        [self showHintHudWithMessage:NSLocalizedStringFromTable(@"prompt.updating", LIKELocalizeAccount, nil)];
         [[LIKEUserContext sharedInstance] updateUserWithKeyValuePairs:keyValuePairs
                                                          completion:^(NSError *error) {
                                                                 if (!error) {
-                                                                    [self hideHUDWithCompletionMessage:NSLocalizedStringFromTable(@"prompt.updateProfileComplete", @"account", nil)];
+                                                                    [self hideHUDWithCompletionMessage:NSLocalizedStringFromTable(@"prompt.updateProfileComplete", LIKELocalizeAccount, nil)];
                                                                     [self performSegueWithIdentifier:@"registerUnwindSegue" sender:self];
                                                                 }
                                                                 else {
-                                                                    [self hideHUDWithCompletionMessage:NSLocalizedStringFromTable(@"error.updateProfileFail", @"account", nil)];
+                                                                    [self hideHUDWithCompletionMessage:NSLocalizedStringFromTable(@"error.updateProfileFail", LIKELocalizeAccount, nil)];
                                                                     NSLog(@"%@", error);
                                                                 }
                                                             }];
 
     }
     else {
-        [PSTAlertController presentDismissableAlertWithTitle:NSLocalizedStringFromTable(@"error", @"main", nil)
-                                                     message:NSLocalizedStringFromTable(@"fillInfomationAndCheckPrivacyPolicy", @"account", nil)
+        [PSTAlertController presentDismissableAlertWithTitle:NSLocalizedStringFromTable(@"error", LIKELocalizeMain, nil)
+                                                     message:NSLocalizedStringFromTable(@"fillInfomationAndCheckPrivacyPolicy", LIKELocalizeAccount, nil)
                                                   controller:self];
     }
 }

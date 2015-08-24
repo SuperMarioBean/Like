@@ -47,15 +47,15 @@
     
     if (!self.defaultEditing) {
         UIButton *chooseButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 60, 40)];
-        [chooseButton setTitle:NSLocalizedStringFromTable(@"choose", @"chat", @"Choose") forState:UIControlStateNormal];
-        [chooseButton setTitle:NSLocalizedStringFromTable(@"down", @"chat", @"Down") forState:UIControlStateSelected];
+        [chooseButton setTitle:NSLocalizedStringFromTable(@"choose", LIKELocalizeChat, @"Choose") forState:UIControlStateNormal];
+        [chooseButton setTitle:NSLocalizedStringFromTable(@"down", LIKELocalizeChat, @"Down") forState:UIControlStateSelected];
         [chooseButton setBackgroundColor:[UIColor clearColor]];
         [chooseButton addTarget:self action:@selector(chooseAction:) forControlEvents:UIControlEventTouchUpInside];
         [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithCustomView:chooseButton]];
     }
     else{
         UIButton *doneButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 60, 40)];
-        [doneButton setTitle:NSLocalizedStringFromTable(@"down", @"chat", @"Down") forState:UIControlStateNormal];
+        [doneButton setTitle:NSLocalizedStringFromTable(@"down", LIKELocalizeChat, @"Down") forState:UIControlStateNormal];
         [doneButton setBackgroundColor:[UIColor clearColor]];
         [doneButton addTarget:self action:@selector(doneAction:) forControlEvents:UIControlEventTouchUpInside];
         [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithCustomView:doneButton]];
@@ -305,7 +305,7 @@
 - (void)loadDataSource
 {
     if (_delegate && [_delegate respondsToSelector:@selector(viewControllerLoadDataSource:)]) {
-        [self showHintHudWithMessage:NSLocalizedStringFromTable(@"loadData", @"chat", @"Load data...")];
+        [self showHintHudWithMessage:NSLocalizedStringFromTable(@"loadData", LIKELocalizeChat, @"Load data...")];
         
         NSArray *array = [_delegate viewControllerLoadDataSource:self];
         [self.dataSource addObjectsFromArray:[self sortRecords:array]];

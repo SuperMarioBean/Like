@@ -77,7 +77,7 @@ static EMAudioPlayerUtil *audioPlayerUtil = nil;
     NSError *error = nil;
     NSFileManager *fm = [NSFileManager defaultManager];
     if (![fm fileExistsAtPath:aFilePath]) {
-        error = [NSError errorWithDomain:NSLocalizedStringFromTable(@"error.notFound", @"chat", @"File path not exist")
+        error = [NSError errorWithDomain:NSLocalizedStringFromTable(@"error.notFound", LIKELocalizeChat, @"File path not exist")
                                     code:EMErrorAttachmentNotFound
                                 userInfo:nil];
         if (playFinish) {
@@ -92,7 +92,7 @@ static EMAudioPlayerUtil *audioPlayerUtil = nil;
     _player = [[AVAudioPlayer alloc] initWithContentsOfURL:wavUrl error:&error];
     if (error || !_player) {
         _player = nil;
-        error = [NSError errorWithDomain:NSLocalizedStringFromTable(@"error.initPlayerFail", @"chat", @"Failed to initialize AVAudioPlayer")
+        error = [NSError errorWithDomain:NSLocalizedStringFromTable(@"error.initPlayerFail", LIKELocalizeChat, @"Failed to initialize AVAudioPlayer")
                                     code:EMErrorInitFailure
                                 userInfo:nil];
         if (playFinish) {
@@ -144,7 +144,7 @@ static EMAudioPlayerUtil *audioPlayerUtil = nil;
 - (void)audioPlayerDecodeErrorDidOccur:(AVAudioPlayer *)player
                                  error:(NSError *)error{
     if (playFinish) {
-        NSError *error = [NSError errorWithDomain:NSLocalizedStringFromTable(@"error.palyFail", @"chat", @"Play failure")
+        NSError *error = [NSError errorWithDomain:NSLocalizedStringFromTable(@"error.palyFail", LIKELocalizeChat, @"Play failure")
                                              code:EMErrorFailure
                                          userInfo:nil];
         playFinish(error);

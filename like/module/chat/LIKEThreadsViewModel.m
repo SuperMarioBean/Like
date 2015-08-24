@@ -132,22 +132,22 @@ NSString *const LIKEThreadItemConversationSearchResultCellIdentifier = @"com.tri
         id<IEMMessageBody> messageBody = lastMessage.messageBodies.lastObject;
         switch (messageBody.messageBodyType) {
             case eMessageBodyType_Image:{
-                ret = NSLocalizedStringFromTable(@"message.image1", @"chat", @"[image]");
+                ret = NSLocalizedStringFromTable(@"message.image1", LIKELocalizeChat, @"[image]");
             } break;
             case eMessageBodyType_Text:{
                 ret = [[(EMTextMessageBody *)messageBody text] stringByReplacingEmojiCheatCodesWithUnicode];
             }
                 break;
             case eMessageBodyType_Voice:{
-                ret = NSLocalizedStringFromTable(@"message.voice1", @"chat", @"[voice]");
+                ret = NSLocalizedStringFromTable(@"message.voice1", LIKELocalizeChat, @"[voice]");
             }
                 break;
             case eMessageBodyType_Location: {
-                ret = NSLocalizedStringFromTable(@"message.location1", @"chat", @"[location]");
+                ret = NSLocalizedStringFromTable(@"message.location1", LIKELocalizeChat, @"[location]");
             }
                 break;
             case eMessageBodyType_Video: {
-                ret = NSLocalizedStringFromTable(@"message.video1", @"chat", @"[video]");
+                ret = NSLocalizedStringFromTable(@"message.video1", LIKELocalizeChat, @"[video]");
             }
                 break;
             default: {

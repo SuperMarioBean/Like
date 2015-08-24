@@ -24,7 +24,7 @@
         
         self.searchResultsDataSource = self;
         self.searchResultsDelegate = self;
-        self.searchResultsTitle = NSLocalizedStringFromTable(@"searchResults", @"chat", @"The search results");
+        self.searchResultsTitle = NSLocalizedStringFromTable(@"searchResults", LIKELocalizeChat, @"The search results");
     }
     return self;
 }
