@@ -47,6 +47,7 @@
 #import "LIKEAPIProxy.h"
 #import "LIKEHelper.h"
 #import "models.h"
+#import "UIColorDefine.h"
 
 
 static NSString *const LIKEIMLoginChangeNotification = @"loginChange";

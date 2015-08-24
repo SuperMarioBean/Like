@@ -28,6 +28,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.textLabel.text = [NSString stringWithFormat:@"%@ %@", NSLocalizedStringFromTable(@"sendCodeToPhone", LIKELocalizeAccount, nil), [LIKEUserContext sharedInstance].tempPhoneNumber];
+    
+    
+    self.fetchVerifyCodeButton.layer.masksToBounds = YES;
+    self.fetchVerifyCodeButton.layer.cornerRadius = 5;
 }
 
 - (void)viewDidAppear:(BOOL)animated {

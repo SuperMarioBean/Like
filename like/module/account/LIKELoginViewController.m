@@ -14,6 +14,10 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 
+@property (strong, nonatomic) IBOutlet UIButton *btnLogin;
+
+@property (strong, nonatomic) IBOutlet UIButton *btnCreateAccount;
+
 @end
 
 @implementation LIKELoginViewController
@@ -22,6 +26,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [self.btnCreateAccount setTintColor:BTN_COLOR];
+    
+    self.btnLogin.layer.masksToBounds = YES;
+    self.btnLogin.layer.cornerRadius = 5;
+    self.btnLogin.backgroundColor = BTN_COLOR;
+    
+    UIImageView* accoutn_icon = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"account"]];
+    self.phoneNumberTextField.leftView = accoutn_icon;
+    self.phoneNumberTextField.leftViewMode = UITextFieldViewModeAlways;
+    
+    UIImageView* password_icon = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"password"]];
+    self.passwordTextField.leftView = password_icon;
+    self.passwordTextField.leftViewMode = UITextFieldViewModeAlways;
+
 }
 
 - (void)didReceiveMemoryWarning {
