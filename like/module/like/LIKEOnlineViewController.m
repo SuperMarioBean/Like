@@ -133,6 +133,8 @@ static NSString *const LIKECollectionViewFooterIdentifier = @"com.trinity.like.o
     [cell.avatarImageView sd_setImageWithURL:[NSURL URLWithString:avatorUrl]];
     cell.genderLabel.text = [userInfo[LIKEUserGender] isEqualToString:LIKEUserGenderMale]? LIKEUserGenderMaleChar: LIKEUserGenderFemaleChar;
     cell.genderLabel.backgroundColor = [userInfo[LIKEUserGender] isEqualToString:LIKEUserGenderMale]? [UIColor blueColor]: [UIColor magentaColor];
+    float distance = [userInfo[LIKEUserDistance] floatValue];
+    cell.distanceLabel.text = [NSString stringWithFormat:@"%.2f km",distance/1000];
     LIKEOnlineWidgetType type = LIKEOnlineWidgetTypeNone;
     
 //    if ([userInfo[LIKEOnlineUserHot] boolValue]) {

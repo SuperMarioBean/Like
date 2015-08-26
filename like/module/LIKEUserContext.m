@@ -23,6 +23,7 @@ NSString *const LIKEUserGender = @"gender";
 NSString *const LIKEUserBirthday = @"birthday";
 NSString *const LIKEUserAvatorURL = @"avatorURL";
 NSString *const LIKEUserVerify = @"isverified";
+NSString *const LIKEUserDistance = @"distance";
 
 NSString *const LIKEUserGenderMale = @"M";
 NSString *const LIKEUserGenderFemale = @"F";
