@@ -114,7 +114,7 @@ static NSString *const LIKECollectionViewFooterIdentifier = @"com.trinity.like.o
     NSDictionary *online = (NSDictionary *)object;
     [cell.avatarImageView sd_setImageWithURL:online[LIKEOnlineUserAvatarURL]];
     cell.sayingLabel.text = online[LIKEOnlineUserSaying];
-    cell.genderLabel.text = [online[LIKEOnlineUserGender] boolValue]? LIKEUserGenderMale: LIKEUserGenderFemale;
+    cell.genderLabel.text = [online[LIKEOnlineUserGender] boolValue]? LIKEUserGenderMaleChar: LIKEUserGenderFemaleChar;
     cell.genderLabel.backgroundColor = [online[LIKEOnlineUserGender] boolValue]? [UIColor blueColor]: [UIColor magentaColor];
     LIKEOnlineWidgetType type = LIKEOnlineWidgetTypeNone;
     if ([online[LIKEOnlineUserHot] boolValue]) {

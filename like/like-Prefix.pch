@@ -51,8 +51,8 @@
 
 static NSString *const LIKEIMLoginChangeNotification = @"loginChange";
 
-static NSString *const LIKEUserGenderMale = @"♂";
-static NSString *const LIKEUserGenderFemale = @"♀";
+static NSString *const LIKEUserGenderMaleChar = @"♂";
+static NSString *const LIKEUserGenderFemaleChar = @"♀";
 
 #define LIKELocalizeChat        @"chatLocalize"
 #define LIKELocalizeAccount     @"accountLocalize"
