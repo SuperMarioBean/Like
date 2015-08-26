@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
@@ -51,7 +51,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EQZ-CZ-H1i">
                         <rect key="frame" x="0.0" y="195" width="217" height="22"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{{saying}}" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B1d-TD-Ad5">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{{distance}}" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B1d-TD-Ad5">
                                 <rect key="frame" x="22" y="1" width="191" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="yll-pm-ryU"/>
@@ -107,10 +107,10 @@
             <size key="customSize" width="217" height="217"/>
             <connections>
                 <outlet property="avatarImageView" destination="4xQ-VF-shP" id="xke-eN-FKk"/>
+                <outlet property="distanceLabel" destination="B1d-TD-Ad5" id="25C-5A-nLj"/>
                 <outlet property="genderLabel" destination="2mo-20-Lcg" id="c3w-iZ-fWQ"/>
                 <outlet property="hotLabel" destination="rnt-u3-Da8" id="Z2j-da-fLO"/>
                 <outlet property="maskView" destination="EQZ-CZ-H1i" id="vut-Tj-Qy4"/>
-                <outlet property="sayingLabel" destination="B1d-TD-Ad5" id="Xwh-L2-LYd"/>
                 <outlet property="verifyLabel" destination="YXD-EX-8N0" id="pQI-4D-4Tg"/>
             </connections>
             <point key="canvasLocation" x="238.5" y="283.5"/>

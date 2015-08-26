@@ -20,7 +20,7 @@ typedef NS_OPTIONS(NSUInteger, LIKEOnlineWidgetType) {
 
 @property (weak, nonatomic) IBOutlet UILabel *genderLabel;
 
-@property (weak, nonatomic) IBOutlet UILabel *sayingLabel;
+@property (weak, nonatomic) IBOutlet UILabel *distanceLabel;
 
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
 
