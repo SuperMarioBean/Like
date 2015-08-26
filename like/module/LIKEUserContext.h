@@ -15,9 +15,16 @@ extern NSString *const LIKELoginFailureNotification;
 extern NSString *const LIKELogoutSuccessNotification;
 extern NSString *const LIKELogoutFailureNotification;
 
-extern NSString *const LIKEUploadThumbnailImage;
-extern NSString *const LIKEUploadProgress;
-extern NSString *const LIKEUploadStatus;
+extern NSString *const LIKEUserCity;
+extern NSString *const LIKEUserPhoneNumber;
+extern NSString *const LIKEUserNickName;
+extern NSString *const LIKEUserUserID;
+extern NSString *const LIKEUserGender;
+extern NSString *const LIKEUserBirthday;
+extern NSString *const LIKEUserAvatorURL;
+
+extern NSString *const LIKEUserIMUsername;
+extern NSString *const LIKEUserIMPassword;
 
 @interface LIKEUserContext : NSObject
 
@@ -26,6 +33,8 @@ extern NSString *const LIKEUploadStatus;
 @property (readwrite, nonatomic, copy) NSString *tempPhoneNumber;
 
 @property (readwrite, nonatomic, copy) NSString *tempPassword;
+
+@property (readwrite, nonatomic, strong) UIImage *tempAvator;
 
 @property (readwrite, getter=isForgetPassword, nonatomic, assign) BOOL forgetPassword;
 
@@ -43,8 +52,8 @@ extern NSString *const LIKEUploadStatus;
 
 // 根据电话号码获取验证码
 - (void)verificationCodeBySMSWithPhoneNumber:(NSString *)phoneNumber
-                                             zone:(NSString *)zone
-                                       completion:(void (^)(NSError *error))completion;
+                                        zone:(NSString *)zone
+                                  completion:(void (^)(NSError *error))completion;
 
 // 验证SMS code
 - (void)validateVerificationCodeBySMSWithPhoneNumber:(NSString *)phoneNumber
@@ -52,7 +61,9 @@ extern NSString *const LIKEUploadStatus;
                                                 code:(NSString *)code
                                           completion:(void (^)(NSError *error))completion;
 
-- (void)registWithPassword:(NSString *)password completion:(void (^)(NSError *error))completion;
+- (void)registWithPhoneNumber:(NSString *)phoneNumber password:(NSString *)password completion:(void (^)(NSError *error))completion;
+
+- (void)updateUserWithAvatorImage:(UIImage *)avatorImage keyValuePairs:(NSDictionary *)keyValuePairs completion:(void (^)(NSError *error))completion;
 
 - (void)updateUserWithKeyValuePairs:(NSDictionary *)keyValuePairs completion:(void (^)(NSError *error))completion;
 

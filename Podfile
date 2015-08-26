@@ -25,7 +25,7 @@ target :like do
     ## 全局图片缓存
     pod 'SDWebImage', '~> 3.7.2'
     ## 动画效果引擎
-    pod 'pop', '~> 1.0.7'
+    #pod 'pop', '~> 1.0.7'
     ## 网络库
     pod 'AFNetworking', '~> 2.5.4'
     ## 模型框架
@@ -51,7 +51,7 @@ target :like do
     
     ### UICollectionView增强
     ### 底部刷新
-    pod 'CCBottomRefreshControl'
+    #pod 'CCBottomRefreshControl'
     ### 瀑布流
     #pod 'CHTCollectionViewWaterfallLayout', '~> 0.9.1'
     ### 缓存高度
@@ -72,7 +72,7 @@ target :like do
     pod 'SMBCustomRelationshipSegue'
 
     #### perform segue replace
-    pod 'UIViewController+BlockSegue'
+    #pod 'UIViewController+BlockSegue'
     #### 多 storyboard 的组合使用
     pod 'RBStoryboardLink', '~> 0.1.4'
 

@@ -31,4 +31,8 @@
 "refetchSMSCode" = "重新获取验证码";
 "fillInfomationAndCheckPrivacyPolicy" = "请按要求填写信息并勾选隐私协议";
 
+"choose_photo" = "选择照片";
+"take_photo_from_library" = "从照片库中选择";
+"take_photo_from_camera" = "从照相机中获取";
+
 "format.birthdayDate" = "yyyy年 MM月 dd日";

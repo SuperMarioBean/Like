@@ -22,7 +22,7 @@
 #import <CoreLocation/CoreLocation.h>
 
 #import "Masonry.h"
-#import "Mantle.h"
+//#import "Mantle.h"
 #import "AFNetworking.h"
 #import "UIImageView+WebCache.h"
 #import "UICollectionView+ARDynamicCacheHeightLayoutCell.h"

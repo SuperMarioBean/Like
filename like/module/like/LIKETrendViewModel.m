@@ -219,14 +219,14 @@ NSString *const LIKEFeedItemFooterIdentifier = @"com.trinity.like.trend.footer";
         LIKEFeedItemHeader *header = (LIKEFeedItemHeader *)collectionReusableView;
         NSDictionary *feed = [self objectForIndexPath:indexPath];
         
-        NSString* avatorUrl = [NSString stringWithFormat:@"%@%@",LIKEImageBaseURL,feed[LIKETrendUserAvatarURL]];
+        NSString* avatorUrl = [NSString stringWithFormat:@"%@%@", LIKEImageBaseURL, feed[LIKEUserAvatorURL]];
         [header.avatarImageView sd_setImageWithURL:[NSURL URLWithString:avatorUrl]];
-        header.nicknameLabel.text = feed[LIKETrendUserNickname];
-        header.genderAndAgeLabel.text = [NSString stringWithFormat:@"%@  %@", [feed[LIKETrendUserGender] isEqualToString:@"M"]? LIKEUserGenderMale: LIKEUserGenderFemale, feed[LIKETrendUserAge]];
-        header.genderAndAgeLabel.backgroundColor = [feed[LIKETrendUserGender] isEqualToString:@"M"]? [UIColor blueColor]: [UIColor magentaColor];
+        header.nicknameLabel.text = feed[LIKEUserNickName];
+        header.genderAndAgeLabel.text = [NSString stringWithFormat:@"%@  %@", [feed[LIKEUserGender] isEqualToString:@"M"]? LIKEUserGenderMale: LIKEUserGenderFemale, @"请计算获得年龄"];
+        header.genderAndAgeLabel.backgroundColor = [feed[LIKEUserGender] isEqualToString:@"M"]? [UIColor blueColor]: [UIColor magentaColor];
         NSDate *date = [NSDate dateWithTimeIntervalStringInMilliSecondSince1970:feed[LIKETrendTimeline]];
         header.timelineLabel.text = [date timeAgoSimple];
-        header.locationLabel.text = feed[LIKETrendUserLocation];
+        header.locationLabel.text = feed[LIKEUserCity];
     }
     else if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
         

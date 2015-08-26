@@ -15,11 +15,16 @@ NSString *const LIKELoginFailureNotification = @"login.failure";
 NSString *const LIKELogoutSuccessNotification = @"logout.success";
 NSString *const LIKELogoutFailureNotification = @"logout.failure";
 
+NSString *const LIKEUserCity = @"city";
+NSString *const LIKEUserPhoneNumber = @"username";
+NSString *const LIKEUserUserID = @"id";
+NSString *const LIKEUserNickName = @"usernickname";
+NSString *const LIKEUserGender = @"gender";
+NSString *const LIKEUserBirthday = @"birthday";
+NSString *const LIKEUserAvatorURL = @"avatorURL";
 
-NSString const* LIKEUserPhoneNumber = @"username";
-NSString const* LIKEUserUserID = @"id";
-NSString const* LIKEUserIMUsername = @"imUsername";
-NSString const* LIKEUserIMPassword = @"imPassword";
+NSString *const LIKEUserIMUsername = @"imusername";
+NSString *const LIKEUserIMPassword = @"impassword";
 
 @implementation LIKEUserContext
 
@@ -29,7 +34,7 @@ NSString const* LIKEUserIMPassword = @"imPassword";
     self = [super init];
     if (self) {
         _forgetPassword = NO;
-//        _login = NO;
+        //        _login = NO;
     }
     return self;
 }
@@ -159,8 +164,8 @@ NSString const* LIKEUserIMPassword = @"imPassword";
 }
 
 - (void)verificationCodeBySMSWithPhoneNumber:(NSString *)phoneNumber
-                                             zone:(NSString *)zone
-                                       completion:(void (^)(NSError *))completion {
+                                        zone:(NSString *)zone
+                                  completion:(void (^)(NSError *))completion {
     [SMS_SDK getVerificationCodeBySMSWithPhone:phoneNumber
                                           zone:zone
                                         result:^(SMS_SDKError *error) {
@@ -187,7 +192,7 @@ NSString const* LIKEUserIMPassword = @"imPassword";
             success:^(id responseObject) {
                 NSError *error;
                 id __unused data = [LIKEHelper dataWithResponceObject:responseObject error:&error];
-
+                
                 if (!error) {
                     completion(nil);
                 }
@@ -206,14 +211,24 @@ NSString const* LIKEUserIMPassword = @"imPassword";
             }];
 }
 
-- (void)registWithPassword:(NSString *)password
-                completion:(void (^)(NSError *))completion {
+- (void)registWithPhoneNumber:(NSString *)phoneNumber
+                     password:(NSString *)password
+                   completion:(void (^)(NSError *))completion {
     [auth registUser:password
               sucess:^(id responseObject) {
                   NSError *error;
                   id data = [LIKEHelper dataWithResponceObject:responseObject error:&error];
                   if (!error) {
-                      completion(nil);
+                      [self loginWithPhoneNumber:phoneNumber
+                                        password:password
+                                      completion:^(NSError *error) {
+                                          if (!error) {
+                                              completion(nil);
+                                          }
+                                          else {
+                                              completion(error);
+                                          }
+                                      }];
                   }
                   else {
                       completion(error);
@@ -227,6 +242,45 @@ NSString const* LIKEUserIMPassword = @"imPassword";
              }];
 }
 
+- (void)updateUserWithAvatorImage:(UIImage *)avatorImage keyValuePairs:(NSDictionary *)keyValuePairs completion:(void (^)(NSError *))completion {
+    [upload uploadImage:avatorImage
+         uploadProgress:nil
+                success:^(id responseObject) {
+                    NSError *error;
+                    id data = [LIKEHelper dataWithResponceObject:responseObject error:&error];
+                    if (!error) {
+                        NSString *uri = data[@"uri"];
+                        NSMutableDictionary *mutableKeyValuePairs = [NSMutableDictionary dictionaryWithDictionary:keyValuePairs];
+                        mutableKeyValuePairs[LIKEUserAvatorURL] = uri;
+                        /** set the data info to user **/
+                        [self updateUserWithKeyValuePairs:mutableKeyValuePairs
+                                               completion:^(NSError *error) {
+                                                   if (!error) {
+                                                       NSError *error;
+                                                       NSDictionary *data = [LIKEHelper dataWithResponceObject:responseObject error:&error];
+                                                       NSLog(@"%@", data);
+                                                   }
+                                                   else {
+                                                       completion(error);
+                                                   }
+                        }];
+                        
+                        completion(nil);
+                    }
+                    else {
+                        completion(error);
+                    }
+  
+                }
+                failure:^(NSError *error) {
+                    NSError *retError = [NSError errorWithDomain:@"afnetworking.error"
+                                                            code:LIKEStatusCodeNetworkError
+                                                        userInfo:nil];
+                    completion(retError);
+                }];
+
+}
+
 - (void)updateUserWithKeyValuePairs:(NSDictionary *)keyValuePairs
                          completion:(void (^)(NSError *))completion {
     [User updateUserInfo:keyValuePairs
@@ -234,7 +288,9 @@ NSString const* LIKEUserIMPassword = @"imPassword";
                      NSError *error;
                      id data = [LIKEHelper dataWithResponceObject:responseObject error:&error];
                      if (!error) {
+                         
                          /** set the data info to user **/
+                         
                          completion(nil);
                      }
                      else {
@@ -286,7 +342,7 @@ NSString const* LIKEUserIMPassword = @"imPassword";
 - (void)unFollowWithUserID:(NSString *)userID completion:(void (^)(NSError *))completion {
     [User unfollow:userID
            success:^(id responseObject) {
-             completion(nil);
+               completion(nil);
            }
            failure:^(NSError *error) {
                NSError *retError = [NSError errorWithDomain:@"afnetworking.error"
@@ -313,26 +369,26 @@ NSString const* LIKEUserIMPassword = @"imPassword";
     [User following_list:page
                  success:^(id responseObject) {
                      completion(nil);
-                }
+                 }
                  failure:^(NSError *error) {
                      NSError *retError = [NSError errorWithDomain:@"afnetworking.error"
                                                              code:LIKEStatusCodeNetworkError
                                                          userInfo:nil];
                      completion(retError);
-                }];
+                 }];
 }
 
 - (void)mutualListWithPage:(NSInteger)page completion:(void (^)(NSError *))completion {
     [User mutual_list:page
-                success:^(id responseObject) {
-                    completion(nil);
-                }
-                failure:^(NSError *error) {
-                    NSError *retError = [NSError errorWithDomain:@"afnetworking.error"
-                                                            code:LIKEStatusCodeNetworkError
-                                                        userInfo:nil];
-                    completion(retError);
-                }];
+              success:^(id responseObject) {
+                  completion(nil);
+              }
+              failure:^(NSError *error) {
+                  NSError *retError = [NSError errorWithDomain:@"afnetworking.error"
+                                                          code:LIKEStatusCodeNetworkError
+                                                      userInfo:nil];
+                  completion(retError);
+              }];
 }
 
 @end

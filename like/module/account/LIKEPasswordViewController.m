@@ -41,33 +41,34 @@
         }
         else {
             [self showHUD];
-            [[LIKEUserContext sharedInstance] registWithPassword:self.passwordTextField.text
-                                                      completion:^(NSError *error) {
-                                                          [self hideHUD];
-                                                          if (!error) {
-                                                              [LIKEUserContext sharedInstance].tempPassword = self.passwordTextField.text;
-                                                              [self performSegueWithIdentifier:@"personalInfoEnterSegue" sender:self];
-                                                          }
-                                                          else {
-                                                              NSLog(@"%@", error);
-                                                              if (error.code == LIKEStatusCodeRegistUserExist) {
-                                                                  [self showHintHudWithMessage:NSLocalizedStringFromTable(@"prompt.userExist", LIKELocalizeAccount, nil)];
-                                                                  
-                                                                  // FIXME: 临时测试行为
-                                                                  [LIKEUserContext sharedInstance].tempPassword = self.passwordTextField.text;
-                                                                  [self performSegueWithIdentifier:@"personalInfoEnterSegue" sender:self];
-                                                                  
-                                                                  
-//                                                                  dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//                                                                      [self hideHUD];
-//                                                                      [self performSegueWithIdentifier:@"userExistUnwindSegue" sender:self];
-//                                                                  });
-                                                              }
-                                                              else {
-                                                                  [self hideHUDWithCompletionMessage:NSLocalizedStringFromTable(@"error.registFail", LIKELocalizeAccount, nil)];
-                                                              }
-                                                          }
-                                                      }];
+            [[LIKEUserContext sharedInstance] registWithPhoneNumber:[LIKEUserContext sharedInstance].tempPhoneNumber
+                                                           password:self.passwordTextField.text
+                                                         completion:^(NSError *error) {
+                                                             [self hideHUD];
+                                                             if (!error) {
+                                                                 [LIKEUserContext sharedInstance].tempPassword = self.passwordTextField.text;
+                                                                 [self performSegueWithIdentifier:@"personalInfoEnterSegue" sender:self];
+                                                             }
+                                                             else {
+                                                                 NSLog(@"%@", error);
+                                                                 if (error.code == LIKEStatusCodeRegistUserExist) {
+                                                                     [self showHintHudWithMessage:NSLocalizedStringFromTable(@"prompt.userExist", LIKELocalizeAccount, nil)];
+                                                                     
+                                                                     // FIXME: 临时测试行为
+                                                                     [LIKEUserContext sharedInstance].tempPassword = self.passwordTextField.text;
+                                                                     [self performSegueWithIdentifier:@"personalInfoEnterSegue" sender:self];
+                                                                     
+                                                                     
+                                                                     //                                                                  dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                                                                     //                                                                      [self hideHUD];
+                                                                     //                                                                      [self performSegueWithIdentifier:@"userExistUnwindSegue" sender:self];
+                                                                     //                                                                  });
+                                                                 }
+                                                                 else {
+                                                                     [self hideHUDWithCompletionMessage:NSLocalizedStringFromTable(@"error.registFail", LIKELocalizeAccount, nil)];
+                                                                 }
+                                                             }
+                                                         }];
         }
     }
     else {

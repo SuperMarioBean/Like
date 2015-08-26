@@ -22,8 +22,6 @@ PODS:
     - AFNetworking/NSURLSession
   - AMap2DMap (2.6.0)
   - AMapSearch (2.6.0)
-  - CCBottomRefreshControl (0.5.1):
-    - Masonry (~> 0.6.2)
   - EaseMobSDKFull (2.1.7)
   - Expecta (1.0.2)
   - FIR.im (1.2.0)
@@ -46,7 +44,7 @@ PODS:
   - MBProgressHUDExtensions@donly (0.3):
     - MBProgressHUD (~> 0.9.1)
   - MulticastDelegate (0.0.1.1)
-  - OCMock (3.1.2)
+  - OCMock (3.1.5)
   - PBJVision (0.4.2)
   - Pingpp/Alipay (2.0.6):
     - Pingpp/Core
@@ -55,7 +53,6 @@ PODS:
   - Pingpp/Core (2.0.6)
   - Pingpp/Wx (2.0.6):
     - Pingpp/Core
-  - pop (1.0.7)
   - PSTAlertController (1.1.0)
   - RBStoryboardLink (0.1.4)
   - Reveal-iOS-SDK (1.5.1)
@@ -69,11 +66,9 @@ PODS:
   - THProgressView (1.0)
   - UIBarButtonItem-Badge (0.0.1)
   - UICollectionView-ARDynamicHeightLayoutCell (1.0)
-  - UIViewController+BlockSegue (1.0.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.5.4)
-  - CCBottomRefreshControl
   - EaseMobSDKFull (~> 2.1.7)
   - Expecta (~> 1.0.0)
   - FIR.im (~> 1.2.0)
@@ -92,7 +87,6 @@ DEPENDENCIES:
   - Pingpp/Alipay (~> 2.0.5)
   - Pingpp/ApplePay (~> 2.0.5)
   - Pingpp/Wx (~> 2.0.5)
-  - pop (~> 1.0.7)
   - PSTAlertController (~> 1.1.0)
   - RBStoryboardLink (~> 0.1.4)
   - Reveal-iOS-SDK
@@ -104,7 +98,6 @@ DEPENDENCIES:
   - THProgressView (~> 1.0)
   - UIBarButtonItem-Badge (from `https://github.com/mikeMTOL/UIBarButtonItem-Badge.git`)
   - UICollectionView-ARDynamicHeightLayoutCell (from `https://github.com/SuperMarioBean/UICollectionView-ARDynamicHeightLayoutCell.git`)
-  - UIViewController+BlockSegue
 
 EXTERNAL SOURCES:
   LIKELocation:
@@ -122,10 +115,10 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   LIKELocation:
-    :commit: 8c586582e2009950d04aa5d9610b7c20fa365934
+    :commit: e8ea4d3dc37167767188fdd12a218e2cd9046dfd
     :git: https://David_Fu@bitbucket.org/TrinityLike/likelocation.git
   LIKENetworkLayer:
-    :commit: 8437501ab8d19924bc1a96d2c9cbb857c06ae77e
+    :commit: e2a76f6cd26ab43b82af44cb283c36aaa1fff696
     :git: https://David_Fu@bitbucket.org/TrinityLike/likenetworklayer.git
   LIKENetworkStatus:
     :commit: a1b0e50d617e6c930bc3f13fecaf3cca5dfc1052
@@ -144,7 +137,6 @@ SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
   AMap2DMap: b5ce82581ca53b71a0136da858f7ef04db1ffc59
   AMapSearch: 0ea3101eec4b9f500b53e33dcda30d343d41613b
-  CCBottomRefreshControl: 57a596348855260f627ffc2b311328ed15b94877
   EaseMobSDKFull: 43858ca9a62bbe1fa4c7c006f944a3e52a4bff48
   Expecta: 54e8a3530add08f4f0208c111355eda7cde74a53
   FIR.im: e5c7367a35adcd796f30f176f059356c330c0c2e
@@ -158,10 +150,9 @@ SPEC CHECKSUMS:
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   MBProgressHUDExtensions@donly: 9b692655484251819c6f3ce5a9e9b2538eac7bf4
   MulticastDelegate: 473589ab16a00612150f8bfd726caac85125e695
-  OCMock: a10ea9f0a6e921651f96f78b6faee95ebc813b92
+  OCMock: 4c2925291f80407c3738dd1db14d21d0cc278864
   PBJVision: fe43c9a58bb1c1277d16fd802fa836d25e034a45
   Pingpp: c66e424847bc811c890f04b623bc96646eb86bd9
-  pop: 628ffc631644601567ee8bfaaaea493ebd7d0923
   PSTAlertController: cb21afcfa76c3229feec7db044afd4f60dab5892
   RBStoryboardLink: 0faae84aea6a5e8716c4469984d847d958c3fcb3
   Reveal-iOS-SDK: c9c55cad2729c85f6ced415f1b21857c9a2d8ef9
@@ -173,6 +164,5 @@ SPEC CHECKSUMS:
   THProgressView: 999dc78f748f4cb6d69408f545de4d82ef7f1cec
   UIBarButtonItem-Badge: 8f5ed4d32d32dbb03034d4f273d02c8da680236b
   UICollectionView-ARDynamicHeightLayoutCell: 560154abd491f89ad6381fa76bfb091cee2b3f37
-  UIViewController+BlockSegue: 5c326671d254c3ad16523ecfe165137004293073
 
 COCOAPODS: 0.38.2

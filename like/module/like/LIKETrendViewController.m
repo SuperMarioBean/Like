@@ -20,9 +20,7 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet LIKETrendLayout *trendLayout;
 
-@property (readwrite, nonatomic, strong) UIRefreshControl *bottomRefreshControl;
-
-@property (readwrite, nonatomic, strong) UIRefreshControl *topRefreshControl;
+@property (readwrite, nonatomic, strong) SSPullToRefreshView *topRefreshView;
 
 @end
 
@@ -46,15 +44,6 @@
     
     self.viewModel = [[LIKETrendViewModel alloc] init];
     self.collectionView.dataSource = self.viewModel;
-    
-    self.bottomRefreshControl = [[UIRefreshControl alloc] init];
-    self.bottomRefreshControl.triggerVerticalOffset = 30.0f;
-    [self.bottomRefreshControl addTarget:self action:@selector(bottomRefresh) forControlEvents:UIControlEventValueChanged];
-    self.collectionView.bottomRefreshControl = self.bottomRefreshControl;
-    
-    self.topRefreshControl = [[UIRefreshControl alloc] init];
-    [self.topRefreshControl addTarget:self action:@selector(topRefresh) forControlEvents:UIControlEventValueChanged];
-    [self.collectionView addSubview:self.topRefreshControl];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginSuccessHandler:) name:LIKELoginSuccessNotification object:nil];
 }
@@ -116,6 +105,12 @@
     return CGSizeMake(0, 0);
 }
 
+#pragma mark SSPullToRefreshViewDelegate
+
+- (void)pullToRefreshViewDidStartLoading:(SSPullToRefreshView *)view {
+    [view finishLoading];
+}
+
 #pragma mark - event response
 
 - (void)loginSuccessHandler:(NSNotification *)notification {
@@ -126,7 +121,6 @@
     [self.viewModel loadDataWithRefreshFlag:NO
                                  completion:^(NSError *error,
                                               NSIndexSet *appendIndexSet) {
-                                     [self.bottomRefreshControl endRefreshing];
         if (!error) {
             [self.collectionView insertSections:appendIndexSet];
         }
@@ -140,7 +134,7 @@
     [self.viewModel loadDataWithRefreshFlag:YES
                                  completion:^(NSError *error,
                                               NSIndexSet *appendIndexSet) {
-                                     [self.topRefreshControl endRefreshing];
+                                     [self.topRefreshView finishLoading];
         if (!error) {
 //            /[self.collectionView insertSections:appendIndexSet];
             [self.collectionView reloadData];
@@ -155,6 +149,13 @@
 #pragma mark - private methods
 
 #pragma mark - accessor methods
+
+- (SSPullToRefreshView *)topRefreshView {
+    if (!_topRefreshView) {
+        _topRefreshView = [[SSPullToRefreshView alloc] initWithScrollView:self.collectionView delegate:self];
+    }
+    return _topRefreshView;
+}
 
 #pragma mark - api methods
 

@@ -8,11 +8,6 @@
 
 #import "LIKEPostContext.h"
 
-NSString *const LIKETrendUserAvatarURL = @"userAvatarURL";
-NSString *const LIKETrendUserNickname = @"userNickname";
-NSString *const LIKETrendUserGender = @"userGender";
-NSString *const LIKETrendUserAge = @"userAge";
-NSString *const LIKETrendUserLocation = @"userLocation";
 NSString *const LIKETrendTimeline = @"userTimeline";
 NSString *const LIKETrendContentImageURL = @"contentImageURL";
 NSString *const LIKETrendContentImage = @"contentImage";

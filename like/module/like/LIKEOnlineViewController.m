@@ -94,18 +94,18 @@ static NSString *const LIKECollectionViewFooterIdentifier = @"com.trinity.like.o
 
 #pragma mark UICollectionViewDelegateFlowLayout
 
-//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-//    CGSize size = [collectionView ar_sizeForCellWithIdentifier:LIKECollectionViewCellIdentifier
-//                                                     indexPath:indexPath
-//                                                    fixedWidth:CGRectGetWidth(self.collectionView.frame)
-//                                                 configuration:^(id cell) {
-//                                                     [self configureCell:cell
-//                                                                  object:self.onlines[indexPath.section]
-//                                                               indexPath:indexPath];
-//                                                 }];
-//    
-//    return size;
-//}
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    CGSize size = [collectionView ar_sizeForCellWithIdentifier:LIKECollectionViewCellIdentifier
+                                                     indexPath:indexPath
+                                                    fixedWidth:CGRectGetWidth(self.collectionView.frame)
+                                                 configuration:^(id cell) {
+                                                     [self configureCell:cell
+                                                                  object:self.onlines[indexPath.section]
+                                                               indexPath:indexPath];
+                                                 }];
+    
+    return size;
+}
 
 #pragma mark - event response
 

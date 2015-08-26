@@ -13,7 +13,7 @@ static NSString *kDatePickerID = @"datePicker"; // the cell containing the date 
 static NSString *kOtherCell = @"otherCell";     // the remaining cells at the end
 
 
-@interface LIKEPersonalInfoViewController () {
+@interface LIKEPersonalInfoViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate> {
     NSDate *currentSelectedDate;
     NSInteger pickerHeight;
     NSDateFormatter *dateFormatter;
@@ -62,10 +62,70 @@ static NSString *kOtherCell = @"otherCell";     // the remaining cells at the en
 
 #pragma mark - delegate methods
 
+#pragma mark - UIImagePickerControllerDelegate
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    [LIKEUserContext sharedInstance].tempAvator = [info objectForKey:UIImagePickerControllerEditedImage];
+    [self.avatarButton setImage:[LIKEUserContext sharedInstance].tempAvator forState:UIControlStateNormal];
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
 #pragma mark - event response
 
 - (IBAction)uploadAvatar:(id)sender {
+    PSTAlertController *choosePhotoActionSheet = [PSTAlertController actionSheetWithTitle:NSLocalizedStringFromTable(@"choose_photo", LIKELocalizeAccount, nil)];
+    PSTAlertAction *actionCancel = [PSTAlertAction actionWithTitle:NSLocalizedStringFromTable(@"cancel", LIKELocalizeAccount, @"")
+                                                             style:PSTAlertActionStyleCancel
+                                                           handler:^(PSTAlertAction *action) {
+                                                               
+                                                           }];
+    PSTAlertAction *actionTakePhotoFromLibrary = [PSTAlertAction actionWithTitle:NSLocalizedStringFromTable(@"take_photo_from_library", LIKELocalizeAccount, @"")
+                                                                         handler:^(PSTAlertAction *action) {
+                                                                             UIImagePickerControllerSourceType sourceType;
+                                                                             if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+                                                                                 sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+                                                                             }
+                                                                             else {
+                                                                                 sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+                                                                             }
+                                                                             
+                                                                             UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
+                                                                             imagePickerController.delegate = self;
+                                                                             imagePickerController.allowsEditing = YES;
+                                                                             imagePickerController.sourceType = sourceType;
+                                                                             [self presentViewController:imagePickerController animated:YES completion:^{
+                                                                                 
+                                                                             }];
+                                                                         }];
     
+    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        PSTAlertAction *actionTakePhotoFromCamera = [PSTAlertAction actionWithTitle:NSLocalizedStringFromTable(@"take_photo_from_camera", LIKELocalizeAccount, @"")
+                                                                            handler:^(PSTAlertAction *action) {
+                                                                                UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
+                                                                                imagePickerController.delegate = self;
+                                                                                imagePickerController.allowsEditing = YES;
+                                                                                imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
+                                                                                [self presentViewController:imagePickerController animated:YES completion:^{
+                                                                                    
+                                                                                }];  
+                                                                            }];
+        
+        [choosePhotoActionSheet addAction:actionCancel];
+        [choosePhotoActionSheet addAction:actionTakePhotoFromCamera];
+        [choosePhotoActionSheet addAction:actionTakePhotoFromLibrary];
+    } else {
+        [choosePhotoActionSheet addAction:actionCancel];
+        [choosePhotoActionSheet addAction:actionTakePhotoFromLibrary];
+    }
+    
+    [choosePhotoActionSheet showWithSender:nil controller:self animated:YES completion:^{
+        
+    }];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -99,22 +159,24 @@ static NSString *kOtherCell = @"otherCell";     // the remaining cells at the en
     BOOL checkTermFlag = [self.privacyPolicyButton.titleLabel.text isEqualToString:@"√"];
     
     if (usernameFlag && birthdayFlag && checkTermFlag) {
-        NSDictionary *keyValuePairs = @{@"username": self.usernameTextField.text,
-                                      @"male": @(self.genderSegmentedControl.selectedSegmentIndex? NO: YES),
-                                      @"birthday": currentSelectedDate};
+        NSDictionary *keyValuePairs = @{LIKEUserNickName: self.usernameTextField.text,
+                                        LIKEUserGender: @(self.genderSegmentedControl.selectedSegmentIndex? NO: YES),
+                                        LIKEUserBirthday: [currentSelectedDate timeIntervalStringInMilliSecond]};
         [self showHintHudWithMessage:NSLocalizedStringFromTable(@"prompt.updating", LIKELocalizeAccount, nil)];
-        [[LIKEUserContext sharedInstance] updateUserWithKeyValuePairs:keyValuePairs
+        [[LIKEUserContext sharedInstance] updateUserWithAvatorImage:[LIKEUserContext sharedInstance].tempAvator
+                                                      keyValuePairs:keyValuePairs
                                                          completion:^(NSError *error) {
-                                                                if (!error) {
-                                                                    [self hideHUDWithCompletionMessage:NSLocalizedStringFromTable(@"prompt.updateProfileComplete", LIKELocalizeAccount, nil)];
-                                                                    [self performSegueWithIdentifier:@"registerUnwindSegue" sender:self];
-                                                                }
-                                                                else {
-                                                                    [self hideHUDWithCompletionMessage:NSLocalizedStringFromTable(@"error.updateProfileFail", LIKELocalizeAccount, nil)];
-                                                                    NSLog(@"%@", error);
-                                                                }
-                                                            }];
-
+                                                               if (!error) {
+                                                                   [self hideHUDWithCompletionMessage:NSLocalizedStringFromTable(@"prompt.updateProfileComplete", LIKELocalizeAccount, nil)];
+                                                                   [self performSegueWithIdentifier:@"registerUnwindSegue" sender:self];
+                                                               }
+                                                               else {
+                                                                   [self hideHUDWithCompletionMessage:NSLocalizedStringFromTable(@"error.updateProfileFail", LIKELocalizeAccount, nil)];
+                                                                   NSLog(@"%@", error);
+                                                               }
+                                                           }];
+        
+        
     }
     else {
         [PSTAlertController presentDismissableAlertWithTitle:NSLocalizedStringFromTable(@"error", LIKELocalizeMain, nil)

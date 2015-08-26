@@ -31,4 +31,8 @@
 "refetchSMSCode" = "refetch SMS code";
 "fillInfomationAndCheckPrivacyPolicy" = "Confirm your profile information and check the privacy policy";
 
+"choose_photo" = "Choose Photo";
+"take_photo_from_library" = "take photo from library";
+"take_photo_from_camera" = "take photo from camera";
+
 "format.birthdayDate" = "yyyy-MM-dd";
