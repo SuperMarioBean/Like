@@ -170,13 +170,10 @@ NSString *const LIKEFeedItemFooterIdentifier = @"com.trinity.like.trend.footer";
     if ([kind isEqualToString:LIKEFeedItemElementKindCellContent]) {
         LIKEFeedItemContentCell *cell = (LIKEFeedItemContentCell *)collectionViewCell;
         NSDictionary *feed = [self objectForIndexPath:indexPath];
-        NSURL *url = [NSURL URLWithString:feed[LIKETrendContentImageURL]];
-        if ([url isEqual:[NSNull null]]) {
-            cell.photoImageView.image = feed[LIKETrendContentImage];
-        }
-        else {
-            [cell.photoImageView sd_setImageWithURL:url];
-        }
+        
+        NSString* imguri = [NSString stringWithFormat:@"%@%@",LIKEImageBaseURL,feed[LIKETrendContentImageURL]];
+        NSURL *url = [NSURL URLWithString:imguri];
+        [cell.photoImageView sd_setImageWithURL:url];
         cell.contentLabel.text = feed[LIKETrendContentText];
         
         [cell beginTagsUpdate];
@@ -221,10 +218,12 @@ NSString *const LIKEFeedItemFooterIdentifier = @"com.trinity.like.trend.footer";
     if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
         LIKEFeedItemHeader *header = (LIKEFeedItemHeader *)collectionReusableView;
         NSDictionary *feed = [self objectForIndexPath:indexPath];
-        [header.avatarImageView sd_setImageWithURL:[NSURL URLWithString:feed[LIKETrendUserAvatarURL]]];
+        
+        NSString* avatorUrl = [NSString stringWithFormat:@"%@%@",LIKEImageBaseURL,feed[LIKETrendUserAvatarURL]];
+        [header.avatarImageView sd_setImageWithURL:[NSURL URLWithString:avatorUrl]];
         header.nicknameLabel.text = feed[LIKETrendUserNickname];
-        header.genderAndAgeLabel.text = [NSString stringWithFormat:@"%@  %@", [feed[LIKETrendUserGender] boolValue]? LIKEUserGenderMale: LIKEUserGenderFemale, feed[LIKETrendUserAge]];
-        header.genderAndAgeLabel.backgroundColor = [feed[LIKETrendUserGender] boolValue]? [UIColor blueColor]: [UIColor magentaColor];
+        header.genderAndAgeLabel.text = [NSString stringWithFormat:@"%@  %@", [feed[LIKETrendUserGender] isEqualToString:@"M"]? LIKEUserGenderMale: LIKEUserGenderFemale, feed[LIKETrendUserAge]];
+        header.genderAndAgeLabel.backgroundColor = [feed[LIKETrendUserGender] isEqualToString:@"M"]? [UIColor blueColor]: [UIColor magentaColor];
         NSDate *date = [NSDate dateWithTimeIntervalStringInMilliSecondSince1970:feed[LIKETrendTimeline]];
         header.timelineLabel.text = [date timeAgoSimple];
         header.locationLabel.text = feed[LIKETrendUserLocation];

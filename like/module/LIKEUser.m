@@ -45,6 +45,24 @@ NSString *const LIKEUserPhotoURL = @"photoURL";
 
 #pragma mark - accessor methods
 
+-(void) setUserLocation:(NSArray *)userLocation
+{
+    //lat|lon format
+    NSString* upload_data = [NSString stringWithFormat:@"%@|%@",[userLocation objectAtIndex:0],[userLocation objectAtIndex:1]];
+    [geo updateUserLocation:upload_data success:^(id responseObject) {
+        NSError* error;
+        [LIKEHelper dataWithResponceObject:responseObject error:&error];
+        if (!error) {
+            _userLocation = userLocation;
+        }else
+        {
+            NSLog(@"%@",[responseObject objectForKey:LIKEContextMessage]);
+        }
+    } failure:^(NSError *error) {
+            NSLog(@"%@",error);
+    }];
+}
+
 - (NSMutableArray *)testTrendsArray {
     if (!_testTrendsArray) {
         _testTrendsArray = [NSMutableArray array];

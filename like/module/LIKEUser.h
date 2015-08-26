@@ -38,6 +38,8 @@ extern NSString *const LIKEUserPhotoURL;
 
 @property (readwrite, nonatomic, assign) NSInteger unreadCount;
 
+@property (readwrite, nonatomic, assign) NSArray* userLocation;
+
 // debug
 @property (readwrite, nonatomic, strong) NSMutableArray *testTrendsArray;
 

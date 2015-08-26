@@ -24,9 +24,12 @@ NSString *const LIKETagDirection = @"tagDirection";
 NSString *const LIKETagType = @"tagType";
 NSString *const LIKETagPosition = @"tagPostion";
 
+
 NSString *const LIKEUploadThumbnailImage = @"uploadThumbnailImage";
 NSString *const LIKEUploadProgress = @"uploadProgress";
 NSString *const LIKEUploadStatus = @"uploadStatus";
+
+NSString *const LIKEImageBaseURL = @"http://img.like.free-blade.com/";
 
 @implementation LIKEPostContext
 
@@ -84,12 +87,7 @@ NSString *const LIKEUploadStatus = @"uploadStatus";
                       _currentTimelinePage = page;
                       
                       NSMutableArray *tempArray = [NSMutableArray array];
-                      for (NSDictionary *metaData in data) {
-                          if (metaData.count > 3) {
-                              [tempArray addObject:metaData];
-                          }
-                      }
-                      
+                      [tempArray addObjectsFromArray:data];
                       if (page == 1) {
                           [_timelineList removeAllObjects];
                       }
@@ -109,7 +107,7 @@ NSString *const LIKEUploadStatus = @"uploadStatus";
               }];
 }
 
-- (void)postWithKeyValuePairs:(NSDictionary *)keyValuePairs image:(UIImage*)image completion:(void (^)(NSError *error))completion
+- (NSURLSessionUploadTask*)postWithKeyValuePairs:(NSDictionary *)keyValuePairs image:(UIImage*)image completion:(void (^)(NSError *error))completion
 {
     [upload uploadImage:image uploadProgress:^(CGFloat percent) {
         NSLog(@"upload : %d %%",(int)percent*100);
@@ -123,7 +121,14 @@ NSString *const LIKEUploadStatus = @"uploadStatus";
             
             [post newPost:postInfo success:^(id responseObject) {
                 if (completion) {
-                    completion(nil);
+                    NSError *error;
+                    [LIKEHelper dataWithResponceObject:responseObject error:&error];
+                    if (error) {
+                        completion([responseObject objectForKey:LIKEContextMessage]);
+                    }else
+                    {
+                        completion(nil);
+                    }
                 }
             } failure:^(NSError *error) {
                 if (completion) {
@@ -144,6 +149,8 @@ NSString *const LIKEUploadStatus = @"uploadStatus";
             completion(error);
         }
     }];
+    
+    return nil;
 }
 
 

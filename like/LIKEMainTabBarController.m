@@ -10,7 +10,7 @@
 #import "LIKEInstanceMessageManager.h"
 
 #define SCREEN_WIDTH  [[UIScreen mainScreen] bounds].size.width
-#define SCREEN_HEIGHT [[UIScreen mainScreen] bounds].size.height)
+#define SCREEN_HEIGHT [[UIScreen mainScreen] bounds].size.height
 
 @interface LIKEMainTabBarController () <UITabBarControllerDelegate,
                                         EMChatManagerDelegate,
@@ -42,7 +42,6 @@
         [self startHelp];
     }
     
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -55,6 +54,7 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [self reset];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -350,7 +350,7 @@
 - (void)startHelp
 {
     _arrayImage = @[@"intro1", @"intro2", @"intro3"];
-    self.helpScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT];
+    self.helpScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
     self.helpScrollView.pagingEnabled = YES;
     self.helpScrollView.contentSize = CGSizeMake(SCREEN_WIDTH*_arrayImage.count, 0);
     [self.helpScrollView setShowsHorizontalScrollIndicator:NO];

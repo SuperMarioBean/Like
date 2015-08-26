@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+extern NSString *const LIKEImageBaseURL;
 extern NSString *const LIKETrendUserAvatarURL;
 extern NSString *const LIKETrendUserNickname;
 extern NSString *const LIKETrendUserGender;
@@ -36,7 +37,7 @@ extern NSString *const LIKETagPosition;
 
 - (void)postWithPostID:(NSString *)postID completion:(void (^)(NSError *error))completion;
 
-- (void)postWithKeyValuePairs:(NSDictionary *)keyValuePairs image:(UIImage*)image completion:(void (^)(NSError *error))completion;
+- (NSURLSessionUploadTask*)postWithKeyValuePairs:(NSDictionary *)keyValuePairs image:(UIImage*)image completion:(void (^)(NSError *error))completion;
 
 - (void)deletePostWithPostID:(NSString *)postID completion:(void (^)(NSError *error))completion;
 

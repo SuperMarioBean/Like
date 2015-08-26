@@ -127,23 +127,19 @@
         [tagsArray addObject:dictionary];
     }
     
-    UIImage *thumbnail = [self.image thumbnailImage:32 transparentBorder:0 cornerRadius:0 interpolationQuality:kCGInterpolationHigh];
-    NSDictionary *upload = @{LIKETrendUserAvatarURL: [NSNull null],
-                             LIKETrendUserNickname: @"我",
-                             LIKETrendUserGender: @YES,
-                             LIKETrendUserAge: @(27),
-                             LIKETrendTimeline: [NSDate date],
-                             LIKETrendUserLocation: @"上海",
-                             LIKETrendContentImageURL: [NSNull null],
-                             LIKETrendContentImage: self.image,
+    NSDictionary *upload = @{
                              LIKETrendContentText: self.contentTextField.text,
                              LIkeTrendContentTagList: tagsArray,
-                             LIKEUploadThumbnailImage: thumbnail,
-                             LIKEUploadProgress: @(2),
-                             LIKEUploadStatus: @(0)
                              };
 
-    [[LIKEAppContext sharedInstance].testUploadTrendsArray insertObject:upload atIndex:0];
+    [[LIKEPostContext sharedInstance] postWithKeyValuePairs:upload image:self.image completion:^(NSError *error) {
+        if (!error) {
+            
+        }else
+        {
+            NSLog(@"%@",error);
+        }
+    }];
     
     [self performSegueWithIdentifier:@"publishUnwindSegue" sender:self];
 }
