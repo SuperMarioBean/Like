@@ -51,6 +51,8 @@
     self.rootViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     
     self.window.rootViewController = self.rootViewController;
+    
+    [LIKELocationManager sharedInstance];
     return YES;
 }
 

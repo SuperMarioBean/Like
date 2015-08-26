@@ -160,7 +160,7 @@ static NSString *kOtherCell = @"otherCell";     // the remaining cells at the en
     
     if (usernameFlag && birthdayFlag && checkTermFlag) {
         NSDictionary *keyValuePairs = @{LIKEUserNickName: self.usernameTextField.text,
-                                        LIKEUserGender: @(self.genderSegmentedControl.selectedSegmentIndex? NO: YES),
+                                        LIKEUserGender: self.genderSegmentedControl.selectedSegmentIndex? LIKEUserGenderFemale: LIKEUserGenderMale,
                                         LIKEUserBirthday: [currentSelectedDate timeIntervalStringInMilliSecond]};
         [self showHintHudWithMessage:NSLocalizedStringFromTable(@"prompt.updating", LIKELocalizeAccount, nil)];
         [[LIKEUserContext sharedInstance] updateUserWithAvatorImage:[LIKEUserContext sharedInstance].tempAvator

@@ -130,15 +130,17 @@ static NSString *const LIKECollectionViewFooterIdentifier = @"com.trinity.like.o
 - (void)configureCell:(UICollectionViewCell *)collectionViewCell object:(id)object indexPath:(NSIndexPath *)indexPath{
     LIKEOnlineCollectionViewCell *cell = (LIKEOnlineCollectionViewCell *)collectionViewCell;
     NSDictionary *userInfo = (NSDictionary *)object;
-    [cell.avatarImageView sd_setImageWithURL:userInfo[LIKEUserAvatorURL]];
-    cell.genderLabel.text = [userInfo[LIKEUserGender] isEqualToString:LIKEUserGenderMale]? LIKEUserGenderMale: LIKEUserGenderFemale;
+    NSString* avatorUrl = [NSString stringWithFormat:@"%@%@",LIKEImageBaseURL,userInfo[LIKEUserAvatorURL]];
+    [cell.avatarImageView sd_setImageWithURL:[NSURL URLWithString:avatorUrl]];
+    cell.genderLabel.text = [userInfo[LIKEUserGender] isEqualToString:LIKEUserGenderMale]? LIKEUserGenderMaleChar: LIKEUserGenderFemaleChar;
     cell.genderLabel.backgroundColor = [userInfo[LIKEUserGender] isEqualToString:LIKEUserGenderMale]? [UIColor blueColor]: [UIColor magentaColor];
     LIKEOnlineWidgetType type = LIKEOnlineWidgetTypeNone;
-    if ([userInfo[LIKEOnlineUserHot] boolValue]) {
-        type = type | LIKEOnlineWidgetTypeHot;
-    }
     
-    if ([userInfo[LIKEOnlineUserVerify] boolValue]) {
+//    if ([userInfo[LIKEOnlineUserHot] boolValue]) {
+//        type = type | LIKEOnlineWidgetTypeHot;
+//    }
+    
+    if ([userInfo[LIKEUserVerify] boolValue]) {
         type = type | LIKEOnlineWidgetTypeVerify;
     }
     

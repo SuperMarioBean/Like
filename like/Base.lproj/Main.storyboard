@@ -212,10 +212,24 @@
             </objects>
             <point key="canvasLocation" x="-2003" y="1507"/>
         </scene>
+        <!--Main Navigation Controller-->
+        <scene sceneID="cQG-Xd-VPp">
+            <objects>
+                <navigationController id="aL1-iP-geC" customClass="LIKEMainNavigationController" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="erP-ub-uIs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mrk-L4-Yvk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1830" y="-138"/>
+        </scene>
         <!--Main Tab Bar Controller-->
         <scene sceneID="lF0-nF-OMz">
             <objects>
                 <tabBarController id="40D-SM-teq" customClass="LIKEMainTabBarController" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="eR9-1e-jM5"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="uor-oQ-YWH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>

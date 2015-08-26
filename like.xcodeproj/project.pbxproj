@@ -352,6 +352,7 @@
 		63FF6ABA1B6698CA000C46D8 /* LIKEMinePhotoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FF6AB81B6698CA000C46D8 /* LIKEMinePhotoItem.m */; };
 		63FF6ABB1B6698CA000C46D8 /* LIKEMinePhotoItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63FF6AB91B6698CA000C46D8 /* LIKEMinePhotoItem.xib */; };
 		9ACAE78879C2194B489B9D5A /* libPods-like.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A979D4D865537226B1455EA9 /* libPods-like.a */; };
+		A39370811B8E02DA003EB7A3 /* LIKEMainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A39370801B8E02DA003EB7A3 /* LIKEMainNavigationController.m */; };
 		F64A1F7AEFE5389F5FDB362B /* libPods-likeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4925A4D07F0BFCA3304237D /* libPods-likeTests.a */; };
 /* End PBXBuildFile section */
 
@@ -1061,6 +1062,8 @@
 		63FF6AB91B6698CA000C46D8 /* LIKEMinePhotoItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LIKEMinePhotoItem.xib; sourceTree = "<group>"; };
 		7FC1AF0E053AD386E334AC50 /* Pods-likeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-likeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-likeTests/Pods-likeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A393707E1B8AF691003EB7A3 /* UIColorDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIColorDefine.h; sourceTree = "<group>"; };
+		A393707F1B8E02DA003EB7A3 /* LIKEMainNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LIKEMainNavigationController.h; sourceTree = "<group>"; };
+		A39370801B8E02DA003EB7A3 /* LIKEMainNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LIKEMainNavigationController.m; sourceTree = "<group>"; };
 		A979D4D865537226B1455EA9 /* libPods-like.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-like.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4925A4D07F0BFCA3304237D /* libPods-likeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-likeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -1160,6 +1163,8 @@
 				632256731B0E10D100D10817 /* AppDelegate.m */,
 				63B3C78D1B48F1810030D5D4 /* LIKEMainTabBarController.h */,
 				63B3C78E1B48F1810030D5D4 /* LIKEMainTabBarController.m */,
+				A393707F1B8E02DA003EB7A3 /* LIKEMainNavigationController.h */,
+				A39370801B8E02DA003EB7A3 /* LIKEMainNavigationController.m */,
 				6322567B1B0E10D100D10817 /* Images.xcassets */,
 				63B3C44F1B48DCA40030D5D4 /* Main.storyboard */,
 				6322567D1B0E10D100D10817 /* LaunchScreen.xib */,
@@ -2990,6 +2995,7 @@
 				63AAFFAC1B5BEA1E00ACF151 /* MessageReadManager.m in Sources */,
 				63FF6AAC1B660831000C46D8 /* LIKEMineTrendItem.m in Sources */,
 				63FF6A941B65F2CA000C46D8 /* TabBarControllerDelegate.m in Sources */,
+				A39370811B8E02DA003EB7A3 /* LIKEMainNavigationController.m in Sources */,
 				633D16FC1B5167A300C2786A /* IrregularView.m in Sources */,
 				63B3C7681B48E6930030D5D4 /* LIKEUser.m in Sources */,
 				63B3C7031B48E49F0030D5D4 /* UINavigationController+StackManager.m in Sources */,

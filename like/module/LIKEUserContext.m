@@ -22,6 +22,10 @@ NSString *const LIKEUserNickName = @"usernickname";
 NSString *const LIKEUserGender = @"gender";
 NSString *const LIKEUserBirthday = @"birthday";
 NSString *const LIKEUserAvatorURL = @"avatorURL";
+NSString *const LIKEUserVerify = @"isverified";
+
+NSString *const LIKEUserGenderMale = @"M";
+NSString *const LIKEUserGenderFemale = @"F";
 
 NSString *const LIKEUserIMUsername = @"imusername";
 NSString *const LIKEUserIMPassword = @"impassword";
