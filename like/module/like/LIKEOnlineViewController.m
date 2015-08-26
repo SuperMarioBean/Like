@@ -10,12 +10,6 @@
 
 #import "LIKEOnlineCollectionViewCell.h"
 
-static NSString *const LIKEOnlineUserAvatarURL = @"userAvatarURL";
-static NSString *const LIKEOnlineUserSaying = @"userSaying";
-static NSString *const LIKEOnlineUserGender = @"userGender";
-static NSString *const LIKEOnlineUserHot = @"userHot";
-static NSString *const LIKEOnlineUserVerify = @"userVerify";
-
 static NSString *const LIKECollectionViewCellIdentifier = @"com.trinity.like.online.cell";
 static NSString *const LIKECollectionViewHeaderIdentifier = @"com.trinity.like.online.header";
 static NSString *const LIKECollectionViewFooterIdentifier = @"com.trinity.like.online.footer";
@@ -26,6 +20,11 @@ static NSString *const LIKECollectionViewFooterIdentifier = @"com.trinity.like.o
 @property (weak, nonatomic) IBOutlet UICollectionViewFlowLayout *onlineLayout;
 
 @property (readwrite, nonatomic, strong) NSMutableArray *onlines;
+@property (readwrite, nonatomic, strong) NSMutableArray *nearbys;
+@property (readwrite, nonatomic, strong) NSMutableArray *mirrorArray;
+@property (readwrite, nonatomic)         BOOL isNearbyData;
+
+@property(strong, nonatomic) CLLocation* location;
 
 @end
 
@@ -43,6 +42,24 @@ static NSString *const LIKECollectionViewFooterIdentifier = @"com.trinity.like.o
     self.onlineLayout.minimumLineSpacing = 4;
     CGFloat width = floorf((CGRectGetWidth(self.collectionView.frame) - 4 * 4) / 3);
     self.onlineLayout.itemSize = CGSizeMake(width, width);
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateLocation:) name:LIKELocationCoordinateSuccessNotification object:nil];
+    
+    self.location = [[CLLocation alloc] init];
+    
+//    data init
+    self.nearbys = [NSMutableArray array];
+    self.onlines = [NSMutableArray array];
+    self.isNearbyData = YES;
+    self.mirrorArray = self.nearbys;
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    if (self.isNearbyData) {
+        [[LIKELocationManager sharedInstance] startForceLocating];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -65,13 +82,13 @@ static NSString *const LIKECollectionViewFooterIdentifier = @"com.trinity.like.o
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.onlines.count;
+    return self.mirrorArray.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:LIKECollectionViewCellIdentifier forIndexPath:indexPath];
     
-    [self configureCell:cell object:self.onlines[indexPath.item] indexPath:indexPath];
+    [self configureCell:cell object:self.mirrorArray[indexPath.item] indexPath:indexPath];
     return cell;
 }
 
@@ -88,7 +105,8 @@ static NSString *const LIKECollectionViewFooterIdentifier = @"com.trinity.like.o
                                                                  forIndexPath:indexPath];
         
     }
-    [self configureReusableView:reusableView kind:kind object:self.onlines[indexPath.item] indexPath:indexPath];
+    
+    [self configureReusableView:reusableView kind:kind object:self.mirrorArray[indexPath.item] indexPath:indexPath];
     return reusableView;
 }
 
@@ -100,7 +118,7 @@ static NSString *const LIKECollectionViewFooterIdentifier = @"com.trinity.like.o
                                                     fixedWidth:CGRectGetWidth(self.collectionView.frame)
                                                  configuration:^(id cell) {
                                                      [self configureCell:cell
-                                                                  object:self.onlines[indexPath.section]
+                                                                  object:self.mirrorArray[indexPath.section]
                                                                indexPath:indexPath];
                                                  }];
     
@@ -111,17 +129,16 @@ static NSString *const LIKECollectionViewFooterIdentifier = @"com.trinity.like.o
 
 - (void)configureCell:(UICollectionViewCell *)collectionViewCell object:(id)object indexPath:(NSIndexPath *)indexPath{
     LIKEOnlineCollectionViewCell *cell = (LIKEOnlineCollectionViewCell *)collectionViewCell;
-    NSDictionary *online = (NSDictionary *)object;
-    [cell.avatarImageView sd_setImageWithURL:online[LIKEOnlineUserAvatarURL]];
-    cell.sayingLabel.text = online[LIKEOnlineUserSaying];
-    cell.genderLabel.text = [online[LIKEOnlineUserGender] boolValue]? LIKEUserGenderMale: LIKEUserGenderFemale;
-    cell.genderLabel.backgroundColor = [online[LIKEOnlineUserGender] boolValue]? [UIColor blueColor]: [UIColor magentaColor];
+    NSDictionary *userInfo = (NSDictionary *)object;
+    [cell.avatarImageView sd_setImageWithURL:userInfo[LIKEUserAvatorURL]];
+    cell.genderLabel.text = [userInfo[LIKEUserGender] isEqualToString:LIKEUserGenderMale]? LIKEUserGenderMale: LIKEUserGenderFemale;
+    cell.genderLabel.backgroundColor = [userInfo[LIKEUserGender] isEqualToString:LIKEUserGenderMale]? [UIColor blueColor]: [UIColor magentaColor];
     LIKEOnlineWidgetType type = LIKEOnlineWidgetTypeNone;
-    if ([online[LIKEOnlineUserHot] boolValue]) {
+    if ([userInfo[LIKEOnlineUserHot] boolValue]) {
         type = type | LIKEOnlineWidgetTypeHot;
     }
     
-    if ([online[LIKEOnlineUserVerify] boolValue]) {
+    if ([userInfo[LIKEOnlineUserVerify] boolValue]) {
         type = type | LIKEOnlineWidgetTypeVerify;
     }
     
@@ -141,42 +158,79 @@ static NSString *const LIKECollectionViewFooterIdentifier = @"com.trinity.like.o
 
 #pragma mark - accessor methods
 
-- (NSMutableArray *)onlines {
-    if (!_onlines) {
-        _onlines = [NSMutableArray array];
-        NSDictionary *text1 = @{LIKEOnlineUserAvatarURL: [NSURL URLWithString:@"http://7xjvx7.com1.z0.glb.clouddn.com/m9.png"],
-                                LIKEOnlineUserGender: @YES,
-                                LIKEOnlineUserHot: @YES,
-                                LIKEOnlineUserVerify: @YES,
-                                LIKEOnlineUserSaying: @"出去耍",
-                                };
-        NSDictionary *text2 = @{LIKEOnlineUserAvatarURL: [NSURL URLWithString:@"http://7xjvx7.com1.z0.glb.clouddn.com/f4.png"],
-                                LIKEOnlineUserGender: @YES,
-                                LIKEOnlineUserHot: @NO,
-                                LIKEOnlineUserVerify: @YES,
-                                LIKEOnlineUserSaying: @"今天遇到一个不错的男生,可惜错过了,希望下次不会有下次,大家也都要抓住机会,不要放过",
-                                };
-        NSDictionary *text3 = @{LIKEOnlineUserAvatarURL: [NSURL URLWithString:@"http://7xjvx7.com1.z0.glb.clouddn.com/f6.png"],
-                                LIKEOnlineUserGender: @NO,
-                                LIKEOnlineUserHot: @YES,
-                                LIKEOnlineUserVerify: @NO,
-                                LIKEOnlineUserSaying: @"有人一块看电影么,人家最近有空哦~",
-                                };
-        
-        for (unsigned int index = 0; index < 50; index++) {
-            NSInteger mod = index % 3;
-            if (mod == 0) {
-                [_onlines addObject:text1];
+//- (NSMutableArray *)onlines {
+//    if (!_onlines) {
+//        _onlines = [NSMutableArray array];
+//        NSDictionary *text1 = @{LIKEOnlineUserAvatarURL: [NSURL URLWithString:@"http://7xjvx7.com1.z0.glb.clouddn.com/m9.png"],
+//                                LIKEOnlineUserGender: @YES,
+//                                LIKEOnlineUserHot: @YES,
+//                                LIKEOnlineUserVerify: @YES,
+//                                LIKEOnlineUserSaying: @"出去耍",
+//                                };
+//        NSDictionary *text2 = @{LIKEOnlineUserAvatarURL: [NSURL URLWithString:@"http://7xjvx7.com1.z0.glb.clouddn.com/f4.png"],
+//                                LIKEOnlineUserGender: @YES,
+//                                LIKEOnlineUserHot: @NO,
+//                                LIKEOnlineUserVerify: @YES,
+//                                LIKEOnlineUserSaying: @"今天遇到一个不错的男生,可惜错过了,希望下次不会有下次,大家也都要抓住机会,不要放过",
+//                                };
+//        NSDictionary *text3 = @{LIKEOnlineUserAvatarURL: [NSURL URLWithString:@"http://7xjvx7.com1.z0.glb.clouddn.com/f6.png"],
+//                                LIKEOnlineUserGender: @NO,
+//                                LIKEOnlineUserHot: @YES,
+//                                LIKEOnlineUserVerify: @NO,
+//                                LIKEOnlineUserSaying: @"有人一块看电影么,人家最近有空哦~",
+//                                };
+//        
+//        for (unsigned int index = 0; index < 50; index++) {
+//            NSInteger mod = index % 3;
+//            if (mod == 0) {
+//                [_onlines addObject:text1];
+//            }
+//            else if (mod == 1) {
+//                [_onlines addObject:text2];
+//            }
+//            else if (mod == 2) {
+//                [_onlines addObject:text3];
+//            }
+//        }
+//    }
+//    return _onlines;
+//}
+
+#pragma mark - Location methods
+- (void)updateLocation:(NSNotification *)notification {
+    NSLog(@"%@",notification.userInfo);
+    NSDictionary* userInfo = notification.userInfo;
+    float lat = [[userInfo objectForKey:LIKELocationCoordinateLatitudeKey] floatValue];
+    float lon = [[userInfo objectForKey:LIKELocationCoordinateLongitudeKey] floatValue];
+    
+    CLLocation* newLocation = [[CLLocation alloc] initWithLatitude:lat longitude:lon];
+//    if ([newLocation distanceFromLocation:self.location]>500) {
+    if (YES) {
+        self.location = newLocation;
+        NSString* param = [NSString stringWithFormat:@"%f|%f",lat,lon];
+        [geo updateUserLocation:param success:^(id responseObject) {
+            NSLog(@"%@",responseObject);
+            NSError* error;
+            [LIKEHelper dataWithResponceObject:responseObject error:&error];
+            if (!error) {
+                [geo getNearbyUsers:1 success:^(id responseObject) {
+                    NSError* error;
+                    NSArray* data = [LIKEHelper dataWithResponceObject:responseObject error:&error];
+                    [self.nearbys removeAllObjects];
+                    [self.nearbys addObjectsFromArray:data];
+                    [self.collectionView reloadData];
+                    NSLog(@"%@",self.nearbys);
+                } failure:^(NSError *error) {
+                    NSLog(@"======get nearby users error======\n%@",error);
+                }];
+            }else
+            {
+                NSLog(@"======Upload location error======\n%@",error);
             }
-            else if (mod == 1) {
-                [_onlines addObject:text2];
-            }
-            else if (mod == 2) {
-                [_onlines addObject:text3];
-            }
-        }
+        } failure:^(NSError *error) {
+            NSLog(@"%@",error);
+        }];
     }
-    return _onlines;
 }
 
 #pragma mark - api methods
