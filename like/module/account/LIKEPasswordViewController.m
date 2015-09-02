@@ -37,7 +37,21 @@
     [self touchesBegan:nil withEvent:nil];
     if ([LIKEHelper verifyPassword:self.passwordTextField.text]) {
         if ([LIKEUserContext sharedInstance].isForgetPassword) {
-            // TODO: 忘记密码的流程
+            [self showHUD];
+            [[LIKEUserContext sharedInstance] changePasswordWithNewPassword:self.passwordTextField.text
+                                                                 completion:^(NSError *error) {
+                                                                     [self hideHUD];
+                                                                     if (!error) {
+                                                                         [self showHintHudWithMessage:NSLocalizedStringFromTable(@"prompt.changePassword", LIKELocalizeAccount, nil)];
+                                                                         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                                                                             [self hideHUD];
+                                                                             [self performSegueWithIdentifier:@"changePasswordUnwindSegue" sender:self];
+                                                                         });
+                                                                     }
+                                                                     else {
+                                                                         [self hideHUDWithCompletionMessage:NSLocalizedStringFromTable(@"error.changePasswordFail", LIKELocalizeAccount, nil)];
+                                                                     }
+                                                                 }];
         }
         else {
             [self showHUD];

@@ -23,9 +23,13 @@
 
 #import "Masonry.h"
 //#import "Mantle.h"
+
 #import "AFNetworking.h"
 #import "UIImageView+WebCache.h"
 #import "UICollectionView+ARDynamicCacheHeightLayoutCell.h"
+#import "UIViewController+BlockSegue.h"
+#import "UIViewcontroller+MBProgressHUD.h"
+
 #import "THProgressView.h"
 #import "EMAlertView.h"
 #import "GCDMulticastDelegate.h"
@@ -46,7 +50,6 @@
 #import "LIKEAPIProxy.h"
 #import "LIKEHelper.h"
 #import "models.h"
-#import "UIColorDefine.h"
 
 
 static NSString *const LIKEIMLoginChangeNotification = @"loginChange";
@@ -60,6 +63,6 @@ static NSString *const LIKEUserGenderFemaleChar = @"♀";
 #define LIKELocalizeDiscovery   @"discoveryLocalize"
 #define LIKELocalizeMine        @"mineLocalize"
 #define LIKELocalizePost        @"postLocalize"
-#define LIKELocalizeMain        @"mainLocalize"
+#define LIKELocalizeMain        @"MainLocalize"
 
 #endif

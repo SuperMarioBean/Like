@@ -27,11 +27,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self.btnCreateAccount setTintColor:BTN_COLOR];
+    [self.btnCreateAccount setTintColor:[UIColor like_buttonColor]];
     
     self.btnLogin.layer.masksToBounds = YES;
     self.btnLogin.layer.cornerRadius = 5;
-    self.btnLogin.backgroundColor = BTN_COLOR;
+    self.btnLogin.backgroundColor = [UIColor like_buttonColor];
     
     UIImageView* accoutn_icon = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"account"]];
     self.phoneNumberTextField.leftView = accoutn_icon;

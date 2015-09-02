@@ -72,7 +72,7 @@ target :like do
     pod 'SMBCustomRelationshipSegue'
 
     #### perform segue replace
-    #pod 'UIViewController+BlockSegue'
+    pod 'UIViewController+BlockSegue'
     #### 多 storyboard 的组合使用
     pod 'RBStoryboardLink', '~> 0.1.4'
 

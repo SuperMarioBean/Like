@@ -39,6 +39,8 @@ extern NSString *const LIKEUserIMPassword;
 
 @property (readwrite, nonatomic, copy) NSString *tempPhoneNumber;
 
+@property (readwrite, nonatomic, copy) NSString *tempAreaCode;
+
 @property (readwrite, nonatomic, copy) NSString *tempPassword;
 
 @property (readwrite, nonatomic, strong) UIImage *tempAvator;
@@ -69,6 +71,8 @@ extern NSString *const LIKEUserIMPassword;
                                           completion:(void (^)(NSError *error))completion;
 
 - (void)registWithPhoneNumber:(NSString *)phoneNumber password:(NSString *)password completion:(void (^)(NSError *error))completion;
+
+- (void)changePasswordWithNewPassword:(NSString *)newPassword completion:(void (^)(NSError *error))completion;
 
 - (void)updateUserWithAvatorImage:(UIImage *)avatorImage keyValuePairs:(NSDictionary *)keyValuePairs completion:(void (^)(NSError *error))completion;
 

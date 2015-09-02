@@ -1,39 +1,39 @@
 
 /* Class = "UINavigationItem"; title = "登录"; ObjectID = "25s-Ev-KyX"; */
-"25s-Ev-KyX.title" = "登录";
+"25s-Ev-KyX.title" = "login";
 
 /* Class = "UINavigationItem"; title = "填写手机号"; ObjectID = "63j-yf-bjY"; */
-"63j-yf-bjY.title" = "填写手机号";
+"63j-yf-bjY.title" = "enter your phone number";
 
 /* Class = "UIButton"; normalTitle = "生日"; ObjectID = "835-8g-Fx8"; */
-"835-8g-Fx8.normalTitle" = "生日";
+"835-8g-Fx8.normalTitle" = "birthday";
 
 /* Class = "UILabel"; text = "请输入您的手机号，我们将向您发送验证短信"; ObjectID = "Dtj-gR-Tbh"; */
-"Dtj-gR-Tbh.text" = "请输入您的手机号，我们将向您发送验证短信";
+"Dtj-gR-Tbh.text" = "please enter your phone number, we will send SMS code for you";
 
 /* Class = "UIButton"; normalTitle = "返回"; ObjectID = "E0s-Km-NbF"; */
-"E0s-Km-NbF.normalTitle" = "返回";
+"E0s-Km-NbF.normalTitle" = "back";
 
 /* Class = "UIButton"; normalTitle = "获取验证码"; ObjectID = "E7S-9W-6wJ"; */
-"E7S-9W-6wJ.normalTitle" = "获取验证码";
+"E7S-9W-6wJ.normalTitle" = "fetch SMS Code";
 
 /* Class = "UINavigationItem"; title = "创建登录密码"; ObjectID = "Eq6-Cj-W4s"; */
-"Eq6-Cj-W4s.title" = "创建登录密码";
+"Eq6-Cj-W4s.title" = "Set up login password";
 
 /* Class = "UIButton"; normalTitle = "我已阅读并同意隐私协议"; ObjectID = "Fi8-Mo-Oar"; */
-"Fi8-Mo-Oar.normalTitle" = "我已阅读并同意隐私协议";
+"Fi8-Mo-Oar.normalTitle" = "I have agreed Provacy Policy";
 
 /* Class = "UIBarButtonItem"; title = "下一步"; ObjectID = "G3B-c0-Ln7"; */
-"G3B-c0-Ln7.title" = "下一步";
+"G3B-c0-Ln7.title" = "Next";
 
 /* Class = "UINavigationItem"; title = "隐私协议"; ObjectID = "KBx-By-tm0"; */
-"KBx-By-tm0.title" = "隐私协议";
+"KBx-By-tm0.title" = "Provacy Policy";
 
 /* Class = "UILabel"; text = "系统将会发送验证码短信到您的手机{{phoneNumber}}"; ObjectID = "KPc-uL-048"; */
 "KPc-uL-048.text" = "系统将会发送验证码短信到您的手机{{phoneNumber}}";
 
 /* Class = "UIBarButtonItem"; title = "下一步"; ObjectID = "Msg-EO-dRy"; */
-"Msg-EO-dRy.title" = "下一步";
+"Msg-EO-dRy.title" = "Next";
 
 /* Class = "UINavigationItem"; title = "验证手机号"; ObjectID = "P86-MG-LVm"; */
 "P86-MG-LVm.title" = "验证手机号";
