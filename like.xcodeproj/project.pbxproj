@@ -353,6 +353,7 @@
 		63FF6ABB1B6698CA000C46D8 /* LIKEMinePhotoItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63FF6AB91B6698CA000C46D8 /* LIKEMinePhotoItem.xib */; };
 		9ACAE78879C2194B489B9D5A /* libPods-like.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A979D4D865537226B1455EA9 /* libPods-like.a */; };
 		A39370811B8E02DA003EB7A3 /* LIKEMainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A39370801B8E02DA003EB7A3 /* LIKEMainNavigationController.m */; };
+		A3A069DB1B95C4BE00961DA4 /* LocList.xml in Resources */ = {isa = PBXBuildFile; fileRef = A3A069DA1B95C4BE00961DA4 /* LocList.xml */; };
 		F64A1F7AEFE5389F5FDB362B /* libPods-likeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4925A4D07F0BFCA3304237D /* libPods-likeTests.a */; };
 /* End PBXBuildFile section */
 
@@ -1064,6 +1065,7 @@
 		A393707E1B8AF691003EB7A3 /* UIColorDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIColorDefine.h; sourceTree = "<group>"; };
 		A393707F1B8E02DA003EB7A3 /* LIKEMainNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LIKEMainNavigationController.h; sourceTree = "<group>"; };
 		A39370801B8E02DA003EB7A3 /* LIKEMainNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LIKEMainNavigationController.m; sourceTree = "<group>"; };
+		A3A069DA1B95C4BE00961DA4 /* LocList.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = LocList.xml; sourceTree = "<group>"; };
 		A979D4D865537226B1455EA9 /* libPods-like.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-like.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4925A4D07F0BFCA3304237D /* libPods-likeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-likeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -1177,6 +1179,7 @@
 		6322566E1B0E10D100D10817 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A3A069DA1B95C4BE00961DA4 /* LocList.xml */,
 				63B3C76A1B48E7AC0030D5D4 /* like-Prefix.pch */,
 				6322566F1B0E10D100D10817 /* Info.plist */,
 				632256701B0E10D100D10817 /* main.m */,
@@ -2806,6 +2809,7 @@
 				63AAFFDB1B5BEA1E00ACF151 /* MWPhotoBrowser.bundle in Resources */,
 				63B3C4511B48DCA40030D5D4 /* Main.storyboard in Resources */,
 				63AAC7D61B8486B9003AD547 /* account.storyboard in Resources */,
+				A3A069DB1B95C4BE00961DA4 /* LocList.xml in Resources */,
 				63908C041B85857700D87CC9 /* MainLocalize.strings in Resources */,
 				63B3C6AF1B48E49F0030D5D4 /* NSDateTimeAgo.bundle in Resources */,
 				63908C221B858AF200D87CC9 /* post.storyboard in Resources */,

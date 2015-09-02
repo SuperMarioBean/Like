@@ -23,7 +23,9 @@ extern NSString *const LIKEUserGender;
 extern NSString *const LIKEUserBirthday;
 extern NSString *const LIKEUserAvatorURL;
 extern NSString *const LIKEUserVerify;
+extern NSString *const LIKEUserAreaCode;
 extern NSString *const LIKEUserDistance;
+extern NSString *const LIKEUserHeight;
 
 extern NSString *const LIKEUserGenderMale;
 extern NSString *const LIKEUserGenderFemale;

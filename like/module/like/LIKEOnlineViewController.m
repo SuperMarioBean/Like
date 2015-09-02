@@ -216,7 +216,7 @@ static NSString *const LIKECollectionViewFooterIdentifier = @"com.trinity.like.o
             NSError* error;
             [LIKEHelper dataWithResponceObject:responseObject error:&error];
             if (!error) {
-                [geo getNearbyUsers:1 success:^(id responseObject) {
+                [geo searchUsers:@{} page:1 success:^(id responseObject) {
                     NSError* error;
                     NSArray* data = [LIKEHelper dataWithResponceObject:responseObject error:&error];
                     [self.nearbys removeAllObjects];

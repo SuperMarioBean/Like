@@ -21,9 +21,11 @@ NSString *const LIKEUserUserID = @"id";
 NSString *const LIKEUserNickName = @"usernickname";
 NSString *const LIKEUserGender = @"gender";
 NSString *const LIKEUserBirthday = @"birthday";
-NSString *const LIKEUserAvatorURL = @"avatorURL";
-NSString *const LIKEUserVerify = @"isverified";
+NSString *const LIKEUserAvatorURL = @"avator";
+NSString *const LIKEUserVerify = @"video_verified";
+NSString *const LIKEUserAreaCode = @"area_code";
 NSString *const LIKEUserDistance = @"distance";
+NSString *const LIKEUserHeight = @"height";
 
 NSString *const LIKEUserGenderMale = @"M";
 NSString *const LIKEUserGenderFemale = @"F";

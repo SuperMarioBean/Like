@@ -118,7 +118,7 @@ CHECKOUT OPTIONS:
     :commit: e8ea4d3dc37167767188fdd12a218e2cd9046dfd
     :git: https://David_Fu@bitbucket.org/TrinityLike/likelocation.git
   LIKENetworkLayer:
-    :commit: e2a76f6cd26ab43b82af44cb283c36aaa1fff696
+    :commit: 84d2b61e3c35bca3b1a7dbfac7a84afbe318f1d1
     :git: https://David_Fu@bitbucket.org/TrinityLike/likenetworklayer.git
   LIKENetworkStatus:
     :commit: a1b0e50d617e6c930bc3f13fecaf3cca5dfc1052
