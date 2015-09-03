@@ -9,15 +9,11 @@
 #import <Foundation/Foundation.h>
 
 typedef NS_ENUM(NSInteger, LIKEStatusCode) {
-    LIKEStatusCodeSuccess = 0,
-    LIKEStatusCodeRegistUserExist = 2,
     LIKEStatusCodeLoginError,
     LIKEStatusCodeLogoutError,
     LIKEStatusCodeSMSFetchError,
-    LIKEStatusCodeSMSValidateError,
     LIKEStatusCodeIMLoginError,
     LIKEStatusCodeIMLogoutError,
-    LIKEStatusCodeNetworkError,
 };
 
 @interface NSError (StatusCode)

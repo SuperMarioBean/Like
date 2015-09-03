@@ -76,9 +76,7 @@ NSString *const LIKEImageBaseURL = @"http://img.like.free-blade.com/";
 - (void)timelineWithPage:(NSInteger)page completion:(void (^)(NSError *, NSArray *))completion {
     [post getTimeline:page
               success:^(id responseObject) {
-                  NSError *error;
-                  NSArray *data = [LIKEHelper dataWithResponceObject:responseObject error:&error];
-                  if (!error) {
+                  NSArray *data = responseObject;
                       _currentTimelinePage = page;
                       
                       NSMutableArray *tempArray = [NSMutableArray array];
@@ -89,16 +87,10 @@ NSString *const LIKEImageBaseURL = @"http://img.like.free-blade.com/";
                       [_timelineList addObjectsFromArray:tempArray];
                       
                       completion(nil, tempArray);
-                  }
-                  else {
-                      completion(error, nil);
-                  }
+                
               }
               failure:^(NSError *error) {
-                  NSError *retError = [NSError errorWithDomain:@"afnetworking.error"
-                                                          code:LIKEStatusCodeNetworkError
-                                                      userInfo:nil];
-                  completion(retError, nil);
+                  completion(error, nil);
               }];
 }
 
@@ -107,37 +99,20 @@ NSString *const LIKEImageBaseURL = @"http://img.like.free-blade.com/";
     [upload uploadImage:image uploadProgress:^(CGFloat percent) {
         NSLog(@"upload : %d %%",(int)percent*100);
     } success:^(id responseObject) {
-        NSError* error;
-        NSDictionary* data = [LIKEHelper dataWithResponceObject:responseObject error:&error];
-        if (!error) {
+        NSDictionary* data = responseObject;
             NSString *uri = [data objectForKey:@"uri"];
             NSMutableDictionary* postInfo = [NSMutableDictionary dictionaryWithDictionary:keyValuePairs];
             [postInfo setObject:uri forKey:LIKETrendContentImageURL];
             
             [post newPost:postInfo success:^(id responseObject) {
                 if (completion) {
-                    NSError *error;
-                    [LIKEHelper dataWithResponceObject:responseObject error:&error];
-                    if (error) {
-                        completion([responseObject objectForKey:LIKEContextMessage]);
-                    }else
-                    {
                         completion(nil);
-                    }
                 }
             } failure:^(NSError *error) {
                 if (completion) {
                     completion(error);
                 }
             }];
-        }else
-        {
-            NSLog(@"%@",error);
-            if (completion) {
-                completion(error);
-            }
-        }
-
     } failure:^(NSError *error) {
         NSLog(@"upload image fail.%@",error);
         if (completion) {

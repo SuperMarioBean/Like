@@ -65,7 +65,7 @@
                                                              }
                                                              else {
                                                                  NSLog(@"%@", error);
-                                                                 if (error.code == LIKEStatusCodeRegistUserExist) {
+                                                                 if (error.code == LIKENetworkLayerStatusCodeRegistUserExist) {
                                                                      [self showHintHudWithMessage:NSLocalizedStringFromTable(@"prompt.userExist", LIKELocalizeAccount, nil)];
                                                                      
                                                                      // FIXME: 临时测试行为

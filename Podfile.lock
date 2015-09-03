@@ -120,7 +120,7 @@ CHECKOUT OPTIONS:
     :commit: e8ea4d3dc37167767188fdd12a218e2cd9046dfd
     :git: https://David_Fu@bitbucket.org/TrinityLike/likelocation.git
   LIKENetworkLayer:
-    :commit: 41bdcc2c91d6ecb429ee15406a76d09381c1ced8
+    :commit: 6e3a1d6e26dfb367988741102070f790e53cbe70
     :git: https://David_Fu@bitbucket.org/TrinityLike/likenetworklayer.git
   LIKENetworkStatus:
     :commit: a1b0e50d617e6c930bc3f13fecaf3cca5dfc1052
@@ -145,7 +145,7 @@ SPEC CHECKSUMS:
   HIPImageCropper: 080054a1d885660e24ca365904842a287207cce2
   KIF: a94bffe9c97e449e44f8fa481c53243d21309e1e
   LIKELocation: fb6a45e8811a73bdbb3aa1f5b2acf8129f6cf3fb
-  LIKENetworkLayer: 36040d9e70fedc88933b7a77023ebf1dbd89689e
+  LIKENetworkLayer: e874fc7ca40ab50f15cf522dd3c1fcf2e6f1b5d1
   LIKENetworkStatus: e75aa7315e61a8788f3ec213d8d9eafd60a22a00
   Mantle: 6bee68168423948be0c0c5924832bf3af188e099
   Masonry: 362e8a1cc0beada4a4c4832d5e863da2a51533be

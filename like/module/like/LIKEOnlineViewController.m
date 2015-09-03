@@ -213,9 +213,6 @@ static NSString *const LIKECollectionViewFooterIdentifier = @"com.trinity.like.o
         NSString* param = [NSString stringWithFormat:@"%f|%f",lat,lon];
         [geo updateUserLocation:param success:^(id responseObject) {
             NSLog(@"%@",responseObject);
-            NSError* error;
-            [LIKEHelper dataWithResponceObject:responseObject error:&error];
-            if (!error) {
 //                [geo getNearbyUsers:1 success:^(id responseObject) {
 //                    NSError* error;
 //                    NSArray* data = [LIKEHelper dataWithResponceObject:responseObject error:&error];
@@ -226,10 +223,6 @@ static NSString *const LIKECollectionViewFooterIdentifier = @"com.trinity.like.o
 //                } failure:^(NSError *error) {
 //                    NSLog(@"======get nearby users error======\n%@",error);
 //                }];
-            }
-            else {
-                NSLog(@"======Upload location error======\n%@",error);
-            }
         } failure:^(NSError *error) {
             NSLog(@"%@",error);
         }];

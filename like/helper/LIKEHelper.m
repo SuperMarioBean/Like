@@ -149,17 +149,4 @@ NSString *getAppVersion() {
     return YES;
 }
 
-+ (id)dataWithResponceObject:(id)responceObject error:(NSError *__autoreleasing *)error {
-    if ([responceObject[LIKEContextCode] integerValue] == LIKEStatusCodeSuccess) {
-        *error = nil;
-        return responceObject[LIKEContextData];
-    }
-    else {
-        *error = [NSError errorWithDomain:responceObject[LIKEContextMessage]
-                                     code:[responceObject[LIKEContextCode] integerValue]
-                                 userInfo:nil];
-        return nil;
-    }
-}
-
 @end

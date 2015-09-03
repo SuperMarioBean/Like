@@ -66,6 +66,4 @@ NSString *getAppVersion();
 
 + (BOOL)veiryBirthday:(NSDate *)birthdayDate;
 
-+ (id)dataWithResponceObject:(id)responceObject error:(NSError *__autoreleasing *)error;
-    
 @end

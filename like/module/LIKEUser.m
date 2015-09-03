@@ -50,14 +50,7 @@ NSString *const LIKEUserPhotoURL = @"photoURL";
     //lat|lon format
     NSString* upload_data = [NSString stringWithFormat:@"%@|%@",[userLocation objectAtIndex:0],[userLocation objectAtIndex:1]];
     [geo updateUserLocation:upload_data success:^(id responseObject) {
-        NSError* error;
-        [LIKEHelper dataWithResponceObject:responseObject error:&error];
-        if (!error) {
-            _userLocation = userLocation;
-        }else
-        {
-            NSLog(@"%@",[responseObject objectForKey:LIKEContextMessage]);
-        }
+        _userLocation = userLocation;
     } failure:^(NSError *error) {
             NSLog(@"%@",error);
     }];
