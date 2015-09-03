@@ -216,18 +216,18 @@ static NSString *const LIKECollectionViewFooterIdentifier = @"com.trinity.like.o
             NSError* error;
             [LIKEHelper dataWithResponceObject:responseObject error:&error];
             if (!error) {
-                [geo searchUsers:@{} page:1 success:^(id responseObject) {
-                    NSError* error;
-                    NSArray* data = [LIKEHelper dataWithResponceObject:responseObject error:&error];
-                    [self.nearbys removeAllObjects];
-                    [self.nearbys addObjectsFromArray:data];
-                    [self.collectionView reloadData];
-                    NSLog(@"%@",self.nearbys);
-                } failure:^(NSError *error) {
-                    NSLog(@"======get nearby users error======\n%@",error);
-                }];
-            }else
-            {
+//                [geo getNearbyUsers:1 success:^(id responseObject) {
+//                    NSError* error;
+//                    NSArray* data = [LIKEHelper dataWithResponceObject:responseObject error:&error];
+//                    [self.nearbys removeAllObjects];
+//                    [self.nearbys addObjectsFromArray:data];
+//                    [self.collectionView reloadData];
+//                    NSLog(@"%@",self.nearbys);
+//                } failure:^(NSError *error) {
+//                    NSLog(@"======get nearby users error======\n%@",error);
+//                }];
+            }
+            else {
                 NSLog(@"======Upload location error======\n%@",error);
             }
         } failure:^(NSError *error) {

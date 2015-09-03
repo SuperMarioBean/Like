@@ -10,10 +10,10 @@
 "prompt.updateProfileComplete" = "Profile update complete";
 "prompt.updating" = "Updating";
 "prompt.loginSuccess" = "Login succeed";
-"prompt.SMSCodeVerifySuccess" = "SMS code verify succeed, you should back to login with your password";
+"prompt.changePassword" = "Password has been reset, please login with your new password";
+"prompt.doesNotSupportArea"="Temporarily does not support the area";
 
 "error.registFail" = "Regist failed";
-
 "error.loginFail" = "Login failed";
 "error.invalidPhoneNumberFormat" = "Invalid phone number format";
 "error.invalidPasswordFormat" = "Invalid password format";
@@ -22,6 +22,7 @@
 "error.updateProfileFail" = "Profile update failed";
 "error.SMSCodeVerifyFail" = "SMS code verify failed";
 "error.SMSCodeSendFail" = "SMS code send failed";
+"error.changePasswordFail" = "Reset password failed";
 
 "readPrivacyPolicy" = "I have agree to privacy policy";
 "setNewPassword" = "Please set your new password";
@@ -36,3 +37,5 @@
 "take_photo_from_camera" = "take photo from camera";
 
 "format.birthdayDate" = "yyyy-MM-dd";
+
+"countryAndArea" = "Region";

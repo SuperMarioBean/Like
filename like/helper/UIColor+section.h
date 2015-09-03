@@ -18,4 +18,6 @@
 
 + (UIColor *)like_moreViewBackgroundColor;
 
++ (UIColor *)like_buttonColor;
+
 @end

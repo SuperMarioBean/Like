@@ -27,7 +27,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.textLabel.text = [NSString stringWithFormat:@"%@ %@", NSLocalizedStringFromTable(@"sendCodeToPhone", LIKELocalizeAccount, nil), [LIKEUserContext sharedInstance].tempPhoneNumber];
+    self.textLabel.text = [NSString stringWithFormat:@"%@ +%@ %@",
+                           NSLocalizedStringFromTable(@"sendCodeToPhone", LIKELocalizeAccount, nil),
+                           [LIKEUserContext sharedInstance].tempAreaCode,
+                           [LIKEUserContext sharedInstance].tempPhoneNumber];
     
     
     self.fetchVerifyCodeButton.layer.masksToBounds = YES;
@@ -57,18 +60,11 @@
     [self touchesBegan:nil withEvent:nil];
     if ([LIKEHelper verifyDigistsCode:self.verifyCodeTextField.text]) {        
         [[LIKEUserContext sharedInstance] validateVerificationCodeBySMSWithPhoneNumber:[LIKEUserContext sharedInstance].tempPhoneNumber
-                                                                                  zone:@"86"
+                                                                                  zone:[LIKEUserContext sharedInstance].tempAreaCode
                                                                                   code:self.verifyCodeTextField.text
                                                                             completion:^(NSError *error) {
                                                                                 if (!error) {
-                                                                                    if ([LIKEUserContext sharedInstance].isForgetPassword) {
-                                                                                        [PSTAlertController presentDismissableAlertWithTitle:NSLocalizedStringFromTable(@"error", LIKELocalizeMain, nil)
-                                                                                                                                 message:NSLocalizedStringFromTable(@"prompt.SMSCodeVerifySuccess", LIKELocalizeAccount, nil)
-                                                                                                                              controller:self];
-                                                                                    }
-                                                                                    else {
-                                                                                        [self performSegueWithIdentifier:@"setPasswordSegue" sender:self];
-                                                                                    }
+                                                                                    [self performSegueWithIdentifier:@"setPasswordSegue" sender:self];
                                                                                 }
                                                                                 else {
                                                                                     [PSTAlertController presentDismissableAlertWithTitle:NSLocalizedStringFromTable(@"error", LIKELocalizeMain, nil)

@@ -249,6 +249,26 @@ NSString *const LIKEUserIMPassword = @"impassword";
              }];
 }
 
+- (void)changePasswordWithNewPassword:(NSString *)newPassword completion:(void (^)(NSError *))completion {
+    [auth changePassword:newPassword
+                  sucess:^(id responseObject) {
+                      NSError *error;
+                      id __unused data = [LIKEHelper dataWithResponceObject:responseObject error:&error];
+                      if (!error) {
+                          completion(nil);
+                      }
+                      else {
+                          completion(error);
+                      }
+                  }
+                 failure:^(NSError *error) {
+                     NSError *retError = [NSError errorWithDomain:@"afnetworking.error"
+                                                             code:LIKEStatusCodeNetworkError
+                                                         userInfo:nil];
+                     completion(retError);
+                 }];
+}
+
 - (void)updateUserWithAvatorImage:(UIImage *)avatorImage keyValuePairs:(NSDictionary *)keyValuePairs completion:(void (^)(NSError *))completion {
     [upload uploadImage:avatorImage
          uploadProgress:nil

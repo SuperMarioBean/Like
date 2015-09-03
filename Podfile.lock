@@ -66,6 +66,7 @@ PODS:
   - THProgressView (1.0)
   - UIBarButtonItem-Badge (0.0.1)
   - UICollectionView-ARDynamicHeightLayoutCell (1.0)
+  - UIViewController+BlockSegue (1.0.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.5.4)
@@ -98,6 +99,7 @@ DEPENDENCIES:
   - THProgressView (~> 1.0)
   - UIBarButtonItem-Badge (from `https://github.com/mikeMTOL/UIBarButtonItem-Badge.git`)
   - UICollectionView-ARDynamicHeightLayoutCell (from `https://github.com/SuperMarioBean/UICollectionView-ARDynamicHeightLayoutCell.git`)
+  - UIViewController+BlockSegue
 
 EXTERNAL SOURCES:
   LIKELocation:
@@ -164,5 +166,6 @@ SPEC CHECKSUMS:
   THProgressView: 999dc78f748f4cb6d69408f545de4d82ef7f1cec
   UIBarButtonItem-Badge: 8f5ed4d32d32dbb03034d4f273d02c8da680236b
   UICollectionView-ARDynamicHeightLayoutCell: 560154abd491f89ad6381fa76bfb091cee2b3f37
+  UIViewController+BlockSegue: 5c326671d254c3ad16523ecfe165137004293073
 
 COCOAPODS: 0.38.2

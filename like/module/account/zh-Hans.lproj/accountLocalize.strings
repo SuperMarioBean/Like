@@ -10,10 +10,10 @@
 "prompt.updateProfileComplete" = "个人信息更新成功";
 "prompt.updating" = "正在更新";
 "prompt.loginSuccess" = "登陆成功";
-"prompt.SMSCodeVerifySuccess" = "你的验证码验证成功, 你需要返回登陆界面使用新密码重新登陆一次";
+"prompt.changePassword" = "密码已经充值, 请重新登录";
+"prompt.doesNotSupportArea" = "暂时不支持该地区";
 
 "error.registFail" = "注册失败";
-
 "error.loginFail" = "登录失败";
 "error.invalidPhoneNumberFormat" = "您输入的电话号码格式不正确";
 "error.invalidPasswordFormat" = "您输入的密码格式不正确";
@@ -22,6 +22,7 @@
 "error.updateProfileFail" = "个人信息更新失败";
 "error.SMSCodeVerifyFail" = "您的验证码验证失败";
 "error.SMSCodeSendFail" = "您的验证码发送失败";
+"error.changePasswordFail" = "重置密码失败";
 
 "readPrivacyPolicy" = "我已阅读并同意隐私协议";
 "setNewPassword" = "请设置您的新登录密码";
@@ -36,3 +37,5 @@
 "take_photo_from_camera" = "从照相机中获取";
 
 "format.birthdayDate" = "yyyy年 MM月 dd日";
+
+"countryAndArea" = "国家和地区";

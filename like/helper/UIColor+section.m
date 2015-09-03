@@ -22,4 +22,8 @@
     return [UIColor colorWithRed:240.0f/255.0f green:242.0f/255.0f blue:247.0f/255.0f alpha:1.0f];
 }
 
++ (UIColor *)like_buttonColor {
+    return [UIColor colorWithRed:255.0/255.0 green:163/255.0 blue:13.0/255.0 alpha:1.0];
+}
+
 @end
