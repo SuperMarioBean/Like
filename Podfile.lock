@@ -25,6 +25,7 @@ PODS:
   - EaseMobSDKFull (2.1.7)
   - Expecta (1.0.2)
   - FIR.im (1.2.0)
+  - FoldingTabBar (1.0.1)
   - HIPImageCropper (2.0.0)
   - KIF (3.2.3):
     - KIF/XCTest (= 3.2.3)
@@ -73,6 +74,7 @@ DEPENDENCIES:
   - EaseMobSDKFull (~> 2.1.7)
   - Expecta (~> 1.0.0)
   - FIR.im (~> 1.2.0)
+  - FoldingTabBar (from `https://github.com/SuperMarioBean/FoldingTabBar.iOS.git`)
   - HIPImageCropper
   - KIF (~> 3.2.2)
   - LIKELocation (from `https://David_Fu@bitbucket.org/TrinityLike/likelocation.git`)
@@ -102,6 +104,8 @@ DEPENDENCIES:
   - UIViewController+BlockSegue
 
 EXTERNAL SOURCES:
+  FoldingTabBar:
+    :git: https://github.com/SuperMarioBean/FoldingTabBar.iOS.git
   LIKELocation:
     :git: https://David_Fu@bitbucket.org/TrinityLike/likelocation.git
   LIKENetworkLayer:
@@ -116,11 +120,14 @@ EXTERNAL SOURCES:
     :git: https://github.com/SuperMarioBean/UICollectionView-ARDynamicHeightLayoutCell.git
 
 CHECKOUT OPTIONS:
+  FoldingTabBar:
+    :commit: 66d1db9c9ade0d6c725f4ac860979825e871793d
+    :git: https://github.com/SuperMarioBean/FoldingTabBar.iOS.git
   LIKELocation:
-    :commit: e8ea4d3dc37167767188fdd12a218e2cd9046dfd
+    :commit: e10af86dff3d89839afd2d14c18c6845e6943d9c
     :git: https://David_Fu@bitbucket.org/TrinityLike/likelocation.git
   LIKENetworkLayer:
-    :commit: 6e3a1d6e26dfb367988741102070f790e53cbe70
+    :commit: b48f8b9f56106c5ffc2fa615533ad5a75e3eaf89
     :git: https://David_Fu@bitbucket.org/TrinityLike/likenetworklayer.git
   LIKENetworkStatus:
     :commit: a1b0e50d617e6c930bc3f13fecaf3cca5dfc1052
@@ -142,9 +149,10 @@ SPEC CHECKSUMS:
   EaseMobSDKFull: 43858ca9a62bbe1fa4c7c006f944a3e52a4bff48
   Expecta: 54e8a3530add08f4f0208c111355eda7cde74a53
   FIR.im: e5c7367a35adcd796f30f176f059356c330c0c2e
+  FoldingTabBar: 3e04c49dbe2b02c529561a4182bf017b928d04d2
   HIPImageCropper: 080054a1d885660e24ca365904842a287207cce2
   KIF: a94bffe9c97e449e44f8fa481c53243d21309e1e
-  LIKELocation: fb6a45e8811a73bdbb3aa1f5b2acf8129f6cf3fb
+  LIKELocation: 85d7c54b15ac86357d30261dc7c323b22d210497
   LIKENetworkLayer: e874fc7ca40ab50f15cf522dd3c1fcf2e6f1b5d1
   LIKENetworkStatus: e75aa7315e61a8788f3ec213d8d9eafd60a22a00
   Mantle: 6bee68168423948be0c0c5924832bf3af188e099

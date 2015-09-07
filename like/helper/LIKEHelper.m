@@ -8,11 +8,16 @@
 
 #import "LIKEHelper.h"
 
-NSString *const LIKEContextCode = @"code";
-NSString *const LIKEContextData = @"data";
-NSString *const LIKEContextMessage = @"msg";
-
 @implementation LIKEHelper
+
++ (instancetype)helper {
+    static LIKEHelper *sharedInstance;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedInstance = [[LIKEHelper alloc] init];
+    });
+    return sharedInstance;
+}
 
 static NSString *const letters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 

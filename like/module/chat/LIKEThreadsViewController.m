@@ -70,6 +70,9 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    
+    [[LIKEHelper helper].mainTabBarController.tabBarView hideTabBarView:NO completion:^(BOOL finished) {
+    }];
 }
 
 - (void)viewDidLayoutSubviews {
@@ -126,9 +129,10 @@
     [self.searchDisplayController setActive:NO animated:YES];
     _kind = tableView.tag;
     _selectedIndexPath = indexPath;
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    
+    [[LIKEHelper helper].mainTabBarController.tabBarView hideTabBarView:YES completion:^(BOOL finished) {
         [self performSegueWithIdentifier:@"threadsToChatSegue" sender:self];
-    });
+    }];
 }
 
 -(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{

@@ -40,6 +40,10 @@
 #import "UIBarButtonItem+Badge.h"
 #import "PSTAlertController.h"
 
+#import "YALTabBarItem.h"
+#import "YALFoldingTabBarController.h"
+#import "YALAnimatingTabBarConstants.h"
+
 #import "LIKEUser.h"
 #import "LIKEAppContext.h"
 #import "LIKEUserContext.h"

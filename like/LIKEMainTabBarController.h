@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LIKEMainTabBarController : UITabBarController
+@interface LIKEMainTabBarController : YALFoldingTabBarController
 
 @end

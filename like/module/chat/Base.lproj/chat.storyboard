@@ -109,7 +109,7 @@
         <!--{{chatter}}-->
         <scene sceneID="pA7-vv-flh">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="TdX-jA-cX2" customClass="LIKEChatViewController" sceneMemberID="viewController">
+                <viewController id="TdX-jA-cX2" customClass="LIKEChatViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PUd-8q-quK"/>
                         <viewControllerLayoutGuide type="bottom" id="Bsj-oX-zxz"/>
@@ -164,7 +164,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="xVt-rH-Yyn"/>
+        <segue reference="mrc-V3-6Ex"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>

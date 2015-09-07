@@ -11,7 +11,8 @@
 
 @interface LIKEMainTabBarController () <UITabBarControllerDelegate,
                                         EMChatManagerDelegate,
-                                        EMCallManagerDelegate>
+                                        EMCallManagerDelegate,
+                                        YALTabBarViewDelegate>
 
 @end
 
@@ -26,15 +27,53 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [LIKEHelper helper].mainTabBarController = self;
     self.delegate = self;
+    self.tabBarView.delegate = self;
+    
+    //prepare leftBarItems
+    YALTabBarItem *item1 = [[YALTabBarItem alloc] initWithItemImage:[UIImage imageNamed:@"chats_icon"]
+                                                      leftItemImage:[UIImage imageNamed:@"edit_icon"]
+                                                     rightItemImage:[UIImage imageNamed:@"new_chat_icon"]];
+    
+    
+    YALTabBarItem *item2 = [[YALTabBarItem alloc] initWithItemImage:[UIImage imageNamed:@"like_icon"]
+                                                      leftItemImage:[UIImage imageNamed:@"edit_icon"]
+                                                     rightItemImage:nil];
+    
+    
+    self.leftBarItems = @[item1, item2];
+    
+    //prepare rightBarItems
+    YALTabBarItem *item3 = [[YALTabBarItem alloc] initWithItemImage:[UIImage imageNamed:@"nearby_icon"]
+                                                      leftItemImage:[UIImage imageNamed:@"edit_icon"]
+                                                     rightItemImage:nil];
+    
+    YALTabBarItem *item4 = [[YALTabBarItem alloc] initWithItemImage:[UIImage imageNamed:@"profile_icon"]
+                                                      leftItemImage:nil
+                                                     rightItemImage:nil];
+    
+    
+    self.rightBarItems = @[item3, item4];
+    
+    self.centerButtonImage = [UIImage imageNamed:@"plus_icon"];
+    
+    self.selectedIndex = 1;
+    
+    //customize tabBarView
+    self.tabBarView.extraTabBarItemHeight = YALExtraTabBarItemsDefaultHeight;
+    self.tabBarView.offsetForExtraTabBarItems = YALForExtraTabBarItemsDefaultOffset;
+    self.tabBarView.backgroundColor = [UIColor clearColor];
+    self.tabBarView.tabBarColor = [UIColor like_tintColor];
+    self.tabBarViewHeight = YALTabBarViewDefaultHeight;
+    self.tabBarView.tabBarViewEdgeInsets = YALTabBarViewHDefaultEdgeInsets;
+    self.tabBarView.tabBarItemsEdgeInsets = YALTabBarViewItemsDefaultEdgeInsets;
+    
     [self registerNotifications];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-
-    self.selectedIndex = 1;
-
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -54,14 +93,17 @@
 
 #pragma mark - delegate methods
 
-- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
-    NSInteger index = [tabBarController.viewControllers indexOfObject:viewController];
-    if (index == 2) {
-        [self performSegueWithIdentifier:@"postSegue" sender:self];
-        return NO;
-    }
-    return YES;
+#pragma mark YALTabBarViewDelegate
+
+- (void)extraLeftItemDidPressInTabBarView:(YALFoldingTabBar *)tabBarView {
+    [self performSegueWithIdentifier:@"postSegue" sender:self];
 }
+
+- (void)extraRightItemDidPressInTabBarView:(YALFoldingTabBar *)tabBarView {
+    
+}
+
+#pragma mark mob
 
 - (void)didUpdateConversationList:(NSArray *)conversationList {
     [self setupUnreadMessageCount];
@@ -331,5 +373,7 @@
 #pragma mark - accessor methods
 
 #pragma mark - api methods
+
+
 
 @end
