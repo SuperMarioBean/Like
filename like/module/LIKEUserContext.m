@@ -72,6 +72,9 @@ NSString *const LIKEUserIMPassword = @"impassword";
     [auth login:phoneNumber
        password:password
          sucess:^(id responseObject) {
+             // FIXME: 目前的 upload 模块需要手动登录, 否则无法正常的工作
+             [upload login:nil failure:nil];
+             
              NSError *error;
              NSDictionary *data = responseObject;
              if (!error) {
