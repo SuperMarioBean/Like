@@ -38,11 +38,13 @@
 
 #import "NSError+StatusCode.h"
 
-extern NSString *const LIKEContextCode;
-extern NSString *const LIKEContextData;
-extern NSString *const LIKEContextMessage;
+#import "LIKEMainTabBarController.h"
 
 @interface LIKEHelper : NSObject
+
+@property (readwrite, nonatomic, weak) LIKEMainTabBarController *mainTabBarController;
+
++ (instancetype)helper;
 
 + (NSString *)randomStringWithMaxLength:(int)maxlength;
 

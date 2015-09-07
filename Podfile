@@ -45,7 +45,9 @@ target :like do
     ## UIKit 组件封装
     ### 进度
     pod 'THProgressView', '~> 1.0'
-    
+
+    ### 折叠 tabbar
+    pod 'FoldingTabBar', :git => 'https://github.com/SuperMarioBean/FoldingTabBar.iOS.git'
     ### UIAlertController, UIAlertView, UIActionSheet 的 iOS7 兼容封装
     pod 'PSTAlertController', '~> 1.1.0'
     

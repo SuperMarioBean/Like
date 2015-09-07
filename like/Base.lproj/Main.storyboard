@@ -5,11 +5,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--聊天-->
+        <!--Navigation Controller-->
         <scene sceneID="TPi-Xe-do1">
             <objects>
                 <navigationController id="aa0-dh-woc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="聊天" image="chat" id="27t-lS-E1C"/>
+                    <tabBarItem key="tabBarItem" title="" id="27t-lS-E1C"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="psa-eA-emv">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -20,7 +20,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OwX-gY-jvA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2003" y="767"/>
+            <point key="canvasLocation" x="-1873" y="775"/>
         </scene>
         <!--Storyboard Link-->
         <scene sceneID="hbK-An-16q">
@@ -44,7 +44,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t6u-gh-rvZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1644" y="1507"/>
+            <point key="canvasLocation" x="-1472" y="1515"/>
         </scene>
         <!--Storyboard Link-->
         <scene sceneID="N7H-SL-lzO">
@@ -68,13 +68,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kpX-ve-V0f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1286" y="767"/>
+            <point key="canvasLocation" x="-684" y="167"/>
         </scene>
-        <!--Like-->
+        <!--Navigation Controller-->
         <scene sceneID="EUc-EQ-tW6">
             <objects>
                 <navigationController id="q3a-Md-gbc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Like" image="like" id="IuN-aM-JXT"/>
+                    <tabBarItem key="tabBarItem" title="" id="IuN-aM-JXT"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0Pt-W7-mp9">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -85,32 +85,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jNQ-fk-3c6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1644" y="767"/>
+            <point key="canvasLocation" x="-1472" y="775"/>
         </scene>
-        <!--发布-->
-        <scene sceneID="cvi-VJ-Fd6">
-            <objects>
-                <viewController id="6fW-ZI-Aqr" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="hJh-ng-46z"/>
-                        <viewControllerLayoutGuide type="bottom" id="joR-bn-q6Q"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Xgn-rB-Fss">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="发布" id="hXi-UH-Z98"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NZe-dH-Smf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-688" y="-831"/>
-        </scene>
-        <!--我的-->
+        <!--Navigation Controller-->
         <scene sceneID="gW3-BC-2vi">
             <objects>
                 <navigationController id="AU8-3m-kHF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="我的" image="mine" id="SCv-9C-x01"/>
+                    <tabBarItem key="tabBarItem" title="" id="SCv-9C-x01"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Y56-Ei-CsK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -121,13 +102,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="15c-bR-Yph" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-576" y="767"/>
+            <point key="canvasLocation" x="-700" y="775"/>
         </scene>
-        <!--发现-->
+        <!--Navigation Controller-->
         <scene sceneID="ikz-il-6Wf">
             <objects>
                 <navigationController id="du5-ou-G3w" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="发现" id="mEG-Gi-V0S"/>
+                    <tabBarItem key="tabBarItem" title="" id="mEG-Gi-V0S"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="6NX-Uu-ZSq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -138,7 +119,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Y8-wc-D1b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-930" y="767"/>
+            <point key="canvasLocation" x="-1094" y="775"/>
         </scene>
         <!--Storyboard Link-->
         <scene sceneID="v3J-vE-NCZ">
@@ -162,7 +143,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vm9-pe-RBD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-930" y="1507"/>
+            <point key="canvasLocation" x="-1094" y="1515"/>
         </scene>
         <!--Storyboard Link-->
         <scene sceneID="GyZ-EV-jmi">
@@ -186,7 +167,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dHG-r7-zqP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-576" y="1507"/>
+            <point key="canvasLocation" x="-700" y="1515"/>
         </scene>
         <!--Storyboard Link-->
         <scene sceneID="xiN-eO-mjI">
@@ -210,7 +191,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XjK-CC-4mU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2003" y="1507"/>
+            <point key="canvasLocation" x="-1873" y="1515"/>
         </scene>
         <!--Main Navigation Controller-->
         <scene sceneID="cQG-Xd-VPp">
@@ -223,12 +204,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mrk-L4-Yvk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1830" y="-138"/>
+            <point key="canvasLocation" x="-2259" y="-460"/>
         </scene>
         <!--Main Tab Bar Controller-->
         <scene sceneID="lF0-nF-OMz">
             <objects>
                 <tabBarController id="40D-SM-teq" customClass="LIKEMainTabBarController" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="eR9-1e-jM5"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="uor-oQ-YWH">
@@ -241,7 +223,6 @@
                         <segue destination="MUi-nc-UVc" kind="custom" identifier="postSegue" customClass="RBStoryboardModalSegue" id="K4u-IP-ia0"/>
                         <segue destination="aa0-dh-woc" kind="relationship" relationship="viewControllers" id="s0j-Nb-8Fz"/>
                         <segue destination="q3a-Md-gbc" kind="relationship" relationship="viewControllers" id="DcX-Oq-MMq"/>
-                        <segue destination="6fW-ZI-Aqr" kind="relationship" relationship="viewControllers" id="8m6-3d-MIm"/>
                         <segue destination="du5-ou-G3w" kind="relationship" relationship="viewControllers" id="BEm-E0-rd4"/>
                         <segue destination="AU8-3m-kHF" kind="relationship" relationship="viewControllers" id="4jQ-kx-9U6"/>
                     </connections>
@@ -269,14 +250,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5os-tw-dQQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-688" y="-138"/>
+            <point key="canvasLocation" x="-684" y="-490"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="chat" width="20" height="20"/>
-        <image name="like" width="30" height="30"/>
-        <image name="mine" width="36" height="36"/>
-    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
